@@ -1,0 +1,165 @@
+[
+  {
+    "title": "Computer Vision",
+    "description": "We tackle fundamental unsupervised learning approaches that we consider to be the key to true unconstrained learning, which best simulates how humans discover the surrounding world. We aim to combine the unsupervised visual perception with supervised cognitive video representation. We want to build systems that understand our world by only watching videos.\nAnd we go further, teaching the system to describe, in natural language, the discovered elements.",
+    "people": "Elena Burceanu, Iulia Duță, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
+    "projects": [
+      {
+        "title": "Unsupervised Object Tracking",
+        "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. While it has attracted the interest of many researchers over several decades of computer vision, it is far from being solved.\nThe task is hard for many reasons. Difficulties could come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.\nThe only ground-truth knowledge given to the tracker is the bounding box of the object in the first frame. Thus, without knowing in advance the properties of the object being tracked, the tracking algorithm must learn them on the fly. It must adapt correctly and make sure it does not jump toward other objects in the background. That is why the possibility of drifting to the background poses on of the main challenges in tracking.",
+        "papers": [
+          {
+            "authors" : "E. Burceanu, M. Leordeanu",
+            "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
+            "year" : "2018",
+            "link" : "https://arxiv.org/abs/1804.01771"
+          },
+          {
+            "authors" : "E. Burceanu, M. Leordeanu",
+            "title" : "Learning a Robust Society of Tracking Parts",
+            "year" : "2017",
+            "link" : "https://arxiv.org/abs/1705.09602"
+          }
+        ]
+      },
+      {
+        "title":"Video Captioning",
+        "description": "Video captioning is the task of describing a video in natural language. It lies at the intersection of computer vision, natural language processing and machine learning requiring both high level visual comprehension and the ability to produce meaningful sentences. Our goal is to detect objects and events in a video and be capable of understanding the interactions between them in spatial and temporal dimensions.\nWe investigated multiple methods to analyze a video and extract information from it. To overcome limitations of the task and the available data, we design multiple models, to explore different video encoding strategies, to explore intermediate video-language representation and to investigate the gains brought by additional tasks and features. We propose a method for video captioning by selecting from the results of multiple encoder-decoder models. Our selection method based on consensus among multiple sentences is more likely to produce results with the same meaning as the video. We designed a methods that surpassed the state-of-the-art results on the challenging MSR-VTT dataset.",
+        "papers": [
+          {
+            "authors" : "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
+            "title" : "Mining for meaning: from vision to language through multiple networks consensus",
+            "year" : "2018",
+            "link" : "https://arxiv.org/abs/1806.01954"
+          }
+        ]
+      },
+      {
+        "title":"Unsupervised learning of objects from video sequences",
+        "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.\nWe are focused on generating foreground object soft masks based on automatic selection and learning from highly probable positive features. We show that such features can be selected efficiently by taking into consideration the spatio-temporal appearance and motion consistency of the object in the video sequence. We also emphasize the role of the contrasting properties between the foreground object and its background. Our work is also focused on theoretically proving the properties of our unsupervised learning method, which under some mild constraints is guaranteed to learn the correct classifier even in the unsupervised case.",
+        "papers": [
+          {
+            "authors" : "E. Haller, M. Leordeanu",
+            "title" : "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
+            "year" : "2017",
+            "link" : "https://arxiv.org/abs/1704.05674",
+            "published" : " In The IEEE International Conference on Computer Vision (ICCV)"
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
+    "title":"Natural Language Processing",
+    "description": "A large amount of today's data is stored in databases. Building AI tools that facilitate the access to knowledge requires processing of natural language and structured data. We focus on neural approaches for natural language interfaces to databases, in particular structure-aware and semi-supervised methods.",
+    "people": "Florin Brad in collaboration with Traian Rebedea, Ionel Hosu, Radu Iacob",
+    "projects": [
+      {
+        "title":"Natural Language Interface to Databases",
+        "description": "Natural Language Interface to Databases (NLIDB) bridges the gap between technical and non-technical users by allowing the latter to query large amounts of structured data through the use of instructions written in natural language.\nDespite long-standing research efforts, progress has been slow and widespread adoption has failed to pick up. Data-driven approaches have been hindered by the lack of large parallel corpora to train the models on, but recent datasets alleviate this problem. We seek to improve existing SEQ2SEQ models by leveraging syntax to guide the generation process and by using semi-supervised techniques to overcome the low parallel data regime.",
+        "papers": [
+          {
+            "authors" : "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
+            "title" : "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
+            "year" : "2017",
+            "link" : "https://arxiv.org/abs/1707.03172",
+            "published" : ""
+          },
+          {
+            "authors" : "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
+            "title" : "Natural Language Interface for Databases Using a Dual-Encoder Model",
+            "year" : "2018",
+            "link" : "#",
+            "published" : "To appear."
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
+    "title":"Reinforcement Learning",
+    "description": "Within the field of artificial intelligence reinforcement learning seems a natural setting for training agents that interact with the world we are living in. We engage in furthering the field by developing agents able to learn continuously in different environments. We are also investigating models sitting at the intersection of generative models and reinforcement learning.",
+    "people": "Tudor Berariu, Florin Gogianu, Ștefan Postăvaru, collaborating with Andrei Nica",
+    "projects": [
+      {
+        "title":"Continual Learning",
+        "description": "Recent advances in machine learning are still limited to stationary tasks, but general purpose intelligence would require agents able to acquire knowledge in a continual manner dealing with interleaving tasks. Lifelong learning scenarios deal exactly with this problem: training agents on new tasks while preserving performance on old ones.\nWe are currently exploring memory based, optimization related and architectural methods to train neural models in lifelong learning scenarios.",
+        "papers": []
+      },
+      {
+        "title":"Malmo AI Challenge",
+        "description": "The Microsoft Malmo AI Challenge proposed a time-extended stag hunt scneario build on top of the well-known Minecraft platform. In order to maximize its payoff in such a game an agent needs to predict the level of commitment to a collaborative strategy of the other player, decide on a specific plan and navigate through the environment to execute it.\nMulti-agent setups pose additional optimization problems stemming from the non-stationarity of the training objective. Also, situated environments ask agents to learn dynamic strategies capable of dealing with sudden changes in the course of action (such as another playing abandoning the collaborative strategy).\nWe approached the contest by training agents through deep reinforcement learning techniques using recurrent neural networks for policies and for value estimation. We also added auxiliary loss functions (such as next reward, or next frame prediction) in order to complement the sparse reward signal.\n Our submission ranked second for the AI Summer School placement prize and third for the Microsoft Azure for Research Grant prize.",
+        "papers": [
+          {
+            "authors" : "A. Nica, T. Berariu, F. Gogianu, A.M. Florea",
+            "title" : "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
+            "year" : "2017",
+            "link" : "./learning-maximize-return.pdf",
+            "published" : ""
+          }
+        ]
+      },
+      {
+        "title":"Towards a generative Experience Replay",
+        "description": "Within the field of reinforcement learning with deep neural network estimators, this research proposal is concerned with investigating and then augmenting or replacing the Experience Replay mechanism found in most of the state-of-the art methods with shallow and flexible, action-conditional models of the environment working not in the pixel space but at the level of low-dimensional intermediate representations",
+        "papers": []
+      }
+    ]
+  },
+
+
+
+  {
+    "title":"Cryptography",
+    "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
+    "people": "Miruna Roșca, Radu Țițiu, coordinated by Damien Stehlé, Benoît Libert. Mădălina Bolboceanu",
+    "projects": [
+      {
+        "title":"Hardness of lattice problems",
+        "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems, giving reductions between them and using them to build new cryptographic primitives.",
+        "papers": [
+          {
+            "authors" : "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
+            "title" : "Middle-Product Learning with Errors",
+            "year" : "2017",
+            "link" : "https://eprint.iacr.org/2017/628",
+            "published" : "In the proceedings of CRYPTO 2017, pages 283-297, Springer, 2017"
+          },
+          {
+            "authors" : "M. Rosca, D. Stehlé and A. Wallet",
+            "title" : "On the Ring-LWE and Polynomial-LWE Problems",
+            "year" : "2018",
+            "link" : "https://eprint.iacr.org/2018/170",
+            "published" : "In the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
+          }
+        ]
+      },
+      {
+        "title":"Cryptographic primitives from LWE",
+        "description": "My research project is concerned with building advanced cryptographic primitives, which mainly rely their security on the Learning With Errors problem (LWE). Together with my PhD advisor, Benoit Libert, we are currently working on improving known constructions of some Functional Encryption schemes.\nSome Applications of this primitive: run learning algorithms on encrypted data; perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
+        "papers": [
+          {
+            "authors" : "R. Țițiu, B.Libert, D. Stehlé",
+            "title" : "Adaptively Secure Distributed PRFs from LWE",
+            "year" : "",
+            "link" : "",
+            "published" : "In submission"
+          },
+          {
+            "authors" : "R. Țițiu, B.Libert, D. Stehlé",
+            "title" : "Tight Security Proofs for GGM-like Lattice-Based PRFs",
+            "year" : "",
+            "link" : "",
+            "published" : ""
+          }
+        ]
+      }
+    ]
+  }
+]
