@@ -11,6 +11,12 @@ export const SpecialtyWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   `}
+
+  ${breakpoint('tablet')`
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  `}
 `
 
 export const SpecialtyPanel = styled.div`
@@ -18,6 +24,32 @@ export const SpecialtyPanel = styled.div`
   overflow: hidden;
 
   ${breakpoint('desktop')`
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 38%;
+    overflow: hidden;
+    left: 0;
+
+    .specItem {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      justify-content: center;
+
+      &.grows {
+        display: flex;
+        flex-grow: 20;
+        align-items: center;
+      }
+    }
+  `}
+
+  ${breakpoint('tablet')`
     position: sticky;
     top: 0;
 
@@ -33,6 +65,12 @@ export const SpecialtyPanel = styled.div`
       flex-shrink: 1;
       flex-basis: auto;
       justify-content: center;
+
+      &.grows {
+        display: flex;
+        flex-grow: 20;
+        align-items: center;
+      }
     }
   `}
 
@@ -45,7 +83,7 @@ const Heading = styled.h2`
   //position: sticky;
   //top: 0;
 
-  margin-top: 0;
+  margin: 0;
   font-family: 'Bitter', serif;
   font-style: normal;
   font-weight: 400;
@@ -55,18 +93,29 @@ const Heading = styled.h2`
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
 
+  ${breakpoint('tablet')`
+    font-size: 6vw;
+    line-height: 5vw;
+    margin-top: -2px;
+
+    @media screen and (orientation:portrait) {
+      margin-top: -7px;
+    }
+  `}
+
   ${breakpoint('desktop')`
     position: initial;
     top: initial;
 
-    line-height: 78px;
-    font-size: 96px;
+    //font-size: 96px;
+    //line-height: 78px;
+    font-size: 6vw;
+    line-height: 5vw;
     margin-top: -3px;
   `}
 `
 
 const Description = styled.p`
-  flex-grow: 10;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -75,10 +124,23 @@ const Description = styled.p`
   color: rgba(255, 255, 255, 0.8);
   padding: 0 1rem;
 
+  ${breakpoint('tablet')`
+    font-size: 3vmin;
+    line-height: 5vmin;
+    padding: 0 2rem;
+
+    @media screen and (orientation:landscape) {
+      //background: palevioletred;
+    }
+  `}
+
   ${breakpoint('desktop')`
-    padding: 0 5rem;
-    line-height: 2.25rem;
-    font-size: 1.5rem;
+    font-size: 2.6vmin;
+    line-height: 4.2vmin;
+    padding: 0 8.5vmin;
+
+    //line-height: 2.25rem;
+    //padding: 0 5rem;
   `}
 `
 
@@ -91,12 +153,25 @@ const Team = styled.p`
   color: rgba(255, 255, 255, 0.5);
   padding: 0 1rem;
 
+  ${breakpoint('tablet')`
+    font-size: 2vmin;
+    line-height: 3.8vmin;
+    padding: 0 2rem;
+  `}
+
   ${breakpoint('desktop')`
-    padding: 0 5rem;
+    //padding: 0 5rem;
+    font-size: 2vmin;
+    line-height: 3vmin;
+    padding: 0 8.5vmin;
   `}
 `
 
 const ProjectsWrapper = styled.div`
+  ${breakpoint('tablet')`
+    max-width: 62%;
+  `}
+
   ${breakpoint('desktop')`
     max-width: 62%;
   `}
@@ -108,7 +183,9 @@ export default ({ children, props, bgIdx }) => (
   <SpecialtyWrapper>
     <SpecialtyPanel bg={SpecialtyBg[bgIdx]}>
       <Heading className="specItem">{props.title} </Heading>
-      <Description className="specItem">{props.description} </Description>
+      <div className="specItem grows">
+        <Description>{props.description} </Description>
+      </div>
       <Team className="specItem">{props.people} </Team>
     </SpecialtyPanel>
 

@@ -17,6 +17,15 @@ export const ResearchTeam = styled.div`
   padding: 6rem 1rem;
   background: #F5F2F2;
 
+  ${breakpoint('tablet')`
+    padding: 10rem 5rem;
+
+    @media screen and (orientation:portrait) {
+      //background: palevioletred;
+      padding: 10rem 10rem;
+    }
+  `}
+
   ${breakpoint('desktop')`
     padding: 10rem 5rem;
   `}

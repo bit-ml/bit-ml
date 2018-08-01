@@ -13,10 +13,25 @@ export const Hero = styled.div`
   background-size: 1024px;
   background-position: -600px bottom;
 
+  ${breakpoint('tablet')`
+    padding: 0 5rem;
+    background-size: contain;
+    background-position: bottom;
+    @media screen and (orientation:portrait) {
+      background-size: 1512px;
+      background-position: -700px bottom;
+    }
+  `}
+
   ${breakpoint('desktop')`
     padding: 0 5rem;
     background-size: contain;
     background-position: bottom;
+
+    @media screen and (orientation:portrait) {
+      background-size: 2048px;
+      background-position: -700px bottom;
+    }
   `}
 `
 
@@ -28,6 +43,11 @@ const Heading = styled.h1`
   font-size: 36px;
   line-height: 3rem;
   color: #E4E4E4;
+
+  ${breakpoint('tablet')`
+    font-size: 64px;
+    line-height: 92px;
+  `}
 
   ${breakpoint('desktop')`
     font-size: 64px;

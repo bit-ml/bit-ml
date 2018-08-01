@@ -4,6 +4,12 @@ import breakpoint from 'styled-components-breakpoint'
 
 
 const Project = styled.div`
+  ${breakpoint('tablet')`
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  `}
+
   ${breakpoint('desktop')`
     display: flex;
     align-items: center;
@@ -14,8 +20,14 @@ const Project = styled.div`
 const ProjectContent = styled.section`
   display: inline-block;
   padding: 0 1rem;
+
+  ${breakpoint('tablet')`
+    padding: 0 5rem;
+  `}
+
   ${breakpoint('desktop')`
-    padding: 0 15rem;
+    //padding: 0 15rem;
+    padding: 0 24vmin;
   `}
 `
 
