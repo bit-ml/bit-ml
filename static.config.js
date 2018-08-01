@@ -51,18 +51,6 @@ export default {
             <meta charSet="UTF-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <link
-              href="//fonts.googleapis.com/css?family=Bitter:400"
-              rel="stylesheet"
-            />
-            <link
-              href="https://fonts.googleapis.com/css?family=Roboto:300,400"
-              rel="stylesheet"
-            />
-            <link
-              href="https://fonts.googleapis.com/css?family=Exo+2:400,600"
-              rel="stylesheet"
-            />
             <link rel="apple-touch-icon" href="icon.png" />
 
             {renderMeta.styleTags}

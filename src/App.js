@@ -9,6 +9,8 @@ import styled, { injectGlobal } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Normalize from 'components/Normalize'
 
+
+// Initialize the Google Analytics script.
 ReactGA.initialize('UA-11226891-6')
 
 

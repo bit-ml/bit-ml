@@ -4,6 +4,19 @@ import ReactDOM from 'react-dom'
 // Your top level component
 import App from './App'
 
+
+// Load fonts in a non-blocking way.
+// This will make sure WebFont.load is only used in the browser.
+if (typeof window !== 'undefined') {
+  const WebFont = require('webfontloader')
+
+  WebFont.load({
+    google: {
+      families: ['Bitter:400', 'Roboto:300,400', 'Exo+2:400,600'],
+    },
+  })
+}
+
 // Export your top level component as JSX (for static rendering)
 export default App
 
