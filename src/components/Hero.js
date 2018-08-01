@@ -37,7 +37,7 @@ export const Hero = styled.div`
 
 const Heading = styled.h1`
   max-width: 800px;
-  font-family: 'Exo 2', serif;
+  font-family: 'Exo 2', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
