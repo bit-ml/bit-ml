@@ -24,7 +24,8 @@ export default withRouteData(withSiteData(props => (
       title={`${props.title} | ${props.tagline}`}
       description={props.description}
       tagline={props.tagline}
-      tags={props.tags} />
+      tags={props.tags}
+      image="https://bit-ml.github.io/tile.png" />
 
     <Hero props={props} />
 
