@@ -94,6 +94,7 @@ class App extends React.Component {
             <Link exact to="/">Home</Link>
             <Link to="/#research">Research</Link>
             <Link to="/#team">Team</Link>
+            <Link to="/blog">Blog</Link>
           </nav>
           <div className="content">
             <Routes />

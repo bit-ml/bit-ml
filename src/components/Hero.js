@@ -9,7 +9,7 @@ export const Hero = styled.div`
   margin: 0 auto;
   height: 95vh;
   padding: 0 1rem;
-  background: #020100 url('./hero_avatar.jpg') no-repeat bottom;
+  background: #020100 url('/hero_avatar.jpg') no-repeat bottom;
   background-size: 1024px;
   background-position: -600px bottom;
 

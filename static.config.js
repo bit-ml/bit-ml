@@ -1,14 +1,49 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
+import { reloadRoutes } from 'react-static/node'
+import jdown from 'jdown'
+import chokidar from 'chokidar'
+import fs from 'fs'
+import ImageSize from 'image-size'
+
+// Get the data
 import ProjectsJSON from './src/data/projects'
 import PeopleJSON from './src/data/people'
+
+chokidar.watch('content').on('all', () => reloadRoutes())
+
+
+function getGalleries() {
+	const galleries_path = 'public/galleries/'
+	let galleries = {}
+
+	fs.readdirSync(galleries_path).forEach(item => {
+			let gallery_path = galleries_path + item
+
+			if (fs.statSync(gallery_path).isDirectory()) {
+				galleries[item] = []
+				fs.readdirSync(gallery_path).forEach(file => {
+					// should do another verification here
+					let dims = ImageSize('public/galleries/' + item +'/' + file)
+					galleries[item].push({
+						src: '/galleries/' + item +'/' + file,
+						width: dims.width,
+						height: dims.height,
+					})
+				})
+			}
+	})
+	console.log(galleries)
+	return galleries
+}
 
 
 export default {
   siteRoot: 'https://bit-ml.github.io',
   getSiteData: () => ({
-    title: 'Bitdefender Machine Learning and Crypto Research Unit',
+    title: 'Bitdefender Machine Learning & Crypto Research Unit',
     description: 'Bitdefender Machine Learning & Crypto Research Unit goals are to further the fields of machine learning and criptography while engaging with the international research community and to develop the local AI&ML scene by supporting and participating in local conferences, lecture and research groups.',
     tagline: 'Engaging with the broader Machine Learning Community.',
     tags: ['machine-learning', 'research', 'bitdefender'],
@@ -17,18 +52,36 @@ export default {
   getRoutes: async () => {
     const { data: specialties } = { data: ProjectsJSON }
     const { data: people } = { data: PeopleJSON }
+    //const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const { posts } = await jdown('content')
+
+    const galleries = await getGalleries()
 
     return [
       {
         path: '/',
-        component: 'src/containers/Home',
+        component: 'src/pages/Home',
         getData: () => ({
           specialties, people,
         }),
       },
       {
+        path: '/blog',
+        component: 'src/pages/Blog',
+        getData: () => ({
+          posts, galleries,
+        }),
+        children: posts.map(post => ({
+          path: `/post/${post.slug}`,
+          component: 'src/containers/Post',
+          getData: () => ({
+            post, galleries,
+          }),
+        })),
+      },
+      {
         is404: true,
-        component: 'src/containers/404',
+        component: 'src/pages/404',
       },
     ]
   },
