@@ -49,10 +49,9 @@ export default {
       return (
         <Html>
           <Head>
-            <title>{siteData.title}</title>
-            <meta itemProp="description" content={siteData.description} />
-            <meta itemProp="tagline" content={siteData.tagline} />
-            <meta itemProp="keywords" content={siteData.tags.join(',')} />
+            <title>{`${siteData.title} | ${siteData.tagline}`}</title>
+            <meta name="description" content={siteData.description} />
+            <meta name="keywords" content={siteData.tags.join(',')} />
 
             <meta charSet="UTF-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
