@@ -29,7 +29,7 @@ export default ({
     {description && <meta property="og:description" content={description} />}
     {siteTitle && <meta property="og:site_name" content={siteTitle} />}
     {tags && tags.slice(0, 6).map(tag => <meta key={tag} property="article:tag" content={tag} />)}
-    {image && <meta key={image} itemProp="image" content={image} />}
+    {image && <meta property="og:image" content={image} />}
 
     {/* Twitter Cards */}
     <meta name="twitter:card" content="summary" />
@@ -41,5 +41,6 @@ export default ({
     {/* Schema.org markup */}
     {description && <meta itemProp="description" content={description} />}
     {tags && <meta itemProp="keywords" content={tags.join(',')} />}
+    {image && <meta itemProp="image" content={image} />}
   </Head>
 )
