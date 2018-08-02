@@ -11,6 +11,7 @@ export default {
     title: 'Bitdefender Machine Learning and Crypto Research Unit',
     description: 'Bitdefender Machine Learning & Crypto Research Unit goals are to further the fields of machine learning and criptography while engaging with the international research community and to develop the local AI&ML scene by supporting and participating in local conferences, lecture and research groups.',
     tagline: 'Engaging with the broader Machine Learning Community.',
+    tags: ['machine-learning', 'research', 'bitdefender'],
   }),
 
   getRoutes: async () => {
@@ -42,12 +43,17 @@ export default {
   Document: class CustomHtml extends Component {
     render () {
       const {
-        Html, Head, Body, children, renderMeta,
+        Html, Head, Body, children, renderMeta, siteData,
       } = this.props
 
       return (
         <Html>
           <Head>
+            <title>{siteData.title}</title>
+            <meta itemProp="description" content={siteData.description} />
+            <meta itemProp="tagline" content={siteData.tagline} />
+            <meta itemProp="keywords" content={siteData.tags.join(',')} />
+
             <meta charSet="UTF-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />

@@ -21,7 +21,9 @@ export const SpecialtyContainer = styled.div`
 export default withRouteData(withSiteData(props => (
   <Page>
     <Head title={`Home | ${props.title}`}
-      description={props.description} />
+          description={props.description}
+          tagline={props.tagline}
+          tags={props.tags} />
 
     <Hero props={props} />
 
