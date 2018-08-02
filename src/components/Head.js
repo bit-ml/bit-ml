@@ -36,6 +36,7 @@ export default ({
     {description && <meta name="twitter:description" content={description} />}
 
     {/* Schema.org markup */}
-    {/* {title && <meta itemProp="name" content={title} />} */}
+    {description && <meta itemProp="description" content={description} />}
+    {tags && <meta itemProp="keywords" content={tags.join(',')} />}
   </Head>
 )
