@@ -4,6 +4,7 @@ import styled from 'styled-components'
 //
 
 import Head from 'components/Head'
+import Nav from 'components/Navigation'
 import Page from 'components/Page'
 import Hero from 'components/Hero'
 import Specialty from 'components/Specialty'
@@ -14,32 +15,37 @@ import ResearchTeam from 'components/ResearchTeam'
 // import logoImg from '../logo.png'
 
 
-export const SpecialtyContainer = styled.div`
+const SpecialtyContainer = styled.div`
 `
 
 
 export default withRouteData(withSiteData(props => (
-  <Page>
+  <div>
     <Head
       title={`${props.title} | ${props.tagline}`}
       description={props.description}
       tagline={props.tagline}
-      tags={props.tags} />
+      tags={props.tags}
+      image="https://bit-ml.github.io/tile.png" />
 
-    <Hero props={props} />
+    <Nav pageName="home" />
 
-    <SpecialtyContainer id="research">
-      {props.specialties.map((specialty, i) => (
-        <Specialty props={specialty} key={i} bgIdx={i}>
+    <Page>
+      <Hero props={props} />
 
-          { specialty.projects.map(Project) }
+      <SpecialtyContainer id="research">
+        {props.specialties.map((specialty, i) => (
+          <Specialty props={specialty} key={i} bgIdx={i}>
 
-        </Specialty>
-      ))}
-    </SpecialtyContainer>
+            { specialty.projects.map(Project) }
 
-    <ResearchTeam id="team">
-      {props.people.map(Bio)}
-    </ResearchTeam>
-  </Page>)
+          </Specialty>
+        ))}
+      </SpecialtyContainer>
+
+      <ResearchTeam id="team">
+        {props.people.map(Bio)}
+      </ResearchTeam>
+    </Page>
+  </div>)
 ))

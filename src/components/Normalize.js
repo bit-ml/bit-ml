@@ -25,6 +25,8 @@ pre {
 }
 a {
     background-color: transparent;
+    text-decoration: none;
+
 }
 abbr[title] {
     border-bottom: none;
@@ -62,6 +64,7 @@ figure {
 }
 img {
     border-style: none;
+    max-width: 100%;
 }
 button,
   input,

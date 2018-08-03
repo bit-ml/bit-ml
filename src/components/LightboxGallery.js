@@ -4,9 +4,10 @@ import Lightbox from 'react-images'
 import styled from 'styled-components'
 
 
-
 const LightboxGalleryWrapper = styled.div`
-  padding: 2rem;
+  background-color: #edebeb;
+  padding: 1rem;
+  margin: 1rem 0;
 `
 
 
@@ -54,7 +55,7 @@ class LightboxGallery extends React.Component {
           columns={this.props.columns}
           onClick={this.openLightbox} />
         <Lightbox
-          theme={{ container: { background: 'rgba(0, 0, 0, 0.85)' } }}
+          theme={this.props.theme}
           images={this.props.photos.map(x => ({ ...x, srcset: x.srcSet, caption: x.title }))}
           backdropClosesModal={true}
           onClose={this.closeLightbox}
@@ -69,9 +70,62 @@ class LightboxGallery extends React.Component {
   }
 }
 
+const theme = {
+  // container
+  container: {
+    background: 'rgba(255, 255, 255, 0.9)',
+  },
 
-export default ({ photo_set }) => (
+  // arrows
+  arrow: {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    fill: '#222',
+    opacity: 0.6,
+    transition: 'opacity 200ms',
+
+    ':hover': {
+      opacity: 1,
+    },
+  },
+  arrow__size__medium: {
+    borderRadius: 40,
+    height: 40,
+    marginTop: -20,
+
+    '@media (min-width: 768px)': {
+      height: 70,
+      padding: 15,
+    },
+  },
+  arrow__direction__left: { marginLeft: 10 },
+  arrow__direction__right: { marginRight: 10 },
+  close: {
+    fill: '#D40000',
+    opacity: 0.6,
+    transition: 'all 200ms',
+    ':hover': {
+      opacity: 1,
+    },
+  },
+
+  // footer
+  footer: {
+    color: 'black',
+  },
+  footerCount: {
+    color: 'rgba(0, 0, 0, 0.6)',
+  },
+
+  // thumbnails
+  thumbnail: {},
+  thumbnail__active: {
+    boxShadow: '0 0 0 2px #00D8FF',
+  },
+}
+
+
+export default ({ photo_set, columns }) => (
   <LightboxGalleryWrapper>
-    <LightboxGallery photos={photo_set} columns={4} />
+    <LightboxGallery photos={photo_set} columns={columns} theme={theme} />
   </LightboxGalleryWrapper>
 )

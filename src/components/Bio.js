@@ -98,7 +98,7 @@ export default ({ name, bio, img, contact }, i) => (
   <BioBox key={i}>
     <MediaFigure>
       <img src={`./bio/${img || 'hal_9000.jpg'}`}
-        alt="" />
+        alt={img} />
     </MediaFigure>
     <MediaBody>
       <Heading>{name} </Heading>

@@ -5,6 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 
 export const SpecialtyWrapper = styled.div`
   position: relative;
+  background: #EDEBEB;
 
   ${breakpoint('desktop')`
     max-width: 100%;
@@ -116,9 +117,9 @@ const Heading = styled.h2`
 `
 
 const Description = styled.p`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6rem;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
@@ -135,8 +136,8 @@ const Description = styled.p`
   `}
 
   ${breakpoint('desktop')`
-    font-size: 2.6vmin;
-    line-height: 4.2vmin;
+    font-size: 2.4vmin;
+    line-height: 4vmin;
     padding: 0 8.5vmin;
 
     //line-height: 2.25rem;
@@ -145,7 +146,7 @@ const Description = styled.p`
 `
 
 const Team = styled.p`
-  font-family: Roboto;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
@@ -161,7 +162,7 @@ const Team = styled.p`
 
   ${breakpoint('desktop')`
     //padding: 0 5rem;
-    font-size: 2vmin;
+    font-size: 1.8vmin;
     line-height: 3vmin;
     padding: 0 8.5vmin;
   `}

@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import Featured from 'components/Featured'
 
 
 export const Hero = styled.div`
   display: inline-block;
   width: 100%;
   margin: 0 auto;
-  height: 95vh;
+  height: 92vh;
   padding: 0 1rem;
   background: #020100 url('/hero_avatar.jpg') no-repeat bottom;
   background-size: 1024px;
@@ -15,6 +16,7 @@ export const Hero = styled.div`
 
   ${breakpoint('tablet')`
     padding: 0 5rem;
+    height: 95vh;
     background-size: contain;
     background-position: bottom;
     @media screen and (orientation:portrait) {
@@ -25,6 +27,7 @@ export const Hero = styled.div`
 
   ${breakpoint('desktop')`
     padding: 0 5rem;
+    height: 95vh;
     background-size: contain;
     background-position: bottom;
 
@@ -34,6 +37,7 @@ export const Hero = styled.div`
     }
   `}
 `
+
 
 const Heading = styled.h1`
   max-width: 800px;
@@ -59,5 +63,7 @@ const Heading = styled.h1`
 export default ({ props }) => (
   <Hero>
     <Heading>{props.tagline} </Heading>
+
+    { /* <Featured props={props} /> */ }
   </Hero>
 )

@@ -35,7 +35,6 @@ function getGalleries() {
 				})
 			}
 	})
-	console.log(galleries)
 	return galleries
 }
 
@@ -54,26 +53,25 @@ export default {
     const { data: people } = { data: PeopleJSON }
     //const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
     const { posts } = await jdown('content')
-
-    const galleries = await getGalleries()
+    const { galleries } = { 'galleries': getGalleries() }
 
     return [
       {
         path: '/',
         component: 'src/pages/Home',
         getData: () => ({
-          specialties, people,
+          specialties, people, posts,
         }),
       },
       {
         path: '/blog',
         component: 'src/pages/Blog',
         getData: () => ({
-          posts, galleries,
+          posts,
         }),
         children: posts.map(post => ({
           path: `/post/${post.slug}`,
-          component: 'src/containers/Post',
+          component: 'src/pages/Post',
           getData: () => ({
             post, galleries,
           }),
@@ -98,6 +96,8 @@ export default {
       const {
         Html, Head, Body, children, renderMeta, siteData,
       } = this.props
+
+      console.log(this.props)
 
       return (
         <Html>

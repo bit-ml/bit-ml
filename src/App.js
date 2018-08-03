@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Link } from 'react-static'
+import { Router } from 'react-static'
 import Routes from 'react-static-routes'
 import { hot } from 'react-hot-loader'
 
@@ -26,59 +26,16 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
     padding: 0;
-    background: #EDEBEB;
+    background: #F5F2F2;
   }
 
   h1 {
     display: block;
     margin: 0.67em 0;
-  }
-`
-
-const AppStyles = styled.div`
-  a {
-    text-decoration: none;
-    color: #108db8;
-    font-weight: bold;
-  }
-
-  nav {
-    width: 100%;
-    background: #020100;
-    padding: 0 1rem;
-    font-family: Roboto;
-    text-align: right;
-
-    a {
-      padding: 1rem;
-      display: inline-block;
-
-      font-style: normal;
-      font-weight: 500;
-      line-height: 23px;
-      font-size: 14px;
-      text-align: right;
-      text-transform: uppercase;
-
-      color: #A8A8A8;
-    }
-
-    a:last-child {
-      padding-right: 0;
-    }
-
-  ${breakpoint('desktop')`
-    padding: 0 5rem;
-  `}
-
-  }
-
-  img {
-    max-width: 100%;
   }
 `
 
@@ -89,17 +46,9 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-        <AppStyles>
-          <nav>
-            <Link exact to="/">Home</Link>
-            <Link to="/#research">Research</Link>
-            <Link to="/#team">Team</Link>
-            <Link to="/blog">Blog</Link>
-          </nav>
-          <div className="content">
-            <Routes />
-          </div>
-        </AppStyles>
+        <div className="content">
+          <Routes />
+        </div>
       </Router>
     )
   }
