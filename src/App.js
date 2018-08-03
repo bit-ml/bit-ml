@@ -50,7 +50,7 @@ const AppStyles = styled.div`
     width: 100%;
     background: #020100;
     padding: 0 1rem;
-    font-family: Roboto;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     text-align: right;
 
     a {

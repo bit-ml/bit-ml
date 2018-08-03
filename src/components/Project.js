@@ -45,7 +45,7 @@ const Heading = styled.h3`
 `
 
 const Text = styled.p`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
