@@ -40,7 +40,7 @@ const PostContent = styled.section`
   >p {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.8rem;
     font-size: 1.2rem;
     letter-spacing: 0.03em;
@@ -115,12 +115,12 @@ function SimplePost ({ post }) {
   const date = post.date.replace('-', ' ').replace('-', ', ')
   return (
     <PostContent>
-
-      <Heading>{post.title}</Heading>
       <PostHeader>
         <BackLink to="/">{'<'} Back Home</BackLink>
         <Date>published on {date}</Date>
       </PostHeader>
+
+      <Heading>{post.title}</Heading>
 
       {convert(post.contents)}
 

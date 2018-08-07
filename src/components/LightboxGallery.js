@@ -2,12 +2,18 @@ import React from 'react'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
 
 const LightboxGalleryWrapper = styled.div`
-  background-color: #edebeb;
+  background-color: #F5F2F2;
   padding: 1rem;
   margin: 1rem 0;
+
+
+  ${breakpoint('desktop')`
+    padding: 1rem 6rem;
+  `}
 `
 
 

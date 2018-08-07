@@ -30,7 +30,7 @@ injectGlobal`
     font-weight: 400;
     font-size: 16px;
     padding: 0;
-    background: #F5F2F2;
+    background: #FFF;
   }
 
   h1 {
