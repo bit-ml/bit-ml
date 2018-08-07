@@ -3,7 +3,7 @@ import { withRouteData, Link } from 'react-static'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import convert from 'htmr'
-import stripHtml from 'string-strip-html'
+import striptags from 'striptags'
 
 import Head from 'components/Head'
 import Nav from 'components/Navigation'
@@ -167,7 +167,7 @@ function PostWithGallery ({ post, galleries }) {
 export default withRouteData(({ post, galleries, test }) => {
   const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
   const keywords = post.categories.replace(/ /g, '').split(',')
-  const synopsis = stripHtml(post.contents).substring(0, 350).replace(/\n/g, '')
+  const synopsis = striptags(post.contents).substring(0, 350).replace(/\n/g, '')
 
   return (
     <div>
