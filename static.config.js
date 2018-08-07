@@ -97,14 +97,10 @@ export default {
         Html, Head, Body, children, renderMeta, siteData,
       } = this.props
 
-      console.log(this.props)
-
       return (
         <Html>
           <Head>
             <title>{`${siteData.title} | ${siteData.tagline}`}</title>
-            <meta name="description" content={siteData.description} />
-            <meta name="keywords" content={siteData.tags.join(',')} />
 
             <meta charSet="UTF-8" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />

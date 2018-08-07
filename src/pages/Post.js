@@ -3,7 +3,9 @@ import { withRouteData, Link } from 'react-static'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import convert from 'htmr'
+import stripHtml from 'string-strip-html'
 
+import Head from 'components/Head'
 import Nav from 'components/Navigation'
 import Page from 'components/Page'
 import LightboxGallery from 'components/LightboxGallery'
@@ -164,10 +166,19 @@ function PostWithGallery ({ post, galleries }) {
 
 export default withRouteData(({ post, galleries, test }) => {
   const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
+  const keywords = post.categories.replace(/ /g, '').split(',')
+  const synopsis = stripHtml(post.contents).substring(0, 350).replace(/\n/g, '')
 
   return (
     <div>
+      <Head
+        title={`${post.title} | Bitdefender Research`}
+        description={`${synopsis}...`}
+        tags={keywords}
+        image="https://bit-ml.github.io/tile.png" />
+
       <Nav pageName="post" />
+
       <Page>
         <Post>
           {

@@ -17,12 +17,13 @@ export default ({
 }) => (
   <Head>
     {children}
-    {title && <title>{title}</title>}
 
     {/* Generic */}
     {path && <link rel="canonical" href={path} />}
-    {/* description && <meta name="description" content={description} /> */}
-    {/* tags && <meta name="keywords" content={tags.join(',')} /> */}
+
+    {title && <title>{title}</title>}
+    {description && <meta name="description" content={description} />}
+    {tags && <meta name="keywords" content={tags.join(',')} /> }
 
     {/* Required Open Graph Info */}
     {title && <meta property="og:title" content={title} />}
