@@ -3,6 +3,7 @@ import { withRouteData, Link } from 'react-static'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
+import Head from 'components/Head'
 import Nav from 'components/Navigation'
 import Page from 'components/Page'
 //
@@ -52,6 +53,12 @@ const BlogList = styled.ul`
 
 export default withRouteData(({ posts }) => (
   <div>
+    <Head
+      title="Latest Blog Posts | Bitdefender Research"
+      description="List of all the recent blog posts by Bitdefender's Machine Learning & Crypto Research Unit."
+      tags={['machine-learning', 'research', 'bitdefender', 'posts']}
+      image="https://bit-ml.github.io/tile.png" />
+
     <Nav pageName="blog" />
 
     <Page>
