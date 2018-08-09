@@ -9,8 +9,9 @@ date: August-2-2018
 
 
 **Bitdefender's Machine Learning Unit** participated with eight of its members
-at the first edition of the Transylvania Machine Learning Summer School that
-took place at the end of July 2018 in Cluj-Napoca.
+at the first edition of the [Transylvania Machine Learning Summer
+School](https://tmlss.ro/) that took place at the end of July 2018 in
+Cluj-Napoca.
 
 The organizers are well known DeepMind figures (and also Romanians :D), Doina
 Precup, Razvan Pascanu and Viorica Patraucean and RIST institute from Cluj -
@@ -39,7 +40,7 @@ Even though there were six full and exhausting days, our team really enjoyed it
 and tried to get the most out of the lecturers and from the interactions with
 the participants and the lecturers. Bitdefender was very well represented and
 we came back home inspired and eager to continue our research.  More, we also
-get a Best Poster award for Computer Vision (yey!).
+got a Best Poster award for Computer Vision (yey!).
 
 Actually our team enjoyed this experience so much that some of them decided to
 give an individual account of some of the highlights of TMLSS2018 and the
@@ -59,9 +60,10 @@ was the place to be this July if interested in machine learning._
 _Amidst all those captivating lectures spanned over six days one caught my eye
 in particular: **Ulrich Paquet's** introduction to Variational Autoencoders.
 Although I held some lectures on the topic myself in the past years, I found
-Ulrich's presentation remarkable for its concise, visual, extremely clear,
-while at the same time strongly theoretical elucidation of what and how VAEs do
-achieve. I wish my lectures were half as good as his._
+Ulrich's [presentation](https://youtu.be/xTsnNcctvmU) remarkable for its
+concise, visual, extremely clear, while at the same time strongly theoretical
+elucidation of what and how VAEs do achieve. I wish my lectures were half as
+good as his._
 
 *Later that day, while visiting the boring salt mine near Turda, I also had the
 chance to chat with Ulrich and ask him a few questions regarding generative
@@ -84,32 +86,32 @@ _One of the lectures that I remarked as being well structured and
 created exactly for this purpose was **Dumitru Erhan's** presentation: "Computer
 Vision: Way  Beyond  Classification". He build the lecture incrementally, from
 a classical computer vision problem (Object Detection) to a much hotter topic
-(Domain Adaptation). Both of them were presented in terms of how the field
-evolved over time, highlighting advantages and disadvantages of each
-approaches. While the first part addresses a common problem for computer vision
-researchers, Domain adaptation is a topic  extremely important for all machine
-learning subfields, being a worth studying open problem. So besides useful
-knowledge and interactions, TMLSS showed us a glipse of novel research and a
-long bibliography to follow._
+[Domain Adaptation](https://arxiv.org/abs/1612.05424). Both of them were
+presented in terms of how the field evolved over time, highlighting advantages
+and disadvantages of each approaches. While the first part addresses a common
+problem for computer vision researchers, Domain adaptation is a topic
+extremely important for all machine learning subfields, being a worth studying
+open problem. So besides useful knowledge and interactions, TMLSS showed us a
+glimpse of novel research and a long bibliography to follow._
 
 
 **Andrei Nicolicioiu**:
 
 _The lecture that impressed me the most was the one about Graph Networks
-presented by **Răzvan Pașcanu**. He showed intuitions about the priors existing in
-deep networks and the need for models better suited for domains having strong
-relational priors. We were presented in a unified way different views of the
-domain from general graph networks to simpler graph convolutional
-architectures, showing the usefulness of relations both in problems involving
-data with a more obvious graph structure as molecules and in unexpected places
-like the interactions of memories in a recurrent model. The presentation
-certainly inspired me to study more about these approaches and how can they be
-applied in my research._
+presented by **Răzvan Pașcanu**. He showed intuitions about the priors existing
+in deep networks and the need for models better suited for domains having
+strong [relational priors](http://arxiv.org/abs/1806.01261v2). We were
+presented in a unified way different views of the domain from general graph
+networks to simpler graph convolutional architectures, showing the usefulness
+of relations both in problems involving data with a more obvious graph
+structure as molecules and in unexpected places like the interactions of
+memories in a recurrent model. The presentation certainly inspired me to study
+more about these approaches and how can they be applied in my research._
 
 
 **Dana Axinte**:
 
-_Neural networks, gradients, posters, enthusiasm, magic. This are some of the
+_Neural networks, gradients, posters, enthusiasm, magic. These are some of the
 settings of the first Transylvanian Machine Learning Summer School held in
 Cluj, Romania. Looking through the schedule and speakers, I expected the school
 to be strong and that I would have the chance to settle new concepts while I
@@ -121,8 +123,9 @@ presented the industry usage of those concepts. Such pair of lectures that I
 particularly appreciated were the ones by **Doina Precup** who took a
 progressive approach in presenting value-based methods with function
 approximation for reinforcement learning and the one of **Raia Hadsell** who
-showed how deep reinforcement learning can be applied into robotics, with the
-challenges that exists and the possible solutions._
+showed how deep reinforcement learning can be applied into
+[robotics](http://arxiv.org/abs/1610.04286v2), with the challenges that exists
+and the possible [solutions](http://arxiv.org/abs/1804.00168v2)._
 
 _One of the parts of the summer school that I especially enjoyed was the panel
 session where some lecturers shared their opinion on different interesting
