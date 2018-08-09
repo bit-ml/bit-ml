@@ -7,13 +7,40 @@ import striptags from 'striptags'
 
 import Head from 'components/Head'
 import Nav from 'components/Navigation'
-import Page from 'components/Page'
 import LightboxGallery from 'components/LightboxGallery'
 //
 
 
+const PageWithCoverImg = styled.div`
+  ${breakpoint('desktop')`
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      padding: 0;
+    }
+  `}
+
+  ${breakpoint('tablet')`
+    display: flex;
+    justify-content: space-between;
+  `}
+`
+
+
 const Post = styled.div`
   margin: 0 auto;
+  padding: 0 1rem;
+
+  ${breakpoint('tablet')`
+    max-width: 62%;
+    padding: 0 2rem;
+  `}
+
+  ${breakpoint('desktop')`
+    max-width: 62%;
+    padding: 0 5rem;
+  `}
 `
 
 const Heading = styled.h1`
@@ -33,11 +60,6 @@ const Heading = styled.h1`
 const PostContent = styled.section`
   margin: 0 auto;
   max-width: 720px;
-  padding: 0 1rem;
-
-  ${breakpoint('desktop')`
-    padding-left: 0 0 0 100px;
-  `}
 
   >p {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -113,6 +135,30 @@ const PostFooterWraper = styled.div`
 `
 
 
+const CoverImg = styled.div`
+
+  ${breakpoint('tablet')`
+    background: #fff url("/galleries/tmlss2018_pictures/salina_1.jpg") no-repeat bottom;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 38%;
+  `}
+
+  ${breakpoint('desktop')`
+    background: #fff url("/galleries/tmlss2018_pictures/salina_1.jpg") no-repeat bottom;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 38%;
+  `}
+`
+
+
 function SimplePost ({ post }) {
   const date = post.date.replace('-', ' ').replace('-', ', ')
   return (
@@ -177,17 +223,20 @@ export default withRouteData(({ post, galleries, test }) => {
         tags={keywords}
         image="https://bit-ml.github.io/tile.png" />
 
-      <Nav pageName="post" />
 
-      <Page>
+      <PageWithCoverImg>
+        <CoverImg />
+
         <Post>
+          <Nav pageName="post" />
+
           {
             hasGallery
             ? <PostWithGallery post={post} galleries={galleries} test={test} />
             : <SimplePost post={post} />
           }
         </Post>
-      </Page>
+      </PageWithCoverImg>
     </div>
   )
 })

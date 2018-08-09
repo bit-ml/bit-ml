@@ -27,6 +27,7 @@ export const SpecialtyPanel = styled.div`
   ${breakpoint('desktop')`
     position: sticky;
     top: 0;
+    left: 0;
 
     display: flex;
     flex-direction: column;
@@ -34,7 +35,6 @@ export const SpecialtyPanel = styled.div`
     height: 100vh;
     width: 38%;
     overflow: hidden;
-    left: 0;
 
     .specItem {
       flex-grow: 1;
