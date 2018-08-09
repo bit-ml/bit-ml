@@ -75,6 +75,12 @@ const PostContent = styled.section`
       font-weight: 500;
     }
   }
+
+  >p a {
+    text-decoration: underline;
+    color: #333;
+    &:hover {color: #E6212B}
+  }
 `
 
 const PostWithGalleryWrapper = styled.div`

@@ -9,11 +9,6 @@ const LightboxGalleryWrapper = styled.div`
   background-color: #F5F2F2;
   padding: 1rem;
   margin: 1rem 0;
-
-
-  ${breakpoint('desktop')`
-    padding: 1rem 6rem;
-  `}
 `
 
 
