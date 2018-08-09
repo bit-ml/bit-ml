@@ -64,6 +64,6 @@ export default ({ props }) => (
   <Hero>
     <Heading>{props.tagline} </Heading>
 
-    { /* <Featured props={props} /> */ }
+    <Featured props={props} />
   </Hero>
 )
