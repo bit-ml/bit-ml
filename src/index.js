@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 
   WebFont.load({
     google: {
-      families: ['Bitter:400', 'Roboto:300,400,500', 'Exo+2:400,600'],
+      families: ['Roboto:300,400,500', 'Exo+2:400,600'],
     },
   })
 }

@@ -85,22 +85,21 @@ const Heading = styled.h2`
   //top: 0;
 
   margin: 0;
-  font-family: 'Bitter', serif;
+  font-family: 'Exo 2', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 62px;
-  line-height: 50px;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 19.4vw;
+  line-height: 0.75;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
+  margin-top: -5px;
 
   ${breakpoint('tablet')`
-    font-size: 6vw;
-    line-height: 5vw;
-    margin-top: -2px;
+    font-size: 7.2vw;
+    margin-top: -3px;
 
-    @media screen and (orientation:portrait) {
-      margin-top: -7px;
+    @media screen and (orientation:landscape) {
+      margin-top: -5px;
     }
   `}
 
@@ -110,9 +109,8 @@ const Heading = styled.h2`
 
     //font-size: 96px;
     //line-height: 78px;
-    font-size: 6vw;
-    line-height: 5vw;
-    margin-top: -3px;
+    font-size: 7.3vw;
+    margin-top: -8px;
   `}
 `
 
@@ -123,25 +121,21 @@ const Description = styled.p`
   line-height: 1.6rem;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
-  padding: 0 1rem;
+  padding: 3rem 1rem;
 
   ${breakpoint('tablet')`
-    font-size: 3vmin;
-    line-height: 5vmin;
+    font-size: 2vh;
     padding: 0 2rem;
 
     @media screen and (orientation:landscape) {
-      //background: palevioletred;
+      font-size: 2.4vh;
     }
   `}
 
   ${breakpoint('desktop')`
-    font-size: 2.4vmin;
-    line-height: 4vmin;
-    padding: 0 8.5vmin;
-
-    //line-height: 2.25rem;
-    //padding: 0 5rem;
+    font-size: 2.8vh;
+    padding: 0 8vh;
+    line-height: 4vh;
   `}
 `
 
@@ -149,22 +143,17 @@ const Team = styled.p`
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 23px;
-  font-size: 14px;
+  line-height: 1.4;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
   padding: 0 1rem;
 
   ${breakpoint('tablet')`
-    font-size: 2vmin;
-    line-height: 3.8vmin;
     padding: 0 2rem;
   `}
 
   ${breakpoint('desktop')`
-    //padding: 0 5rem;
-    font-size: 1.8vmin;
-    line-height: 3vmin;
-    padding: 0 8.5vmin;
+    padding: 0 8vh;
   `}
 `
 
