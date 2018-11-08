@@ -12,7 +12,8 @@
             "authors" : "E. Burceanu, M. Leordeanu",
             "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
             "year" : "2018",
-            "link" : "https://arxiv.org/abs/1804.01771"
+            "link" : "https://arxiv.org/abs/1804.01771",
+            "published" : " In The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
           },
           {
             "authors" : "E. Burceanu, M. Leordeanu",
@@ -30,7 +31,8 @@
             "authors" : "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
             "title" : "Mining for meaning: from vision to language through multiple networks consensus",
             "year" : "2018",
-            "link" : "https://arxiv.org/abs/1806.01954"
+            "link" : "https://arxiv.org/abs/1806.01954",
+            "published" : " In The British Machine Vision Conference (BMVC)"
           }
         ]
       },
@@ -101,7 +103,7 @@
             "title" : "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
             "year" : "2017",
             "link" : "./learning-maximize-return.pdf",
-            "published" : ""
+            "published" : "In The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
           }
         ]
       },
