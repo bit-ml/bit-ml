@@ -68,15 +68,22 @@
             "title" : "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
             "year" : "2017",
             "link" : "https://arxiv.org/abs/1707.03172",
-            "published" : ""
+            "published" : " In The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
           },
           {
-            "authors" : "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
+            "authors" : "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
             "title" : "Natural Language Interface for Databases Using a Dual-Encoder Model",
             "year" : "2018",
-            "link" : "#",
-            "published" : "To appear."
-          }
+            "link" : "http://www.aclweb.org/anthology/C18-1043",
+            "published" : " In The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
+          },
+		  {
+		    "authors" : "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
+			"title" : "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
+			"year" : "2018",
+			"link" : "https://bit-ml.github.io/papers/SYNLIDB_ICTAI_2018.pdf",
+			"published" : " In The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
+		  }
         ]
       }
     ]
@@ -139,7 +146,14 @@
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/170",
             "published" : "In the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
-          }
+          },
+		  {
+			"authors" : "M. Bolboceanu",
+			"title" : "Relating Different Polynomial-LWE problems",
+			"year" : "2018",
+			"link" : "https://eprint.iacr.org/2018/1035",
+			"published" : " presented at the 11th International Conference on Security for Information Technology and Communications (SECITC)"
+		  }
         ]
       },
       {
