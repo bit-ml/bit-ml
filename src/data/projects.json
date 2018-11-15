@@ -12,7 +12,7 @@
             "authors" : "E. Burceanu, M. Leordeanu",
             "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
             "year" : "2018",
-            "link" : "https://bit-ml.github.io/papers/SocietyOfTrackingParts.pdf",
+            "link" : "./papers/SocietyOfTrackingParts.pdf",
             "published" : " In The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
           },
           {
@@ -131,14 +131,14 @@
             "title" : "Middle-Product Learning with Errors",
             "year" : "2017",
             "link" : "https://eprint.iacr.org/2017/628",
-            "published" : "In the proceedings of CRYPTO 2017, pages 283-297, Springer, 2017"
+            "published" : "In the proceedings of CRYPTO 2017, pages 283-297, Springer"
           },
           {
             "authors" : "M. Rosca, D. Stehlé and A. Wallet",
             "title" : "On the Ring-LWE and Polynomial-LWE Problems",
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/170",
-            "published" : "In the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
+            "published" : "In the proceedings of EUROCRYPT 2018, pages 146-173, Springer"
           }
         ]
       },
