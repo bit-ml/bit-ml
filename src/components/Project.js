@@ -94,11 +94,16 @@ const BibYear = styled.span`
   font-style: normal;
 `
 
-const BibEntry = ({ authors, title, year, link }, i) => (
+const BibPublished = styled.span`
+  font-style: normal;
+`
+
+const BibEntry = ({ authors, title, year, link, published }, i) => (
   <BibItem key={i}>
     <BibLink href={link} target="_blank">
       <BibAuthors>{authors}</BibAuthors>
       {`, ${title}, `}
+      {published && <BibPublished>{`${published}, `}</BibPublished>}
       <BibYear>{year}</BibYear>
     </BibLink>
   </BibItem>
