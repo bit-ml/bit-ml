@@ -11,7 +11,10 @@ import Normalize from 'components/Normalize'
 
 
 // Initialize the Google Analytics script.
-ReactGA.initialize('UA-11226891-6')
+if (typeof window !== 'undefined') {
+  ReactGA.initialize('UA-11226891-6')
+  ReactGA.set({ anonymizeIp: true, cookieExpires: 0 })
+}
 
 
 injectGlobal`
