@@ -3,6 +3,7 @@ import { Router } from 'react-static'
 import Routes from 'react-static-routes'
 import { hot } from 'react-hot-loader'
 
+import CookieConsent from 'react-cookie-consent'
 import ReactGA from 'react-ga'
 
 import styled, { injectGlobal } from 'styled-components'
@@ -11,9 +12,11 @@ import Normalize from 'components/Normalize'
 
 
 // Initialize the Google Analytics script.
-if (typeof window !== 'undefined') {
-  ReactGA.initialize('UA-11226891-6')
-  ReactGA.set({ anonymizeIp: true, cookieExpires: 0 })
+function initGA() {
+  if (typeof window !== 'undefined') {
+    ReactGA.initialize('UA-11226891-6')
+    ReactGA.set({ anonymizeIp: true, cookieExpires: 0 })
+  }
 }
 
 
@@ -46,11 +49,34 @@ class App extends React.Component {
   componentDidMount = () => ReactGA.pageview(window.location.pathname + window.location.search);
   componentDidUpdate = () => ReactGA.pageview(window.location.pathname + window.location.search);
 
-  render () {
+  render() {
     return (
       <Router>
         <div className="content">
+
           <Routes />
+
+          <CookieConsent
+            location="top"
+            cookieName="gdpr_consent"
+            expires={150}
+            buttonText="Accept"
+            onAccept={() => { initGA() }}
+            style={{ background: "rgba(24,27,42, 1)" }}
+            buttonStyle={{
+              background: "transparent", color: "rgba(255,255,255,0.8)",
+              fontSize: "16px", border: "1px solid #fff"
+            }}
+            enableDeclineButton
+            declineButtonText="Decline"
+            onDecline={() => { window['ga-disable-UA-11226891-6'] = true; }}
+            declineButtonStyle={{
+              background: "transparent", color: "rgba(255,255,255,0.8)",
+              fontSize: "16px", border: "1px solid #fff"
+            }}
+          >
+            This website uses cookies for analysing our traffic.
+          </CookieConsent>
         </div>
       </Router>
     )
