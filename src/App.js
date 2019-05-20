@@ -75,7 +75,7 @@ class App extends React.Component {
               fontSize: "16px", border: "1px solid #fff"
             }}
           >
-            This website uses cookies for analysing our traffic.
+            This website uses cookies for traffic analysis.
           </CookieConsent>
         </div>
       </Router>
