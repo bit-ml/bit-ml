@@ -5,21 +5,42 @@
     "people": "Elena Burceanu, Iulia Duță, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
     "projects": [
       {
-        "title": "Unsupervised Object Tracking",
-        "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. While it has attracted the interest of many researchers over several decades of computer vision, it is far from being solved.\nThe task is hard for many reasons. Difficulties could come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.\nThe only ground-truth knowledge given to the tracker is the bounding box of the object in the first frame. Thus, without knowing in advance the properties of the object being tracked, the tracking algorithm must learn them on the fly. It must adapt correctly and make sure it does not jump toward other objects in the background. That is why the possibility of drifting to the background poses on of the main challenges in tracking.",
+        "title":"Unsupervised learning of objects from video sequences",
+        "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.\nWe are focused on generating foreground object soft masks based on automatic selection and learning from highly probable positive features. We show that such features can be selected efficiently by taking into consideration the spatio-temporal appearance and motion consistency of the object in the video sequence. We also emphasize the role of the contrasting properties between the foreground object and its background. Our work is also focused on theoretically proving the properties of our unsupervised learning method, which under some mild constraints is guaranteed to learn the correct classifier even in the unsupervised case.",
         "papers": [
           {
-            "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
-            "year" : "2018",
-            "link" : "./papers/SocietyOfTrackingParts.pdf",
-            "published" : " In The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
+            "authors" : "E. Haller, M. Leordeanu",
+            "title" : "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
+            "year" : "2017",
+            "link" : "https://arxiv.org/abs/1704.05674",
+            "published" : " In The IEEE International Conference on Computer Vision (ICCV)"
           },
           {
             "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "Learning a Robust Society of Tracking Parts",
-            "year" : "2017",
-            "link" : "https://arxiv.org/abs/1705.09602"
+            "title" : "A Spectral Approach to Unsupervised Object Segmentation in Video",
+            "year" : "2019",
+            "link" : "https://arxiv.org/abs/1907.02731",
+            "published" : " under review"
+          },
+          {
+            "authors" : "E. Haller, M. Leordeanu",
+            "title" : "Spacetime Graph Optimization for Video Object Segmentation",
+            "year" : "2019",
+            "link" : "./papers/govos_arxiv.pdf",
+            "published" : " under review"
+          }
+        ]
+      },
+      {
+        "title":"Graph methods for video processing",
+        "description": "Given a video we want to have an understanding of the scene and to be able to identify the key events in order to extract useful information. In a video there can exist multiple entities interacting in complex ways. Usually these interactions are happening in a local neighbourhood, but the distant ones have also an essential role. The classical models of video understanding often process information in a local way.\n We propose to improve this, by using graph methods that have a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions.",
+        "papers": [
+          {
+            "authors" : "A. Nicolicioiu, I. Duță, M. Leordeanu",
+            "title" : "Recurrent Space-time Graphs for Video Understanding",
+            "year" : "2019",
+            "link" : "https://arxiv.org/abs/1904.05582",
+            "published" : " under review"
           }
         ]
       },
@@ -37,15 +58,21 @@
         ]
       },
       {
-        "title":"Unsupervised learning of objects from video sequences",
-        "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.\nWe are focused on generating foreground object soft masks based on automatic selection and learning from highly probable positive features. We show that such features can be selected efficiently by taking into consideration the spatio-temporal appearance and motion consistency of the object in the video sequence. We also emphasize the role of the contrasting properties between the foreground object and its background. Our work is also focused on theoretically proving the properties of our unsupervised learning method, which under some mild constraints is guaranteed to learn the correct classifier even in the unsupervised case.",
+        "title": "Unsupervised Object Tracking",
+        "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. While it has attracted the interest of many researchers over several decades of computer vision, it is far from being solved.\nThe task is hard for many reasons. Difficulties could come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.\nThe only ground-truth knowledge given to the tracker is the bounding box of the object in the first frame. Thus, without knowing in advance the properties of the object being tracked, the tracking algorithm must learn them on the fly. It must adapt correctly and make sure it does not jump toward other objects in the background. That is why the possibility of drifting to the background poses on of the main challenges in tracking.",
         "papers": [
           {
-            "authors" : "E. Haller, M. Leordeanu",
-            "title" : "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
+            "authors" : "E. Burceanu, M. Leordeanu",
+            "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
+            "year" : "2018",
+            "link" : "./papers/SocietyOfTrackingParts.pdf",
+            "published" : " In The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
+          },
+          {
+            "authors" : "E. Burceanu, M. Leordeanu",
+            "title" : "Learning a Robust Society of Tracking Parts",
             "year" : "2017",
-            "link" : "https://arxiv.org/abs/1704.05674",
-            "published" : " In The IEEE International Conference on Computer Vision (ICCV)"
+            "link" : "https://arxiv.org/abs/1705.09602"
           }
         ]
       }
