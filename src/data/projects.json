@@ -37,10 +37,10 @@
         "papers": [
           {
             "authors" : "A. Nicolicioiu, I. Duță, M. Leordeanu",
-            "title" : "Recurrent Space-time Graphs for Video Understanding",
+            "title" : "Recurrent Space-time Graph Neural Networks",
             "year" : "2019",
             "link" : "https://arxiv.org/abs/1904.05582",
-            "published" : " under review"
+            "published" : " in the Conference on Neural Information Processing Systems (NeurIPS)"
           }
         ]
       },
@@ -53,7 +53,7 @@
             "title" : "Mining for meaning: from vision to language through multiple networks consensus",
             "year" : "2018",
             "link" : "https://arxiv.org/abs/1806.01954",
-            "published" : " In The British Machine Vision Conference (BMVC)"
+            "published" : " in The British Machine Vision Conference (BMVC)"
           }
         ]
       },
@@ -66,7 +66,7 @@
             "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
             "year" : "2018",
             "link" : "./papers/SocietyOfTrackingParts.pdf",
-            "published" : " In The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
+            "published" : " in The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
           },
           {
             "authors" : "E. Burceanu, M. Leordeanu",
@@ -95,22 +95,35 @@
             "title" : "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
             "year" : "2017",
             "link" : "https://arxiv.org/abs/1707.03172",
-            "published" : " In The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
+            "published" : " in The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
           },
           {
             "authors" : "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
             "title" : "Natural Language Interface for Databases Using a Dual-Encoder Model",
             "year" : "2018",
             "link" : "http://www.aclweb.org/anthology/C18-1043",
-            "published" : " In The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
+            "published" : " in The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
           },
-		  {
-		    "authors" : "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
-			"title" : "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
-			"year" : "2018",
-			"link" : "./papers/SYNLIDB_ICTAI_2018.pdf",
-			"published" : " In The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
-		  }
+          {
+            "authors" : "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
+            "title" : "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
+            "year" : "2018",
+            "link" : "./papers/SYNLIDB_ICTAI_2018.pdf",
+            "published" : " in The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
+          }
+        ]
+      },
+      {
+        "title":"Visual Question Answering",
+        "description": "The VQA task refers to answering questions about an image. Existing methods fuse image and text representations and are able to exploit superficial correlations and produce the correct answer, but often for the wrong reason. The recently introduced Visual Commonsense Reasoning dataset facilitates cognition-level understanding on top of recognition, by requiring not only the correct answer, but also a justification for it. We improve existing methods by leveraging structured representations of images.",
+        "papers": [
+          {
+            "authors" : "F. Brad",
+            "title" : "Scene Graph Contextualization in Visual Commonsense Reasoning",
+            "year" : "2019",
+            "link" : "#",
+            "published" : " in The IEEE International Conference on Computer Vision (ICCV) - Pre.Register Workshop"
+          }
         ]
       }
     ]
@@ -137,7 +150,7 @@
             "title" : "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
             "year" : "2017",
             "link" : "./learning-maximize-return.pdf",
-            "published" : "In The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
+            "published" : "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
           }
         ]
       },
@@ -154,12 +167,19 @@
   {
     "title":"Cryptography",
     "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
-    "people": "Miruna Roșca, Radu Țițiu, coordinated by Damien Stehlé, Benoît Libert. Mădălina Bolboceanu",
+    "people": "Miruna Rosca, Radu Țițiu, coordinated by Damien Stehlé, Benoît Libert. Mădălina Bolboceanu",
     "projects": [
       {
         "title":"Hardness of lattice problems",
         "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems, giving reductions between them and using them to build new cryptographic primitives.",
         "papers": [
+          {
+            "authors" : "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
+            "title" : "Order-LWE and the Hardness of Ring-LWE with Entropic Secrets",
+            "year" : "2019",
+            "link" : "https://eprint.iacr.org/2018/494",
+            "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+          },
           {
             "authors" : "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
             "title" : "Middle-Product Learning with Errors",
@@ -172,14 +192,14 @@
             "title" : "On the Ring-LWE and Polynomial-LWE Problems",
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/170",
-            "published" : "In the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
+            "published" : " in the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
           },
           {
             "authors" : "M. Bolboceanu",
             "title" : "Relating Different Polynomial-LWE problems",
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/1035",
-            "published" : " presented at the 11th International Conference on Security for Information Technology and Communications (SECITC)"
+            "published" : " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
           }
         ]
       },
@@ -188,18 +208,25 @@
         "description": "My research project is concerned with building advanced cryptographic primitives, which mainly rely their security on the Learning With Errors problem (LWE). Together with my PhD advisor, Benoit Libert, we are currently working on improving known constructions of some Functional Encryption schemes.\nSome Applications of this primitive: run learning algorithms on encrypted data; perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
         "papers": [
           {
-            "authors" : "R. Țițiu, B.Libert, D. Stehlé",
-            "title" : "Adaptively Secure Distributed PRFs from LWE",
-            "year" : "",
+            "authors" : "B.Libert, R. Țițiu",
+            "title" : "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
+            "year" : "2019",
             "link" : "",
-            "published" : "In submission"
+            "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+          },
+          {
+            "authors" : "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
+            "title" : "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
+            "year" : "2019",
+            "link" : "https://eprint.iacr.org/2019/908",
+            "published" : " under review"
           },
           {
             "authors" : "R. Țițiu, B.Libert, D. Stehlé",
-            "title" : "Tight Security Proofs for GGM-like Lattice-Based PRFs",
-            "year" : "",
+            "title" : "Adaptively Secure Distributed PRFs from LWE",
+            "year" : "2018",
             "link" : "",
-            "published" : ""
+            "published" : " in The Theory of Cryptography Conference (TCC), under review for The Journal of Cryptology"
           }
         ]
       }
