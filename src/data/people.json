@@ -22,17 +22,6 @@
       }
   },
   {
-    "name":"Ștefan Postăvaru",
-    "bio":"I came in the field of Machine Learning with a strong background in programming and mathematics, driven by an interest in the process of inference and systems capable of it. My main research focus are policies conditioned on given configurations and their ability of efficiently generalizing in unseen environments, in the context of Deep Reinforcement Learning.",
-    "img" : "stefan_postavaru.jpg",
-    "contact":
-      {
-        "mail":"spostavaru@bitdefender.com",
-        "twitter":"",
-        "github":""
-      }
-  },
-  {
     "name":"Florin Brad",
     "bio":"I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
     "img": "florin_brad.jpg",
