@@ -3,6 +3,7 @@ import React from 'react'
 
 export default () => (
   <div>
-    <h1>404 - Oh no's! We couldn't find that page :(</h1>
+    <h1>RuntimeError: CUDA runtime error (2) : out of memory.</h1>
+    <p>Joking, this is a 404, we simply couldn't find the page.</p>
   </div>
 )
