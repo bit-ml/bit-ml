@@ -12,12 +12,8 @@ import Normalize from 'components/Normalize'
 
 
 // Initialize the Google Analytics script.
-function initGA() {
-  if (typeof window !== 'undefined') {
-    ReactGA.initialize('UA-11226891-6')
-    ReactGA.set({ anonymizeIp: true, cookieExpires: 0 })
-  }
-}
+ReactGA.initialize('UA-11226891-6')
+// ReactGA.set({ anonymizeIp: true, cookieExpires: 0 })
 
 
 injectGlobal`
@@ -61,16 +57,9 @@ class App extends React.Component {
             cookieName="gdpr_consent"
             expires={150}
             buttonText="Accept"
-            onAccept={() => { initGA() }}
+            onAccept={() => { }}
             style={{ background: "rgba(24,27,42, 1)" }}
             buttonStyle={{
-              background: "transparent", color: "rgba(255,255,255,0.8)",
-              fontSize: "16px", border: "1px solid #fff"
-            }}
-            enableDeclineButton
-            declineButtonText="Decline"
-            onDecline={() => { window['ga-disable-UA-11226891-6'] = true; }}
-            declineButtonStyle={{
               background: "transparent", color: "rgba(255,255,255,0.8)",
               fontSize: "16px", border: "1px solid #fff"
             }}
