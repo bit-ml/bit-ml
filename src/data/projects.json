@@ -181,18 +181,11 @@
             "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
           },
           {
-            "authors" : "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
-            "title" : "Middle-Product Learning with Errors",
-            "year" : "2017",
-            "link" : "https://eprint.iacr.org/2017/628",
-            "published" : "In the proceedings of CRYPTO 2017, pages 283-297, Springer"
-          },
-          {
             "authors" : "M. Rosca, D. Stehlé and A. Wallet",
             "title" : "On the Ring-LWE and Polynomial-LWE Problems",
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/170",
-            "published" : " in the proceedings of EUROCRYPT 2018, pages 146-173, Springer, 2018"
+            "published" : " in the proceedings of International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT), pages 146-173, Springer"
           },
           {
             "authors" : "M. Bolboceanu",
@@ -200,6 +193,13 @@
             "year" : "2018",
             "link" : "https://eprint.iacr.org/2018/1035",
             "published" : " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
+          },
+          {
+            "authors" : "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
+            "title" : "Middle-Product Learning with Errors",
+            "year" : "2017",
+            "link" : "https://eprint.iacr.org/2017/628",
+            "published" : "In the proceedings of International Cryptology Conference (CRYPTO), pages 283-297, Springer"
           }
         ]
       },
@@ -226,7 +226,7 @@
             "title" : "Adaptively Secure Distributed PRFs from LWE",
             "year" : "2018",
             "link" : "",
-            "published" : " in The Theory of Cryptography Conference (TCC), under review for The Journal of Cryptology"
+            "published" : " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
           }
         ]
       }
