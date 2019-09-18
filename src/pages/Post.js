@@ -144,7 +144,7 @@ const PostFooterWraper = styled.div`
 const CoverImg = styled.div`
 
   ${breakpoint('tablet')`
-    background: #fff url("/galleries/tmlss2018_pictures/salina_1.jpg") no-repeat bottom;
+    background: #fff url(${props => props.featured_img}) no-repeat bottom;
     background-size: cover;
     position: sticky;
     top: 0;
@@ -154,7 +154,7 @@ const CoverImg = styled.div`
   `}
 
   ${breakpoint('desktop')`
-    background: #fff url("/galleries/tmlss2018_pictures/salina_1.jpg") no-repeat bottom;
+    background: #fff url(${props => props.featured_img}) no-repeat bottom;
     background-size: cover;
     position: sticky;
     top: 0;
@@ -231,7 +231,7 @@ export default withRouteData(({ post, galleries, test }) => {
 
 
       <PageWithCoverImg>
-        <CoverImg />
+        <CoverImg featured_img={post.featured_img} />
 
         <Post>
           <Nav pageName="post" />
