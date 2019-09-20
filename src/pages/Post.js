@@ -81,6 +81,25 @@ const PostContent = styled.section`
     color: #333;
     &:hover {color: #E6212B}
   }
+
+  >blockquote {
+    font-size: 1.2rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.8rem;
+    letter-spacing: 0.03em;
+    text-align: right;
+    margin-right: 0;
+    background-color: #f2f2f2;
+    padding: 24px;
+    
+    >footer{
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
 `
 
 const PostWithGalleryWrapper = styled.div`
