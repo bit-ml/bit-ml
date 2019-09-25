@@ -34,21 +34,27 @@ const FeaturedWrapper = styled.div`
 
 
 const FeaturedLink = styled(Link)`
+  display: none;
   background: rgba(98, 118, 207, 0);
   transition: all 0.2s cubic-bezier(0.25,0.46,0.45,0.94);
-
   color: #E4E4E4;
+
+  &:first-child {
+    display: inline;
+  }
   &:hover {
     color: #fff;
     background: rgba(98, 118, 207, 0.3);
   }
 
   ${breakpoint('tablet')`
+    display: inline;
     flex-basis: 50%;
     padding: 1rem;
   `}
 
   ${breakpoint('desktop')`
+    display: inline;
     flex-basis: 50%;
     padding: 1rem;
   `}
@@ -72,11 +78,18 @@ const FeaturedSynopsis = styled.p`
 export default ({ posts }) => (
   <FeaturedContainer>
     <FeaturedWrapper>
+     {<FeaturedLink to="/blog/post/bitdefender_at_eeml2019/">
+        <FeaturedHeading>Bitdefender at EEML 2019</FeaturedHeading>
+        <FeaturedSynopsis>Read about our team's experience of organizing and
+        participating at Eastern European Machine Learning summer school in
+        Bucharest.
+        </FeaturedSynopsis>
+      </FeaturedLink>}
       <FeaturedLink to="/blog/post/bitdefender_at_tmlss2018/">
         <FeaturedHeading>Bitdefender at TMLSS 2018</FeaturedHeading>
         <FeaturedSynopsis>Bitdefender participated with eight of its members
-at the first edition of the Transylvania Machine Learning Summer School that
-took place at the end of July 2018 in Cluj-Napoca.
+        at the first edition of the Transylvania Machine Learning Summer
+        School that took place at the end of July 2018 in Cluj-Napoca.
         </FeaturedSynopsis>
       </FeaturedLink>
     </FeaturedWrapper>
