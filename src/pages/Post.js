@@ -83,7 +83,7 @@ const PostContent = styled.section`
   }
 
   >blockquote {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-weight: 300;
@@ -91,8 +91,19 @@ const PostContent = styled.section`
     letter-spacing: 0.03em;
     text-align: right;
     margin-right: 0;
-    background-color: #f2f2f2;
+    // background-color: #f2f2f2;
     padding: 24px;
+
+    quotes: "\\201E" "\\201C";
+    &:before{
+      display: inline-block;
+      transform: translate(-15px, -15px);
+      content: open-quote;
+      // color: #E6212B;
+      color: #EDEBEB;
+      font-size: 5rem;
+      font-weight: 400;
+    }
     
     >footer{
       margin-top: 10px;
