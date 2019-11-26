@@ -49,13 +49,13 @@ const FeaturedLink = styled(Link)`
 
   ${breakpoint('tablet')`
     display: inline;
-    flex-basis: 50%;
+    flex-basis: 33.3%;
     padding: 1rem;
   `}
 
   ${breakpoint('desktop')`
     display: inline;
-    flex-basis: 50%;
+    flex-basis: 33.3%;
     padding: 1rem;
   `}
 `
@@ -78,6 +78,13 @@ const FeaturedSynopsis = styled.p`
 export default ({ posts }) => (
   <FeaturedContainer>
     <FeaturedWrapper>
+     {<FeaturedLink to="/blog/post/recurrent-space-time-graph-neural-nets/">
+        <FeaturedHeading>Recurrent Space-time Graph Neural Network</FeaturedHeading>
+        <FeaturedSynopsis>We introduce our recurrent graph model designed for
+        video processing from our new paper that will be presented at NeurIPS
+        2019 in Vancouver.
+        </FeaturedSynopsis>
+      </FeaturedLink>}
      {<FeaturedLink to="/blog/post/bitdefender_at_eeml2019/">
         <FeaturedHeading>Bitdefender at EEML 2019</FeaturedHeading>
         <FeaturedSynopsis>Read about our team's experience of organizing and
@@ -87,9 +94,9 @@ export default ({ posts }) => (
       </FeaturedLink>}
       <FeaturedLink to="/blog/post/bitdefender_at_tmlss2018/">
         <FeaturedHeading>Bitdefender at TMLSS 2018</FeaturedHeading>
-        <FeaturedSynopsis>Bitdefender participated with eight of its members
-        at the first edition of the Transylvania Machine Learning Summer
-        School that took place at the end of July 2018 in Cluj-Napoca.
+        <FeaturedSynopsis>Bitdefender participated at the first edition of
+        the Transylvania Machine Learning Summer School that took place in
+        Cluj-Napoca.
         </FeaturedSynopsis>
       </FeaturedLink>
     </FeaturedWrapper>
