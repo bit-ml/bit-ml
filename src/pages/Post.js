@@ -261,8 +261,7 @@ export default withRouteData(({ post, galleries, test }) => {
         title={`${post.title} | Bitdefender Research`}
         description={`${synopsis}...`}
         tags={keywords}
-        image="https://bit-ml.github.io/tile.png" />
-
+        image={post.featured_img} />
 
       <PageWithCoverImg>
         <CoverImg featured_img={post.featured_img} />
