@@ -11,17 +11,6 @@
       }
   },
   {
-    "name":"Tudor Berariu",
-    "bio":"I got my Master's degree in Artificial Intelligence from University Politehnica of Bucharest after studying Computer Science there. I am currently a TA while pursuing a PhD in AI. My main research interest is in understanding systems capable of acquiring knowledge in a continual manner with a focus on the reinforcement learning setup. At Bitdefender I am currently studying various mechanisms for alleviating catastrophic forgetting in neural models.",
-    "img": "tudor_berariu.jpg",
-    "contact":
-      {
-        "mail":"tberariu@bitdefender.com",
-        "twitter":"_tudor",
-        "github":"tudor-berariu"
-      }
-  },
-  {
     "name":"Florin Brad",
     "bio":"I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
     "img": "florin_brad.jpg",
@@ -40,17 +29,6 @@
       {
         "mail":"iduta@bitdefender.com",
         "twitter":"DutaIulia",
-        "github":""
-      }
-  },
-  {
-    "name":"Marius Leordeanu",
-    "bio":"I am an Associate Professor (Senior Lecturer) at the University Politehnica of Bucharest and senior researcher at the Institute of Mathematics of the Romanian Academy. I am interested in the nature of intelligence, life and consciousness. In particular, my research focuses on computer vision, machine learning and robotics. At the university I teach the graduate level computer vision and robotics classes. I have received a Ph.D. in Robotics from Carnegie Mellon University in 2009 and Bachelor degrees in Mathematics and Computer Science from the City University of New York, 2003.",
-    "img" : "marius_leordeanu.jpg",
-    "contact":
-      {
-        "mail":"leordeanu@gmail.com",
-        "twitter":"",
         "github":""
       }
   },
@@ -116,6 +94,17 @@
     "contact":
       {
         "mail":"rtitiu@bitdefender.com",
+        "twitter":"",
+        "github":""
+      }
+  },
+  {
+    "name":"Marius Leordeanu",
+    "bio":"I am an Associate Professor (Senior Lecturer) at the University Politehnica of Bucharest and senior researcher at the Institute of Mathematics of the Romanian Academy. I am interested in the nature of intelligence, life and consciousness. In particular, my research focuses on computer vision, machine learning and robotics. At the university I teach the graduate level computer vision and robotics classes. I have received a Ph.D. in Robotics from Carnegie Mellon University in 2009 and Bachelor degrees in Mathematics and Computer Science from the City University of New York, 2003.",
+    "img" : "marius_leordeanu.jpg",
+    "contact":
+      {
+        "mail":"leordeanu@gmail.com",
         "twitter":"",
         "github":""
       }
