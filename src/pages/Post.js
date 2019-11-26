@@ -239,8 +239,6 @@ function PostWithGallery ({ post, galleries }) {
             key={index} photo_set={galleries[key]} columns={columns[index]} />
         ))
       }
-
-      <Footer post={post} />
     </PostWithGalleryWrapper>
   )
 }
@@ -271,6 +269,9 @@ export default withRouteData(({ post, galleries, test }) => {
             ? <PostWithGallery post={post} galleries={galleries} test={test} />
             : <SimplePost post={post} />
           }
+
+          <Footer post={post} />
+
         </Post>
       </PageWithCoverImg>
     </div>
