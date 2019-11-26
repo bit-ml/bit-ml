@@ -82,6 +82,12 @@ const PostContent = styled.section`
     &:hover {color: #E6212B}
   }
 
+  >img,
+  > p img {
+    margin: 0 auto;
+    display: block;
+  }
+
   >blockquote {
     font-size: 1.1rem;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
