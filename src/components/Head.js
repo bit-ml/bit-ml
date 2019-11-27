@@ -3,8 +3,8 @@ import { Head } from 'react-static'
 //
 
 
-const siteTitle = 'https://bit-ml.github.io/'
-const siteTwitter = ''
+const siteTitle = 'https://bit-ml.github.io'
+const siteTwitter = '@Bitdefender'
 
 export default ({
   children,
@@ -33,7 +33,7 @@ export default ({
     {image && <meta property="og:image" content={`${siteTitle}${image}`} />}
 
     {/* Twitter Cards */}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     {siteTwitter && <meta name="twitter:site" content={siteTwitter} />}
     {title && <meta name="twitter:title" content={title} />}
     {description && <meta name="twitter:description" content={description} />}
