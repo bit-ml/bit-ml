@@ -8,11 +8,15 @@ export const Hero = styled.div`
   display: inline-block;
   width: 100%;
   margin: 0 auto;
-  height: 92vh;
   padding: 0 1rem;
   background: #020100 url('/hero_avatar.jpg') no-repeat bottom;
   background-size: 1024px;
   background-position: -600px bottom;
+
+  min-height: 92vh;
+  @supports (-webkit-appearance:none) {
+    min-height: calc(92vh - 56px);
+  }
 
   ${breakpoint('tablet')`
     padding: 0 5rem;
