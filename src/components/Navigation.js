@@ -1,8 +1,7 @@
-import React from 'react'
 import { Link } from 'react-static'
-
-import styled from 'styled-components'
+import React from 'react'
 import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components'
 
 const Nav = styled.nav`
     width: 100%;
@@ -12,7 +11,7 @@ const Nav = styled.nav`
     text-align: right;
 
     a {
-      padding: 1rem;
+      padding: 0.3rem 1.2rem 0.25rem 1.2rem;
       display: inline-block;
 
       font-style: normal;
