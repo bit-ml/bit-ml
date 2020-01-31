@@ -15,7 +15,7 @@ You might want to check their [tutorial](https://react-static.js.org/docs/concep
 
 - Make sure you have `node v8.11.3` installed. You can manage `node` and `npm`
   versions with [nvm](https://github.com/creationix/nvm "Node Version Manager")
-- Install `react-static` globally with `npm install -g react-static`.
+- Install `react-static` globally with `npm install -g react-static@5.9.12`.
 - Install the node modules with `npm install`.
 - Start a local server with the project with `npm start`.
 - Generate the static website with `npm build`.
