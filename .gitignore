@@ -1,6 +1,9 @@
 # Original, uncompressed images
 _original
 
+# VScode
+.vscode
+
 
 # Node ------------------------------------------------------------------------
 # dependencies
