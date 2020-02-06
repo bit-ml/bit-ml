@@ -7,6 +7,8 @@ featured_img: "/galleries/courses/overview_bitdefender.jpg"
 date: August-20-2019
 ---
 
+# DeepBit 2019 <span>Deep Learning for Bitdefender Engineers</span>
+
 The course is an introduction to up-to-date Deep Learning methods for Bitdefender engineers. It covers very basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with accent on building the final project, which was focused on the security field.
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and

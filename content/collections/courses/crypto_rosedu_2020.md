@@ -5,6 +5,9 @@ categories: event
 featured_img: "/galleries/courses/overview_crypto.jpg"
 date: February-7-2020
 ---
+
+# OpenCrypto <span>Crypto Analysis introduction for ROSEdu students</span>
+
 This course gives a brief introduction to lattices. We show how to use
 lattice-based techniques to break a variety of public key systems, but also
 how we may use them to design quantum-resistant solutions. The course is

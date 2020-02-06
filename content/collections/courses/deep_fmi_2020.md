@@ -7,6 +7,8 @@ featured_img: "/galleries/courses/overview_fmi.jpg"
 date: February-7-2020
 ---
 
+# DeepFMI 2020 <span>Learning Deep Neural Networks</span>
+
 The course is about basic Deep Learning methods, current models and
 capabilities. It is an optional course primarily (but not exclusively) for
 third-year undergraduates of the Faculty of Mathematics and Computer Science,
@@ -70,5 +72,5 @@ time will be provided via email.
 
 ## Previous Edition
 
-You can find below the posters from the previous edition and full course details [**DeepFMI
+You can find below the posters from the previous edition and other course details [**DeepFMI
 2019**](/teaching/deep_fmi_2019):
