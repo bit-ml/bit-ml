@@ -1,6 +1,6 @@
 ---
 title: Courses
-slug: lectures_and_courses
+slug: lectures-and-courses
 categories: event
 featured_img: "/galleries/courses/campus.jpg"
 date: September-20-2019
@@ -13,7 +13,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 <h2 class="title--separator">2020</h2>
 
 <div class="mo">
-  <a href="/teaching/crypto_rosedu_2020/" class="mo__link">
+  <a href="/teaching/crypto-rosedu-2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_rosedu.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">OpenCrypto - Crypto Analysis introduction for
@@ -26,7 +26,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 </div>
 
 <div class="mo">
-  <a href="/teaching/deep_fmi_2020/" class="mo__link">
+  <a href="/teaching/deep-fmi-2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
@@ -39,7 +39,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 </div>
 
 <div class="mo">
-  <a href="/teaching/deep_bit_pm_2020" class="mo__link">
+  <a href="/teaching/deep-bit-pm-2020" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_bitdefender.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepBit4PM - ML for Bitdefender Product Managers </h4>
@@ -69,7 +69,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 </div> -->
 
 <div class="mo">
-  <a href="/teaching/deep_bit_2019" class="mo__link">
+  <a href="/teaching/deep-bit-2019" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_bitdefender.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepBit - Deep Learning for Bitdefender Engineers</h4>
@@ -81,7 +81,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 </div>
 
 <div class="mo">
-  <a href="/teaching/deep_fmi_2019/" class="mo__link">
+  <a href="/teaching/deep-fmi-2019/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks</h4>

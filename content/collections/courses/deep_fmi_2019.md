@@ -1,6 +1,6 @@
 ---
 title: DeepFMI 2019 - Learning Deep Neural Networks
-slug: deep_fmi_2019
+slug: deep-fmi-2019
 categories: event
 galleries: deep_fmi_2019_posters:6
 featured_img: "/galleries/courses/overview_fmi.jpg"

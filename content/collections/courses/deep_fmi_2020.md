@@ -1,6 +1,6 @@
 ---
 title: DeepFMI 2020 - Learning Deep Neural Networks
-slug: deep_fmi_2020
+slug: deep-fmi-2020
 categories: event
 galleries: deep_fmi_2019_posters:6
 featured_img: "/galleries/courses/overview_fmi.jpg"
@@ -71,4 +71,4 @@ time will be provided via email.
 ## Previous Edition
 
 You can find below the posters from the previous edition and full course details [**DeepFMI
-2019**](/teaching/deep_fmi_2019):
+2019**](/teaching/deep-fmi-2019):

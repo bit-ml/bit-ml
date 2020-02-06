@@ -1,6 +1,6 @@
 ---
 title: DeepBit 2019 - Deep Learning for Bitdefender Engineers
-slug: deep_bit_2019
+slug: deep-bit-2019
 categories: event
 galleries: deep_bit_2019_posters:5,deep_bit_2019_pictures:6
 featured_img: "/galleries/courses/overview_bitdefender.jpg"
