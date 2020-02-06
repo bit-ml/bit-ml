@@ -18,4 +18,4 @@ You might want to check their [tutorial](https://react-static.js.org/docs/concep
 - Install `react-static` globally with `npm install -g react-static@5.9.12`.
 - Install the node modules with `npm install`.
 - Start a local server with the project with `npm start`.
-- Generate the static website with `npm build`.
+- Generate the static website with `npm run-script build`.
