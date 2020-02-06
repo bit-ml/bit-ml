@@ -46,6 +46,8 @@ roots in a piece of classical Latin literature from 45 BC, making it over
 
 1. Introduction to Deep Learning
 2. Neural Nets (Lab1 + Assignment1)
+   - Sub list 1
+   - Sub list 2
 3. Optimization
 4. Convolutional NNs(PROJECT proposals + Lab2 + Assignment2)
 5. Computer Vision applications (choose PROJECT)

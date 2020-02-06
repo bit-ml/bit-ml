@@ -29,9 +29,9 @@ well as for our own internal use. Our purpuse is to bring students closer to the
   <a href="/teaching/deep_fmi_2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
     <header class="mo__header">
-        <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
-        upcoming</h4>
-        <small> February  - April </small>
+      <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
+      upcoming</h4>
+      <small> February  - April </small>
     </header>
     <p class="mo__body"> The course is about basic Deep Learning methods, current models and capabilities. It covers basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with an accent on the applied part, through labs, assignments and the final project. <b>Enrolments are open!</b>
     </p>
@@ -41,12 +41,12 @@ well as for our own internal use. Our purpuse is to bring students closer to the
 <div class="mo">
   <a href="/teaching/deep_bit_pm_2020" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_bitdefender.png" alt="">
-    <div class="mo__content">
-        <h4 class="mo__title">DeepBit4PM - ML for Bitdefender Product Managers </h4>
-        <small> February </small>
-        <p class="mo__body">The course is about understanding Deep Learning basic concepts and focus on combining them for solving more complex problems during the product development process.
-        </p>
-    </div>
+    <header class="mo__header">
+      <h4 class="mo__title">DeepBit4PM - ML for Bitdefender Product Managers </h4>
+      <small> February </small>
+    </header>
+    <p class="mo__body">The course is about understanding Deep Learning basic concepts and focus on combining them for solving more complex problems during the product development process.
+    </p>
   </a>
 </div>
 

@@ -46,7 +46,7 @@ const Heading = styled.h1`
   ${typography}
   ${color}
   ${space}
-  text-transform: uppercase;
+  // text-transform: uppercase;
 `
 Heading.defaultProps = {
   mt: 1,
@@ -62,6 +62,20 @@ Heading.defaultProps = {
 const PostContent = styled.section`
   margin: 0 auto;
   max-width: 720px;
+
+  > h1 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[8]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.title};
+    > span {
+      display: block;
+      font-size: ${props => props.theme.fontSizes[5]};
+    }
+  }
 
   > h2 {
     font-family: ${props => props.theme.fonts.title};
@@ -113,15 +127,17 @@ const PostContent = styled.section`
     font-style: normal;
     letter-spacing: 0.03em;
     color: ${props => props.theme.colors.highContrast};
-    > a {
-      text-decoration: underline;
-      color: ${props => props.theme.colors.highContrast};
-      &:hover {
-        color: ${props => props.theme.colors.brandRed};
-      }
-    }
+
     > strong {
       font-weight: ${props => props.theme.fontWeights.bodyBold};
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    color: ${props => props.theme.colors.highContrast};
+    &:hover {
+      color: ${props => props.theme.colors.brandRed};
     }
   }
 
@@ -131,6 +147,9 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     font-weight: ${props => props.theme.fontWeights.bodyNormal};
     line-height: ${props => props.theme.lineHeights.copy};
+    > li ul {
+      margin-bottom: ${props => props.theme.space[0]};
+    }
   }
 
   > img,
@@ -144,17 +163,24 @@ const PostContent = styled.section`
     border-bottom: 1px solid ${props => props.theme.colors.lowContrast};
   }
 
-
   .mo {
     margin: 0;
+    &:hover {
+      background-color: ${props => props.theme.colors.tintedBackground};
+    }
+    padding: 5px;
   }
   .mo__link {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
     padding: 0;
-    color: #333;
+    color: ${props => props.theme.colors.highContrast};
+    &:hover {
+      color: ${props => props.theme.colors.highContrast};
+    }
     flex-wrap: wrap;
+    text-decoration: none;
     ${breakpoint('desktop')`
       justify-content: flex-end;
     `}
@@ -164,8 +190,10 @@ const PostContent = styled.section`
     margin: 0 1rem 0 0;
     border-radius: 50%;
     width: 64px;
+    height: 64px;
     ${breakpoint('desktop')`
       width: 100px;
+      height: 100px;
     `}
   }
   .mo__header {
@@ -271,8 +299,7 @@ const CoverImg = styled.div`
 function SimplePost ({ post }) {
   return (
     <PostContent>
-      <Heading>{post.title}</Heading>
-
+      {/* <Heading>{post.title}</Heading> */}
       {convert(post.contents)}
     </PostContent>
   )
