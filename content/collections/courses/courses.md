@@ -1,9 +1,7 @@
 ---
 title: Courses
 slug: lectures_and_courses
-authors:
 categories: event
-galleries: 
 featured_img: "/galleries/courses/campus.jpg"
 date: September-20-2019
 ---
@@ -37,22 +35,18 @@ well as for our own internal use. Our purpuse is to bring students closer to the
     </div>
   </a>
 </div>
-<!-- 
+
 <div class="mo">
   <a href="/teaching/deep_bit_pm_2020" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_bitdefender.png" alt="">
     <div class="mo__content">
         <h4 class="mo__title">DeepBit4PM - ML for Bitdefender Product Managers </h4>
         <small> February </small>
-        <p class="mo__body">Amet, ultrices neque, ut cras. In sagittis
-        scelerisque blandit fringilla auctor. Bibendum ornare nullam
-        scelerisque nisl amet purus. Vitae consequat, tincidunt lorem eu elit
-        commodo sed tellus. Proin libero hac metus lobortis amet aliquam ac
-        consectetur id. In tellus est posuere amet sed.
+        <p class="mo__body">The course is about understanding Deep Learning basic concepts and focus on combining them for solving more complex problems during the product development process.
         </p>
     </div>
   </a>
-</div> -->
+</div>
 
 <h2 class="title--separator">2019</h2>
 
