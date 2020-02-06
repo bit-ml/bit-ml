@@ -1,40 +1,26 @@
 ---
-title: Learning Deep Neural Networks
-slug: deep_learning_bitdefender_pm_2020
+title: DeepBit4PM - ML for Bitdefender Product Managers
+slug: deep_bit_pm_2020
 categories: event
-galleries: eeml2019_pictures:6
-featured_img: "/galleries/eeml2019_pictures/full_house.jpg"
+featured_img: "/galleries/courses/overview_pm.png"
 date: September-20-2019
 ---
 
-The course is about basic Deep Learning methods, current models and
-capabilities.
+The course is about understanding Deep Learning basic concepts and focus on combining them for solving more complex problems during the product development process.
 
-**Prerequisites**: Basic Python knowledge or several years as a programmer and
-eagerness to start understanding Deep Learning.
+**Prerequisites**: Eagerness to understand and use Deep Learning as a tool, from the Product Manager and Product Marketing Manager perspective.
 
-## Lectures:
+**Course Team**: Emanuela Haller, Elena Burceanu
 
-1. Introduction to Deep Learning
-2. Neural Nets (Lab1 + Assignment1)
-3. Optimization
-4. Convolutional NNs(PROJECT proposals + Lab2 + Assignment2)
-5. Computer Vision applications (choose PROJECT)
-6. Recurrent NN (+ Lab3 + Assignment3)
-7. Natural Language Processing applications
-8. PROJECTs status (all mentors)
-9. Final PROJECT presentations (all mentors)
+## Content (by week)
 
-## Labs and Assignments:
+1. First intro to Machine Learning
+2. Second intro to in Machine Learning
+3. ML from the PM perspective
+4. Presentations
 
-We use Pytorch for all coding materials.
-3 labs (2h 30min each) + 3 Assignments (~2h each)
-Lab1: PyTorch Intro (Assignment: Sudoku Solver)
-Lab2: Convolutional NN (Assignment: Count digits in an image)
-Lab3: Recurrent NN (Assignment: Given a code snippet, predict its programming language)
+## Administrative details
 
-## Final Project:
-
-Final Security related PROJECT which gave them the practical experience for apply deep learning in their next security project.
-Posters [last Projects presentation](https://drive.google.com/open?id=1eIkdSOcMio16wLWULl4L8s8QBruLin-h)
-Pictures [last Projects presentation](https://drive.google.com/open?id=1eIkdSOcMio16wLWULl4L8s8QBruLin-h)
+- **When**: February
+- **Where**: Bitdefender HQ
+<!-- - [**Course Materials**](https://drive.google.com/drive/folders/1uhIeJkTpeK7Q44nG3LJmjUsbWL3zXpsm?usp=sharing) -->

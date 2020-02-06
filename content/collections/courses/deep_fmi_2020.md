@@ -3,7 +3,7 @@ title: DeepFMI 2020 - Learning Deep Neural Networks
 slug: deep_fmi_2020
 categories: event
 galleries: deep_fmi_2019_posters:6
-featured_img: "/galleries/eeml2019_pictures/full_house.jpg"
+featured_img: "/galleries/courses/overview_fmi.jpg"
 date: February-7-2020
 ---
 
@@ -19,26 +19,33 @@ eagerness to start understanding Deep Learning.
 ## Content (by week)
 
 1. Introduction to Deep Learning
-2. Neural Nets (+ Lab1 + Assignment1)
+   - Lab1: Intro
+2. Neural Nets
 3. Optimization
-4. Convolutional Neural Networks (+ PROJECT proposals + Lab2 + Assignment2)
-5. Computer Vision applications (+ choose PROJECT)
-6. Recurrent NN (+ Lab3 + Assignment3)
+   - Lab2: Training and Optimization + Assignment
+4. Convolutional Neural Networks (PROJECT proposals)
+5. Computer Vision applications
+   - Lab3: CNN on Images + Assignment
+6. Recurrent NN (choose PROJECT)
 7. Natural Language Processing applications
-8. Unsupervised Learning Models (+ Lab4: PROJECTs status)
-9. Unsupervised Learning Models
+   - Lab4: RNN on Language
+8. Unsupervised Learning Models
+9. PROJECT Status
+   - Lab5: Verify Assignments
 10. PROJECTs poster presentation
 
-Based on the last year course experience, the second edition will focus less on evaluating the theoretical aspects. We will also add slides notes on every lecture and we will provide a support book. From the lecture content point of view, we will replace Reinforcement Learning lectures with lectures on Unsupervised Learning.
+Based on the last year course experience, the second edition will focus less on evaluating the theoretical aspects and will have less payload for the end of the semester. We will also add slide notes on every lecture and we will provide a support book. From the lecture content point of view, we will replace the Reinforcement Learning lectures with lectures on Unsupervised Learning.
 
 ## Practical sessions
 
-We use [**Pytorch**](https://pytorch.org/) for all coding materials and [**Colab Notebooks**](colab.research.google.com) for the environment. There is a total of 3 Labs, 3 Home Assignments and one final PROJECT:
-1. PyTorch Intro (Home: TODO)
-2. Convolutional NN (Home: Count digits in an image)
-3. Recurrent NN (Home: Predict the programming language of a code snippet)
-4. PROJECTs status
-5. PROJECTs presentation (Poster Session)
+We use [**Pytorch**](https://pytorch.org/) for all coding materials and [**Colab Notebooks**](colab.research.google.com) for the environment. There is a total of 5 Labs, 2 Home Assignments and one final PROJECT:
+
+1. Intro to Python, Pytorch and Tensors
+2. Training and Oprimization (Home: TODO)
+3. Convolutional NN (Home: Count digits in an image)
+4. Recurrent NN
+5. Verify Assignments
+Poster Session with the Final PROJECT.
 
 ## Administrative details
 

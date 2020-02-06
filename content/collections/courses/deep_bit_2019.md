@@ -3,7 +3,7 @@ title: DeepBit 2019 - Deep Learning for Bitdefender Engineers
 slug: deep_bit_2019
 categories: event
 galleries: deep_bit_2019_posters:5,deep_bit_2019_pictures:6
-featured_img: "/galleries/courses/bitdefender_overview.jpg"
+featured_img: "/galleries/courses/overview_bitdefender.jpg"
 date: August-20-2019
 ---
 
@@ -19,15 +19,18 @@ eagerness to start understanding Deep Learning.
 ## Content (by week)
 
 1. Introduction to Deep Learning
-2. Neural Nets (Lab1 + Assignment1)
+2. Neural Nets
+   - Lab1: Intro + Assignment
 3. Optimization
-4. Convolutional NNs(PROJECT proposals + Lab2 + Assignment2)
+4. Convolutional NNs (PROJECT proposals)
+   - Lab2: CNN on images + Assignment
 5. Computer Vision applications (choose PROJECT)
-6. Recurrent NN (+ Lab3 + Assignment3)
+6. Recurrent NN
+   - Lab3: RNN on Language + Assignment
 7. Natural Language Processing applications
 8. PROJECTs status
 9. PROJECTs poster presentation
-11. [Bonus] Two lectures on Generative Models
+10. [Bonus] Two lectures on Generative Models
 
 ## Practical sessions
 
