@@ -45,7 +45,7 @@ export default ({ pageName }) => {
         <Link to="/#research">Research</Link>
         <Link to="/#team">Team</Link>
         <Link to="/teaching/lectures-and-courses">Teaching</Link>
-        <Link to="/blog">Blog</Link>
+        {/* <Link to="/blog">Blog</Link> */}
       </Nav>
     </header>
   )

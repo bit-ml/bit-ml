@@ -7,6 +7,9 @@ featured_img: "/galleries/courses/overview_fmi.jpg"
 date: April-20-2019
 ---
 
+# DeepFMI 2019 <span>Learning Deep Neural Networks</span>
+
+
 The course is about basic Deep Learning methods, current models and capabilities. It is an optional course for third-year undergraduates of the Faculty of Mathematics and Computer Science, University of Bucharest. It covers basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with an accent on the applied part, through labs, home assignments and the final project.
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
