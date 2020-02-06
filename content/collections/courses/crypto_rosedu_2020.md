@@ -1,0 +1,33 @@
+---
+title: OpenCrypto - Crypto Analysis introduction for ROSEdu students
+slug: crypto_rosedu_2020
+authors: 
+categories: event
+galleries:
+featured_img: "/galleries/courses/crypto_overview.jpg"
+date: February-7-2020
+---
+This course gives a brief introduction to lattices. We show how to use lattice-based techniques to break a variety of public key systems, but also how we may use them to design quantum-resistant solutions. The course is organized by Bitdefender and ROSEdu.
+
+## The first edition of the course is about to start in March. [**Enroll Now**](https://forms.gle/CcRX4VJDeKhgv8bHA)
+
+**Prerequisites**: Basic Python (Sage), basic Linear Algebra concepts.
+
+**Course Team**: Madalina Bolboceanu, Miruna Rosca, Radu Titiu
+
+## Lectures
+
+1. Introduction: why should we care about lattice-based crypto?
+2. Lattice algorithms used for cryptanalysis:
+   - Finding short lattice vectors: LLL algorithm
+   - Finding close lattice vectors: Babai nearest plane algorithm
+3. Breaking public key encryption (ex: variants of RSA) using lattice algorithms
+4. Breaking digital signatures (ex: DSA) using lattice algorithms
+5. Build Post-Quantum crypto using lattices: (variants of) Learning With Errors
+6. Compute on encrypted data using Learning With Errors:
+   - Fully Homomorphic Encryption 
+   - Functional Encryption
+
+## Labs and Assignments
+
+The practical sesions consists in 3 labs and home assignments. There will be special prizes based on the aproaches for solving the assignments.
