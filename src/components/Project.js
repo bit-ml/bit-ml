@@ -1,7 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import { color, space, typography } from 'styled-system'
 
+import React from 'react'
+import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components'
 
 const Project = styled.div`
   ${breakpoint('tablet')`
@@ -32,48 +33,46 @@ const ProjectContent = styled.section`
 `
 
 const Heading = styled.h3`
-  font-family: 'Exo 2', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 37px;
-  font-size: 22px;
+  ${typography}
+  ${color}
+  ${space}
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
-  /* Gray 1 */
-  color: #333333;
 `
+Heading.defaultProps = {
+  mt: 2,
+  mb: 1,
+  p: 0,
+  fontFamily: 'title',
+  fontSize: 4,
+  fontWeight: 'titleSemi',
+  lineHeight: 'copy',
+  color: 'highContrast',
+}
 
 const Text = styled.p`
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px;
-  font-size: 1.1rem;
+  ${typography}
+  ${color}
+  ${space}
   letter-spacing: 0.03em;
-
-  /* Gray 1 */
-  color: #333333;
 `
+Text.defaultProps = {
+  fontFamily: 'body',
+  fontSize: 3,
+  fontWeight: 'bodyNormal',
+  lineHeight: 'copy',
+  color: 'highContrast',
+}
 
 const BibList = styled.ul`
   margin-top: 3rem;
   padding-left: 0;
-
-  li>a {
-    font-weight: normal;
-    color: inherit;
-  }
 `
 
 const BibItem = styled.li`
-  padding: .5rem;
+  ${typography}
+  padding: 0.5rem;
   list-style: none;
-  font-family: Roboto;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 20px;
-  font-size: 14px;
   letter-spacing: 0.03em;
 
   /* Gray 3 */
@@ -84,11 +83,28 @@ const BibItem = styled.li`
     transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 `
+BibItem.defaultProps = {
+  lineHeight: 'tiny',
+}
+
+
 const BibLink = styled.a`
+  ${typography}
+  ${color}
+  font-style: italic;
 `
+BibLink.defaultProps = {
+  fontFamily: 'body',
+  fontSize: 1,
+  fontWeight: 'bodyMedium',
+  lineHeight: 'tiny',
+  color: 'midContrast',
+}
+
+
 const BibAuthors = styled.span`
   font-style: normal;
-  color: #E6212B;
+  color: #e6212b;
 `
 const BibYear = styled.span`
   font-style: normal;
@@ -98,7 +114,9 @@ const BibPublished = styled.span`
   font-style: normal;
 `
 
-const BibEntry = ({ authors, title, year, link, published }, i) => (
+const BibEntry = ({
+  authors, title, year, link, published,
+}, i) => (
   <BibItem key={i}>
     <BibLink href={link} target="_blank">
       <BibAuthors>{authors}</BibAuthors>
@@ -109,21 +127,15 @@ const BibEntry = ({ authors, title, year, link, published }, i) => (
   </BibItem>
 )
 
-
-const Description = ({ children }) => (
-  children.split('\n').map((line, key) => (
-    <Text key={key}>{line}</Text>
-  ))
-)
+const Description = ({ children }) =>
+  children.split('\n').map((line, key) => <Text key={key}>{line}</Text>)
 
 export default ({ title, description, papers }, i) => (
   <Project key={i}>
     <ProjectContent>
       <Heading>{title}</Heading>
       <Description>{description}</Description>
-      <BibList>
-        {papers.map(BibEntry)}
-      </BibList>
+      <BibList>{papers.map(BibEntry)}</BibList>
     </ProjectContent>
   </Project>
 )

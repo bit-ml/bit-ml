@@ -11,7 +11,7 @@ date: September-20-2019
 ## H2 Titles are hard to find
 
 It is a long established fact that a reader will be distracted by the
-readable content of a page when looking at its layout. The point of using
+readable content of a page when looking at its layout. **The point** of using
 Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
 opposed to using 'Content here, content here', making it look like readable
 English.
@@ -61,6 +61,8 @@ Also un-ordered:
 - Some other stuff
 
 ##### H5 Testimonials
+
+This is how citing someone on this site should look like.
 
 <blockquote>
 EEML also provided me with the opportunity of presenting my work on

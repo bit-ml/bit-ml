@@ -22,8 +22,9 @@ export const theme = {
     '2.074rem',
     '2.488rem',
   ],
-  fontWeights: [300, 500, 700, 900],
+  fontWeights: [300, 400, 500, 600],
   lineHeights: {
+    tiny: '1.00rem',
     small: '1.48rem',
     copy: '1.78947rem',
     title: '3.57895rem',
@@ -56,3 +57,9 @@ export const theme = {
     '1536px',
   ],
 }
+
+theme.fontWeights.bodyNormal = theme.fontWeights[0]
+theme.fontWeights.bodyMedium = theme.fontWeights[1]
+theme.fontWeights.bodyBold = theme.fontWeights[2]
+theme.fontWeights.titleNormal = theme.fontWeights[1]
+theme.fontWeights.titleSemi = theme.fontWeights[3]

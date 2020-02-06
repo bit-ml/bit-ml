@@ -26,7 +26,6 @@ injectGlobal`
 
   body {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-weight: 400;
     line-height: 1.78rem;
     padding: 0;
     background: #FFF;

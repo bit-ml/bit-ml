@@ -1,4 +1,3 @@
-import { Link, withRouteData } from 'react-static'
 import { color, space, typography } from 'styled-system'
 
 import Head from 'components/Head'
@@ -9,6 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import convert from 'htmr'
 import striptags from 'striptags'
 import styled from 'styled-components'
+import { withRouteData } from 'react-static'
 
 //
 
@@ -56,7 +56,7 @@ Heading.defaultProps = {
   p: 0,
   fontFamily: 'title',
   fontSize: 8,
-  fontWeight: 2,
+  titleWeight: 'titleSemi',
   lineHeight: 'title',
   color: 'highContrast',
 }
@@ -68,7 +68,7 @@ const PostContent = styled.section`
   > h2 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[7]};
-    font-weight: ${props => props.theme.fontWeights[2]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
     margin-top: ${props => props.theme.space[1]};
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
@@ -78,9 +78,9 @@ const PostContent = styled.section`
   > h3 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[6]};
-    font-weight: ${props => props.theme.fontWeights[2]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
     margin-top: ${props => props.theme.space[1]};
-    margin-bottom: ${props => props.theme.space[0]};
+    margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
   }
@@ -88,9 +88,9 @@ const PostContent = styled.section`
   > h4 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[5]};
-    font-weight: ${props => props.theme.fontWeights[2]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
     margin-top: ${props => props.theme.space[1]};
-    margin-bottom: ${props => props.theme.space[0]};
+    margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
   }
@@ -98,7 +98,7 @@ const PostContent = styled.section`
   > h5 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[4]};
-    font-weight: ${props => props.theme.fontWeights[2]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
     margin-top: ${props => props.theme.space[1]};
     margin-bottom: ${props => props.theme.space[0]};
     padding: ${props => props.theme.space[0]};
@@ -108,7 +108,7 @@ const PostContent = styled.section`
   p {
     font-family: ${props => props.theme.fonts.body};
     font-size: ${props => props.theme.fontSizes[3]};
-    font-weight: ${props => props.theme.fontWeights[0]};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
     margin-top: ${props => props.theme.space[0]};
     margin-bottom: ${props => props.theme.space[1]};
     padding: 0;
@@ -123,7 +123,7 @@ const PostContent = styled.section`
       }
     }
     > strong {
-      font-weight: ${props => props.theme.fontWeights[1]};
+      font-weight: ${props => props.theme.fontWeights.bodyBold};
     }
   }
 
@@ -131,7 +131,7 @@ const PostContent = styled.section`
   ul, ol {
     margin-top: ${props => props.theme.space[0]};
     margin-bottom: ${props => props.theme.space[1]};
-    font-weight: ${props => props.theme.fontWeights[0]};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
     line-height: ${props => props.theme.lineHeights.copy};
   }
 
@@ -173,7 +173,8 @@ const PostContent = styled.section`
   }
   .mo__body {
     font-size: ${props => props.theme.fontSizes[2]};
-    line-height: ${props => props.theme.lineHeights.copy};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
+    line-height: ${props => props.theme.lineHeights.small};
   }
 
   > blockquote {
