@@ -14,19 +14,17 @@ import { withRouteData } from 'react-static'
 
 const PageWithCoverImg = styled.div`
   background-color: ${props => props.theme.colors.background}
-  ${breakpoint('desktop')`
+    ${breakpoint('desktop')`
     display: flex;
     justify-content: space-between;
 
     nav {
       padding: 0;
     }
-  `}
-
-  ${breakpoint('tablet')`
+  `} ${breakpoint('tablet')`
     display: flex;
     justify-content: space-between;
-  `}
+  `};
 `
 
 const Post = styled.div`
@@ -127,16 +125,13 @@ const PostContent = styled.section`
     }
   }
 
-
-  ul, ol {
+  ul,
+  ol {
     margin-top: ${props => props.theme.space[0]};
     margin-bottom: ${props => props.theme.space[1]};
     font-weight: ${props => props.theme.fontWeights.bodyNormal};
     line-height: ${props => props.theme.lineHeights.copy};
   }
-
-
-
 
   > img,
   > p img {
@@ -149,32 +144,50 @@ const PostContent = styled.section`
     border-bottom: 1px solid ${props => props.theme.colors.lowContrast};
   }
 
+
   .mo {
     margin: 0;
   }
   .mo__link {
     display: flex;
     align-items: flex-start;
+    flex-direction: row;
     padding: 0;
     color: #333;
+    flex-wrap: wrap;
+    ${breakpoint('desktop')`
+      justify-content: flex-end;
+    `}
   }
   .mo__img {
-    width: 128px;
+    flex-basis: auto;
     margin: 0 1rem 0 0;
+    border-radius: 50%;
+    width: 64px;
+    ${breakpoint('desktop')`
+      width: 100px;
+    `}
   }
-  .mo__content {
-    flex: 1;
-    font-weight: 300;
+  .mo__header {
+    flex-grow: 1;
+    flex-basis: 100px;
   }
   .mo__title {
     font-weight: 500;
-    font-size: 21px;
+    font-size: ${props => props.theme.fontSizes[3]};
     margin: ${props => props.theme.space[0]};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[4]};
+    `}
   }
   .mo__body {
     font-size: ${props => props.theme.fontSizes[2]};
     font-weight: ${props => props.theme.fontWeights.bodyNormal};
     line-height: ${props => props.theme.lineHeights.small};
+    flex-grow: 0;
+    ${breakpoint('desktop')`
+      width: calc(100% - (100px + 1rem));
+    `}
   }
 
   > blockquote {
@@ -258,7 +271,6 @@ const CoverImg = styled.div`
 function SimplePost ({ post }) {
   return (
     <PostContent>
-
       <Heading>{post.title}</Heading>
 
       {convert(post.contents)}
@@ -296,8 +308,23 @@ function PostWithGallery ({ post, galleries }) {
   )
 }
 
+function checkGallery (post) {
+  let hasGallery = Object.hasOwnProperty.call(post, 'galleries')
+  if (hasGallery === true) {
+    if (post.galleries == null) {
+      console.log(
+        'Warning, you have a gallery field in in your markdown ' +
+          'but it has no value.',
+        post.galleries
+      )
+      hasGallery = false
+    }
+  }
+  return hasGallery
+}
+
 export default withRouteData(({ post, galleries, test }) => {
-  const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
+  const hasGallery = checkGallery(post)
   const keywords = post.categories.replace(/ /g, '').split(',')
   const synopsis = striptags(post.contents)
     .substring(0, 350)

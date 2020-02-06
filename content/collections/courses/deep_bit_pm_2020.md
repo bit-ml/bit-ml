@@ -1,7 +1,6 @@
 ---
 title: Learning Deep Neural Networks
 slug: deep_learning_bitdefender_pm_2020
-authors: Elena Burceanu
 categories: event
 galleries: eeml2019_pictures:6
 featured_img: "/galleries/eeml2019_pictures/full_house.jpg"

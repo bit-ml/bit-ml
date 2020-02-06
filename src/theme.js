@@ -29,7 +29,11 @@ export const theme = {
     copy: '1.78947rem',
     title: '3.57895rem',
   },
-  breakpoints: [32, 48, 64],
+  breakpoints: {
+    mobile: 0,
+    tablet: 737,
+    desktop: 1195,
+  },
   space: [
     0,
     '1.78947rem',

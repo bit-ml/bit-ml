@@ -1,7 +1,6 @@
 ---
 title: DeepFMI 2019 - Learning Deep Neural Networks
 slug: deep_fmi_2019
-authors: 
 categories: event
 galleries: deep_fmi_2019_posters:6
 featured_img: "/galleries/eeml2019_pictures/full_house.jpg"

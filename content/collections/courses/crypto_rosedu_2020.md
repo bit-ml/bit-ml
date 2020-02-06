@@ -1,9 +1,7 @@
 ---
 title: OpenCrypto - Crypto Analysis introduction for ROSEdu students
 slug: crypto_rosedu_2020
-authors: 
 categories: event
-galleries:
 featured_img: "/galleries/courses/crypto_overview.jpg"
 date: February-7-2020
 ---

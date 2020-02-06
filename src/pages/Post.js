@@ -10,7 +10,6 @@ import Nav from 'components/Navigation'
 import LightboxGallery from 'components/LightboxGallery'
 //
 
-
 const PageWithCoverImg = styled.div`
   ${breakpoint('desktop')`
     display: flex;
@@ -26,7 +25,6 @@ const PageWithCoverImg = styled.div`
     justify-content: space-between;
   `}
 `
-
 
 const Post = styled.div`
   margin: 0 auto;
@@ -44,7 +42,7 @@ const Post = styled.div`
 `
 
 const Heading = styled.h1`
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
   margin: 4rem 0;
   font-style: normal;
   font-weight: 700;
@@ -61,7 +59,7 @@ const PostContent = styled.section`
   margin: 0 auto;
   max-width: 720px;
 
-  >p {
+  > p {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -76,19 +74,21 @@ const PostContent = styled.section`
     }
   }
 
-  >p a {
+  > p a {
     text-decoration: underline;
     color: #333;
-    &:hover {color: #E6212B}
+    &:hover {
+      color: #e6212b;
+    }
   }
 
-  >img,
+  > img,
   > p img {
     margin: 0 auto;
     display: block;
   }
 
-  >blockquote {
+  > blockquote {
     font-size: 1.1rem;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-style: italic;
@@ -100,18 +100,18 @@ const PostContent = styled.section`
     // background-color: #f2f2f2;
     padding: 24px;
 
-    quotes: "\\201E" "\\201C";
-    &:before{
+    quotes: "\\201E""\\201C";
+    &:before {
       display: inline-block;
       transform: translate(-15px, -15px);
       content: open-quote;
       // color: #E6212B;
-      color: #EDEBEB;
+      color: #edebeb;
       font-size: 5rem;
       font-weight: 400;
     }
-    
-    >footer{
+
+    > footer {
       margin-top: 10px;
       font-style: normal;
       font-weight: 400;
@@ -119,12 +119,9 @@ const PostContent = styled.section`
   }
 `
 
-const PostWithGalleryWrapper = styled.div`
-`
+const PostWithGalleryWrapper = styled.div``
 
-const Author = styled.p`
-`
-
+const Author = styled.p``
 
 const PostHeader = styled.div`
   display: flex;
@@ -136,12 +133,11 @@ const PostHeader = styled.div`
   letter-spacing: 0.03em;
 `
 
-
 const BackLink = styled(Link)`
   flex-grow: 1;
   color: #828282;
   &:hover {
-    color: #E6212B;
+    color: #e6212b;
   }
 `
 
@@ -153,10 +149,9 @@ const Date = styled.small`
   color: #828282;
 `
 
-
 const PostFooter = styled.div`
   display: inline-block;
-  background: #EDEBEB;
+  background: #edebeb;
   width: 100%;
 `
 
@@ -166,7 +161,7 @@ const PostFooterWraper = styled.div`
   padding: 0 1rem;
   margin: 0 auto;
 
-  &>p {
+  & > p {
     flex-grow: 1;
     color: #828282;
   }
@@ -176,9 +171,7 @@ const PostFooterWraper = styled.div`
   `}
 `
 
-
 const CoverImg = styled.div`
-
   ${breakpoint('tablet')`
     background: #fff url(${props => props.featured_img}) no-repeat bottom;
     background-size: cover;
@@ -200,7 +193,6 @@ const CoverImg = styled.div`
   `}
 `
 
-
 function SimplePost ({ post }) {
   const date = post.date.replace('-', ' ').replace('-', ', ')
   return (
@@ -213,11 +205,9 @@ function SimplePost ({ post }) {
       <Heading>{post.title}</Heading>
 
       {convert(post.contents)}
-
     </PostContent>
   )
 }
-
 
 const Footer = ({ post }) => (
   <PostFooter>
@@ -227,7 +217,6 @@ const Footer = ({ post }) => (
     </PostFooterWraper>
   </PostFooter>
 )
-
 
 function PostWithGallery ({ post, galleries }) {
   let gallery_names = post.galleries.replace(/ /g, '').split(',')
@@ -239,21 +228,23 @@ function PostWithGallery ({ post, galleries }) {
     <PostWithGalleryWrapper>
       <SimplePost post={post} />
 
-      {
-        gallery_names.map((key, index) => (
-          <LightboxGallery
-            key={index} photo_set={galleries[key]} columns={columns[index]} />
-        ))
-      }
+      {gallery_names.map((key, index) => (
+        <LightboxGallery
+          key={index}
+          photo_set={galleries[key]}
+          columns={columns[index]}
+        />
+      ))}
     </PostWithGalleryWrapper>
   )
 }
 
-
 export default withRouteData(({ post, galleries, test }) => {
   const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
   const keywords = post.categories.replace(/ /g, '').split(',')
-  const synopsis = striptags(post.contents).substring(0, 350).replace(/\n/g, '')
+  const synopsis = striptags(post.contents)
+    .substring(0, 350)
+    .replace(/\n/g, '')
 
   return (
     <div>
@@ -261,7 +252,8 @@ export default withRouteData(({ post, galleries, test }) => {
         title={`${post.title} | Bitdefender Research`}
         description={`${synopsis}...`}
         tags={keywords}
-        image={post.featured_img} />
+        image={post.featured_img}
+      />
 
       <PageWithCoverImg>
         <CoverImg featured_img={post.featured_img} />
@@ -269,14 +261,13 @@ export default withRouteData(({ post, galleries, test }) => {
         <Post>
           <Nav pageName="post" />
 
-          {
-            hasGallery
-            ? <PostWithGallery post={post} galleries={galleries} test={test} />
-            : <SimplePost post={post} />
-          }
+          {hasGallery ? (
+            <PostWithGallery post={post} galleries={galleries} test={test} />
+          ) : (
+            <SimplePost post={post} />
+          )}
 
           <Footer post={post} />
-
         </Post>
       </PageWithCoverImg>
     </div>
