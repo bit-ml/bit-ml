@@ -35,4 +35,4 @@ special prizes based on the approaches for solving the assignments.
 
 ## Administrative details
 
-- **When** and **Where**: Will be announced soon
+- Location and time will be announced soon.
