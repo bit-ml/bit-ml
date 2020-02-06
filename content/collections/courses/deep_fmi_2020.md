@@ -13,9 +13,7 @@ third-year undergraduates of the Faculty of Mathematics and Computer Science,
 University of Bucharest. It covers basic theoretical concepts about training
 neural networks, followed by applications in computer vision and natural
 language understanding, with an accent on the applied part, through labs,
-assignments and the final project.
-
-**The second edition of the course is about to start (on February 19th).
+assignments and the final project. **The second edition of the course is about to start (on February 19th).
 [Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)**
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
@@ -23,7 +21,7 @@ eagerness to start understanding Deep Learning.
 - **Course Team**: Emanuela Haller, Florin Gogianu, Andrei Nicolicioiu, Iulia
 *Duta, Florin Brad, Elena Burceanu, Andrei Manolache
 
-## Content (by week)
+## Syllabus
 
 1. Introduction to Deep Learning
    - Lab1: Intro
@@ -50,7 +48,7 @@ Learning.
 
 ## Practical sessions
 
-We use [**Pytorch**](https://pytorch.org/) for all coding materials and
+We use [**PyTorch**](https://pytorch.org/) for all coding materials and
 [**Colab Notebooks**](colab.research.google.com) for the environment. There
 is a total of 5 Labs, 2 Home Assignments and one final PROJECT:
 
@@ -72,5 +70,5 @@ time will be provided via email.
 
 ## Previous Edition
 
-You can find here details about the previous edition [**DeepFMI
-2019**](/teaching/deep_fmi_2019) and the final posters below:
+You can find below the posters from the previous edition and full course details [**DeepFMI
+2019**](/teaching/deep_fmi_2019):

@@ -8,11 +8,10 @@ date: September-20-2019
 
 The course is about understanding Deep Learning basic concepts and focus on combining them for solving more complex problems during the product development process.
 
-**Prerequisites**: Eagerness to understand and use Deep Learning as a tool, from the Product Manager and Product Marketing Manager perspective.
+- **Prerequisites**: Eagerness to understand and use Deep Learning as a tool, from the Product Manager and Product Marketing Manager perspective.
+- **Course Team**: Emanuela Haller, Elena Burceanu
 
-**Course Team**: Emanuela Haller, Elena Burceanu
-
-## Content (by week)
+## Syllabus
 
 1. First intro to Machine Learning
 2. Second intro to in Machine Learning

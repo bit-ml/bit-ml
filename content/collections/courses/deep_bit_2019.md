@@ -7,16 +7,13 @@ featured_img: "/galleries/courses/overview_bitdefender.jpg"
 date: August-20-2019
 ---
 
-The course is about basic Deep Learning methods, current models and
-capabilities.
+The course is an introduction to up-to-date Deep Learning methods for Bitdefender engineers. It covers very basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with accent on building the final project, which was focused on the security field.
 
-**Prerequisites**: Basic Python knowledge or several years as a programmer and
+- **Prerequisites**: Basic Python knowledge or several years as a programmer and
 eagerness to start understanding Deep Learning.
+- **Course Team**: Stefan Postavaru, Andrei Nicolicioiu, Iulia Duta, Florin Brad, Tudor Berariu, Elena Burceanu, Emanuela Haller, Florin Gogianu
 
-**Course Team**: Stefan Postavaru, Andrei Nicolicioiu, Iulia Duta, Florin Brad, Tudor Berariu, Elena Burceanu, Emanuela Haller, Florin Gogianu
-
-
-## Content (by week)
+## Syllabus
 
 1. Introduction to Deep Learning
 2. Neural Nets
@@ -34,7 +31,8 @@ eagerness to start understanding Deep Learning.
 
 ## Practical sessions
 
-We use Pytorch for all coding materials and Colab Notebooks for the environment. There are a total of 3 Labs and 3 Home Assignments:
+We use [**PyTorch**](https://pytorch.org/) for all coding materials and
+[**Colab Notebooks**](colab.research.google.com) for the environment. There are a total of 3 Labs and 3 Home Assignments:
 
 1. PyTorch Intro (Home: Sudoku Solver)
 2. Convolutional NN (Home: Count digits in an image)
@@ -49,4 +47,4 @@ We use Pytorch for all coding materials and Colab Notebooks for the environment.
 
 ## Final Project
 
-Final Security related PROJECT gave the  the practical experience for apply deep learning in their next security project. See bellow the posters and some photos from the poster session.
+Final Security related PROJECT gave our colleagues the practical experience for applying deep learning in their next security project. See bellow the posters and some photos from the poster session.
