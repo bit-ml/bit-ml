@@ -8,7 +8,7 @@ date: September-20-2019
 
 Here at **Bitdefender** we are actively involved in designing and teaching Deep
 Learning and Cryptography courses in partnership with the top universities in Bucharest as
-well as for our own internal use. Our purpuse is to bring students closer to the research field, with both practical and theoretical approaches, with lot of entuziasm and up to date content.
+well as for our own internal use. Our purpose is to bring students closer to the research field, with both practical and theoretical approaches, with a lot of enthusiasm and up to date content.
 
 <h2 class="title--separator">2020</h2>
 
@@ -20,7 +20,7 @@ well as for our own internal use. Our purpuse is to bring students closer to the
       ROSEdu students | upcoming</h4>
       <small> March - April </small>
     </header>
-    <p class="mo__body"> This course gives a brief introduction to lattices. We show how to use lattice-based techniques to break a variety of public key systems, but also how we may use them to design quantum-resistant solutions. This course is organized with ROSEdu's help. <b>Enrolments are open!</b>
+    <p class="mo__body"> This course gives a brief introduction to lattices. We show how to use lattice-based techniques to break a variety of public key systems, but also how we may use them to design quantum-resistant solutions. This course is organized with ROSEdu's help. <b>Enrollments are open!</b>
     </p>
   </a>
 </div>
@@ -33,7 +33,7 @@ well as for our own internal use. Our purpuse is to bring students closer to the
         upcoming</h4>
         <small> February  - April </small>
     </header>
-    <p class="mo__body"> The course is about basic Deep Learning methods, current models and capabilities. It covers basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with an accent on the applied part, through labs, assignments and the final project. <b>Enrolments are open!</b>
+    <p class="mo__body"> The course is about basic Deep Learning methods, current models and capabilities. It covers basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with an accent on the applied part, through labs, assignments and the final project. <b>Enrollments are open!</b>
     </p>
   </a>
 </div>

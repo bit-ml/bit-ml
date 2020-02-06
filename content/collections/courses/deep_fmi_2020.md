@@ -61,7 +61,7 @@ Poster Session with the Final PROJECT.
 
 ## Administrative details
 
-- **When**: February 19th - April 22th 2020, on Wednesday evening
+- **When**: February 19th - April 22nd 2020, on Wednesday evening
 - **Where**: Faculty of Mathematics and Computer Science, University of Bucharest
 - **Google Group**: [deeplearning_fmi_2020](https://groups.google.com/d/forum/deeplearning_fmi_2020)
 - [**Enroll now**](https://forms.gle/pFSUmhcpJktkuWuMA): The exact room and
