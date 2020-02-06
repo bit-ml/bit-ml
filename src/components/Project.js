@@ -59,8 +59,8 @@ const Text = styled.p`
 Text.defaultProps = {
   fontFamily: 'body',
   fontSize: 3,
-  fontWeight: 'bodyNormal',
-  lineHeight: 'copy',
+  fontWeight: 'bodyMedium',
+  lineHeight: 'small',
   color: 'highContrast',
 }
 

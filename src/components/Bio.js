@@ -1,7 +1,7 @@
+import { color, space, typography } from 'styled-system'
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-
 
 export const BioBox = styled.div`
   /* flex */
@@ -46,7 +46,7 @@ const MediaBody = styled.div`
 `
 
 const Heading = styled.h4`
-  font-family: 'Exo 2', serif;
+  font-family: "Exo 2", serif;
   font-style: normal;
   font-weight: 600;
   line-height: 27px;
@@ -57,14 +57,19 @@ const Heading = styled.h4`
 `
 
 const Bio = styled.p`
-  font-family: Exo 2;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 23px;
-  font-size: 1rem;
-  color: #828282;
-  margin-top: 0;
+  ${typography}
+  ${color}
+  ${space}
 `
+Bio.defaultProps = {
+  m: 0,
+  p: 0,
+  fontFamily: 'body',
+  fontSize: 2,
+  fontWeight: 1,
+  lineHeight: 'small',
+  color: 'midContrast',
+}
 
 const ContactBox = styled.div`
   display: flex;
@@ -73,12 +78,13 @@ const ContactBox = styled.div`
 
   margin-bottom: 1rem;
 
-  >a {
+  > a {
     width: 33.33%;
     text-align: center;
+    font-size: 0.833rem;
     font-weight: normal !important;
     color: #828282 !important;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border: 1px solid #edebeb;
     margin-right: 5px;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -94,22 +100,25 @@ const ContactBox = styled.div`
   `}
 `
 
-export default ({ name, bio, img, contact }, i) => (
+export default ({
+  name, bio, img, contact,
+}, i) => (
   <BioBox key={i}>
     <MediaFigure>
-      <img src={`./bio/${img || 'hal_9000.jpg'}`}
-        alt={img} />
+      <img src={`./bio/${img || 'hal_9000.jpg'}`} alt={img} />
     </MediaFigure>
     <MediaBody>
       <Heading>{name} </Heading>
       <Bio>{bio} </Bio>
 
       <ContactBox>
-        {contact.mail && (<a href={`mailto:${contact.mail}`}>email</a>)}
-        {contact.github &&
-            (<a href={`https://github.com/${contact.github}`}>github</a>)}
-        {contact.twitter &&
-            (<a href={`https://twitter.com/${contact.twitter}`}>twitter</a>)}
+        {contact.mail && <a href={`mailto:${contact.mail}`}>email</a>}
+        {contact.github && (
+          <a href={`https://github.com/${contact.github}`}>github</a>
+        )}
+        {contact.twitter && (
+          <a href={`https://twitter.com/${contact.twitter}`}>twitter</a>
+        )}
       </ContactBox>
     </MediaBody>
   </BioBox>
