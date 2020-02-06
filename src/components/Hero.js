@@ -48,8 +48,8 @@ const Heading = styled.h1`
   font-family: 'Exo 2', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 36px;
-  line-height: 3rem;
+  font-size: 32px;
+  line-height: 2.7rem;
   color: #E4E4E4;
 
   ${breakpoint('tablet')`

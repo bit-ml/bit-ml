@@ -8,11 +8,11 @@ const Nav = styled.nav`
     background: ${props => props.bgColor};
     padding: 0 1rem;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 
     a {
-      padding: 0.3rem 1.2rem 0.25rem 1.2rem;
-      display: inline-block;
+      padding: 0.5rem 0 0.25rem 0;
 
       font-style: normal;
       font-weight: 500;
@@ -25,11 +25,16 @@ const Nav = styled.nav`
     }
 
     a:last-child {
+      padding: 0.5rem;
       padding-right: 0;
     }
 
   ${breakpoint('desktop')`
     padding: 0 5rem;
+    justify-content: flex-end;
+    a {
+      padding: 0.5rem 1rem 0.25rem 1rem;
+    }
   `}
 `
 

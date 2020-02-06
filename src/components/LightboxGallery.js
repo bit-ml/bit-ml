@@ -6,7 +6,7 @@ import breakpoint from 'styled-components-breakpoint'
 
 
 const LightboxGalleryWrapper = styled.div`
-  background-color: #F5F2F2;
+  background-color: ${props => props.theme.colors.tintedBackground};
   padding: 1rem;
   margin: 1rem 0;
 `
