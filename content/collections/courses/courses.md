@@ -18,7 +18,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
   <a href="/teaching/crypto-rosedu-2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_rosedu.png" alt="">
     <header class="mo__header">
-      <h4 class="mo__title">Lattices in Crypto - Intro to lattice-based crypto | upcoming </h4>
+      <h4 class="mo__title">Lattices in Crypto - Intro to Lattice-based cryptography | upcoming </h4>
       <small> March - April </small>
     </header>
     <p class="mo__body"> This course gives a brief introduction to lattices. We show how to use lattice-based techniques to break a variety of public key systems, but also how we may use them to design quantum-resistant solutions. This course is organized with ROSEdu's help. <b>Enrollments are open!</b>

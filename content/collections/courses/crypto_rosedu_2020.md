@@ -1,12 +1,12 @@
 ---
-title: Lattices in Crypto - Intro to lattice-based crypto 
+title: Lattices in Crypto - Intro to Lattice-based cryptography
 slug: crypto-rosedu-2020
 categories: event
 featured_img: "/galleries/courses/overview_crypto.jpg"
 date: February-7-2020
 ---
 
-# Lattices in Crypto <span>Intro to lattice-based crypto </span>
+# Lattices in Crypto <span>Intro to Lattice-based cryptography</span>
 
 This course gives a brief introduction to lattices. We show how to use
 lattice-based techniques to break a variety of public key systems, but also
