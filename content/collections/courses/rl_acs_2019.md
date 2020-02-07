@@ -46,3 +46,15 @@ TRPO | [slides](https://floringogianu.github.io/courses/03_policy_gradient).
 4. **Advanced Policy Gradient Methods.** Detailed TRPO, PPO, IMPALA,
 importance sampling, V-Trace and a special section with RL applications in
 machine learning | [slides](https://floringogianu.github.io/courses/04_advanced_pg).
+
+## Administrative details
+
+- **When**: October - November 2020, on Monday evening
+- **Where**: Faculty of Automatic Control and Computer Science, Politehnica
+University of Bucharest
+- **Lectures**: [lecture
+1](https://floringogianu.github.io/courses/01_introduction/), [lecture
+2](https://floringogianu.github.io/courses/02_approximate_solutions/),
+[lecture 3](https://floringogianu.github.io/courses/03_policy_gradient),
+[lecture 4](https://floringogianu.github.io/courses/04_advanced_pg)
+- **Practicals**: [notebooks](https://github.com/floringogianu/rl-module-labs)
