@@ -16,7 +16,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
   <a href="/teaching/crypto-rosedu-2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_rosedu.png" alt="">
     <header class="mo__header">
-      <h4 class="mo__title">OpenCrypto - Crypto Analysis introduction for
+      <h4 class="mo__title">Lattices in Crypto - Intro to lattice-based crypto for ROSEdu students
       ROSEdu students | upcoming</h4>
       <small> March - April </small>
     </header>
@@ -82,7 +82,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 
 <div class="mo">
   <a href="/teaching/deep-fmi-2019/" class="mo__link">
-    <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
+    <img class="mo__img" src="/galleries/courses/thumb_unibuc.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks</h4>
       <small> February - April </small>
