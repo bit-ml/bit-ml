@@ -16,24 +16,25 @@ organized by Bitdefender and ROSEdu.
 Now!](https://docs.google.com/forms/d/e/1FAIpQLSdabrOL93X3mO0eSzghhA2vPo8L60YoDmhT5LFVtoKXn9JM6A/viewform)**
 
 - **Prerequisites**: Basic Python (Sage), basic Linear Algebra concepts.
-- **Course Team**: Mădălina Bolboceanu, Miruna Roșca, Radu Țițiu.
+- **Course Team**: Mădălina Bolboceanu, Miruna Roșca, Radu Țițiu
 
 ## Syllabus
 
 1. Introduction: why should we care about lattice-based crypto?
-2. Lattice algorithms used for cryptanalysis:
+2. **Lattice algorithms** used for cryptanalysis:
    - Finding short lattice vectors: LLL algorithm
    - Finding close lattice vectors: Babai nearest plane algorithm
-3. Breaking public key encryption (ex: variants of RSA) using lattice algorithms
-4. Breaking digital signatures (ex: DSA) using lattice algorithms
-5. Build Post-Quantum crypto using lattices: (variants of) Learning With Errors
+3. **Breaking public key encryption** (ex: variants of RSA) using lattice algorithms
+4. **Breaking digital signatures** (ex: DSA) using lattice algorithms
+5. **Build Post-Quantum crypto** using lattices
+   - variants of **Learning With Errors**
 6. Compute on encrypted data using Learning With Errors:
-   - Fully Homomorphic Encryption
-   - Functional Encryption
+   - **Fully Homomorphic Encryption**
+   - **Functional Encryption**
 
 ## Practical sessions
 
-The practical sessions consist in 3 labs and home assignments. There will be special prizes!
+We use [Sage](http://www.sagemath.org/) for the practical sessions. There is a total of 3 labs and several home assignments. There will be special prizes!
 
 ## Administrative details
 
