@@ -1,2 +1,2 @@
-Sitemap: https://bit-ml.github.io/sitemap.xml
 User-agent: *
+Disallow: /teaching/typography
