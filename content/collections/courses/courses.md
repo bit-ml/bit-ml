@@ -53,21 +53,20 @@ well as for our own internal use. Our purpose is to bring students closer to the
 
 <h2 class="title--separator">2019</h2>
 
-<!-- <div class="mo">
-  <a href="/teaching/rl_acs_2019/" class="mo__link">
+<div class="mo">
+  <a href="/teaching/deep-reinforcement-learning-acs-2019/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_precis.jpg" alt="">
-    <div class="mo__content">
-        <h4 class="mo__title">RL@ACS - Reinforcement Learning Module</h4>
+      <header class="mo__header">
+        <h4 class="mo__title">Deep Reinforcement Learning @ ACS</h4>
         <small> October - December </small>
-        <p class="mo__body">Amet, ultrices neque, ut cras. In sagittis
-        scelerisque blandit fringilla auctor. Bibendum ornare nullam
-        scelerisque nisl amet purus. Vitae consequat, tincidunt lorem eu elit
-        commodo sed tellus. Proin libero hac metus lobortis amet aliquam ac
-        consectetur id. In tellus est posuere amet sed.
-        </p>
-    </div>
+    </header>
+    <p class="mo__body">At the invitation of the Faculty of Automatic Control
+    and Computer Science, Politehnica University of Bucharest we created and
+    delivered an introduction to Deep Reinforcement Learning as part of the
+    Advanced Methods in AI course within the AI Master's Degree program.
+    </p>
   </a>
-</div> -->
+</div>
 
 <div class="mo">
   <a href="/teaching/deep-bit-2019" class="mo__link">
