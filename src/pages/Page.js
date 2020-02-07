@@ -13,8 +13,9 @@ import { withRouteData } from 'react-static'
 //
 
 const PageWithCoverImg = styled.div`
-  background-color: ${props => props.theme.colors.background}
-    ${breakpoint('desktop')`
+  background-color: ${props => props.theme.colors.background};
+
+  ${breakpoint('desktop')`
     display: flex;
     justify-content: space-between;
 
@@ -29,7 +30,6 @@ const PageWithCoverImg = styled.div`
 
 const Post = styled.div`
   margin: 0 auto;
-  padding: 0 1rem;
 
   ${breakpoint('tablet')`
     max-width: 62%;
@@ -42,42 +42,29 @@ const Post = styled.div`
   `}
 `
 
-const Heading = styled.h1`
-  ${typography}
-  ${color}
-  ${space}
-  // text-transform: uppercase;
-`
-Heading.defaultProps = {
-  mt: 1,
-  mb: 2,
-  p: 0,
-  fontFamily: 'title',
-  fontSize: 8,
-  titleWeight: 'titleSemi',
-  lineHeight: 'title',
-  color: 'highContrast',
-}
+// const Heading = styled.h1`
+//   ${typography}
+//   ${color}
+//   ${space}
+//   // text-transform: uppercase;
+// `
+// Heading.defaultProps = {
+//   mt: 1,
+//   mb: 2,
+//   p: 0,
+//   fontFamily: 'title',
+//   fontSize: 8,
+//   titleWeight: 'titleSemi',
+//   lineHeight: 'title',
+//   color: 'highContrast',
+// }
 
 const PostContent = styled.section`
   margin: 0 auto;
+  padding: 0 1rem;
   max-width: 720px;
 
   > h1 {
-    font-family: ${props => props.theme.fonts.title};
-    font-size: ${props => props.theme.fontSizes[8]};
-    font-weight: ${props => props.theme.fontWeights.titleSemi};
-    margin-top: ${props => props.theme.space[1]};
-    margin-bottom: ${props => props.theme.space[1]};
-    padding: ${props => props.theme.space[0]};
-    line-height: ${props => props.theme.lineHeights.title};
-    > span {
-      display: block;
-      font-size: ${props => props.theme.fontSizes[5]};
-    }
-  }
-
-  > h2 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[7]};
     font-weight: ${props => props.theme.fontWeights.titleSemi};
@@ -85,9 +72,21 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.title};
+    > span {
+      display: block;
+      font-size: ${props => props.theme.fontSizes[4]};
+      line-height: ${props => props.theme.lineHeights.copy};
+    }
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[8]};
+      line-height: ${props => props.theme.lineHeights.title};
+      > span {
+        font-size: ${props => props.theme.fontSizes[5]};
+      }
+    `}
   }
 
-  > h3 {
+  > h2 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[6]};
     font-weight: ${props => props.theme.fontWeights.titleSemi};
@@ -95,9 +94,13 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[7]};
+      line-height: ${props => props.theme.lineHeights.title};
+    `}
   }
 
-  > h4 {
+  > h3 {
     font-family: ${props => props.theme.fonts.title};
     font-size: ${props => props.theme.fontSizes[5]};
     font-weight: ${props => props.theme.fontWeights.titleSemi};
@@ -105,6 +108,22 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[6]};
+    `}
+  }
+
+  > h4 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[4]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.copy};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[5]};
+    `}
   }
 
   > h5 {
@@ -204,8 +223,10 @@ const PostContent = styled.section`
     font-weight: 500;
     font-size: ${props => props.theme.fontSizes[3]};
     margin: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.small};
     ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[4]};
+      line-height: ${props => props.theme.lineHeights.copy};
     `}
   }
   .mo__body {

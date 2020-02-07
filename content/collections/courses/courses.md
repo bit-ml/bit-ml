@@ -6,6 +6,8 @@ featured_img: "/galleries/courses/campus.jpg"
 date: September-20-2019
 ---
 
+# Courses
+
 Here at **Bitdefender** we are actively involved in designing and teaching Deep
 Learning and Cryptography courses in partnership with the top universities in Bucharest as
 well as for our own internal use. Our purpose is to bring students closer to the research field, with both practical and theoretical approaches, with a lot of enthusiasm and up to date content.

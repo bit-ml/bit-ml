@@ -8,7 +8,7 @@ featured_img: "/galleries/eeml2019_pictures/full_house.jpg"
 date: September-20-2019
 ---
 
-## H2 Titles are hard to find
+# H1 Titles are hard to find
 
 It is a long established fact that a reader will be distracted by the
 readable content of a page when looking at its layout. **The point** of using
@@ -16,7 +16,7 @@ Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
 opposed to using 'Content here, content here', making it look like readable
 English.
 
-### H3 Even if you search deeply
+## H2 Even if you search deeply
 
 Many desktop publishing packages and web page editors now use Lorem Ipsum as
 their default model text, and a search for 'lorem ipsum' will uncover many
@@ -25,20 +25,19 @@ years, sometimes by accident, sometimes on purpose (injected humour and the
 like).
 
 <div class="mo">
-  <a href="#" class="mo__link">
-    <img class="mo__img" src="/galleries/courses/bitdefender_thumb.png" alt="">
-    <div class="mo__content">
-        <h4 class="mo__title">Machine Learning concepts for Project Managers</h4>
-        <p class="mo__body">Latin words, combined with a handful of model
-        sentence structures, to generate Lorem Ipsum which looks reasonable.
-        The generated Lorem Ipsum is therefore always free from repetition,
-        injected humour, or non-characteristic words etc.
-        </p>
-    </div>
+  <a href="/teaching/deep-fmi-2020/" class="mo__link">
+    <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
+    <header class="mo__header">
+      <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
+      upcoming</h4>
+      <small> February  - April </small>
+    </header>
+    <p class="mo__body"> The course is about basic Deep Learning methods, current models and capabilities. It covers basic theoretical concepts about training neural networks, followed by applications in computer vision and natural language understanding, with an accent on the applied part, through labs, assignments and the final project. <b>Enrollments are open!</b>
+    </p>
   </a>
 </div>
 
-#### H4 Some never show up
+### H3 Some never show up
 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has
 roots in a piece of classical Latin literature from 45 BC, making it over
@@ -62,7 +61,7 @@ Also un-ordered:
 - Second element
 - Some other stuff
 
-##### H5 Testimonials
+#### H4 Testimonials
 
 This is how citing someone on this site should look like.
 
@@ -79,3 +78,9 @@ and that wrapped-up nicely the great experience I had attending EEML.
 Florin Gogianu, Bitdefender
 </footer>
 </blockquote>
+
+##### H5 Titles are unheard of....
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+roots in a piece of classical Latin literature from 45 BC, making it over
+2000 years old.
