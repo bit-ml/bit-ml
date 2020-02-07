@@ -1,12 +1,12 @@
 ---
-title: OpenCrypto Crypto Analysis introduction for ROSEdu students
+title: Lattices in Crypto - Intro to lattice-based crypto 
 slug: crypto-rosedu-2020
 categories: event
 featured_img: "/galleries/courses/overview_crypto.jpg"
 date: February-7-2020
 ---
 
-# OpenCrypto <span>Crypto Analysis introduction for ROSEdu students</span>
+# Lattices in Crypto <span>Intro to lattice-based crypto </span>
 
 This course gives a brief introduction to lattices. We show how to use
 lattice-based techniques to break a variety of public key systems, but also
@@ -33,8 +33,7 @@ Now!](https://docs.google.com/forms/d/e/1FAIpQLSdabrOL93X3mO0eSzghhA2vPo8L60YoDm
 
 ## Practical sessions
 
-The practical sessions consists in 3 labs and home assignments. There will be
-special prizes based on the approaches for solving the assignments.
+The practical sessions consist in 3 labs and home assignments. There will be special prizes!
 
 ## Administrative details
 

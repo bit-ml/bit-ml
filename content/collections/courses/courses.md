@@ -18,8 +18,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
   <a href="/teaching/crypto-rosedu-2020/" class="mo__link">
     <img class="mo__img" src="/galleries/courses/thumb_rosedu.png" alt="">
     <header class="mo__header">
-      <h4 class="mo__title">OpenCrypto - Crypto Analysis introduction for
-      ROSEdu students | upcoming</h4>
+      <h4 class="mo__title">Lattices in Crypto - Intro to lattice-based crypto | upcoming </h4>
       <small> March - April </small>
     </header>
     <p class="mo__body"> This course gives a brief introduction to lattices. We show how to use lattice-based techniques to break a variety of public key systems, but also how we may use them to design quantum-resistant solutions. This course is organized with ROSEdu's help. <b>Enrollments are open!</b>
@@ -29,7 +28,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 
 <div class="mo">
   <a href="/teaching/deep-fmi-2020/" class="mo__link">
-    <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
+    <img class="mo__img" src="/galleries/courses/thumb_unibuc.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
       upcoming</h4>
@@ -83,7 +82,7 @@ well as for our own internal use. Our purpose is to bring students closer to the
 
 <div class="mo">
   <a href="/teaching/deep-fmi-2019/" class="mo__link">
-    <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
+    <img class="mo__img" src="/galleries/courses/thumb_unibuc.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks</h4>
       <small> February - April </small>

@@ -16,7 +16,7 @@ University of Bucharest. It covers basic theoretical concepts about training
 neural networks, followed by applications in computer vision and natural
 language understanding, with an accent on the applied part, through labs,
 assignments and the final project. **The second edition of the course is about to start (on February 19th).
-[Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)**
+[Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)** Registration is necessary only if you do not choose this optional already. Places are limited, first come first served rule will be applied.
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
 eagerness to start understanding Deep Learning.
@@ -41,10 +41,9 @@ Duta, Florin Brad, Elena Burceanu, Andrei Manolache
    - Lab5: Verify Assignments
 10. PROJECT poster presentation
 
-Based on the last year course experience, the second edition will focus less
+Based on the last year course experience, this second edition will focus less
 on evaluating the theoretical aspects and will have less payload for the end
-of the semester. We will also add slide notes on every lecture and we will
-provide a support book. From the lecture content point of view, we will
+of the semester. From the lecture content point of view, we will
 replace the Reinforcement Learning lectures with lectures on Unsupervised
 Learning.
 
@@ -66,8 +65,7 @@ Poster Session with the Final PROJECT.
 - **When**: February 19th - April 22nd 2020, on Wednesday evening
 - **Where**: Faculty of Mathematics and Computer Science, University of Bucharest
 - **Google Group**: [deeplearning_fmi_2020](https://groups.google.com/d/forum/deeplearning_fmi_2020)
-- [**Enroll now**](https://forms.gle/pFSUmhcpJktkuWuMA): The exact room and
-time will be provided via email.
+- [**Enroll now**](https://forms.gle/pFSUmhcpJktkuWuMA): Registration is necessary only if you do not choose this optional already. Places are limited, first come first served rule will be applied. The exact room and time will be provided via email.
 <!-- - [**Course Materials**](https://drive.google.com/drive/folders/1uhIeJkTpeK7Q44nG3LJmjUsbWL3zXpsm) -->
 
 ## Previous Edition
