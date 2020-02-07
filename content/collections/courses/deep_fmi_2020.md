@@ -16,7 +16,7 @@ University of Bucharest. It covers basic theoretical concepts about training
 neural networks, followed by applications in computer vision and natural
 language understanding, with an accent on the applied part, through labs,
 assignments and the final project. **The second edition of the course is about to start (on February 19th).
-[Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)** Registration is necessary only if you do not choose this optional already. Places are limited, first come first served rule will be applied.
+[Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)**
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
 eagerness to start understanding Deep Learning.
