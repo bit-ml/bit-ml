@@ -20,8 +20,7 @@ assignments and the final project. **The second edition of the course is about t
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
 eagerness to start understanding Deep Learning.
-- **Course Team**: Emanuela Haller, Florin Gogianu, Andrei Nicolicioiu, Iulia
-Duta, Florin Brad, Elena Burceanu, Andrei Manolache, Covaci Adrian
+- **Course Team**: Emanuela Haller, Florin Gogianu, Andrei Nicolicioiu, Iulia Duta, Florin Brad, Elena Burceanu, Andrei Manolache, Covaci Adrian
 
 ## Syllabus
 
