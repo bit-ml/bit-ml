@@ -25,7 +25,7 @@ of algorithms.
 Bellman equation and TD learning |
 [slides](https://floringogianu.github.io/courses/01_introduction/).
    - **Practical:** Policy evaluation, Q-Learning, SARSA, Expected SARSA in
-   a tabular setting. Used and modified with the permision of Diana Borsa.
+   a tabular setting. Used and modified with the permission of Diana Borsa.
    | [notebook](https://github.com/floringogianu/rl-module-labs/blob/master/01_introduction.ipynb).
 2. **Approximate methods.** MDP definition, introduction to approximate
 solution methods, geometrical intuition, non-linear function approximation, deadly triad,

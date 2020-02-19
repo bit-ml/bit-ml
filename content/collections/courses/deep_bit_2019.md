@@ -19,26 +19,25 @@ eagerness to start understanding Deep Learning.
 
 1. Introduction to Deep Learning
 2. Neural Nets
-   - Lab1: Intro + Assignment
+   - **Lab1: PyTorch Intro**
+   - **Assignment1: Sudoku Solver**
 3. Optimization
-4. Convolutional NNs (PROJECT proposals)
-   - Lab2: CNN on images + Assignment
-5. Computer Vision applications (choose PROJECT)
+4. Convolutional NNs
+   - **Lab2: CNNs on images**
+   - **Assignment2: Count digits in an image**
+5. Computer Vision applications
 6. Recurrent NN
-   - Lab3: RNN on Language + Assignment
+   - **Lab3: RNNs on Language**
+   - **Assignment3: Predict the programming language of a code snippet**
 7. Natural Language Processing applications
 8. PROJECTs status
-9. PROJECTs poster presentation
+9. **Poster Session** with the PROJECTs
 10. [Bonus] Two lectures on Generative Models
 
 ## Practical sessions
 
-We use [**PyTorch**](https://pytorch.org/) for all coding materials and
-[**Colab Notebooks**](colab.research.google.com) for the environment. There are a total of 3 Labs and 3 Home Assignments:
-
-1. PyTorch Intro (Home: Sudoku Solver)
-2. Convolutional NN (Home: Count digits in an image)
-3. Recurrent NN (Home: Predict the programming language of a code snippet)
+We use [**PyTorch**](https://pytorch.org/) for all coding materials and we work in the
+[**Colab Notebooks**](https://colab.research.google.com) environment. There is a total of three Labs, thress Home Assignments and one final PROJECT - see **Poster Session** below.
 
 ## Administrative details
 
@@ -47,6 +46,6 @@ We use [**PyTorch**](https://pytorch.org/) for all coding materials and
 - [**Course Materials**](https://drive.google.com/drive/folders/1eIkdSOcMio16wLWULl4L8s8QBruLin-h)
 
 
-## Final Project
+## Poster Session
 
 Final Security related PROJECT gave our colleagues the practical experience for applying deep learning in their next security project. See bellow the posters and some photos from the poster session.
