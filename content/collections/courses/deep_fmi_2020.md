@@ -11,9 +11,10 @@ date: February-7-2020
 
 ---
 
-- **February 19th**: The course take place in Stoilow lecture hall, every
-Wednesday at 16:00 hours. The practicals will be every other week, starting
-the first week, in room 308, from 18:00 hours (right after the lecture).
+- **February 19th**: The course takes place in Stoilow lecture hall, every
+Wednesday at 16:00 hours. The practicals (only for FMI students) will be
+every other week, starting the first week, in room 308, from 18:00 hours
+(right after the lecture).
 
 - **February 7th**: The second edition of the course is
 about to start (on February 19th). [Enroll
