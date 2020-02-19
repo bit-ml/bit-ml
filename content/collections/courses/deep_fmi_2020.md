@@ -9,14 +9,27 @@ date: February-7-2020
 
 # DeepFMI 2020 <span>Learning Deep Neural Networks</span>
 
+---
+
+- **February 19th**: The course take place in Stoilow lecture hall, every
+Wednesday at 16:00 hours. The practicals will be every other week, starting
+the first week, in room 308, from 18:00 hours (right after the lecture).
+
+- **February 7th**: The second edition of the course is
+about to start (on February 19th). [Enroll
+now!](https://forms.gle/pFSUmhcpJktkuWuMA)
+
+---
+
+## About
+
 The course is about basic Deep Learning methods, current models and
 capabilities. It is an optional course primarily (but not exclusively) for
 third-year undergraduates of the Faculty of Mathematics and Computer Science,
 University of Bucharest. It covers basic theoretical concepts about training
 neural networks, followed by applications in computer vision and natural
 language understanding, with an accent on the applied part, through labs,
-assignments and the final project. **The second edition of the course is about to start (on February 19th).
-[Enroll now!](https://forms.gle/pFSUmhcpJktkuWuMA)**
+assignments and the final project.
 
 - **Prerequisites**: Basic Python knowledge or several years as a programmer and
 eagerness to start understanding Deep Learning.
