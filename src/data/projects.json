@@ -171,7 +171,7 @@
     "projects": [
       {
         "title":"Hardness of lattice problems",
-        "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems, giving reductions between them and using them to build new cryptographic primitives.",
+        "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems and giving reductions between them.",
         "papers": [
           {
             "authors" : "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
@@ -204,14 +204,28 @@
         ]
       },
       {
-        "title":"Cryptographic primitives from LWE",
-        "description": "My research project is concerned with building advanced cryptographic primitives, which mainly rely their security on the Learning With Errors problem (LWE). Together with my PhD advisor, Benoit Libert, we are currently working on improving known constructions of some Functional Encryption schemes.\nSome Applications of this primitive: run learning algorithms on encrypted data; perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
+        "title":"Cryptographic primitives from (algebraic variants of) LWE",
+        "description": "We build advanced cryptographic primitives whose security relies on the hardness of LWE and its algebraic variants. We are mainly interested in Homomorphic Encryption and Functional Encryption which allow you to run learning algorithms on encrypted data and perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
         "papers": [
+          {
+            "authors" : "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
+            "title" : "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
+            "year" : "2020",
+            "link" : "",
+            "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+          },
+          {
+            "authors" : "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
+            "title" : "Adaptive Simulation Security for Inner Product Functional Encryption ",
+            "year" : "2020",
+            "link" : "",
+            "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+          },
           {
             "authors" : "B.Libert, R. Țițiu",
             "title" : "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
             "year" : "2019",
-            "link" : "",
+            "link" : "https://hal.inria.fr/hal-02352139/document",
             "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
           },
           {
