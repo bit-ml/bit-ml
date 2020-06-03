@@ -17,17 +17,17 @@
           },
           {
             "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "A Spectral Approach to Unsupervised Object Segmentation in Video",
-            "year" : "2019",
+            "title" : "A 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
+            "year" : "2020",
             "link" : "https://arxiv.org/abs/1907.02731",
-            "published" : " under review"
+            "published" : "International Joint Conference on Artificial Intelligence (IJCAI) 2020"
           },
           {
             "authors" : "E. Haller, M. Leordeanu",
             "title" : "Spacetime Graph Optimization for Video Object Segmentation",
-            "year" : "2019",
+            "year" : "2020",
             "link" : "./papers/govos_arxiv.pdf",
-            "published" : " under review"
+            "published" : "under review"
           }
         ]
       },
