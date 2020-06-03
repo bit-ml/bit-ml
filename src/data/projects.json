@@ -211,14 +211,14 @@
             "authors" : "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
             "title" : "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
             "year" : "2020",
-            "link" : "",
+            "link" : "https://eprint.iacr.org/2020/198.pdf",
             "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
           },
           {
             "authors" : "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
-            "title" : "Adaptive Simulation Security for Inner Product Functional Encryption ",
+            "title" : "Adaptive Simulation Security for Inner Product Functional Encryption",
             "year" : "2020",
-            "link" : "",
+            "link" : "https://eprint.iacr.org/2020/209.pdf",
             "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
           },
           {
@@ -239,7 +239,7 @@
             "authors" : "R. Țițiu, B.Libert, D. Stehlé",
             "title" : "Adaptively Secure Distributed PRFs from LWE",
             "year" : "2018",
-            "link" : "",
+            "link" : "https://eprint.iacr.org/2018/927.pdf",
             "published" : " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
           }
         ]
