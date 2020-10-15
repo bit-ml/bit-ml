@@ -33,15 +33,23 @@
       },
       {
         "title":"Graph methods for video processing",
-        "description": "Given a video we want to have an understanding of the scene and to be able to identify the key events in order to extract useful information. In a video there can exist multiple entities interacting in complex ways. Usually these interactions are happening in a local neighbourhood, but the distant ones have also an essential role. The classical models of video understanding often process information in a local way.\n We propose to improve this, by using graph methods that have a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions.",
+        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. \n We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. \n We also design a novel method, unsupervised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
         "papers": [
           {
             "authors" : "A. Nicolicioiu, I. Duță, M. Leordeanu",
             "title" : "Recurrent Space-time Graph Neural Networks",
             "year" : "2019",
-            "link" : "https://arxiv.org/abs/1904.05582",
+            "link" : "https://papers.nips.cc/paper/9444-recurrent-space-time-graph-neural-networks",
             "published" : " in the Conference on Neural Information Processing Systems (NeurIPS)"
+          },
+          {
+            "authors" : "I. Duță, A. Nicolicioiu",
+            "title" : "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
+            "year" : "2020",
+            "link" : "https://arxiv.org/abs/2009.08427",
+            "published" : " under review"
           }
+
         ]
       },
       {
