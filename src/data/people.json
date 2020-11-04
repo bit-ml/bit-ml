@@ -23,7 +23,7 @@
   },
   {
     "name":"Iulia Duță",
-    "bio":"I have a BSc in Computer Science and a MSc in Artificial Intelligence at the University of Bucharest. My research focuses on Computer Vision. I am particularly interested in developing techniques for a better understanding and representation of video scene. My current goal is to improve the quality of video descriptions using machine learning approaches.",
+    "bio":" I have a BSc in Computer Science and a MSc in Artificial Intelligence at the University of Bucharest. My research focuses on Graph Neural Networks and their application in Computer Vision. I am particularly interested in developing techniques to create a more structured representation of the video scene. My current goals are to discover object-centric representations in video useful for relational modeling and to analyse the optimisation process of different graph neural networks.",
     "img": "iulia_duta.jpg",
     "contact":
       {
@@ -34,7 +34,7 @@
   },
   {
     "name":"Andrei Nicolicioiu",
-    "bio":"My focus is on deep learning methods for Computer Vision problems. I studied at University Politehnica of Bucharest, where I obtained a Bachelor's degree and a Master's degree in Artificial Inteligence. I began with studying some lower-mid level computer vision problems like occlusions regions segmentation and then I leaned over some higher level tasks, like multi-label classification in video, captioning in video, finding common representations between video and language.",
+    "bio":" I am interested in deep learning methods with a focus on relational representations and graph neural networds. I studied at University Politehnica of Bucharest, where I obtained a Bachelor's degree and a Master's degree in Artificial Inteligence. I researched topics in multilabel classification, video captioning, occluded regions segmentation, few-shot learning, relational processing of visual data.",
     "img": "andrei_nicolicioiu.jpg",
     "contact":
       {
