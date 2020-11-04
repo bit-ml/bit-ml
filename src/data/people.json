@@ -11,12 +11,12 @@
       }
   },
   {
-    "name":"Florin Brad",
-    "bio":"I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
-    "img": "florin_brad.jpg",
+    "name":"Emanuela Haller",
+    "bio":"I am a second year PhD student, co-supervised by Marius Leordeanu (Institute of Mathematics of the Romanian Academy) and Adina Magda Florea (University Politehnica of Bucharest). I have a BSc in Computer Science and a MSc in Artificial Intelligence, both from University Politehnica of Bucharest. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
+    "img" : "emanuela_haller.jpg",
     "contact":
       {
-        "mail":"fbrad@bitdefender.com",
+        "mail":"ehaller@bitdefender.com",
         "twitter":"",
         "github":""
       }
@@ -33,17 +33,6 @@
       }
   },
   {
-    "name":"Florin Gogianu",
-    "bio":"Currently pursuing an MSc in Artificial Intelligence from University Politehnica of Bucharest after getting a BSc in Philosophy and graduating from an MSc in History & Philosophy of Science. I have a broad interest in Reinforcement Learning topics and I am currently focusing on questions regarding sample efficiency in the context of model-free value-based methods with neural network estimators.",
-    "img" : "florin_gogianu.jpg",
-    "contact":
-      {
-        "mail":"fgogianu@bitdefender.com",
-        "twitter":"FlorinGogianu",
-        "github":"floringogianu"
-      }
-  },
-  {
     "name":"Andrei Nicolicioiu",
     "bio":"My focus is on deep learning methods for Computer Vision problems. I studied at University Politehnica of Bucharest, where I obtained a Bachelor's degree and a Master's degree in Artificial Inteligence. I began with studying some lower-mid level computer vision problems like occlusions regions segmentation and then I leaned over some higher level tasks, like multi-label classification in video, captioning in video, finding common representations between video and language.",
     "img": "andrei_nicolicioiu.jpg",
@@ -55,14 +44,36 @@
       }
   },
   {
-    "name":"Emanuela Haller",
-    "bio":"I am a second year PhD student, co-supervised by Marius Leordeanu (Institute of Mathematics of the Romanian Academy) and Adina Magda Florea (University Politehnica of Bucharest). I have a BSc in Computer Science and a MSc in Artificial Intelligence, both from University Politehnica of Bucharest. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
-    "img" : "emanuela_haller.jpg",
+    "name":"Florin Brad",
+    "bio":"I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
+    "img": "florin_brad.jpg",
     "contact":
       {
-        "mail":"ehaller@bitdefender.com",
+        "mail":"fbrad@bitdefender.com",
         "twitter":"",
         "github":""
+      }
+  },
+  {
+    "name":"Andrei Manolache",
+    "bio":"I got my bachelor's degree in Mathematics and Computer Sciences from the University of Bucharest and I've currently enrolled in its Artificial Intelligence Master's degree program. I'm interested in unsupervised and self-supervised representation learning, especially using deep neural language models. At the moment I'm tackling the problem of out-of-distribution sample detection in natural language and more general unstructured data.",
+    "img": "andrei_manolache.jpg",
+    "contact":
+      {
+        "mail":"amanolache@bitdefender.com",
+        "twitter":"andreimano2",
+        "github":"andreimano"
+      }
+  },
+  {
+    "name":"Florin Gogianu",
+    "bio":"Currently pursuing an MSc in Artificial Intelligence from University Politehnica of Bucharest after getting a BSc in Philosophy and graduating from an MSc in History & Philosophy of Science. I have a broad interest in Reinforcement Learning topics and I am currently focusing on questions regarding sample efficiency in the context of model-free value-based methods with neural network estimators.",
+    "img" : "florin_gogianu.jpg",
+    "contact":
+      {
+        "mail":"fgogianu@bitdefender.com",
+        "twitter":"FlorinGogianu",
+        "github":"floringogianu"
       }
   },
   {
