@@ -1,5 +1,4 @@
 ---
-title: Courses
 slug: lectures-and-courses
 categories: event
 featured_img: "/galleries/courses/campus.jpg"

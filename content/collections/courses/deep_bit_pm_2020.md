@@ -1,5 +1,4 @@
 ---
-title: DeepBit4PM - ML for Bitdefender Product Managers
 slug: deep-bit-pm-2020
 categories: event
 featured_img: "/galleries/courses/overview_pm.png"

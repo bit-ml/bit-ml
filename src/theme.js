@@ -27,6 +27,7 @@ export const theme = {
     tiny: '1.00rem',
     small: '1.48rem',
     copy: '1.78947rem',
+    mobileTitle: '2.074rem',
     title: '3.57895rem',
   },
   breakpoints: {

@@ -1,63 +1,46 @@
-import { color, space, typography } from "styled-system";
+import { color, space, typography } from 'styled-system'
 
-import Head from "components/Head";
-import LightboxGallery from "components/LightboxGallery";
-import Nav from "components/Navigation";
-import React from "react";
-import breakpoint from "styled-components-breakpoint";
-import convert from "htmr";
-import striptags from "striptags";
-import styled from "styled-components";
-import { withRouteData } from "react-static";
+import Head from 'components/Head'
+import LightboxGallery from 'components/LightboxGallery'
+import Nav from 'components/Navigation'
+import React from 'react'
+import breakpoint from 'styled-components-breakpoint'
+import convert from 'htmr'
+import striptags from 'striptags'
+import styled from 'styled-components'
+import { withRouteData } from 'react-static'
 
 //
 
 const PageWithCoverImg = styled.div`
   background-color: ${props => props.theme.colors.background};
 
-  ${breakpoint("desktop")`
+  ${breakpoint('desktop')`
     display: flex;
     justify-content: space-between;
 
     nav {
       padding: 0;
     }
-  `} ${breakpoint("tablet")`
+  `} ${breakpoint('tablet')`
     display: flex;
     justify-content: space-between;
   `};
-`;
+`
 
 const Post = styled.div`
   margin: 0 auto;
 
-  ${breakpoint("tablet")`
+  ${breakpoint('tablet')`
     max-width: 62%;
     padding: 0 2rem;
   `}
 
-  ${breakpoint("desktop")`
+  ${breakpoint('desktop')`
     max-width: 62%;
     padding: 0 5rem;
   `}
-`;
-
-// const Heading = styled.h1`
-//   ${typography}
-//   ${color}
-//   ${space}
-//   // text-transform: uppercase;
-// `
-// Heading.defaultProps = {
-//   mt: 1,
-//   mb: 2,
-//   p: 0,
-//   fontFamily: 'title',
-//   fontSize: 8,
-//   titleWeight: 'titleSemi',
-//   lineHeight: 'title',
-//   color: 'highContrast',
-// }
+`
 
 const PostContent = styled.section`
   margin: 0 auto;
@@ -71,13 +54,13 @@ const PostContent = styled.section`
     margin-top: ${props => props.theme.space[1]};
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
-    line-height: ${props => props.theme.lineHeights.title};
+    line-height: ${props => props.theme.lineHeights.mobileTitle};
     > span {
       display: block;
       font-size: ${props => props.theme.fontSizes[4]};
-      line-height: ${props => props.theme.lineHeights.copy};
+      line-height: ${props => props.theme.lineHeights.mobileTitle};
     }
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[8]};
       line-height: ${props => props.theme.lineHeights.title};
       > span {
@@ -93,8 +76,8 @@ const PostContent = styled.section`
     margin-top: ${props => props.theme.space[1]};
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
-    line-height: ${props => props.theme.lineHeights.copy};
-    ${breakpoint("desktop")`
+    line-height: ${props => props.theme.lineHeights.mobileTitle};
+    ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[7]};
       line-height: ${props => props.theme.lineHeights.title};
     `}
@@ -108,7 +91,7 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[6]};
     `}
   }
@@ -121,7 +104,7 @@ const PostContent = styled.section`
     margin-bottom: ${props => props.theme.space[1]};
     padding: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.copy};
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[5]};
     `}
   }
@@ -205,7 +188,7 @@ const PostContent = styled.section`
     }
     flex-wrap: wrap;
     text-decoration: none;
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       justify-content: flex-end;
     `}
   }
@@ -215,7 +198,7 @@ const PostContent = styled.section`
     border-radius: 50%;
     width: 64px;
     height: 64px;
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       width: 100px;
       height: 100px;
     `}
@@ -229,7 +212,7 @@ const PostContent = styled.section`
     font-size: ${props => props.theme.fontSizes[3]};
     margin: ${props => props.theme.space[0]};
     line-height: ${props => props.theme.lineHeights.small};
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       font-size: ${props => props.theme.fontSizes[4]};
       line-height: ${props => props.theme.lineHeights.copy};
     `}
@@ -239,7 +222,7 @@ const PostContent = styled.section`
     font-weight: ${props => props.theme.fontWeights.bodyNormal};
     line-height: ${props => props.theme.lineHeights.small};
     flex-grow: 0;
-    ${breakpoint("desktop")`
+    ${breakpoint('desktop')`
       width: calc(100% - (100px + 1rem));
     `}
   }
@@ -272,17 +255,17 @@ const PostContent = styled.section`
       font-weight: 400;
     }
   }
-`;
+`
 
-const PostWithGalleryWrapper = styled.div``;
+const PostWithGalleryWrapper = styled.div``
 
-const Author = styled.p``;
+const Author = styled.p``
 
 const PostFooter = styled.div`
   display: inline-block;
   background: #edebeb;
   width: 100%;
-`;
+`
 
 const PostFooterWraper = styled.div`
   display: flex;
@@ -295,13 +278,13 @@ const PostFooterWraper = styled.div`
     color: #828282;
   }
 
-  ${breakpoint("desktop")`
+  ${breakpoint('desktop')`
     padding-left: 0 0 0 100px;
   `}
-`;
+`
 
 const CoverImg = styled.div`
-  ${breakpoint("tablet")`
+  ${breakpoint('tablet')`
     background: #fff url(${props => props.featured_img}) no-repeat bottom;
     background-size: cover;
     position: sticky;
@@ -311,7 +294,7 @@ const CoverImg = styled.div`
     width: 38%;
   `}
 
-  ${breakpoint("desktop")`
+  ${breakpoint('desktop')`
     background: #fff url(${props => props.featured_img}) no-repeat bottom;
     background-size: cover;
     position: sticky;
@@ -320,15 +303,15 @@ const CoverImg = styled.div`
     height: 100vh;
     width: 38%;
   `}
-`;
+`
 
-function SimplePost({ post }) {
+function SimplePost ({ post }) {
   return (
     <PostContent>
       {/* <Heading>{post.title}</Heading> */}
       {convert(post.contents)}
     </PostContent>
-  );
+  )
 }
 
 const Footer = ({ post }) => (
@@ -338,13 +321,13 @@ const Footer = ({ post }) => (
       {/* post.categories && <p>tags: {post.categories}</p> */}
     </PostFooterWraper>
   </PostFooter>
-);
+)
 
-function PostWithGallery({ post, galleries }) {
-  let gallery_names = post.galleries.replace(/ /g, "").split(",");
-  const names_columns = gallery_names.map(x => x.split(":"));
-  gallery_names = names_columns.map(x => x[0]);
-  const columns = names_columns.map(x => Number.parseInt(x[1], 10));
+function PostWithGallery ({ post, galleries }) {
+  let gallery_names = post.data.galleries.replace(/ /g, '').split(',')
+  const names_columns = gallery_names.map(x => x.split(':'))
+  gallery_names = names_columns.map(x => x[0])
+  const columns = names_columns.map(x => Number.parseInt(x[1], 10))
 
   return (
     <PostWithGalleryWrapper>
@@ -358,42 +341,42 @@ function PostWithGallery({ post, galleries }) {
         />
       ))}
     </PostWithGalleryWrapper>
-  );
+  )
 }
 
-function checkGallery(post) {
-  let hasGallery = Object.hasOwnProperty.call(post, "galleries");
+function checkGallery (post) {
+  let hasGallery = Object.hasOwnProperty.call(post, 'galleries')
   if (hasGallery === true) {
-    if (post.galleries == null) {
+    if (post.data.galleries == null) {
       console.log(
-        "Warning, you have a gallery field in in your markdown " +
-          "but it has no value.",
-        post.galleries
-      );
-      hasGallery = false;
+        'Warning, you have a gallery field in in your markdown ' +
+        'but it has no value.',
+        post.data.galleries
+      )
+      hasGallery = false
     }
   }
-  return hasGallery;
+  return hasGallery
 }
 
 export default withRouteData(({ post, galleries, test }) => {
-  const hasGallery = checkGallery(post);
-  const keywords = post.categories.replace(/ /g, "").split(",");
+  const hasGallery = checkGallery(post)
+  const keywords = post.data.categories.replace(/ /g, '').split(',')
   const synopsis = striptags(post.contents)
     .substring(0, 350)
-    .replace(/\n/g, "");
+    .replace(/\n/g, '')
 
   return (
     <div>
       <Head
-        title={`${post.title} | Bitdefender Research`}
+        title={`${post.data.title} | Bitdefender Research`}
         description={`${synopsis}...`}
         tags={keywords}
-        image={post.featured_img}
+        image={post.data.featured_img}
       />
 
       <PageWithCoverImg>
-        <CoverImg featured_img={post.featured_img} />
+        <CoverImg featured_img={post.data.featured_img} />
 
         <Post>
           <Nav pageName="post" />
@@ -402,11 +385,11 @@ export default withRouteData(({ post, galleries, test }) => {
             <PostWithGallery post={post} galleries={galleries} test={test} />
           ) : (
             <SimplePost post={post} />
-          )}
+            )}
 
           <Footer post={post} />
         </Post>
       </PageWithCoverImg>
     </div>
-  );
-});
+  )
+})

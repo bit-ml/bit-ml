@@ -41,44 +41,114 @@ const Post = styled.div`
   `}
 `
 
-const Heading = styled.h1`
-  font-family: "Exo 2", sans-serif;
-  margin: 4rem 0;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 3rem;
-  font-size: 2.2rem;
-  letter-spacing: 0.03em;
-  //text-transform: uppercase;
-
-  /* Gray 1 */
-  color: #333333;
-`
-
 const PostContent = styled.section`
   margin: 0 auto;
   max-width: 720px;
+  
+  > h1 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[7]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.mobileTitle};
+    > span {
+      display: block;
+      font-size: ${props => props.theme.fontSizes[4]};
+      line-height: ${props => props.theme.lineHeights.mobileTitle};
+    }
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[8]};
+      line-height: ${props => props.theme.lineHeights.title};
+      > span {
+        font-size: ${props => props.theme.fontSizes[5]};
+      }
+    `}
+  }
 
-  > p {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+  > h2 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[6]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.mobileTitle};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[7]};
+      line-height: ${props => props.theme.lineHeights.title};
+    `}
+  }
+
+  > h3 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[5]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.copy};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[6]};
+    `}
+  }
+
+  > h4 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[4]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.copy};
+    ${breakpoint('desktop')`
+      font-size: ${props => props.theme.fontSizes[5]};
+    `}
+  }
+
+  > h5 {
+    font-family: ${props => props.theme.fonts.title};
+    font-size: ${props => props.theme.fontSizes[4]};
+    font-weight: ${props => props.theme.fontWeights.titleSemi};
+    margin-top: ${props => props.theme.space[1]};
+    margin-bottom: ${props => props.theme.space[0]};
+    padding: ${props => props.theme.space[0]};
+    line-height: ${props => props.theme.lineHeights.copy};
+  }
+
+  p {
+    font-family: ${props => props.theme.fonts.body};
+    font-size: ${props => props.theme.fontSizes[3]};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
+    margin-top: ${props => props.theme.space[0]};
+    margin-bottom: ${props => props.theme.space[1]};
+    padding: 0;
     font-style: normal;
-    font-weight: 300;
-    line-height: 1.8rem;
-    font-size: 1.2rem;
     letter-spacing: 0.03em;
+    color: ${props => props.theme.colors.highContrast};
 
-    /* Gray 1 */
-    color: #333333;
     > strong {
-      font-weight: 500;
+      font-weight: ${props => props.theme.fontWeights.bodyBold};
     }
   }
 
-  > p a {
+  a {
     text-decoration: underline;
-    color: #333;
+    color: ${props => props.theme.colors.highContrast};
     &:hover {
-      color: #e6212b;
+      color: ${props => props.theme.colors.brandRed};
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: ${props => props.theme.space[0]};
+    margin-bottom: ${props => props.theme.space[1]};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
+    line-height: ${props => props.theme.lineHeights.copy};
+    > li ul {
+      margin-bottom: ${props => props.theme.space[0]};
     }
   }
 
@@ -193,8 +263,8 @@ const CoverImg = styled.div`
   `}
 `
 
-function SimplePost ({ post }) {
-  const date = post.date.replace('-', ' ').replace('-', ', ')
+function SimplePost({ post }) {
+  const date = post.data.date.replace('-', ' ').replace('-', ', ')
   return (
     <PostContent>
       <PostHeader>
@@ -202,7 +272,7 @@ function SimplePost ({ post }) {
         <Date>published on {date}</Date>
       </PostHeader>
 
-      <Heading>{post.title}</Heading>
+      {/* <Heading>{post.data.title}</Heading> */}
 
       {convert(post.contents)}
     </PostContent>
@@ -212,14 +282,14 @@ function SimplePost ({ post }) {
 const Footer = ({ post }) => (
   <PostFooter>
     <PostFooterWraper>
-      {post.authors && <Author>written by {post.authors}</Author>}
+      {post.data.authors && <Author>written by {post.data.authors}</Author>}
       {/* post.categories && <p>tags: {post.categories}</p> */}
     </PostFooterWraper>
   </PostFooter>
 )
 
-function PostWithGallery ({ post, galleries }) {
-  let gallery_names = post.galleries.replace(/ /g, '').split(',')
+function PostWithGallery({ post, galleries }) {
+  let gallery_names = post.data.galleries.replace(/ /g, '').split(',')
   const names_columns = gallery_names.map(x => x.split(':'))
   gallery_names = names_columns.map(x => x[0])
   const columns = names_columns.map(x => Number.parseInt(x[1], 10))
@@ -241,7 +311,7 @@ function PostWithGallery ({ post, galleries }) {
 
 export default withRouteData(({ post, galleries, test }) => {
   const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
-  const keywords = post.categories.replace(/ /g, '').split(',')
+  const keywords = post.data.categories.replace(/ /g, '').split(',')
   const synopsis = striptags(post.contents)
     .substring(0, 350)
     .replace(/\n/g, '')
@@ -249,14 +319,14 @@ export default withRouteData(({ post, galleries, test }) => {
   return (
     <div>
       <Head
-        title={`${post.title} | Bitdefender Research`}
+        title={`${post.data.title} | Bitdefender Research`}
         description={`${synopsis}...`}
         tags={keywords}
-        image={post.featured_img}
+        image={post.data.featured_img}
       />
 
       <PageWithCoverImg>
-        <CoverImg featured_img={post.featured_img} />
+        <CoverImg featured_img={post.data.featured_img} />
 
         <Post>
           <Nav pageName="post" />
@@ -264,8 +334,8 @@ export default withRouteData(({ post, galleries, test }) => {
           {hasGallery ? (
             <PostWithGallery post={post} galleries={galleries} test={test} />
           ) : (
-            <SimplePost post={post} />
-          )}
+              <SimplePost post={post} />
+            )}
 
           <Footer post={post} />
         </Post>

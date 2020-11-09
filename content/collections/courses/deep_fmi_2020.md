@@ -1,5 +1,4 @@
 ---
-title: DeepFMI 2020 - Learning Deep Neural Networks
 slug: deep-fmi-2020
 categories: event
 galleries: deep_fmi_2019_posters:6

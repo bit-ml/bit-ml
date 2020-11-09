@@ -1,5 +1,4 @@
 ---
-title: Lattices in Crypto - Intro to Lattice-based cryptography
 slug: crypto-rosedu-2020
 categories: event
 featured_img: "/galleries/courses/overview_crypto.jpg"

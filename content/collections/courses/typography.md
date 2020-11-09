@@ -1,5 +1,4 @@
 ---
-title: Elements of typography
 slug: typography
 authors: Florin Gogianu
 categories: event

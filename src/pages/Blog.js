@@ -68,7 +68,7 @@ export default withRouteData(({ posts }) => (
         <BlogList>
           {posts.map((post, id) => (
             <li key={id}>
-              <Link to={`/blog/post/${post.slug}/`}>{post.title}</Link>
+              <Link to={`/blog/post/${post.data.slug}/`}>{post.data.title}</Link>
             </li>
           ))}
         </BlogList>

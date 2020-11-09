@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-
-import ImageSize from 'image-size'
-import PeopleJSON from './src/data/people'
-// Get the data
-import ProjectsJSON from './src/data/projects'
-import { ServerStyleSheet } from 'styled-components'
-// import axios from 'axios'
-import chokidar from 'chokidar'
 import fs from 'fs'
-import jdown from 'jdown'
+import React, { Component } from 'react'
 import { reloadRoutes } from 'react-static/node'
+import chokidar from 'chokidar'
+import ImageSize from 'image-size'
+import { ServerStyleSheet } from 'styled-components'
+
+import { getContent } from './src/data_utils'
+
+import PeopleJSON from './src/data/people'
+import ProjectsJSON from './src/data/projects'
+
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
-function getGalleries () {
+function getGalleries() {
   const galleries_path = 'public/galleries/'
   const galleries = {}
 
@@ -50,8 +50,11 @@ export default {
     const { data: specialties } = { data: ProjectsJSON }
     const { data: people } = { data: PeopleJSON }
     // const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    const { posts, courses } = await jdown('content')
+    // const { posts, courses } = await jdown('content')
     const { galleries } = { galleries: getGalleries() }
+
+    const { posts, courses } = getContent('./content/collections')
+    posts.forEach(post => console.log(post.data, Object.keys(post)))
 
     return [
       {
@@ -70,7 +73,7 @@ export default {
           posts,
         }),
         children: posts.map(post => ({
-          path: `/post/${post.slug}`,
+          path: `/post/${post.data.slug}`,
           component: 'src/pages/Post',
           getData: () => ({
             post,
@@ -85,7 +88,7 @@ export default {
         //   posts
         // }),
         children: courses.map(post => ({
-          path: `/${post.slug}`,
+          path: `/${post.data.slug}`,
           component: 'src/pages/Page',
           getData: () => ({
             post,
@@ -108,7 +111,7 @@ export default {
   },
 
   Document: class CustomHtml extends Component {
-    render () {
+    render() {
       const {
         Html, Head, Body, children, renderMeta, siteData,
       } = this.props

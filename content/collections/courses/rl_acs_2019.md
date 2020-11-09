@@ -1,5 +1,4 @@
 ---
-title: Deep Reinforcement Learning Module
 slug: deep-reinforcement-learning-acs-2019
 categories: event
 featured_img: "/galleries/courses/atari_mixtape.png"

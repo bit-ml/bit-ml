@@ -1,5 +1,4 @@
 ---
-title: Bitdefender at TMLSS2018
 slug: bitdefender_at_tmlss2018
 authors: Elena Burceanu
 categories: event
@@ -7,6 +6,8 @@ galleries: tmlss2018_posters:5, tmlss2018_pictures:5
 featured_img: "/galleries/tmlss2018_pictures/salina_1.jpg"
 date: August-2-2018
 ---
+
+# Bitdefender at TMLSS2018
 
 
 **Bitdefender's Machine Learning Unit** participated with eight of its members
