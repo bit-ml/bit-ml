@@ -97,7 +97,8 @@ injectGlobal`
   }
 
   p.hint.tip:before {
-    background-color: #27ab83;
+    // background-color: #27ab83;
+    display: none;
   }
 
   p.hint.warn {
@@ -114,6 +115,7 @@ injectGlobal`
 
   p.hint.error:before {
     background-color: #ef4e4e;
+    content: '\u00D7';
   }
 
 

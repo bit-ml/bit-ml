@@ -187,6 +187,10 @@ const PostContent = styled.section`
       font-weight: 400;
     }
   }
+
+  > details summary {
+    cursor: pointer;
+  }
 `
 
 const PostWithGalleryWrapper = styled.div``
