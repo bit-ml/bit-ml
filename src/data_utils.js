@@ -38,8 +38,12 @@ const getDirectories = source =>
 
 const processor = unified()
   .use(markdown)
+  // .use(highlight)
+  .use(() => extract_title_to_vFile)
+  // .use(footnotes, { inlineNotes: true })
+  .use(math)
+  .use(htmlKatex)
   .use(gfm)
-  .use(hint)
   .use(emoji)
   .use(prism, {
     plugins: [
@@ -47,11 +51,7 @@ const processor = unified()
       'prismjs/plugins/show-invisibles/prism-show-invisibles',
     ],
   })
-  // .use(highlight)
-  .use(() => extract_title_to_vFile)
-  // .use(footnotes, { inlineNotes: true })
-  .use(math)
-  .use(htmlKatex)
+  .use(hint)
   // .use(wikiLinkPlugin, { hrefTemplate: permalink => `/notes/${permalink.replace(' ', '_')}/` })
   .use(html)
 

@@ -23,9 +23,31 @@ web sites still in their infancy. Various versions have evolved over the
 years, sometimes by accident, sometimes on purpose (injected humour and the
 like).
 
+### H3 Some never show up
+
+Fancy paragraphs:
+
+```
+ !> There's a way of doing things,
+ ?> But it's dangerous,
+ x> And sometimes fatal.
+```
+
+renders to:
+
+!> There's a way of doing things,
+
+?> But it's dangerous,
+
+x> And sometimes fatal.
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+roots in a piece of classical Latin literature from 45 BC, making it over
+2000 years old.
+
 <div class="mo">
   <a href="/teaching/deep-fmi-2020/" class="mo__link">
-    <img class="mo__img" src="/galleries/courses/thumb_unibuc.jpg" alt="">
+    <img class="mo__img" src="/galleries/courses/thumb_bitdefender.png" alt="">
     <header class="mo__header">
       <h4 class="mo__title">DeepFMI - Learning Deep Neural Networks |
       upcoming</h4>
@@ -36,7 +58,6 @@ like).
   </a>
 </div>
 
-### H3 Some never show up
 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has
 roots in a piece of classical Latin literature from 45 BC, making it over
