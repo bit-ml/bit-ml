@@ -28,13 +28,6 @@
             "year": "2020",
             "link": "./papers/govos_arxiv.pdf",
             "published": "under review"
-          },
-          {
-            "authors": "E. Burceanu",
-            "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
-            "year": "2020",
-            "link": "https://preregister.science/papers_20neurips/38_paper.pdf",
-            "published": "NeurIPS - Pre-register workshop"
           }
         ]
       },
@@ -87,6 +80,13 @@
             "title": "Learning a Robust Society of Tracking Parts",
             "year": "2017",
             "link": "https://arxiv.org/abs/1705.09602"
+          },
+          {
+            "authors": "E. Burceanu",
+            "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
+            "year": "2020",
+            "link": "https://preregister.science/papers_20neurips/38_paper.pdf",
+            "published": "NeurIPS - Pre-register workshop"
           }
         ]
       }
