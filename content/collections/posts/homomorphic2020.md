@@ -3,7 +3,7 @@ slug: homomorphic-encryption-toy-implementation-in-python
 authors: Mădălina Bolboceanu, Miruna Roșca, Radu Țițiu
 categories: blog
 featured_img: "/galleries/homomorphic2020/enigma_dec.jpg"
-date: November-13-2020
+date: November-16-2020
 ---
 
 # Homomorphic Encryption: a Toy Implementation in Python
@@ -20,14 +20,14 @@ implementation](https://github.com/bit-ml/he-scheme) was for us to understand
 in detail the two techniques of
 [[FV12]](https://eprint.iacr.org/2012/144.pdf) used for ciphertext
 multiplication, namely *relinearization* and *modulus-switching*. This
-functionality, ciphertext multiplication, was missing in the previous
+essential operation of ciphertext multiplication was missing in the previous
 implementation. We thought we might share this understanding through a blog
 post as well since it may be of interest to anyone using the [FV12] scheme in
 [TenSeal](https://github.com/OpenMined/TenSEAL) or
 [Seal](https://github.com/Microsoft/SEAL) libraries.
 
 
-!> **Disclaimer:** Our toy implementation is not meant to be secure or
+?> **Disclaimer:** Our toy implementation is not meant to be secure or
 optimized for efficiency. We did it to better understand the inner workings
 of the [FV12] scheme, so you can use it as a learning tool. Our full
 implementation can be found [here](https://github.com/bit-ml/he-scheme).
@@ -81,7 +81,7 @@ Encryption is given in the picture below. Some important things to notice are:
 * To obtain $C'$ as the encryption of $F(x)$, the evaluation algorithm uses the description of $F$ to do computations on $C$ (which encrypts $x$).
 * By using her secret key, $sk$, Alice manages to recover the information that interests her, namely $F(x)$.
 
-![](https://i.imgur.com/C5f7Pdr.png)
+![alice_overview](/galleries/homomorphic2020/alice.png)
 
 
 ### A closer look at the Eval algorithm :mag_right: 
@@ -94,7 +94,7 @@ efficient computation of $c_{add}$ from the individual ciphertexts
 $c_1=\mathsf{Enc}(pk,m_1)$ and $c_2=\mathsf{Enc}(pk,m_2)$ such that the
 decryption of $c_{add}$ yields $m_1+m_2$.
 
-![](https://i.imgur.com/Vcl8GnO.png)
+![summation](/galleries/homomorphic2020/eval_sum.png)
 
 
 Analogously, the ciphertext $c_{mul}$ corresponding to multiplication, that
@@ -102,17 +102,21 @@ decrypts to $m_1\times m_2$, is efficiently computable from the individual
 ciphertexts $c_1=\mathsf{Enc}(pk,m_1)$ and $c_2=\mathsf{Enc}(pk,m_2)$,
 respectively.
 
-![](https://i.imgur.com/6pv1CMD.png)
+![multiplication](/galleries/homomorphic2020/eval_mul.png)
 
+<details><summary>There are classical examples of encryption schemes that are homomorphic with respect to only *one* operation.</summary>
 
-!> There are classical examples of encryption schemes that are homomorphic with respect to only *one* operation. For instance: 
+For instance: 
 - the [**RSA**](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) encryption: $\mathsf{Enc}^{\mathsf{RSA}}_{e,N}(m):=m^e \bmod N$  is multiplicatively homomorphic as $m_1^e \cdot m_2^e \bmod N = (m_1 \cdot m_2)^{e} \bmod N$
 - the [**El-Gamal**](https://en.wikipedia.org/wiki/ElGamal_encryption) encryption: $\mathsf{Enc}^{\mathsf{EG}}_{g,h}(m)=(g^r,h^r\cdot m)$. It is easy to verify that the multiplicative property holds:
 $$ (g^{r_1},h^{r_1}\cdot m_1)\cdot (g^{r_2},h^{r_2}\cdot m_2) =(g^{r_1+r_2},h^{r_1+r_2}\cdot (m_1\cdot m_2)).$$
+</details>
+
+</br>
 
 All the existing HE schemes support only two types of computations on the encrypted data: some forms of addition and multiplication. This means that the $\mathsf{Eval}$ algorithm works only for functionalities $F$ that can be expressed using additions ($+$) and multiplications ($\times$). Another way of saying this is that HE schemes support only arithmetic circuits with addition/multiplication gates. Below we can view as an arithmetic circuit the functionality $F(m_1,m_2,m_3,m_4)= m_1\times m_2\times m_4 + m_3\times m_4$.
 
-![](https://i.imgur.com/ub2OyXu.png)
+![arithmetic_circuit](/galleries/homomorphic2020/arithmetic_circuit.png)
 
 
 ### Why focus on homomorphisms with respect to *two* operations? 
@@ -136,9 +140,9 @@ all the schemes that are based on it. In particular, this "noise" element is
 present in every HE ciphertext and has a great impact on the parameters of
 the scheme.
 
-![](https://i.imgur.com/c6t3qkb.png)
+![noisy_cyphertext](/galleries/homomorphic2020/noisy_cyphertext.png)
 
-?> The noise grows with every addition or multiplication we do on the
+The noise grows with every addition or multiplication we do on the
 ciphertexts. This is very relevant as decryption stops working correctly once
 the noise exceeds a certain threshold.
 
@@ -298,19 +302,15 @@ polynomials in $R_t = \mathbb{Z}_t[x]/(x^n+1)$, on the plaintext side, and
 adding and multiplying polynomials in $R_q = \mathbb{Z}_q[x]/(x^n+1)$, on the
 ciphertext side. We also denote by $R$ the ring $\mathbb{Z}[x]/(x^n+1).$
 
-!> :warning: **Disclaimer**: From now on all polynomial operations are
+?> **Disclaimer**: From now on all polynomial operations are
 assumed to be mod $x^n+1$, even if we don't mention it every time.
 
 Here is the **high level of the scheme**:
 
-![](https://i.imgur.com/beYuPFn.png)
+![he_scheme5](/galleries/homomorphic2020/he_scheme5.png)
 
 
-+ $\mathsf{Keygen}$: The *secret key* $sk$ is a secret binary polynomial $s$
-in $R$, i.e. its coefficients are either 0 or 1. The *public key* $pk$ is
-created as follows: we sample $a$ uniformly over $R_q$ and an error $e$
-according to some error distribution $\chi$ over $R$ and output $pk =
-([-(a\cdot s+e)]_q,a) \in R_q \times R_q$.
+:arrow_right: $\mathsf{Keygen}$: The *secret key* $sk$ is a secret binary polynomial $s$ in $R$, i.e. its coefficients are either 0 or 1. The *public key* $pk$ is created as follows: we sample $a$ uniformly over $R_q$ and an error $e$ according to some error distribution $\chi$ over $R$ and output $pk = ([-(a\cdot s+e)]_q,a) \in R_q \times R_q$.
 
 !> Notice that hardness of the
 [RLWE](https://en.wikipedia.org/wiki/Ring_learning_with_errors#The_RLWE_Problem)
@@ -342,9 +342,14 @@ def keygen(size, modulus, poly_mod, std1):
     b = polyadd(polymul(-a, s, modulus, poly_mod), -e, modulus, poly_mod)
     return (b, a), s
 ```
- + $\mathsf{Enc}$: To encrypt a *plaintext* $m \in R_t$, we let $pk = (pk_0, pk_1)$, sample $u, e_1, e_2$ according to $\chi$ over $R$ and output the *ciphertext*
 
-$$\mathsf{Enc}(pk,m) = ([pk_0 \cdot u +e_1 + \Delta \cdot m]_q,[pk_1 \cdot u + e_2]_q) \in R_q \times R_q$$
+</br>
+
+:arrow_right: $\mathsf{Enc}$: To encrypt a *plaintext* $m \in R_t$, we let $pk = (pk_0, pk_1)$, sample $u, e_1, e_2$ according to $\chi$ over $R$ and output the *ciphertext*
+
+$$
+\mathsf{Enc}(pk,m) = ([pk_0 \cdot u +e_1 + \Delta \cdot m]_q,[pk_1 \cdot u + e_2]_q) \in R_q \times R_q
+$$
 
 !> Due to the [RLWE](https://en.wikipedia.org/wiki/Ring_learning_with_errors#The_RLWE_Problem) assumption, the ciphertexts "look" uniformly random to a possible attacker, so they don't reveal any information about the plaintext. 
 
@@ -381,7 +386,10 @@ def encrypt(pk, size, q, t, poly_mod, m, std1):
     )
     return (ct0, ct1)
 ```
- + $\mathsf{Dec}$: Given a ciphertext $ct = \mathsf{Enc}(pk,m)=(ct_0, ct_1)$, we decrypt it using the secret key $sk=s$ as follows:
+
+</br>
+ 
+:arrow_right: $\mathsf{Dec}$: Given a ciphertext $ct = \mathsf{Enc}(pk,m)=(ct_0, ct_1)$, we decrypt it using the secret key $sk=s$ as follows:
 
 $$
 \mathsf{Dec}(sk,ct) = \Bigg[ \Bigg\lfloor \frac{t\cdot [ct_0+ct_1\cdot s]_q}{q} \Bigg\rceil \Bigg]_t \in R_t
@@ -409,7 +417,7 @@ which is nothing but the scaled plaintext $m$ with some *"small" noise* $v$.
 
 Because we always have $\|\Delta\cdot m + v\| < q$, reducing it $\bmod q$ has no effect (e.g. $[4]_{7} = 4$). As long as the noise $\|v\|<\Delta/2$, we can always recover the correct $m$. 
 
-![](https://i.imgur.com/HSU3xTK.png)
+![decoder_details](/galleries/homomorphic2020/dec_details.png)
 
 For example, in the picture above, any green point will decrypt to $2$ when we scale it by $t/q$ $(\approx 1/\Delta)$ and round it. Analogously, any dark-brown point will decrypt to $3$.
 
@@ -451,11 +459,15 @@ Let's take two ciphertexts $ct = \mathsf{Enc}(pk,m)$ and $ct' = \mathsf{Enc}(pk,
 
 Let's write the decryption equations of $ct$ and $ct'$:
 
-$$[ct(s)]_q = \Delta \cdot m + v \text{ and } [ct'(s)]_q = \Delta \cdot m' + v'.$$
+$$
+[ct(s)]_q = \Delta \cdot m + v \text{ and } [ct'(s)]_q = \Delta \cdot m' + v'.
+$$
 
-+ **Addition** If we simply add the decryption equations, we get
+:arrow_right: **Addition:** If we simply add the decryption equations, we get
 
-$$[ct(s)]_q + [ct'(s)]_q = \Delta \cdot (m+m') + v  + v'.$$ 
+$$
+[ct(s)]_q + [ct'(s)]_q = \Delta \cdot (m+m') + v  + v'.
+$$
 
 
 But wait a sec, we need to decrypt to $m_1+m_2$ modulo $t$! Notice that $m + m' = t \cdot \epsilon + [m+m']_t$, for some binary polynomial $\epsilon$. Using the notation $r_t(q):= q- \Delta \cdot t$ (this is just the remainder of $q$ divided by $t$) we get:
@@ -478,10 +490,7 @@ $$
 
 This suggests to set the new ciphertext as $c_{add}=(ct_0+ct'_0, \text{ }ct_1+ct'_1)$, which can be computed without the knowledge of the secret key $s$. Therefore, $c_{add} = ct + ct'$ decrypts to the sum, $[m+m']_t$, as long as the new "noise", $v_{add}$, is smaller than $\Delta/2$.
 
-!> :bulb: The **noise growth** for **addition** is quite slow as $$
-\|v_{add}\|<\|v\|+\|v'\| + t < 2B+t, 
-$$ where $B$ is an upper bound on the "noise" of the ciphertexts that were added. 
-This means we can probably do many additions before decryption stops working.
+!> :bulb: The **noise growth** for **addition** is quite slow as $\|v_{add}\|<\|v\|+\|v'\| + t < 2B+t$, where $B$ is an upper bound on the "noise" of the ciphertexts that were added. This means we can probably do many additions before decryption stops working.
 
 To [add ciphertexts](https://github.com/bit-ml/he-scheme/blob/main/rlwe_he_scheme_updated.py#L261), it seems like we only need to add polynomials in $R_q$. So, ciphertext addition is a piece of cake :cake:.
 
@@ -500,7 +509,9 @@ def add_cipher(ct1, ct2, q, poly_mod):
     return (new_ct0, new_ct1)
 ```
 
-+ **Multiplication** Producing a new ciphertext that decrypts the product of the two messages is not that easy. But we should still try :crossed_fingers:. The first idea that comes to mind is to simply multiply the decryption equations. It worked for addition, so maybe it works here as well. 
+</br>
+
+:arrow_right: **Multiplication:** Producing a new ciphertext that decrypts the product of the two messages is not that easy. But we should still try :crossed_fingers:. The first idea that comes to mind is to simply multiply the decryption equations. It worked for addition, so maybe it works here as well. 
 
 $$
 ct(s) \cdot ct'(s) = \Delta^2 \cdot mm' + \Delta\cdot (mv'+m'v) + vv'. \text{ } \ (1)
@@ -534,15 +545,18 @@ $$
 
 Hm.. these coefficients look like *rational polynomials*.  Recall that the ciphertext has *integer polynomials* as elements. So we round each coefficient appearing in the left hand side to their nearest integers and then reduce the whole equation modulo $q$:
 
-$$[\lfloor t/q \cdot c_0^{\times} \rceil]_q + [\lfloor t/q \cdot c_1^{\times}\rceil]_q \cdot s + [\lfloor t/q \cdot c_2^{\times}\rceil]_q \cdot s^2 = \Delta \cdot [mm']_t + u_3 \text{ } \ (2)$$
+$$
+[\lfloor t/q \cdot c_0^{\times} \rceil]_q + [\lfloor t/q \cdot c_1^{\times}\rceil]_q \cdot s + [\lfloor t/q \cdot c_2^{\times}\rceil]_q \cdot s^2 = \Delta \cdot [mm']_t + u_3 \text{ } \ (2)
+$$
 
 where $u_3$ is a "small" integer polynomial, that represents the "noise" after one multiplication.
 
 !> :bulb: The **noise growth** for **multiplication** grows a lot faster:
-$$\|u_3\| \leq 2 \cdot n \cdot t \cdot B \cdot (2n+1)\cdot (n+1) + 8t^2 \cdot n^2,$$
+$\|u_3\| \leq 2 \cdot n \cdot t \cdot B \cdot (2n+1)\cdot (n+1) + 8t^2 \cdot n^2,$
 where $B$ is an upper bound for the "noise" of the ciphertexts that were multiplied. We refer the enthusiastic reader for more details to [[[FV12] Lem. 2]](https://eprint.iacr.org/2012/144.pdf).
 
 Phew, seems like we are done: we can consider as a ciphertext decrypting to $[mm']_t$ the tuple of scaled and rounded coefficients mod $q$ from left hand side of $(2)$, denoted by $(c_0, c_1, c_2)$. Of course, for a correct decryption, $u_3$ should have small enough coefficients. You can see below how these coefficients are [computed](https://github.com/bit-ml/he-scheme/blob/main/rlwe_he_scheme_updated.py#L293) in Python:
+
 ```python[class="line-numbers"]
 def multiplication_coeffs(ct1, ct2, q, t, poly_mod):
     """Multiply two ciphertexts.
@@ -565,14 +579,17 @@ def multiplication_coeffs(ct1, ct2, q, t, poly_mod):
 But, as a popular movie character would say, **"Houston, we have a problem"**. This tuple of coefficients has size 3, **not 2 as the usual ciphertext**. Moreover, the size of such tuple will grow linearly in the number of further multiplications performed on the ciphertexts. In order to restore the size of the ciphertext as 2, we will make use of the so called *relinearization technique*. :boom:
 
 ### Relinearization
+
 !> :bulb: The idea of **Relinearization** is to reduce the triplet
 $(c_0,c_1,c_2)$ to a ciphertext pair $(c_0',c_1') \in R_q \times R_q$ that
 recovers $[mm']_t$ when decrypted with the usual decryption
 algorithm. We would like to produce a pair $(c_0',c_1')$, without using the
 secret $s$, such that:
-$$[c_0' + s\cdot c_1']_q = [c_0 + c_1\cdot s + c_2 \cdot s^2 + r ]_q,$$
+$[c_0' + s\cdot c_1']_q = [c_0 + c_1\cdot s + c_2 \cdot s^2 + r ]_q$,
 where $r$ is a "small" error. The correct decryption will be possible, as the
 "small" error $r$ will vanish because of the rounding in decryption.
+
+</br>
 
 As the name suggests it, we transform the degree 2 polynomial, $c_0+c_1\cdot s+c_2 \cdot s^2$ into a linear polynomial, i.e. of degree 1. This involves giving extra info about  $s^2$. Using a special public key, called *relinearization key*, we can *linearize* $c_2 \cdot s^2$ (up to some small error) as 
 
@@ -664,6 +681,7 @@ def int2base(n, b):
     else:
         return [n % b] + int2base(n // b, b)  
 ```
+
 The relinearization key, $rlk$ in this version, consists of masked variants
 of $T^i \cdot s^2,$ instead of $s^2$. More precisely, for $0 \leq i \leq
 \ell$, this is defined as follows:
@@ -716,7 +734,9 @@ Now, given $rlk$, let's look at how we compute the linear approximation of
 $c_2 \cdot s^2$. Let the polynomials $c_2(i)$ be the base $T$ decomposition
 of $c_2$, such that:
 
-$$c_2 = \displaystyle \sum_{i=0}^{\ell} c_2(i)\cdot T^i.$$ 
+$$
+c_2 = \displaystyle \sum_{i=0}^{\ell} c_2(i)\cdot T^i.
+$$
 
 We can get the linear approximation given by $(c_{20}, c_{21})$, where: 
 
@@ -725,21 +745,29 @@ c_{20} = \sum_{i=0}^{\ell} rlk_0[i]\cdot c_2(i) \text{ and } c_{21} = \sum_{i=0}
 $$
 
 Therefore, $c_{20} + c_{21} \cdot s = c_2 \cdot s^2 + e_{\text{relin\_v1}}$
-where $e_{\text{relin\_v1}}$ is an error term from $R_q$. <details>
-  <summary>Click here for more details.</summary>
+where $e_{\text{relin\_v1}}$ is an error term from $R_q$.
 
+<details><summary>Click here for more details.</summary>
+
+$$
 \begin{aligned}
 c_{20} + c_{21} \cdot s
     &= \sum_{i=0}^{\ell} [-(a_i\cdot s+e_i)+T^i\cdot s^2] c_2(i) + \sum_{i=0}^{\ell} a_i \cdot s \cdot c_2(i)\\
     &= -\sum_{i=0}^{\ell} e_i \cdot c_2(i) + c_2 \cdot s^2.
  \end{aligned}
+$$
 
 </details>
+
 !> :bulb: By doing base $T$ decomposition we get a "small" **relinearization noise**: 
 $\|e_{\text{relin\_v1}}\| \leq (\ell+1)\cdot B \cdot T \cdot n/2$
 where $B$ is an upper bound on the errors $e_i$.
 
-:question: Now the question is how to compute the polynomials $c_2(i)$. The coefficients of these polynomials prove to be nothing but the columns of the matrix $\texttt{Reps}$.  <details><summary>If you're curious to see why, click here:</summary> 
+</br>
+
+:question: Now the question is how to compute the polynomials $c_2(i)$. The coefficients of these polynomials prove to be nothing but the columns of the matrix $\texttt{Reps}$.
+
+<details><summary>If you're curious to see why, click here:</summary> 
 So far, we have stored the representations of each coefficient of $c_2$,
 $c_2[i]$, let's say as rows in an $n \times (\ell+1)$ matrix $\mathtt{Reps}$.
 Therefore
@@ -828,7 +856,7 @@ def mul_cipher_v1(ct1, ct2, q, t, T, poly_mod, rlk0, rlk1):
 
 This version is much simpler and cleaner than the previous one (yay!) and uses the so-called *modulus switching* technique. Recall that if we try to naively mask $s^2$ in the reliniarization key, then there is a large blow-up in the noise because of the $c_2$ multiplication. We want to avoid this to get a correct decryption. 
 
- In this version we mask $s^2$ modulo a a different modulus, $p\cdot q$, with a much larger $p\gg q$, as shown below.
+In this version we mask $s^2$ modulo a a different modulus, $p\cdot q$, with a much larger $p\gg q$, as shown below.
 
 $$
 rlk = (rlk_0, rlk_1) = ([-(a' \cdot s + e') + p\cdot s^2]_{p\cdot q}, a'),
@@ -840,7 +868,7 @@ Remember that our goal is to produce an approximation of $[c_2\cdot s^2]_q$. The
 ?> In a safe implementation the distribution $\chi'$ should be distinct from
 $\chi$ and its parameters should be carefully chosen for security reasons.
 Since security is not our main goal in this blog post, you can check the
-paper for further details. Below you find the [code](https://github.com/bit-ml/he-scheme/blob/main/rlwe_he_scheme_updated.py#L166):
+paper for further details.
 
 ```python[class="line-numbers"]
 def evaluate_keygen_v2(sk, size, modulus, poly_mod, extra_modulus, std2):
@@ -868,9 +896,12 @@ def evaluate_keygen_v2(sk, size, modulus, poly_mod, extra_modulus, std2):
 
 The linear approximation of $[c_2 \cdot s^2]_q$ can be computed from the pair: 
 
-$$(c_{20}, c_{21}) = \Big(\Big[\Big\lfloor\frac{c_2 \cdot rlk_0}{p}\Big\rceil\Big]_q, \Big[\Big\lfloor\frac{c_2 \cdot rlk_1}{p}\Big\rceil\Big]_q\Big).$$
+$$
+(c_{20}, c_{21}) = \Big(\Big[\Big\lfloor\frac{c_2 \cdot rlk_0}{p}\Big\rceil\Big]_q, \Big[\Big\lfloor\frac{c_2 \cdot rlk_1}{p}\Big\rceil\Big]_q\Big).
+$$
 
 Indeed, $[c_{20} + c_{21} \cdot s]_q = [c_2 \cdot s^2]_q + e_{\text{relin\_v2}},$ for a "small" error $e_{\text{relin\_v2}}$ in $R_q$. 
+
 <details><summary> For an intuition of why this happens, click here.</summary>Skipping some details, this holds true because of the following simple computation:
  
 $$
@@ -883,12 +914,17 @@ $$
 
 where $K \in R$ such that $[-(a'\cdot s+e') + p\cdot s^2]_{pq} = -(a'\cdot s+e') + p\cdot s^2 + pq\cdot K$.
 
-We're cheating a bit here, since the pair involves the *roundings of the terms to their nearest integers*. Still, we're not far from the truth, since for any real number $a$, $\lfloor a \rceil$ differs from $a$ by a small quantity $\varepsilon \in [-\frac{1}{2},\frac{1}{2}]$. (we can also extend this coefficient-wise to polynomials). 
+We're cheating a bit here, since the pair involves the *roundings of the terms to their nearest integers*. Still, we're not far from the truth, since for any real number $a$, $\lfloor a \rceil$ differs from $a$ by a small quantity
+$\varepsilon \in [-\frac{1}{2},\frac{1}{2}]$. (we can also extend this coefficient-wise to polynomials). 
 </details>
+
+</br>
 
 !> :bulb: We get a "small" **relinearization noise**,
 $e_{\text{relin\_v2}} \approx (c_2\cdot e')/p$, for large $p:$
-$$\|e_{\text{relin\_v2}}\| \leq \frac{q \cdot B' \cdot n}{p}+\frac{n+1}{2}.$$
+$\|e_{\text{relin\_v2}}\| \leq \frac{q \cdot B' \cdot n}{p}+\frac{n+1}{2}.$
+
+</br>
 
 Next, we provide the easy [code](https://github.com/bit-ml/he-scheme/blob/main/rlwe_he_scheme_updated.py#L355) implementation for multiplying ciphertexts using this version.
 
@@ -927,7 +963,7 @@ $$
 
 where $v_{mult} = u_3 + e_{\text{relin}}$ and $e_{\text{relin}} \in \{e_{\text{relin\_v1}}, e_{\text{relin\_v2}}\}$.
 
-We need to make sure that $c_{mul}$ decrypts *correctly* to $[m_1m_2]_t$. For
+We need to make sure that $c_{mul}$ decrypts *correctly* to $[mm']_t$. For
 this, it suffices to choose the parameters such that
 $\|u_3\| + \|e_{\text{relin}}\| \leq \Delta/2.$
 
@@ -939,21 +975,11 @@ deriving $c_{mul}$, we may wonder which one we can use:
 | **Version 1**     | $2(\ell+1)\cdot n \cdot \log q$    |$(\ell+1)\cdot B \cdot T \cdot n/2$           |
 | **Version 2**     | $2n \cdot \log pq$                 |$\frac{q \cdot B' \cdot n}{p}+\frac{n+1}{2}$            |
 
-+ **size of $rlk$:** **Version 1** gives a relinearization key as $\ell+1$ pairs of polynomials in $R_q,$ whereas **Version 2** gives just one such
-pair. Recall that $\ell=\lfloor \log_T{q}\rfloor$ and see that this decreases
-as long as the base $T$ increases.
+</br>
 
+:arrow_right: **size of $rlk$:** **Version 1** gives a relinearization key as $\ell+1$ pairs of polynomials in $R_q,$ whereas **Version 2** gives just one such pair. Recall that $\ell=\lfloor \log_T{q}\rfloor$ and see that this decreases as long as the base $T$ increases.
 
-+ **bound of $e_{\text{relin}}$:** The upper bounds of $e_{\text{relin}}$ for both versions are according to [[FV12], Lem.
-3](https://eprint.iacr.org/2012/144.pdf). We consider $B$ as a bound taken so
-that the error distribution $\chi$ takes values in $[-B,B]$ with high
-probability. We similarly define $B'$ for the case of the error distribution
-$\chi'$, used in **Version 2**. Notice that for **Version 1**, a larger $T$
-leads to more noise (but smaller $rlk$), whereas in **Version 2**, a larger
-$p$ leads to smaller noise (but larger $rlk$). For choosing the parameters in
-safe implementation, we refer the reader to [[FV12] Sec. Realinearisation
-Version 2.](https://eprint.iacr.org/2012/144.pdf)
-
+:arrow_right: **bound of $e_{\text{relin}}$:** The upper bounds of $e_{\text{relin}}$ for both versions are according to [[FV12], Lem.3](https://eprint.iacr.org/2012/144.pdf). We consider $B$ as a bound taken so that the error distribution $\chi$ takes values in $[-B,B]$ with high probability. We similarly define $B'$ for the case of the error distribution $\chi'$, used in **Version 2**. Notice that for **Version 1**, a larger $T$ leads to more noise (but smaller $rlk$), whereas in **Version 2**, a larger $p$ leads to smaller noise (but larger $rlk$). For choosing the parameters in safe implementation, we refer the reader to [[FV12] Sec. Realinearisation Version 2.](https://eprint.iacr.org/2012/144.pdf) 
 
 ### Setting the parameters
 

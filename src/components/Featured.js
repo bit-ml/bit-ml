@@ -17,21 +17,6 @@ const FeaturedContainer = styled.div`
   bottom: 0;
   position: absolute;
   width: 100%;
-
-  ul > li {
-    padding-bottom: 25% !important;
-  }
-  ${breakpoint('tablet')`
-    ul > li {
-      padding-bottom: 5% !important;
-    }
-  `}
-
-  ${breakpoint('desktop')`
-    ul > li {
-      padding-bottom: 5% !important;
-    }
-  `}
 `
 
 const FeaturedWrapper = styled.div`
@@ -39,6 +24,9 @@ const FeaturedWrapper = styled.div`
   padding: 0 2.2rem;
   padding-bottom: 0.5rem;
   color: #fff;
+  .carousel {
+    height: 35vh;
+  }
 
   ${breakpoint('tablet')`
     padding: 0 5rem;
@@ -46,6 +34,10 @@ const FeaturedWrapper = styled.div`
 
   ${breakpoint('desktop')`
     padding: 0 5rem;
+
+    .carousel {
+      height: 33vh;
+    }
   `}
 `
 
@@ -63,9 +55,9 @@ const FeaturedLink = styled(Link)`
     background: rgba(98, 118, 207, 0.3);
   }
 
-  ${breakpoint('tablet')`
-    padding: 2rem;
-  `}
+  // ${breakpoint('tablet')`
+  //   padding: 2rem;
+  // `}
 
   ${breakpoint('desktop')`
     padding: 2rem 3rem;
@@ -80,6 +72,7 @@ const FeaturedHeading = styled.h2`
   line-height: 1.32rem;
   margin: 0.4rem 0 0 0;
   color: #89cdf0;
+
   ${breakpoint('tablet')`
     font-size: 1.4rem;
     line-height: 2rem;
@@ -97,6 +90,7 @@ const FeaturedSynopsis = styled.p`
   line-height: 1.4;
   color: #fff;
   line-height: 1rem;
+
   ${breakpoint('tablet')`
     font-size: 1rem;
     line-height: 1.4;
@@ -173,10 +167,25 @@ export default ({ posts }) => (
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
-        totalSlides={4}
+        totalSlides={5}
       >
         <Slider>
           <Slide index={0}>
+            {
+              <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
+                <FeaturedHeading>
+                  Homomorphic Encryption: a Toy Implementation in Python
+                </FeaturedHeading>
+                <FeaturedSynopsis>
+                  Curious about how to work with data you can't see? In the
+                  this blog post we are going to broadly explain what
+                  Homomorphic Encryption is and how to implement a particular
+                  scheme.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+          <Slide index={1}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>
@@ -190,7 +199,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/blog/post/recurrent-space-time-graph-neural-nets/">
                 <FeaturedHeading>
@@ -204,7 +213,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/blog/post/bitdefender_at_eeml2019/">
                 <FeaturedHeading>Bitdefender at EEML 2019</FeaturedHeading>
@@ -216,7 +225,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/blog/post/bitdefender_at_tmlss2018/">
                 <FeaturedHeading>Bitdefender at TMLSS 2018</FeaturedHeading>
