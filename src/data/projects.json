@@ -5,63 +5,69 @@
     "people": "Elena Burceanu, Iulia Duță, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
     "projects": [
       {
-        "title":"Unsupervised learning of objects from video sequences",
+        "title": "Unsupervised learning of objects from video sequences",
         "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.\nWe are focused on generating foreground object soft masks based on automatic selection and learning from highly probable positive features. We show that such features can be selected efficiently by taking into consideration the spatio-temporal appearance and motion consistency of the object in the video sequence. We also emphasize the role of the contrasting properties between the foreground object and its background. Our work is also focused on theoretically proving the properties of our unsupervised learning method, which under some mild constraints is guaranteed to learn the correct classifier even in the unsupervised case.",
         "papers": [
           {
-            "authors" : "E. Haller, M. Leordeanu",
-            "title" : "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
-            "year" : "2017",
-            "link" : "https://arxiv.org/abs/1704.05674",
-            "published" : " In The IEEE International Conference on Computer Vision (ICCV)"
+            "authors": "E. Haller, M. Leordeanu",
+            "title": "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
+            "year": "2017",
+            "link": "https://arxiv.org/abs/1704.05674",
+            "published": " In The IEEE International Conference on Computer Vision (ICCV)"
           },
           {
-            "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "A 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
-            "year" : "2020",
-            "link" : "https://arxiv.org/abs/1907.02731",
-            "published" : " In The International Joint Conference on Artificial Intelligence (IJCAI)"
+            "authors": "E. Burceanu, M. Leordeanu",
+            "title": "A 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
+            "year": "2020",
+            "link": "https://arxiv.org/abs/1907.02731",
+            "published": " In The International Joint Conference on Artificial Intelligence (IJCAI)"
           },
           {
-            "authors" : "E. Haller, M. Leordeanu",
-            "title" : "Spacetime Graph Optimization for Video Object Segmentation",
-            "year" : "2020",
-            "link" : "./papers/govos_arxiv.pdf",
-            "published" : "under review"
+            "authors": "E. Haller, M. Leordeanu",
+            "title": "Spacetime Graph Optimization for Video Object Segmentation",
+            "year": "2020",
+            "link": "./papers/govos_arxiv.pdf",
+            "published": "under review"
+          },
+          {
+            "authors": "E. Burceanu",
+            "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
+            "year": "2020",
+            "link": "https://preregister.science/papers_20neurips/38_paper.pdf",
+            "published": "NeurIPS - Pre-register workshop"
           }
         ]
       },
       {
-        "title":"Graph methods for video processing",
+        "title": "Graph methods for video processing",
         "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. \n We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. \n We also design a novel method, unsupervised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
         "papers": [
           {
-            "authors" : "A. Nicolicioiu, I. Duță, M. Leordeanu",
-            "title" : "Recurrent Space-time Graph Neural Networks",
-            "year" : "2019",
-            "link" : "https://papers.nips.cc/paper/9444-recurrent-space-time-graph-neural-networks",
-            "published" : " in the Conference on Neural Information Processing Systems (NeurIPS)"
+            "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
+            "title": "Recurrent Space-time Graph Neural Networks",
+            "year": "2019",
+            "link": "https://papers.nips.cc/paper/9444-recurrent-space-time-graph-neural-networks",
+            "published": " in the Conference on Neural Information Processing Systems (NeurIPS)"
           },
           {
-            "authors" : "I. Duță, A. Nicolicioiu",
-            "title" : "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
-            "year" : "2020",
-            "link" : "https://arxiv.org/abs/2009.08427",
-            "published" : " under review"
+            "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
+            "title": "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
+            "year": "2020",
+            "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
+            "published": "NeurIPS - Object Representations for Learning and Reasoning workshop"
           }
-
         ]
       },
       {
-        "title":"Video Captioning",
+        "title": "Video Captioning",
         "description": "Video captioning is the task of describing a video in natural language. It lies at the intersection of computer vision, natural language processing and machine learning requiring both high level visual comprehension and the ability to produce meaningful sentences. Our goal is to detect objects and events in a video and be capable of understanding the interactions between them in spatial and temporal dimensions.\nWe investigated multiple methods to analyze a video and extract information from it. To overcome limitations of the task and the available data, we design multiple models, to explore different video encoding strategies, to explore intermediate video-language representation and to investigate the gains brought by additional tasks and features. We propose a method for video captioning by selecting from the results of multiple encoder-decoder models. Our selection method based on consensus among multiple sentences is more likely to produce results with the same meaning as the video. We designed a methods that surpassed the state-of-the-art results on the challenging MSR-VTT dataset.",
         "papers": [
           {
-            "authors" : "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
-            "title" : "Mining for meaning: from vision to language through multiple networks consensus",
-            "year" : "2018",
-            "link" : "https://arxiv.org/abs/1806.01954",
-            "published" : " in The British Machine Vision Conference (BMVC)"
+            "authors": "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
+            "title": "Mining for meaning: from vision to language through multiple networks consensus",
+            "year": "2018",
+            "link": "https://arxiv.org/abs/1806.01954",
+            "published": " in The British Machine Vision Conference (BMVC)"
           }
         ]
       },
@@ -70,192 +76,183 @@
         "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. While it has attracted the interest of many researchers over several decades of computer vision, it is far from being solved.\nThe task is hard for many reasons. Difficulties could come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.\nThe only ground-truth knowledge given to the tracker is the bounding box of the object in the first frame. Thus, without knowing in advance the properties of the object being tracked, the tracking algorithm must learn them on the fly. It must adapt correctly and make sure it does not jump toward other objects in the background. That is why the possibility of drifting to the background poses on of the main challenges in tracking.",
         "papers": [
           {
-            "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
-            "year" : "2018",
-            "link" : "./papers/SocietyOfTrackingParts.pdf",
-            "published" : " in The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
+            "authors": "E. Burceanu, M. Leordeanu",
+            "title": "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
+            "year": "2018",
+            "link": "./papers/SocietyOfTrackingParts.pdf",
+            "published": " in The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
           },
           {
-            "authors" : "E. Burceanu, M. Leordeanu",
-            "title" : "Learning a Robust Society of Tracking Parts",
-            "year" : "2017",
-            "link" : "https://arxiv.org/abs/1705.09602"
+            "authors": "E. Burceanu, M. Leordeanu",
+            "title": "Learning a Robust Society of Tracking Parts",
+            "year": "2017",
+            "link": "https://arxiv.org/abs/1705.09602"
           }
         ]
       }
     ]
   },
-
-
-
   {
-    "title":"Natural Language Processing",
+    "title": "Natural Language Processing",
     "description": "A large amount of today's data is stored in databases. Building AI tools that facilitate the access to knowledge requires processing of natural language and structured data. We focus on neural approaches for natural language interfaces to databases, in particular structure-aware and semi-supervised methods.",
     "people": "Florin Brad in collaboration with Traian Rebedea, Ionel Hosu, Radu Iacob",
     "projects": [
       {
-        "title":"Natural Language Interface to Databases",
+        "title": "Natural Language Interface to Databases",
         "description": "Natural Language Interface to Databases (NLIDB) bridges the gap between technical and non-technical users by allowing the latter to query large amounts of structured data through the use of instructions written in natural language.\nDespite long-standing research efforts, progress has been slow and widespread adoption has failed to pick up. Data-driven approaches have been hindered by the lack of large parallel corpora to train the models on, but recent datasets alleviate this problem. We seek to improve existing SEQ2SEQ models by leveraging syntax to guide the generation process and by using semi-supervised techniques to overcome the low parallel data regime.",
         "papers": [
           {
-            "authors" : "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
-            "title" : "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
-            "year" : "2017",
-            "link" : "https://arxiv.org/abs/1707.03172",
-            "published" : " in The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
+            "authors": "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
+            "title": "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
+            "year": "2017",
+            "link": "https://arxiv.org/abs/1707.03172",
+            "published": " in The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
           },
           {
-            "authors" : "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
-            "title" : "Natural Language Interface for Databases Using a Dual-Encoder Model",
-            "year" : "2018",
-            "link" : "http://www.aclweb.org/anthology/C18-1043",
-            "published" : " in The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
+            "authors": "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
+            "title": "Natural Language Interface for Databases Using a Dual-Encoder Model",
+            "year": "2018",
+            "link": "http://www.aclweb.org/anthology/C18-1043",
+            "published": " in The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
           },
           {
-            "authors" : "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
-            "title" : "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
-            "year" : "2018",
-            "link" : "./papers/SYNLIDB_ICTAI_2018.pdf",
-            "published" : " in The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
+            "authors": "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
+            "title": "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
+            "year": "2018",
+            "link": "./papers/SYNLIDB_ICTAI_2018.pdf",
+            "published": " in The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
           },
           {
-            "authors" : "R. Iacob, F. Brad, E.-S. Apostol, C.-O. Truica, T. Rebedea",
-            "title" : "Neural Approaches for Natural Language Interfaces to Databases: A Survey",
-            "year" : "2020",
-            "link" : "https://coling2020.org",
-            "published" : " (to appear) in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
+            "authors": "R. Iacob, F. Brad, E.-S. Apostol, C.-O. Truica, T. Rebedea",
+            "title": "Neural Approaches for Natural Language Interfaces to Databases: A Survey",
+            "year": "2020",
+            "link": "https://coling2020.org",
+            "published": " (to appear) in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
           }
         ]
       },
       {
-        "title":"Visual Question Answering",
+        "title": "Visual Question Answering",
         "description": "The VQA task refers to answering questions about an image. Existing methods fuse image and text representations and are able to exploit superficial correlations and produce the correct answer, but often for the wrong reason. The recently introduced Visual Commonsense Reasoning dataset facilitates cognition-level understanding on top of recognition, by requiring not only the correct answer, but also a justification for it. We improve existing methods by leveraging structured representations of images.",
         "papers": [
           {
-            "authors" : "F. Brad",
-            "title" : "Scene Graph Contextualization in Visual Commonsense Reasoning",
-            "year" : "2019",
-            "link" : "#",
-            "published" : " in The IEEE International Conference on Computer Vision (ICCV) - Pre.Register Workshop"
+            "authors": "F. Brad",
+            "title": "Scene Graph Contextualization in Visual Commonsense Reasoning",
+            "year": "2019",
+            "link": "#",
+            "published": " in The IEEE International Conference on Computer Vision (ICCV) - Pre.Register Workshop"
           }
         ]
       }
     ]
   },
-
-
-
   {
-    "title":"Reinforcement Learning",
+    "title": "Reinforcement Learning",
     "description": "Within the field of artificial intelligence reinforcement learning seems a natural setting for training agents that interact with the world we are living in. We engage in furthering the field by developing agents able to learn continuously in different environments. We are also investigating models sitting at the intersection of generative models and reinforcement learning.",
     "people": "Tudor Berariu, Florin Gogianu, Ștefan Postăvaru, collaborating with Andrei Nica",
     "projects": [
       {
-        "title":"Continual Learning",
+        "title": "Continual Learning",
         "description": "Recent advances in machine learning are still limited to stationary tasks, but general purpose intelligence would require agents able to acquire knowledge in a continual manner dealing with interleaving tasks. Lifelong learning scenarios deal exactly with this problem: training agents on new tasks while preserving performance on old ones.\nWe are currently exploring memory based, optimization related and architectural methods to train neural models in lifelong learning scenarios.",
         "papers": []
       },
       {
-        "title":"Malmo AI Challenge",
+        "title": "Malmo AI Challenge",
         "description": "The Microsoft Malmo AI Challenge proposed a time-extended stag hunt scneario build on top of the well-known Minecraft platform. In order to maximize its payoff in such a game an agent needs to predict the level of commitment to a collaborative strategy of the other player, decide on a specific plan and navigate through the environment to execute it.\nMulti-agent setups pose additional optimization problems stemming from the non-stationarity of the training objective. Also, situated environments ask agents to learn dynamic strategies capable of dealing with sudden changes in the course of action (such as another playing abandoning the collaborative strategy).\nWe approached the contest by training agents through deep reinforcement learning techniques using recurrent neural networks for policies and for value estimation. We also added auxiliary loss functions (such as next reward, or next frame prediction) in order to complement the sparse reward signal.\n Our submission ranked second for the AI Summer School placement prize and third for the Microsoft Azure for Research Grant prize.",
         "papers": [
           {
-            "authors" : "A. Nica, T. Berariu, F. Gogianu, A.M. Florea",
-            "title" : "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
-            "year" : "2017",
-            "link" : "./learning-maximize-return.pdf",
-            "published" : "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
+            "authors": "A. Nica, T. Berariu, F. Gogianu, A.M. Florea",
+            "title": "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
+            "year": "2017",
+            "link": "./learning-maximize-return.pdf",
+            "published": "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
           }
         ]
       },
       {
-        "title":"Towards a generative Experience Replay",
+        "title": "Towards a generative Experience Replay",
         "description": "Within the field of reinforcement learning with deep neural network estimators, this research proposal is concerned with investigating and then augmenting or replacing the Experience Replay mechanism found in most of the state-of-the art methods with shallow and flexible, action-conditional models of the environment working not in the pixel space but at the level of low-dimensional intermediate representations",
         "papers": []
       }
     ]
   },
-
-
-
   {
-    "title":"Cryptography",
+    "title": "Cryptography",
     "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
     "people": "Miruna Rosca, Radu Țițiu, coordinated by Damien Stehlé, Benoît Libert. Mădălina Bolboceanu",
     "projects": [
       {
-        "title":"Hardness of lattice problems",
+        "title": "Hardness of lattice problems",
         "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems and giving reductions between them.",
         "papers": [
           {
-            "authors" : "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
-            "title" : "Order-LWE and the Hardness of Ring-LWE with Entropic Secrets",
-            "year" : "2019",
-            "link" : "https://eprint.iacr.org/2018/494",
-            "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+            "authors": "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
+            "title": "Order-LWE and the Hardness of Ring-LWE with Entropic Secrets",
+            "year": "2019",
+            "link": "https://eprint.iacr.org/2018/494",
+            "published": " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
           },
           {
-            "authors" : "M. Rosca, D. Stehlé and A. Wallet",
-            "title" : "On the Ring-LWE and Polynomial-LWE Problems",
-            "year" : "2018",
-            "link" : "https://eprint.iacr.org/2018/170",
-            "published" : " in the proceedings of International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT), pages 146-173, Springer"
+            "authors": "M. Rosca, D. Stehlé and A. Wallet",
+            "title": "On the Ring-LWE and Polynomial-LWE Problems",
+            "year": "2018",
+            "link": "https://eprint.iacr.org/2018/170",
+            "published": " in the proceedings of International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT), pages 146-173, Springer"
           },
           {
-            "authors" : "M. Bolboceanu",
-            "title" : "Relating Different Polynomial-LWE problems",
-            "year" : "2018",
-            "link" : "https://eprint.iacr.org/2018/1035",
-            "published" : " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
+            "authors": "M. Bolboceanu",
+            "title": "Relating Different Polynomial-LWE problems",
+            "year": "2018",
+            "link": "https://eprint.iacr.org/2018/1035",
+            "published": " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
           },
           {
-            "authors" : "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
-            "title" : "Middle-Product Learning with Errors",
-            "year" : "2017",
-            "link" : "https://eprint.iacr.org/2017/628",
-            "published" : "In the proceedings of International Cryptology Conference (CRYPTO), pages 283-297, Springer"
+            "authors": "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
+            "title": "Middle-Product Learning with Errors",
+            "year": "2017",
+            "link": "https://eprint.iacr.org/2017/628",
+            "published": "In the proceedings of International Cryptology Conference (CRYPTO), pages 283-297, Springer"
           }
         ]
       },
       {
-        "title":"Cryptographic primitives from (algebraic variants of) LWE",
+        "title": "Cryptographic primitives from (algebraic variants of) LWE",
         "description": "We build advanced cryptographic primitives whose security relies on the hardness of LWE and its algebraic variants. We are mainly interested in Homomorphic Encryption and Functional Encryption which allow you to run learning algorithms on encrypted data and perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
         "papers": [
           {
-            "authors" : "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
-            "title" : "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
-            "year" : "2020",
-            "link" : "https://eprint.iacr.org/2020/198.pdf",
-            "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+            "authors": "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
+            "title": "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
+            "year": "2020",
+            "link": "https://eprint.iacr.org/2020/198.pdf",
+            "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
           },
           {
-            "authors" : "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
-            "title" : "Adaptive Simulation Security for Inner Product Functional Encryption",
-            "year" : "2020",
-            "link" : "https://eprint.iacr.org/2020/209.pdf",
-            "published" : " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+            "authors": "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
+            "title": "Adaptive Simulation Security for Inner Product Functional Encryption",
+            "year": "2020",
+            "link": "https://eprint.iacr.org/2020/209.pdf",
+            "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
           },
           {
-            "authors" : "B.Libert, R. Țițiu",
-            "title" : "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
-            "year" : "2019",
-            "link" : "https://hal.inria.fr/hal-02352139/document",
-            "published" : " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+            "authors": "B.Libert, R. Țițiu",
+            "title": "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
+            "year": "2019",
+            "link": "https://hal.inria.fr/hal-02352139/document",
+            "published": " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
           },
           {
-            "authors" : "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
-            "title" : "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
-            "year" : "2019",
-            "link" : "https://eprint.iacr.org/2019/908",
-            "published" : " under review"
+            "authors": "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
+            "title": "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
+            "year": "2019",
+            "link": "https://eprint.iacr.org/2019/908",
+            "published": " under review"
           },
           {
-            "authors" : "R. Țițiu, B.Libert, D. Stehlé",
-            "title" : "Adaptively Secure Distributed PRFs from LWE",
-            "year" : "2018",
-            "link" : "https://eprint.iacr.org/2018/927.pdf",
-            "published" : " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
+            "authors": "R. Țițiu, B.Libert, D. Stehlé",
+            "title": "Adaptively Secure Distributed PRFs from LWE",
+            "year": "2018",
+            "link": "https://eprint.iacr.org/2018/927.pdf",
+            "published": " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
           }
         ]
       }
