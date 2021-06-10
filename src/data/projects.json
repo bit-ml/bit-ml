@@ -155,7 +155,13 @@
             "year": "2020",
             "link": "https://coling2020.org",
             "published": " (to appear) in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Anomaly detection in Text",
+        "description": "Recent deep methods for detecting anomalies in images learn better features of normality in an end-to-end self-supervised setting. These methods train a model to discriminate between different transformations applied to visual data and then use the output to compute an anomaly score. We use this approach for Anomaly Detection in text, by introducing a novel pretext task on text sequences. We learn our model end-to-end, enforcing two independent and complementary self-supervision signals, one at the token-level and one at the sequence-level.",
+        "papers": [
           {
               "authors": "A. Manolache, F. Brad, E. Burceanu",
               "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
