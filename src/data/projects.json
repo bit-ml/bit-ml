@@ -183,7 +183,7 @@
   {
     "title": "Reinforcement Learning",
     "description": "Within the field of artificial intelligence reinforcement learning seems a natural setting for training agents that interact with the world we are living in. We engage in furthering the field by developing agents able to learn continuously in different environments. We are also investigating models sitting at the intersection of generative models and reinforcement learning.",
-    "people": "Tudor Berariu, Florin Gogianu, Ștefan Postăvaru, collaborating with Andrei Nica",
+    "people": "Florin Gogianu, collaborating with Tudor Berariu",
     "projects": [
       {
         "title": "Learning Representations for Deep Reinforcement Learning",
@@ -220,7 +220,7 @@
   {
     "title": "Cryptography",
     "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
-    "people": "Miruna Rosca, Radu Țițiu, coordinated by Damien Stehlé, Benoît Libert. Mădălina Bolboceanu",
+    "people": "Miruna Rosca, Radu Țițiu, Mădălina Bolboceanu",
     "projects": [
       {
         "title": "Hardness of lattice problems",
