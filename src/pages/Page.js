@@ -349,7 +349,9 @@ function PostWithGallery ({ post, galleries }) {
 }
 
 function checkGallery (post) {
-  let hasGallery = Object.hasOwnProperty.call(post, 'galleries')
+
+  let hasGallery = Object.hasOwnProperty.call(post.data, 'galleries')
+
   if (hasGallery === true) {
     if (post.data.galleries == null) {
       console.log(
@@ -363,7 +365,7 @@ function checkGallery (post) {
   return hasGallery
 }
 
-export default withRouteData(({ post, galleries, test }) => {
+export default withRouteData(({ post, galleries }) => {
   const hasGallery = checkGallery(post)
   const keywords = post.data.categories.replace(/ /g, '').split(',')
   const synopsis = striptags(post.contents)
@@ -386,7 +388,7 @@ export default withRouteData(({ post, galleries, test }) => {
           <Nav pageName="post" />
 
           {hasGallery ? (
-            <PostWithGallery post={post} galleries={galleries} test={test} />
+            <PostWithGallery post={post} galleries={galleries} />
           ) : (
             <SimplePost post={post} />
             )}

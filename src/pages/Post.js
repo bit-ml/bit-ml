@@ -313,8 +313,8 @@ function PostWithGallery({ post, galleries }) {
   )
 }
 
-export default withRouteData(({ post, galleries, test }) => {
-  const hasGallery = Object.hasOwnProperty.call(post, 'galleries')
+export default withRouteData(({ post, galleries }) => {
+  const hasGallery = Object.hasOwnProperty.call(post.data, 'galleries')
   const keywords = post.data.categories.replace(/ /g, '').split(',')
   const synopsis = striptags(post.contents)
     .substring(0, 350)
@@ -336,7 +336,7 @@ export default withRouteData(({ post, galleries, test }) => {
           <Nav pageName="post" />
 
           {hasGallery ? (
-            <PostWithGallery post={post} galleries={galleries} test={test} />
+            <PostWithGallery post={post} galleries={galleries} />
           ) : (
               <SimplePost post={post} />
             )}
