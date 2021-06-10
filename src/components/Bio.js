@@ -114,10 +114,13 @@ export default ({
       <ContactBox>
         {contact.mail && <a href={`mailto:${contact.mail}`}>email</a>}
         {contact.github && (
-          <a href={`https://github.com/${contact.github}`}>github</a>
+          <a href={`https://github.com/${contact.github}`} target="_blank">github</a>
         )}
         {contact.twitter && (
-          <a href={`https://twitter.com/${contact.twitter}`}>twitter</a>
+          <a href={`https://twitter.com/${contact.twitter}`} target="_blank">twitter</a>
+        )}
+        {contact.website && (
+          <a href={`https://${contact.website}`} target="_blank">website</a>
         )}
       </ContactBox>
     </MediaBody>
