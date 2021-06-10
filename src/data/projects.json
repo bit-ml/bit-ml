@@ -186,6 +186,18 @@
     "people": "Tudor Berariu, Florin Gogianu, Ștefan Postăvaru, collaborating with Andrei Nica",
     "projects": [
       {
+        "title": "Learning Representations for Deep Reinforcement Learning",
+        "description": "We are interested in furthering the research on learning good representations for Deep Reinforcement Learning towards the goals of more stable optimisation, improvede generalization and better sample complexity.",
+        "papers": [          {
+            "authors": "F. Gogianu, T. Berariu, M. Roșca, C. Clopath, L. Bușoniu, R. Pașcanu",
+            "title": "Spectral Normalisation for Deep Reinforcement Learning: An Optimisation Perspective",
+            "year": "2021",
+            "link": "https://arxiv.org/abs/2105.05246",
+            "published": " to appear in The International Conference on Machine Learning (ICML)"
+          }
+        ]
+      },
+      {
         "title": "Continual Learning",
         "description": "Recent advances in machine learning are still limited to stationary tasks, but general purpose intelligence would require agents able to acquire knowledge in a continual manner dealing with interleaving tasks. Lifelong learning scenarios deal exactly with this problem: training agents on new tasks while preserving performance on old ones.\nWe are currently exploring memory based, optimization related and architectural methods to train neural models in lifelong learning scenarios.",
         "papers": []
@@ -202,11 +214,6 @@
             "published": "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
           }
         ]
-      },
-      {
-        "title": "Towards a generative Experience Replay",
-        "description": "Within the field of reinforcement learning with deep neural network estimators, this research proposal is concerned with investigating and then augmenting or replacing the Experience Replay mechanism found in most of the state-of-the art methods with shallow and flexible, action-conditional models of the environment working not in the pixel space but at the level of low-dimensional intermediate representations",
-        "papers": []
       }
     ]
   },
