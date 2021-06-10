@@ -27,7 +27,21 @@
             "title": "Spacetime Graph Optimization for Video Object Segmentation",
             "year": "2020",
             "link": "./papers/govos_arxiv.pdf",
-            "published": "under review"
+            "published": "arXiv"
+          },
+          {
+            "authors": "E. Haller, A.M. Florea, M. Leordeanu",
+            "title": "Iterative Knowledge Exchange Between Deep Learning and Space-Time Spectral Clustering for Unsupervised Segmentation in Videos",
+            "year": "2020",
+            "link": "https://arxiv.org/pdf/2012.07123.pdf",
+            "published": "journal version under review"
+          },
+          {
+            "authors": "E.Burceanu, M. Leordeanu",
+            "title": "Learning a Fast 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
+            "year": "2021",
+            "link": "#",
+            "published": "journal version under review"
           }
         ]
       },
@@ -48,6 +62,13 @@
             "year": "2020",
             "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
             "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS 2020"
+          },
+          {
+            "authors": "E. Haller, E.Burceanu, M. Leordeanu",
+            "title": "Unsupervised Domain Adaptation through Iterative Consensus Shift in a Multi-Task Graph",
+            "year": "2021",
+            "link": "https://arxiv.org/abs/2103.14417",
+            "published": "under review"
           }
         ]
       },
@@ -128,6 +149,13 @@
             "year": "2020",
             "link": "https://coling2020.org",
             "published": " (to appear) in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
+          },
+          {
+              "authors": "A. Manolache, F. Brad, E. Burceanu",
+              "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
+              "year": "2021",
+              "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
+              "published": "in The Proceedings of the North American Chapter of ACL (NAACL)"
           }
         ]
       },
