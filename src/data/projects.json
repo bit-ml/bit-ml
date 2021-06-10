@@ -47,7 +47,7 @@
       },
       {
         "title": "Graph methods for video processing",
-        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. \n We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. \n We also design a novel method, unsupervised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
+        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, unsupervised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
         "papers": [
           {
             "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
@@ -62,7 +62,13 @@
             "year": "2020",
             "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
             "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS 2020"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Multi-task graph",
+        "description": "Existing methods in multi-task graphs rely on expensive manual supervision. In contrast, our proposed solution, with consensus shift learning, relies only on pseudo-labels provided by expert models. In our graph, every node represents a task, and every edge learns to transform one input node into another. Once initialized, the graph learns by itself on virtually any novel target domain. An adaptive selection mechanism finds consensus among multiple paths reaching a given node and establishes the pseudo-ground truth at that node. Such pseudo-labels, given by ensemble pathways in the graph, are used during the next learning iteration when single edges distill this distributed knowledge.",
+        "papers": [
           {
             "authors": "E. Haller, E.Burceanu, M. Leordeanu",
             "title": "Unsupervised Domain Adaptation through Iterative Consensus Shift in a Multi-Task Graph",
