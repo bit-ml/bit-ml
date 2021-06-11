@@ -285,14 +285,14 @@
             "title": "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
             "year": "2019",
             "link": "https://hal.inria.fr/hal-02352139/document",
-            "published": " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+            "published": " accepted at ASIACRYPT"
           },
           {
             "authors": "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
             "title": "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
-            "year": "2019",
+            "year": "2020",
             "link": "https://eprint.iacr.org/2019/908",
-            "published": " under review"
+            "published": " accepted at ASIACRYPT"
           },
           {
             "authors": "R. Țițiu, B.Libert, D. Stehlé",
