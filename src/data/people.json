@@ -74,7 +74,7 @@
   },
   {
     "name": "Miruna Roșca",
-    "bio": "I am interested in post-quantum cryptography, with a focus on lattice-based solutions. I have a strong background in mathematics and I am currently a second year Phd student in cryptography at École Normale Supérieure de Lyon, working with Damien Stehlé on hardness of lattice problems over rings.",
+    "bio": "I am interested in post-quantum cryptography, with a focus on lattice-based solutions. I have a strong background in mathematics and I obtained my Phd in cryptography from École Normale Supérieure de Lyon, advised by Damien Stehlé. During my Phd, I worked on algebraic variants of Learning With Errors. More info about me on the website link below.",
     "img": "miruna_rosca.jpg",
     "contact": {
       "mail": "mrosca@bitdefender.com",
