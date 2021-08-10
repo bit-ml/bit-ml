@@ -198,8 +198,8 @@
             "authors": "F. Gogianu, T. Berariu, M. Roșca, C. Clopath, L. Bușoniu, R. Pașcanu",
             "title": "Spectral Normalisation for Deep Reinforcement Learning: An Optimisation Perspective",
             "year": "2021",
-            "link": "https://arxiv.org/abs/2105.05246",
-            "published": " to appear in The International Conference on Machine Learning (ICML)"
+            "link": "http://proceedings.mlr.press/v139/gogianu21a.html",
+            "published": "Proceedings of the 38th International Conference on Machine Learning (ICML)"
           }
         ]
       },
