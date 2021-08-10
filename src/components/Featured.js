@@ -172,6 +172,20 @@ export default ({ posts }) => (
         <Slider>
           <Slide index={0}>
             {
+              <FeaturedLink to="/blog/post/private-set-intersection-an-implementation-in-python/">
+                <FeaturedHeading>
+                  Private Set Intersection from Homomorphic Encryption: A Python Implementation
+                </FeaturedHeading>
+                <FeaturedSynopsis>
+                  In which we discuss how to implement the PSI protocol using a HE
+                  encryption scheme, we introduce our new python library and describe
+                  various applications of PSI.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+          <Slide index={1}>
+            {
               <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
                 <FeaturedHeading>
                   Homomorphic Encryption: a Toy Implementation in Python
@@ -185,7 +199,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>
@@ -199,7 +213,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/blog/post/recurrent-space-time-graph-neural-nets/">
                 <FeaturedHeading>
@@ -213,7 +227,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/blog/post/bitdefender_at_eeml2019/">
                 <FeaturedHeading>Bitdefender at EEML 2019</FeaturedHeading>
@@ -225,7 +239,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={4}>
+          <Slide index={5}>
             {
               <FeaturedLink to="/blog/post/bitdefender_at_tmlss2018/">
                 <FeaturedHeading>Bitdefender at TMLSS 2018</FeaturedHeading>
