@@ -63,7 +63,14 @@
             "title": "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
             "year": "2020",
             "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
-            "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS 2020"
+            "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS"
+          }
+          {
+            "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
+            "title": "Discovering Dynamic Salient Regions with Spatio-Temporal Graph Neural Networks",
+            "year": "2021",
+            "link": "https://arxiv.org/abs/2009.08427",
+            "published": "in the Conference on Neural Information Processing Systems (NeurIPS)"
           }
         ]
       },
