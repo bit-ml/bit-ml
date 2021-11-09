@@ -10,7 +10,7 @@
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.2",
     "chokidar": "^2.0.4",
     "highlight": "^0.2.4",
     "htmr": "^0.7.0",
