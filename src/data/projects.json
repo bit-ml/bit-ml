@@ -2,7 +2,7 @@
   {
     "title": "Computer Vision",
     "description": "We tackle fundamental unsupervised learning approaches that we consider to be the key to true unconstrained learning, which best simulates how humans discover the surrounding world. We aim to combine the unsupervised visual perception with supervised cognitive video representation. We want to build systems that understand our world by only watching videos.\nAnd we go further, teaching the system to describe, in natural language, the discovered elements.",
-    "people": "Elena Burceanu, Iulia Duță, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
+    "people": "Elena Burceanu, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
     "projects": [
       {
         "title": "Unsupervised learning of objects from video sequences",
@@ -32,9 +32,9 @@
           {
             "authors": "E. Haller, A.M. Florea, M. Leordeanu",
             "title": "Iterative Knowledge Exchange Between Deep Learning and Space-Time Spectral Clustering for Unsupervised Segmentation in Videos",
-            "year": "2020",
-            "link": "https://arxiv.org/pdf/2012.07123.pdf",
-            "published": "journal version under review"
+            "year": "2021",
+            "link": "https://ieeexplore.ieee.org/document/9573434",
+            "published": "Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
           },
           {
             "authors": "E.Burceanu, M. Leordeanu",
@@ -47,7 +47,9 @@
       },
       {
         "title": "Graph methods for video processing",
-        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, unsupervised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
+        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, 
+        
+        vised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
         "papers": [
           {
             "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
@@ -61,7 +63,14 @@
             "title": "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
             "year": "2020",
             "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
-            "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS 2020"
+            "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS"
+          }
+          {
+            "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
+            "title": "Discovering Dynamic Salient Regions with Spatio-Temporal Graph Neural Networks",
+            "year": "2021",
+            "link": "https://arxiv.org/abs/2009.08427",
+            "published": "in the Conference on Neural Information Processing Systems (NeurIPS)"
           }
         ]
       },
@@ -71,10 +80,10 @@
         "papers": [
           {
             "authors": "E. Haller, E.Burceanu, M. Leordeanu",
-            "title": "Unsupervised Domain Adaptation through Iterative Consensus Shift in a Multi-Task Graph",
+            "title": "Self-Supervised Learning in Multi-Task Graphs through Iterative Consensus Shift",
             "year": "2021",
             "link": "https://arxiv.org/abs/2103.14417",
-            "published": "under review"
+            "published": " in The British Machine Vision Conference (BMVC)"
           }
         ]
       },
@@ -112,8 +121,8 @@
             "authors": "E. Burceanu",
             "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
             "year": "2020",
-            "link": "https://preregister.science/papers_20neurips/38_paper.pdf",
-            "published": "NeurIPS - Pre-register workshop"
+            "link": "https://proceedings.mlr.press/v148/burceanu21a.html",
+            "published": "NeurIPS 2020 - Pre-register workshop, ICCV 2021 Structured Representations for Video Understanding workshop"
           }
         ]
       }
@@ -167,7 +176,20 @@
               "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
               "year": "2021",
               "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
-              "published": "in The Proceedings of the North American Chapter of ACL (NAACL)"
+              "published": "in The Proceedings of the North American Chapter of ACL (NAACL), ICML Uncertainty & Robustness in Deep Learning workshop"
+          }
+        ]
+      },
+      {
+        "title": "Domain Adaptation for Authorship Verification",
+        "description": "The task of identifying the author of a text spans several decades and was tackled using linguistics, statistics, and, more recently, machine learning. We tackle it inspired by the impressive performance gains across a broad range of natural language processing tasks and by the recent availability of the PAN large-scale authorship dataset.",
+        "papers": [
+          {
+              "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
+              "title": "Transferring BERT-like Transformers' Knowledge for Authorship Verification",
+              "year": "2021",
+              "link": "#",
+              "published": " under review"
           }
         ]
       },
