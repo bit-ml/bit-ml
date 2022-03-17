@@ -47,9 +47,7 @@
       },
       {
         "title": "Graph methods for video processing",
-        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, 
-        
-        vised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
+        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, devised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
         "papers": [
           {
             "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
@@ -64,7 +62,7 @@
             "year": "2020",
             "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
             "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS"
-          }
+          },
           {
             "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
             "title": "Discovering Dynamic Salient Regions with Spatio-Temporal Graph Neural Networks",
