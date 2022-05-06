@@ -11,7 +11,7 @@ date: May-05-2022
 
 Releasing trained models in computer vision and natural language processing has been a major source of progress for the research in these fields and a significant catalyst for the adaption of deep learning models in the industry. By comparison, RL agents pretrained on otherwise resource and time intensive benchmarks such as Arcade Learning Environment are rather hard to come by.
 
-Today we make available over :two::five:,:zero::zero::zero: agents trained on 60 games in the Arcade Learning Environment. We hope the diversity and the quality of these trained models will help spur new research in multi-task and imitation learning and contribute to the state of reproducibility in deep reinforcement learning.
+Today, our research group within Bitdefender is making available over :two::five:,:zero::zero::zero: agents trained on 60 games in the Arcade Learning Environment. We hope the diversity and the quality of these trained models will help spur new research in multi-task and imitation learning and contribute to the state of reproducibility in deep reinforcement learning.
 
 The performance of these agents closely matches figures published in the literature and have been used as strong baselines in published and unpublished work. The agents included in this release are Munchausen-DQN and Adam-optimised DQN that compare favourably with more complex agents as well as a C51 agent whose performance matches or exceeds the results reported in the paper that introduced it. We provide three independent training runs for each agent-game combination with the exception of on agent for which we only provide two seeds. We plan to continue releasing new models.
 
@@ -26,7 +26,7 @@ We encourage you coming with suggestions of how to make this repository of train
 
 A major reason for deciding to publish these models is the sheer amount of time required to run DQN-style algorithms on the Atari benchmark. This is especially difficult for small labs.
 
-For this release we used "only" 20 to 40 GPUs (a wide assortment ranging from GTX Titan to newer RTX consumer models) for a combined running time of about two months for learning all the agents. Considering  a full run on ALE requires 3 seeds $\times$ 60 games and a single DQN-style agent takes a bit over one week this might seem a bit surprising. What made this possible is that we figured out early that you could launch three to four DQN processes on a single GPU provided the replay buffer is stored in the system RAM. The penalty incurred in terms of wall clock times is easily offset by parallelization in this case.
+For this release we used "only" 20 to 40 GPUs (a wide assortment ranging from GTX Titan to newer RTX consumer models) from our cluster at Bitdefender, for a combined running time of about two months for learning all the agents. Considering  a full run on ALE requires 3 seeds $\times$ 60 games and a single DQN-style agent takes a bit over one week this might seem a bit surprising. What made this possible is that we figured out early that you could launch three to four DQN processes on a single GPU provided the replay buffer is stored in the system RAM. The penalty incurred in terms of wall clock times is easily offset by parallelization in this case.
 
 This is one of the reason our agents have been trained using our own PyTorch implementations and while the code used is not readily available we consider publishing it if there is demand for it.
 
@@ -63,7 +63,7 @@ An agent trained on 200M frames usually produces 200 checkpoints times the numbe
 
 Note it's not mandatory the best performing checkpoint is included since on some combinations of algorithms and agents the peak performance occurs earlier in training. However this sampling should characterize fairly well the performance of an agent most of the time.
 
- :exclamation::raised_hand: **If there is demand we can provide the full list of checkpoints for a given agent.**
+ :exclamation::raised_hand: If [requested](https://github.com/floringogianu/atari-agents/issues), we can provide the full list of checkpoints for a given agent.
 
 Agents have been trained using PyTorch and the models are stored as compressed [state_dict](https://pytorch.org/tutorials/recipes/recipes/what_is_state_dict.html) pickle files. Since the networks used on ALE are fairly simple these could easily be converted for use in other deep learning frameworks.
 
