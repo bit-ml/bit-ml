@@ -52,6 +52,16 @@
     }
   },
   {
+    "name": "Marius Drăgoi",
+    "bio": "I studied at Politehnica University of Bucharest, where I obtained a Bachelor's degree in Computer Science and a Master's degree in Artificial Intelligence. I am currently researching the problem of out-of-distribution sample detection and distributional shift in log data.",
+    "img": "marius_dragoi.jpg",
+    "contact": {
+      "mail": "mdragoi@bitdefender.com",
+      "twitter": "dmarviss",
+      "github": "dmarviss"
+    }
+  },
+  {
     "name": "Florin Gogianu",
     "bio": "Currently pursuing a PhD in Reinforcement Learning unde the supervision of Prof. Lucian Bușoniu following an MSc in Artificial Intelligence from University Politehnica of Bucharest and a BSc in Philosophy. I have a broad interest in Reinforcement Learning topics and I am currently focusing on questions regarding sample efficiency in the context of model-free value-based methods with neural network estimators.",
     "img": "florin_gogianu.jpg",
