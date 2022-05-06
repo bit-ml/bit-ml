@@ -1,7 +1,7 @@
 ---
 slug: deep-reinforcement-learning-acs-2019
 categories: event
-featured_img: "/galleries/courses/atari_mixtape.png"
+featured_img: "/galleries/courses/atari_collage.png"
 date: September-20-2019
 ---
 
