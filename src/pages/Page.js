@@ -355,7 +355,7 @@ function checkGallery (post) {
   if (hasGallery === true) {
     if (post.data.galleries == null) {
       console.log(
-        'Warning, you have a gallery field in in your markdown ' +
+        'Warning, you have a gallery field in your markdown ' +
         'but it has no value.',
         post.data.galleries
       )

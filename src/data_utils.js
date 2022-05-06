@@ -14,7 +14,7 @@ const hint = require('remark-hint')
 const gfm = require('remark-gfm')
 const html = require('remark-html')
 // const { wikiLinkPlugin } = require('remark-wiki-link');
-// const footnotes = require('remark-footnotes')
+const footnotes = require('remark-footnotes')
 // const highlight = require('remark-highlight.js')
 
 
@@ -40,7 +40,7 @@ const processor = unified()
   .use(markdown)
   // .use(highlight)
   .use(() => extract_title_to_vFile)
-  // .use(footnotes, { inlineNotes: true })
+  .use(footnotes, { inlineNotes: true })
   .use(math)
   .use(htmlKatex)
   .use(gfm)

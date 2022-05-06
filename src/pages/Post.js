@@ -133,6 +133,23 @@ const PostContent = styled.section`
     }
   }
 
+  >table {
+    font-family: ${props => props.theme.fonts.body};
+    font-size: ${props => props.theme.fontSizes[1]};
+    font-weight: ${props => props.theme.fontWeights.bodyNormal};
+    > strong {
+      font-weight: ${props => props.theme.fontWeights.bodyBold};
+    }
+    margin-bottom: ${props => props.theme.space[1]};
+  }
+
+  div.wide-content+table {
+    ${breakpoint('desktop')`
+      width: 920px;
+      margin-left: -100px;
+    `}
+  }
+
   a {
     text-decoration: underline;
     color: ${props => props.theme.colors.highContrast};
