@@ -13,7 +13,7 @@ import ProjectsJSON from './src/data/projects'
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
-function getGalleries() {
+function getGalleries () {
   const galleries_path = 'public/galleries/'
   const galleries = {}
 
@@ -36,6 +36,13 @@ function getGalleries() {
   return galleries
 }
 
+const { data: specialties } = { data: ProjectsJSON }
+const { data: people } = { data: PeopleJSON }
+// const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+// const { posts, courses } = await jdown('content')
+const { galleries } = { galleries: getGalleries() }
+const { posts, courses } = getContent('./content/collections')
+
 export default {
   siteRoot: 'https://bit-ml.github.io',
   getSiteData: () => ({
@@ -47,14 +54,7 @@ export default {
   }),
 
   getRoutes: async () => {
-    const { data: specialties } = { data: ProjectsJSON }
-    const { data: people } = { data: PeopleJSON }
-    // const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    // const { posts, courses } = await jdown('content')
-    const { galleries } = { galleries: getGalleries() }
-
-    const { posts, courses } = getContent('./content/collections')
-    posts.forEach(post => console.log(post.data, Object.keys(post)))
+    posts.forEach(post => console.log(post.data.slug, Object.keys(post)))
 
     return [
       {
