@@ -167,7 +167,7 @@ const ProjectsWrapper = styled.div`
   `}
 `
 
-const SpecialtyBg = ['#E6212B', '#00B2CB', '#12161E', '#C700CB']
+const SpecialtyBg = ['#F3A712', '#E6212B', '#00B2CB', '#12161E', '#C700CB']
 
 export default ({ children, props, bgIdx }) => (
   <SpecialtyWrapper>

@@ -8,12 +8,13 @@ import { ServerStyleSheet } from 'styled-components'
 import { getContent } from './src/data_utils'
 
 import PeopleJSON from './src/data/people'
+import TeamsJSON from './src/data/teams'
 import ProjectsJSON from './src/data/projects'
 
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
-function getGalleries () {
+function getGalleries() {
   const galleries_path = 'public/galleries/'
   const galleries = {}
 
@@ -38,6 +39,7 @@ function getGalleries () {
 
 const { data: specialties } = { data: ProjectsJSON }
 const { data: people } = { data: PeopleJSON }
+const { data: teams } = { data: TeamsJSON }
 // const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
 // const { posts, courses } = await jdown('content')
 const { galleries } = { galleries: getGalleries() }
@@ -63,6 +65,7 @@ export default {
         getData: () => ({
           specialties,
           people,
+          teams,
           posts,
         }),
       },

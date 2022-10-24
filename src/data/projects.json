@@ -1,5 +1,32 @@
 [
   {
+    "title": "Robustness",
+    "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the deep anomaly detection task.",
+    "people": "Elena Burceanu, Emanuela Haller, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
+    "projects": [
+      {
+        "title": "Anomaly Detection in Distribution Shifted environments",
+        "description": "Even though recently there is an effervescence on the generalization capabilities in multi-environment setups, the problem is curently  discussed only in supervised scenarios. We are interested in analysising unsupervised approaches and their perfomance under distribution shifted data. More, we started formalizing this setup for the Anomaly Detection task.",
+        "papers": [
+          {
+            "authors": "S. Smeu, E. Burceanu, A. Nicolicioiu, E. Haller",
+            "title": "Env-Aware Anomaly Detection: Ignore Style Changes, Stay True to Content!",
+            "year": "2022",
+            "link": "https://arxiv.org/abs/2210.03103",
+            "published": " in NeurIPS Workshop on Distribution Shifts: Connecting Methods and Applications"
+          },
+          {
+            "authors": "M. Dragoi, E.Burceanu, E. Haller, A. Manolache, F. Brad",
+            "title": "AnoShift: A Distribution Shift Benchmark for Unsupervised Anomaly Detection",
+            "year": "2022",
+            "link": "https://arxiv.org/abs/2206.15476",
+            "published": " in The Proceedings of the Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "Computer Vision",
     "description": "We tackle fundamental unsupervised learning approaches that we consider to be the key to true unconstrained learning, which best simulates how humans discover the surrounding world. We aim to combine the unsupervised visual perception with supervised cognitive video representation. We want to build systems that understand our world by only watching videos.\nAnd we go further, teaching the system to describe, in natural language, the discovered elements.",
     "people": "Elena Burceanu, Ema Haller, Andrei Nicolicioiu, coordinated by Marius Leordeanu",
@@ -39,7 +66,7 @@
           {
             "authors": "E.Burceanu, M. Leordeanu",
             "title": "Learning a Fast 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
-            "year": "2021",
+            "year": " ",
             "link": "#",
             "published": "journal version under review"
           }
@@ -170,11 +197,11 @@
         "description": "Recent deep methods for detecting anomalies in images learn better features of normality in an end-to-end self-supervised setting. These methods train a model to discriminate between different transformations applied to visual data and then use the output to compute an anomaly score. We use this approach for Anomaly Detection in text, by introducing a novel pretext task on text sequences. We learn our model end-to-end, enforcing two independent and complementary self-supervision signals, one at the token-level and one at the sequence-level.",
         "papers": [
           {
-              "authors": "A. Manolache, F. Brad, E. Burceanu",
-              "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
-              "year": "2021",
-              "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
-              "published": "in The Proceedings of the North American Chapter of ACL (NAACL), ICML Uncertainty & Robustness in Deep Learning workshop"
+            "authors": "A. Manolache, F. Brad, E. Burceanu",
+            "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
+            "year": "2021",
+            "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
+            "published": "in The Proceedings of the North American Chapter of ACL (NAACL), ICML Uncertainty & Robustness in Deep Learning workshop"
           }
         ]
       },
@@ -183,11 +210,18 @@
         "description": "The task of identifying the author of a text spans several decades and was tackled using linguistics, statistics, and, more recently, machine learning. We tackle it inspired by the impressive performance gains across a broad range of natural language processing tasks and by the recent availability of the PAN large-scale authorship dataset.",
         "papers": [
           {
-              "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
-              "title": "Transferring BERT-like Transformers' Knowledge for Authorship Verification",
-              "year": "2021",
-              "link": "#",
-              "published": " under review"
+            "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
+            "title": "Transferring BERT-like Transformers' Knowledge for Authorship Verification",
+            "year": "2022",
+            "link": "https://arxiv.org/abs/2112.05125",
+            "published": "EMNLP"
+          },
+          {
+            "authors": "A. Manolache, F. Brad, Antonio Barbalau, Radu Tudor Ionescu, Marius Popescu",
+            "title": "VeriDark: A Large-Scale Benchmark for Authorship Verification on the Dark Web",
+            "year": "2022",
+            "link": "https://openreview.net/forum?id=gvaqa_WcIR6",
+            "published": " in The Proceedings of the Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
           }
         ]
       },
@@ -214,7 +248,8 @@
       {
         "title": "Learning Representations for Deep Reinforcement Learning",
         "description": "We are interested in furthering the research on learning good representations for Deep Reinforcement Learning towards the goals of more stable optimisation, improvede generalization and better sample complexity.",
-        "papers": [          {
+        "papers": [
+          {
             "authors": "F. Gogianu, T. Berariu, M. Roșca, C. Clopath, L. Bușoniu, R. Pașcanu",
             "title": "Spectral Normalisation for Deep Reinforcement Learning: An Optimisation Perspective",
             "year": "2021",
