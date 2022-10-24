@@ -172,6 +172,16 @@ export default ({ posts }) => (
         <Slider>
           <Slide index={0}>
             {
+              <FeaturedLink to="/blog/post/pretrained-atari-agents/">
+                <FeaturedHeading>Over 25,000 Atari trained agents published</FeaturedHeading>
+                <FeaturedSynopsis>
+                  We are making available trained models on 60 games in the Arcade Learning Environment.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+          <Slide index={1}>
+            {
               <FeaturedLink to="/blog/post/private-set-intersection-an-implementation-in-python/">
                 <FeaturedHeading>
                   Private Set Intersection from Homomorphic Encryption: A Python Implementation
@@ -184,7 +194,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
                 <FeaturedHeading>
@@ -199,7 +209,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>
@@ -213,7 +223,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/blog/post/recurrent-space-time-graph-neural-nets/">
                 <FeaturedHeading>
@@ -223,30 +233,6 @@ export default ({ posts }) => (
                   We introduce our recurrent graph model designed for video
                   processing from our paper that will be presented at NeurIPS
                   2019 in Vancouver.
-                </FeaturedSynopsis>
-              </FeaturedLink>
-            }
-          </Slide>
-          <Slide index={4}>
-            {
-              <FeaturedLink to="/blog/post/bitdefender_at_eeml2019/">
-                <FeaturedHeading>Bitdefender at EEML 2019</FeaturedHeading>
-                <FeaturedSynopsis>
-                  Read about our team's experience of organizing and
-                  participating at Eastern European Machine Learning summer
-                  school in Bucharest.
-                </FeaturedSynopsis>
-              </FeaturedLink>
-            }
-          </Slide>
-          <Slide index={5}>
-            {
-              <FeaturedLink to="/blog/post/bitdefender_at_tmlss2018/">
-                <FeaturedHeading>Bitdefender at TMLSS 2018</FeaturedHeading>
-                <FeaturedSynopsis>
-                  Bitdefender participated at the first edition of the
-                  Transylvania Machine Learning Summer School that took place in
-                  Cluj-Napoca.
                 </FeaturedSynopsis>
               </FeaturedLink>
             }
