@@ -47,7 +47,7 @@ The current crop of agents is summarized below.
 | Algorithm          | Protocol  | Games | Seeds | Observations   |
 | :----------------- | --------- | :---: | :---: | :------------- |
 | **DQN**            | `modern`  |  60   |   3   | DQN agent using the settings from [dopamine](https://github.com/google/dopamine/blob/master/dopamine/jax/agents/dqn/configs/dqn.gin). It's optimised with Adam and uses MSE instead of Huber loss. **A surprisingly strong agent on this protocol**. |
-| **M-DQN** | `modern`  |  60   |   3   | DQN above but using the **Munchausen trick**. Even stronger performance. |
+| **M-DQN** | `modern`  |  60   |   3   | DQN above but using the **Munchausen trick**[^7]. Even stronger performance. |
 | **C51**            | `classic` | 28/57 |   3   | Closely follows the original paper[^3]. |
 | **DQN Adam**       | `classic` | 28/57 |   2   | A DQN agent trained according to the Rainbow paper[^4]. The exact settings and plots can be found in our paper[^5]. |
 
@@ -78,9 +78,11 @@ A detailed discussion about the performance of DQN + Adam and C51 trained on the
 
 ## References
 
-[^1]: [Machado, 2017. _Revisiting the Arcade Learning Environment..._](https://arxiv.org/abs/1709.06009)
-[^2]: [Mnih, 2015. _Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236)
-[^3]: [Bellemare, 2017. _A distributional perspective..._](http://proceedings.mlr.press/v70/bellemare17a.html)
-[^4]: [Hessel, 2017. _Combining Improvements in Deep RL_](https://arxiv.org/abs/1710.02298)
-[^5]: [Gogianu, 2017. _Spectral Normalisation..._](https://www.semanticscholar.org/paper/Spectral-Normalisation-for-Deep-Reinforcement-an-Gogianu-Berariu/cf04c05f69022f71b60c7b7252af94f11cad5ef1)
-[^6]: [Castro, 2018. _Dopamine: A Research Framework for Deep RL_](http://arxiv.org/abs/1812.06110)
+
+[^1]: [Machado, et al. 2017, _Revisiting the Arcade Learning Environment..._](https://arxiv.org/abs/1709.06009)
+[^2]: [Mnih, et al. 2015, _Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236)
+[^3]: [Bellemare, et al. 2017, _A distributional perspective..._](http://proceedings.mlr.press/v70/bellemare17a.html)
+[^4]: [Hessel, et al. 2017, _Combining Improvements in Deep RL_](https://arxiv.org/abs/1710.02298)
+[^5]: [Gogianu, et al. 2021, _Spectral Normalisation..._](https://www.semanticscholar.org/paper/Spectral-Normalisation-for-Deep-Reinforcement-an-Gogianu-Berariu/cf04c05f69022f71b60c7b7252af94f11cad5ef1)
+[^6]: [Castro, et al. 2018, _Dopamine: A Research Framework for Deep RL_](http://arxiv.org/abs/1812.06110)
+[^7]: [Vieillard, et al. 2020, _Munchausen Reinforcement Learning_](https://arxiv.org/abs/2007.14430)

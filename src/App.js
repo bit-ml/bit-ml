@@ -219,7 +219,7 @@ class App extends React.Component {
             <Routes />
 
             <CookieConsent
-              location="top"
+              location="bottom"
               cookieName="gdpr_consent"
               expires={150}
               buttonText="Accept"
