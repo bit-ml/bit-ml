@@ -2,8 +2,8 @@
   {
     "direction": "Machine Learning team",
     "id": "ml",
-    "team": {
-      "core": [
+    "subteams": {
+      "": [
         {
           "name": "Elena Burceanu",
           "bio": "I recently defended my PhD thesis in Computer Vision, on `Efficiently Exploiting Space-Time Consensus for Object Segmentation and Tracking in Video`, at University of Bucharest, under Marius Leordeanu and GheorgheStefanescu supervision. My current research interest is in Generalization problems under Distribution Shifts, with a focus on the anomaly detection task.",
@@ -117,7 +117,7 @@
           }
         }
       ],
-      "collabs": [
+      "collaborators": [
         {
           "name": "Andrei Nicolicioiu",
           "bio": "PhD Student @ University of Montreal",
@@ -168,8 +168,8 @@
   {
     "direction": "Crypto team",
     "id": "ml",
-    "team": {
-      "core": [
+    "subteams": {
+      "": [
         {
           "name": "Miruna Roșca",
           "bio": "I am interested in post-quantum cryptography, with a focus on lattice-based solutions. I have a strong background in mathematics and I obtained my Phd in cryptography from École Normale Supérieure de Lyon, advised by Damien Stehlé. During my Phd, I worked on algebraic variants of Learning With Errors. More info about me on the website link below.",
@@ -202,9 +202,7 @@
             "github": ""
           }
         }
-      ],
-      "interns": [],
-      "collabs": []
+      ]
     }
   }
 ]

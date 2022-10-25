@@ -1,6 +1,8 @@
 import React from 'react'
 import { withSiteData, withRouteData } from 'react-static'
 import styled from 'styled-components'
+import { color, space, typography } from 'styled-system'
+import breakpoint from 'styled-components-breakpoint'
 //
 
 import Head from 'components/Head'
@@ -10,7 +12,7 @@ import Hero from 'components/Hero'
 import Specialty from 'components/Specialty'
 import Project from 'components/Project'
 import Bio from 'components/Bio'
-import ResearchTeam from 'components/ResearchTeam'
+import PeopleGrid from 'components/PeopleGrid'
 
 // import logoImg from '../logo.png'
 
@@ -18,34 +20,47 @@ import ResearchTeam from 'components/ResearchTeam'
 const SpecialtyContainer = styled.div`
 `
 
+const TeamsContainer = styled.div`
+  background: #F5F2F2;
 
-// const TeamContainer = styled.div`
-// `
+  padding: 6rem 1rem;
+  ${breakpoint('tablet')`
+    padding: 10rem 5rem;
 
-// import { color, space, typography } from 'styled-system'
-// const Heading = styled.h3`
-//   ${typography}
-//   ${color}
-//   letter-spacing: 0.03em;
-//   text-transform: uppercase;
-// `
-// Heading.defaultProps = {
-//   mt: 2,
-//   mb: 1,
-//   p: 0,
-// }
+    @media screen and (orientation:portrait) {
+      padding: 10rem 10rem;
+    }
+  `}
 
-// const HeadingSmall = styled.h5`
-//   ${typography}
-//   ${color}
-//   letter-spacing: 0.03em;
-//   text-transform: uppercase;
-// `
-// HeadingSmall.defaultProps = {
-//   mt: 2,
-//   mb: 1,
-//   p: 0,
-// }
+  ${breakpoint('desktop')`
+    padding: 10rem 5rem;
+  `}
+`
+
+const TeamHeading = styled.h3`
+  ${typography}
+  ${color}
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+`
+TeamHeading.defaultProps = {
+  mt: 2,
+  mb: 1,
+  p: 0,
+}
+
+const SubTeamHeading = styled.h5`
+  ${typography}
+  ${color}
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+`
+SubTeamHeading.defaultProps = {
+  mt: 2,
+  mb: 1,
+  p: 0,
+  color: 'midContrast'
+}
 
 export default withRouteData(withSiteData(props => (
   <div>
@@ -72,27 +87,22 @@ export default withRouteData(withSiteData(props => (
       </SpecialtyContainer>
 
 
-
-      {/* <TeamContainer id="teams">
-        {props.teams.map((subteam) => (
-          <ResearchTeam id={subteam.id}>
-            <Heading>{subteam.direction}</Heading>
-            {subteam.team.core.map(Bio)}
-
-            <HeadingSmall>Interns</HeadingSmall>
-            {subteam.team.interns.map(Bio)}
-
-            <HeadingSmall>Collaborators</HeadingSmall>
-            {subteam.team.collabs.map(Bio)}
-          </ResearchTeam>
+      <TeamsContainer id="teams">
+        {props.teams.map((team) => (
+          <div>
+            <TeamHeading>{team.direction}</TeamHeading>
+            {Object.entries(team.subteams).map(([subteamName, people], i) => (
+              <div key={i}>
+                <SubTeamHeading>{subteamName}</SubTeamHeading>
+                <PeopleGrid id={subteamName}>
+                  {people.map(Bio)}
+                </PeopleGrid>
+              </div>
+            ))}
+          </div>
         ))}
-      </TeamContainer>
-       */}
+      </TeamsContainer>
 
-
-      <ResearchTeam id="team">
-        {props.people.map(Bio)}
-      </ResearchTeam>
     </Page>
-  </div>)
+  </div >)
 ))
