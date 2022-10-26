@@ -211,7 +211,7 @@
         "papers": [
           {
             "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
-            "title": "Transferring BERT-like Transformers' Knowledge for Authorship Verification",
+            "title": "Rethinking the Authorship Verification Experimental Setups",
             "year": "2022",
             "link": "https://arxiv.org/abs/2112.05125",
             "published": "EMNLP"
