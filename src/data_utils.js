@@ -17,6 +17,10 @@ const html = require('remark-html')
 const footnotes = require('remark-footnotes')
 // const highlight = require('remark-highlight.js')
 
+const macros = {
+  "\\R": "\\mathbb{R}",
+  "\\can": "{\\|#1\\|^{\\text{can}}}"
+};
 
 function extract_title_to_vFile(tree, file) {
   let title = ''
@@ -42,7 +46,7 @@ const processor = unified()
   .use(() => extract_title_to_vFile)
   .use(footnotes, { inlineNotes: true })
   .use(math)
-  .use(htmlKatex)
+  .use(htmlKatex, {macros})
   .use(gfm)
   .use(emoji)
   .use(prism, {
@@ -54,6 +58,7 @@ const processor = unified()
   .use(hint)
   // .use(wikiLinkPlugin, { hrefTemplate: permalink => `/notes/${permalink.replace(' ', '_')}/` })
   .use(html)
+  
 
 
 export const getContent = data_path => {
