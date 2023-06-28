@@ -20,7 +20,7 @@ for efficiency. It's for educational purposes only, and for us to better underst
 **What to expect from this blogpost?**
 1. We briefly describe the motivations of fully homomorphic encryption.
 2. We present the BGV scheme.
-3. We offer a Python implementation for the BGV scheme, for educational purposes. 
+3. We offer a [Python implementation](https://github.com/zademn/EverythingCrypto/blob/master/E3-Homomorphic-Encryption/BGV.ipynb) for the BGV scheme, for educational purposes. 
 
 Now, let's make a short, informal, tour before starting.
 [**Fully homomorphic encryption**](https://en.wikipedia.org/wiki/Homomorphic_encryption) (FHE) allows us to perform computation on encrypted data. While there are a few cryptographic schemes to achieve this, in this blogpost we explore the [**BGV scheme**](https://eprint.iacr.org/2011/277.pdf).  
@@ -54,7 +54,8 @@ Notations:
 
 ## Fully Homomorphic Encryption (FHE)
 
-Before defining fully homomorphic encryption, let's look at some **applications** of it to get a better intuition: 
+Before defining fully homomorphic encryption, let's look at some **applications** of it to get a better intuition:  
+
 **1. Outsourcing storage and computations**
 - A company wants to use a cloud provider to store data and do computational heavy lifting. 
 - *Task*: The company wants to use the information (for example: to do machine learning, extract statistical properties) without locally retrieving it  (defeating the purpose of using the cloud company services). Furthermore, the company doesn't want the cloud provider to see the sensitive data. 
@@ -83,7 +84,7 @@ Let  $(\text{KeyGen}, \text{Enc}, \text{Dec}, \text{Eval})$ be a tuple of proced
 Let $f \in \mathcal F$ be a function in a family of functions. This function can also be written as a *circuit* from a family of circuits $C \in \mathcal C$.  
 - $(sk, pk) \gets \text{KeyGen}(1^\lambda, 1^d)$ - key generation, $\lambda$ is a security parameter, $d$ is a functionality parameter (degree of the polynomial or depth of the circtuit). 
 - $c_i \gets \text{Enc}(pk, m_i)$ - Encryption of a message $m_i$ --  known as **fresh ciphertexts**. 
-- $c^* = \text{Eval}(pk, f, c_1, ... c_n)$ - Evaluate the function $f$ on the ciphertexts  -- known as **evaluated ciphertexts** 
+- $c^* = \text{Eval}(pk, f, c_1, ... c_n)$ - Evaluate the function $f$ on the ciphertexts  -- known as **evaluated ciphertexts**. 
 
 **Correctness**
 We require the (FHE) scheme to correctly decrypt both fresh and evaluated ciphertexts:
@@ -98,6 +99,7 @@ In the image above, the user with the laptop is interested in computing in encry
 
 **Circuits?**  
 The two important operations we care about are addition and multiplication, because with them we can construct any arithmetic operation! Homomorphic encryption schemes started out by encrypting bits, so the equivalent operations for additon and multiplication on bits, `xor` and `and` are used. 
+
 $$
 \oplus = + \bmod 2 \\
 \otimes = \times \bmod 2 
@@ -122,6 +124,7 @@ The community put a lot of effort into the analysing FHE schemes: finding good p
 
 ## Ring Learning With Errors (RLWE) 
 
+In this section we'll focus on briefly introducing the Ring learning with errors (RLWE) problem. The problem is very complex and we'll only attempt to cover the basic blocks for building an intuition. For the interested reader more details can be found in this [paper](https://eprint.iacr.org/2012/230.pdf).
 
 ### Quick recap on working with polynomials
 
@@ -232,8 +235,6 @@ The RLWE problem also has a search version, where given pairs $(a_i, b_i)$, $b_i
 
 More details about the RLWE problem can be found in this [paper](https://eprint.iacr.org/2012/230.pdf). In essence, by adding some small noise $e_i$, from a Gaussian distribution, we make our secret $s$ unrecoverable even if we have access to many RLWE samples.
 
-
-
 The [original BGV paper](https://eprint.iacr.org/2011/277.pdf) presents the algorithms (encryption, decryption, etc) of a HE scheme based on a more general problem, the *General Learning with Errors (GLWE)*  problem. For simplicity, we work with the RLWE case in this blogpost.
 
 ## The BGV encryption scheme
@@ -316,7 +317,9 @@ The decryption is correct as long as the error we add to $m$ does not wrap the c
 
 Now, we reduce the above $\bmod t$ and we get:
 
-$$c_0+c_1 \cdot s = m \bmod q \bmod t$$
+$$
+c_0+c_1 \cdot s = m \bmod q \bmod t
+$$
 
 
 
@@ -373,15 +376,20 @@ And by using `Decrypt(c*, sk, params)` we have
 
 $$
 \begin{aligned}
-c^*_0 + c^*_1 \cdot s &= \overbrace{(a \cdot s ) \cdot (u + u') + te \cdot (u + u') + t(e_0 + e'_0) + m + m'}^{c^*_0} + \overbrace{(-a(u + u') + t(e_1 + e'_1))}^{c^*_1} \cdot s \\
-&= \cancel{(a \cdot s ) \cdot (u + u')} + te \cdot (u + u') + t(e_0 + e'_0) + m + m' + \cancel{-(a \cdot s) \cdot (u + u')} +  t(e_1 + e'_1) \cdot s \\
+c^*_0 + c^*_1 \cdot s &= \overbrace{(a \cdot s ) \cdot (u + u') + te \cdot (u + u') + t(e_0 + e'_0) + m + m'}^{c^*_0} + \\
+&+ \overbrace{(-a(u + u') + t(e_1 + e'_1))}^{c^*_1} \cdot s \\
+&= \cancel{(a \cdot s ) \cdot (u + u')} + te \cdot (u + u') + t(e_0 + e'_0) + m + m' - \\
+& \cancel{-(a \cdot s) \cdot (u + u')} +  t(e_1 + e'_1) \cdot s \\
 &= t(e \cdot (u + u')) + t(e_0 + e'_0) + t(e_1 + e'_1) \cdot s  + m + m' \\
 &=  \underbrace{t(e \cdot (u + u') + e_0 + e'_0 + (e_1 + e'_1)\cdot s )}_{\text{error}} + m + m'
 \end{aligned}
 $$
 
-Again, by reducing everything $\bmod t$ we have 
-$$c^*_0 + c^*_1 \cdot s = m^* = m + m' \bmod t$$
+Again, by reducing everything $\bmod t$ we have
+
+$$
+c^*_0 + c^*_1 \cdot s = m^* = m + m' \bmod t
+$$
 
 with the same remark that for the decryption to be correct the error that we add to $m^*$ must not wrap $m^*$ around $q$.
 
@@ -441,7 +449,10 @@ $$(pk_0 + s^2, pk_1)$$
 Intuitively, we use a RLWE sample to hide $s^2$.
 
 Notice that:
-$$ek_0 + ek_1 \cdot s = \cancel{a \cdot s} + e + s^2 - \cancel{a \cdot s} = s^2 + e$$
+
+$$
+ek_0 + ek_1 \cdot s = \cancel{a \cdot s} + e + s^2 - \cancel{a \cdot s} = s^2 + e
+$$
 
 The easiest way to get the term $c^*_2 s^2$ from the above equation is to multiply it by $c^*_2$. However, $c^*_2$ is a random element in $R_q$ and it will yield some large noise $c^*_2e$. So we have to do something smarter.
 
@@ -480,17 +491,26 @@ A ciphertext component $c \in R_q$ is a polynomial of degree less than $n$, with
 $$c(x) = c[0] + c[1]x + ... + c[n-1]x^{n-1}$$
 
 We want to write the coefficients $(c[0], ..., c[n-1])$ in base $T$. Since any coefficient is less than $q$, this decomposition has at most $\lfloor \log_T q \rfloor + 1$ terms. For example $c[0] = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i c[0]^{(i)}$ where $c[0]^{(i)}$ is the corresponding digit $< T$ in the decomposition. Using these digits we can construct the polynomials $c^{(i)}$:
-$$c^{(i)}(x) = c[0]^{(i)} + c[1]^{(i)}x + ... + c[n-1]^{(i)}x^{n-1}$$
+
+$$
+c^{(i)}(x) = c[0]^{(i)} + c[1]^{(i)}x + ... + c[n-1]^{(i)}x^{n-1}
+$$
 
 Then using these polynomials we can decompose the original polynomial $c$:
-$$c = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot c^{(i)} \bmod q$$
+$$
+c = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot c^{(i)} \bmod q
+$$
 
 The polynomials $c^{(i)}$ are elements of $R_T$ and for a reasonable small $T$ they have small coefficients ($< T$). For each one of them we generate the hints:
-$$(ek_0^{(i)}, ek_1^{(i)}) = (a_i \cdot s + te_i + T^is^2, -a_i)$$
+$$
+(ek_0^{(i)}, ek_1^{(i)}) = (a_i \cdot s + te_i + T^is^2, -a_i)
+$$
 with $a_i \xleftarrow{R} R_q$ and $e_i \leftarrow \chi$.
 
 Now we go back to our ciphertext $c^* = (c_0^*, c_1^*, c_2^*)$, the result of `EvalMul`. We decompose $c^*_2$ in the base $T$ and we get:
-$$c^*_2 = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot {c^*_2}^{(i)} \bmod q$$
+$$
+c^*_2 = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot {c^*_2}^{(i)} \bmod q
+$$
 
 Then we construct the new ciphertext $\hat c$ with the **two** components:
 $$
@@ -502,7 +522,9 @@ $$
 
 Using the above relations, we obtain the following linear equation:
 
-$$\hat c_0 + \hat c_1 \cdot s = \underbrace{c^*_0 + c^*_1 \cdot s + c^*_2 \cdot s^2}_{m \cdot m'} + \underbrace{ \sum_{i=0}^{\lfloor \log_T q \rfloor} te_i \cdot {c^*_2}^{(i)}}_{\text{relinearization error}}$$
+$$
+\hat c_0 + \hat c_1 \cdot s = \underbrace{c^*_0 + c^*_1 \cdot s + c^*_2 \cdot s^2}_{m \cdot m'} + \underbrace{ \sum_{i=0}^{\lfloor \log_T q \rfloor} te_i \cdot {c^*_2}^{(i)}}_{\text{relinearization error}}
+$$
 (the terms containing $a_i \cdot s$ from $\hat c_0$ and $-a_i \cdot s$ from $\hat c_1 \cdot s$  cancel out, $c^*_2$ is reconstructed and we are left with an error term).
 
 Because the relinearization error is a multiple of $t$, it goes away when we decrypt and reduce $\bmod t$ as long as the relinearization error does not wrap $m^* = m\cdot m'$ around $q$.
@@ -531,7 +553,10 @@ The two requirements that we want to have are
 **Rounding**  
 In order for the decryption to be correct we must adjust $c_i$ before scaling by  $q / Q$. To do this we add a **small correction term** $\delta_i$ per component. We require $\delta_i$ to:
 1. Only influence the error, hence $\delta_i \equiv 0 \bmod t$ (it will disappear when decrypting)
-2. Make the ciphertext to be divisible by $Q / q \Rightarrow c_i + \delta_i \equiv 0 \bmod \dfrac Q q  \Rightarrow \delta_i \equiv -c_i \bmod \dfrac Q q$.
+2. Make the ciphertext to be divisible by
+    $$
+    Q / q \Rightarrow c_i + \delta_i \equiv 0 \bmod \dfrac Q q  \Rightarrow \delta_i \equiv -c_i \bmod \dfrac Q q
+    $$
 
 One easy choice to set the correction terms such that both properties hold is $\delta_i = t [-c_i t^{-1}]_{Q/q}$ where $t^{-1}$ is the inverse of $t$ modulo $Q / q$. 
 
@@ -672,7 +697,9 @@ We now have the building blocks (starting values and operations) to analyse the 
 
 **Fresh ciphertext noise**  
 In order to make sure the decryption is correct we must make sure the error 
-$$v = c_0 + c_1 \cdot s= \underbrace{t(e \cdot u + e_0 + e_1 \cdot s)}_{r}+ m = r + m \bmod q$$
+$$
+v = c_0 + c_1 \cdot s= \underbrace{t(e \cdot u + e_0 + e_1 \cdot s)}_{r}+ m = r + m \bmod q
+$$
 does not wrap around the modulus (i.e $\|v\|_{\infty} \leq c_{2n}\can v \leq q/2$ ). The message $m$ is thought to come uniformly from $R_t$.
 
 Recall that
@@ -693,12 +720,14 @@ $$\can v \leq D\sqrt {nV_v}$$
 
 The parameters for the scheme and distributions, $q, t, \sigma, n$,  are chosen such that the decryption is correct. 
 
-**Addition**
+**Addition**  
 For two ciphertexts $(c, c')$ encrypting $(m, m')$ we have the corresponding errors $(v, v')$. The error after ciphertext addition is $v_{\text{add}}$. 
 
 
 If we use the decryption equation we have
-$$v_{\text{add}} = v + v' = (c_0 + c_1 \cdot s) + (c_0' + c_1' \cdot s) = r + m + r' + m' \bmod q$$
+$$
+v_{\text{add}} = v + v' = (c_0 + c_1 \cdot s) + (c_0' + c_1' \cdot s) = r + m + r' + m' \bmod q
+$$
 
 We have $m + m' = [m + m']_t + gt$ with $g \in R$ and $\|g\|_{\infty} = 1$ (because both $\|m\|_{\infty}, \|m'\|_{\infty} < t / 2$). By replacing in the equation above we obtain:
 $$v + v' = [m + m']_t + r + r' + gt \bmod q$$
@@ -706,16 +735,22 @@ $$v + v' = [m + m']_t + r + r' + gt \bmod q$$
 We see that the noise $r + r' + gt$ grows linearly. 
 
 Finally, using the canonical norm we have the following:
-$$\can {v_{\text{add}}} \leq \can v + \can {v'}$$
+$$
+\can {v_{\text{add}}} \leq \can v + \can {v'}
+$$
 
-**Multiplication**
+**Multiplication**  
 Similarly for multiplication, if we use the decryption equation we have:
-$$v_{\text{mul}} = v \cdot v' = (c_0 + c_1 \cdot s) \cdot (c_0' + c_1' \cdot s) = (r + m) + (r' + m') = mm' + mr' + m'r + rr' \bmod q$$
+$$
+v_{\text{mul}} = v \cdot v' = (c_0 + c_1 \cdot s) \cdot (c_0' + c_1' \cdot s) = (r + m) + (r' + m') = mm' + mr' + m'r + rr' \bmod q
+$$
 
 If we look at the error term $mr' + m'r + rr'$ we see that in the leading term $rr'$ we multiply the noises, therefore the noise grows quadratically.
 
 Using the canonical norm, we have:
-$$\can {v_{\text{mul}}} \leq \can v\can {v'}$$
+$$
+\can {v_{\text{mul}}} \leq \can v\can {v'}
+$$
 
 **Modulus switching**  
 For modulus switch we scale the noise down and then we add the small error that comes with the correction terms $\delta_0, \delta_1$.
@@ -723,10 +758,14 @@ Recall that
 -  We set $\delta_i = t[-c_it^{-1}]_{Q/q}$. We assume the terms $[-c_it^{-1}]_{Q/q}$ are uniformly distributed mod $Q / q$, then multiplied by $t$ => $V_{\delta_0} = V_{\delta_1} = \dfrac {t^2Q^2} {12q^2}$.
 
 
-$$v_{\text{switch}} = [\tilde c_0 + \tilde c_1 \cdot s]_q = \dfrac q Q [c_0 + c_1 \cdot s]_Q  + \dfrac q Q (\delta_0 + \delta_1 \cdot s) = \dfrac q Q v  + \dfrac q Q (\delta_0 + \delta_1 \cdot s)$$
+$$
+v_{\text{switch}} = [\tilde c_0 + \tilde c_1 \cdot s]_q = \dfrac q Q [c_0 + c_1 \cdot s]_Q  + \dfrac q Q (\delta_0 + \delta_1 \cdot s) = \dfrac q Q v  + \dfrac q Q (\delta_0 + \delta_1 \cdot s)
+$$
 
 Using the canonical norm we get:
-$$\can {v_{\text{switch}}} \leq \dfrac q Q \can v + \dfrac q Q \can {\delta_0 + \delta_1 \cdot s} \leq \dfrac q Q \can v + Dt\sqrt{\dfrac n {12} \left (1 + \dfrac 2 3 n \right)}$$
+$$
+\can {v_{\text{switch}}} \leq \dfrac q Q \can v + \dfrac q Q \can {\delta_0 + \delta_1 \cdot s} \leq \dfrac q Q \can v + Dt\sqrt{\dfrac n {12} \left (1 + \dfrac 2 3 n \right)}
+$$
 
 We can see that the noise is scaled down by almost $q / Q$.
 
@@ -756,7 +795,9 @@ Recall that:
 - The secret $s$ comes from a ternary distribution => $V_{s}= 2/3$.
 -  We set $\delta_i = t[-c_it^{-1}]_{Q/q}$. We assume the terms $[-c_it^{-1}]_{Q/q}$ are uniformly distributed mod $Q / q$, then multiplied by $t$ => $V_{\delta_0} = V_{\delta_1} = \dfrac {t^2Q^2} {12q^2}$.
 
-$$v_{\text{ks}} = \underbrace{c_0^* + c_1^* \cdot s + c_2^* \cdot s^2}_{v_{\text{mul}}} + \dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)$$
+$$
+v_{\text{ks}} = \underbrace{c_0^* + c_1^* \cdot s + c_2^* \cdot s^2}_{v_{\text{mul}}} + \dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)
+$$
 
 The variance of this error term is:
 $$
@@ -783,7 +824,7 @@ $$
 
 And now that we have discussed all the ingredients and spices of the BGV encryption scheme, it's time to bake it, sorry, implement it.
 
-We provide a proof of concept implementation, in Python. The aim of the code is to mirror the equations easily. This means that if we see $a \cdot s + e$ in the theory part we prefer to see `a * s + e` in code instead of `polyadd(polymul(a, s), e)`. 
+We provide a [proof of concept implementation](https://github.com/zademn/EverythingCrypto/blob/master/E3-Homomorphic-Encryption/BGV.ipynb), in Python. The aim of the code is to mirror the equations easily. This means that if we see $a \cdot s + e$ in the theory part we prefer to see `a * s + e` in code instead of `polyadd(polymul(a, s), e)`. 
 
 ?> DISCLAIMER: The code should be used for educational purposes only, and never in production. 
 
