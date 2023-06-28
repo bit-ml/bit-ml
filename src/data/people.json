@@ -118,5 +118,15 @@
       "twitter": "",
       "github": ""
     }
+  },
+  {
+    "name": "Dacian Stroia",
+    "bio": "I am an applied researcher in the field of cryptography and machine learning. I studied CSE at Politehnica University of Timișoara, and now I'm  a MSc student at the machine learning specialization at the same university. I'm interested in understanding cryptographic algorithms and their real world implementation considerations. Nowadays, I'm focusing on homomorphic encryption techniques.",
+    "img": "dacian_stroia.jpg",
+    "contact": {
+      "mail": "dstroia@bitdefender.com",
+      "twitter": "",
+      "github": "zademn"
+    }
   }
 ]
