@@ -481,9 +481,9 @@ Before describing how we multiply two ciphertexts we need to reinterpret the dec
 $$c_0 + c_1 \cdot \red{s}  \equiv m \bmod t$$
 as a linear equation:
 $$y = ax + b$$
-in $s$.
+in $\ted{s}$.
 
-If we look at adding two such linear equations in $s$ we obtain another linear  equation in $s$:
+If we look at adding two such linear equations in $s$ we obtain another linear  equation in $\red{s}$:
 $$c_0 + c_1 \cdot \red{s} + c'_0  + c'_1 \cdot \red{s} = \underbrace{(c_0 + c_0')}_{c^*_0}  + \underbrace{(c_1 + c'_1)}_{c^*_1} \cdot \red{s}$$
 
 However, when multiplying two linear equations in $\red{s}$ we get a quadratic equation ($ax^2 + bx + c$) in $\red{s}$:
@@ -518,7 +518,7 @@ The concept was explained in the [BFV blogpost](https://bit-ml.github.io/blog/po
 
 *Intuition*: We want to transform the quadratic equation $c^*_0 + c^*_1 \cdot \red{s} + c^*_2 \cdot \red{s}^2$ in $\red{s}$ into some other linear equation $\hat c_0 + \hat c_1 \cdot \red{\hat s}$ in some other secret key $\red{\hat s}$.
 
-In order to do this we need to give some extra information (a "hint") about the key $s$ that will help us get $\hat s$.
+In order to do this we need to give some extra information (a "hint") about the key $\red{s}$ that will help us get $\red{\hat s}$.
 
 Consider the hint to be the pair:
 
