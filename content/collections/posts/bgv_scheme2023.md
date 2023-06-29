@@ -6,11 +6,12 @@ featured_img: "/galleries/homomorphic2020/enigma_dec.jpg"
 date: June-29-2023
 ---
 
-# The BGV fully homomorphic encryption scheme
 
+# The BGV fully homomorphic encryption scheme
+## Introduction
 $$\gdef\can #1{\|#1\|^{\text{can}}}$$
 
-This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) part of the series that cover fully homomorphic encryption techniques and applications.
+This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) and it's part of the series that cover fully homomorphic encryption techniques and applications.
 
 In this blogpost we will focus on the encryption, decryption, relinearization and the noise analysis of the [Brakerski, Gentry, Vaikuntanathan (BGV)](https://eprint.iacr.org/2011/277.pdf) fully homomorphic encryption scheme. A Python implementation of the aforementioned will be provided.
 
@@ -67,6 +68,11 @@ Before defining fully homomorphic encryption, let's look at some **applications*
 - *Task*: The client wants to retrieve a query **without** the database provider learning the query. 
 - *Solution*: Using homomorphic encryption the client can encrypt the index of the record and then the database can use this encrypted index to fetch (the comparison operation can be done using FHE) and return the encrypted result to the client. Finally, the client can decrypt the record. 
 
+**3. Private set intersection**
+- A client and a server each has a set of elements. The client wants to know which elements from its set are in the server's set.
+- *Task*: The client wants to find out the intersection of its elements and the server's, without the server learning anything about the client's elements and vice versa.
+- *Solution (Very simplified)*: They translate the comparison operation into a subtraction ($x = y \Rightarrow x - y = 0$). The client encrypts its elements and sends them to the server. Then, the server evalutes these subtractions homomorphically. Because the result of the subtraction is an encrypted result, the server learns nothing. Then the server sends the comparison results back and the client decrypts the results. We have a longer, more in-depth blogpost about it [here](https://bit-ml.github.io/blog/post/private-set-intersection-an-implementation-in-python/). Happy reading!
+- Examples: Client: user contacts, Server: whatsapp contacts; Client: own passwords, Server: database with breached passwords.
 
 *Intuition*
 - A user has an arithmetic function $f$ and some inputs $(m_1, ... m_n)$.
@@ -86,7 +92,7 @@ Let $f \in \mathcal F$ be a function in a family of functions. This function can
 - $c_i \gets \text{Enc}(pk, m_i)$ - Encryption of a message $m_i$ --  known as **fresh ciphertexts**. 
 - $c^* = \text{Eval}(pk, f, c_1, ... c_n)$ - Evaluate the function $f$ on the ciphertexts  -- known as **evaluated ciphertexts**. 
 
-**Correctness**
+**Correctness**  
 We require the (FHE) scheme to correctly decrypt both fresh and evaluated ciphertexts:
 $$\text{Dec}(sk, c^*) = m^* = f(m_1, ..., m_n)$$
 
@@ -111,7 +117,7 @@ $$\text{nand}(a, b) = a \times b + 1 \bmod 2$$
 By extending to multiple bits, with the gates we discussed above you can represent any computation using boolean circuits.
 
 HE can be classified based on the type of functions $f$ that it supports: 
-- **Partially homomorphic encryption**
+- **Partially homomorphic encryption**  
     Given $\text{Enc}(m_1)$, and $\text{Enc}(m_2)$ you can do limited operations (either additions or multiplications)
 - **Somewhat (leveled) homomorphic encryption**  
     Given $\text{Enc}(m_1), ..., \text{Enc}(m_n)$ you can compute $\text{Enc}(f(m_1, ... m_n))$ where $f$ is a polynomial of a limited degree.
@@ -228,7 +234,7 @@ Consider the quotient polynomial ring $R_q = \mathbb Z_q[X]/ (X^n + 1)$. This ri
 **The RLWE problem - decision**  
 The problem asks to distinguish between the following two distributions:
   - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $b_i \xleftarrow R R_q$. 
-  - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $e_i \leftarrow \chi$,  and $b_i = a_i \cdot s + e_i$ for some "small" secret $s \in R_q$ sampled before.
+  - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $\textcolor{darkgreen}{e_i} \leftarrow \chi$,  and $b_i = a_i \cdot \red{s} + \textcolor{darkgreen}{e_i}$ for some "small" secret $\red{s} \in R_q$ sampled before.
     
 The RLWE problem also has a search version, where given pairs $(a_i, b_i)$, $b_i = a_i \cdot s + e_i$ you need to find $s$. In practice, the decision version is more widely used when proving the security of different schemes. 
 
@@ -249,41 +255,43 @@ We consider $R_q = \mathbb Z_q[X] / (X^n + 1)$. This ring has polynomials with d
 **Note**: 
 - All polynomial operations are considered $\bmod q$ unless otherwise specified, to ease notation.
 - When we talk about "small" polynomials, we intuitively think about them having  small coefficients. 
+- Polynomials that come from the noise distribution will be colored with green (ex: $\textcolor{darkgreen}{e}$) and the ones that will come from the secret key distribution will be colored with red (Ex: $\red{s}, \red{u}$).
 
 
 We will have one secret key $sk$, a public key with two components $pk = (pk_0, pk_1)$, a ciphertext with 2 components $c = (c_0, c_1)$
 The messsage will come from the ring $R_t$.
 
 `SecretKeyGen(params) -> sk`
-- Draw $s$ from a secret key distribution which outputs "small" elements with overwhelming probability. In practice $s \in \{-1, 0, 1\}^n$, with the probability of sampling $0$ specified as a parameter and the probabilities of sampling $-1$ or $1$ being equal.
-- Return the secret key $sk = s$.
+- Draw $\red{s}$ from a secret key distribution which outputs "small" elements with overwhelming probability. In practice $\red{s} \in \{-1, 0, 1\}^n$, with the probability of sampling $0$ specified as a parameter and the probabilities of sampling $-1$ or $1$ being equal.
+- Return the secret key $sk = \red{s}$.
 
 `PubKeyGen(sk, params) -> (pk0, pk1)`
-- Draw a random element $a \xleftarrow R R_q$ and the noise $e \leftarrow \chi$. 
-- Return the public key: $pk = (pk_0, pk_1) = \underbrace{(a \cdot s + te, -a)}_{\text{RLWE instance-like}}$.
+- Draw a random element $a \xleftarrow R R_q$ and the noise $\textcolor{darkgreen}{e} \leftarrow \chi$. 
+- Return the public key: $pk = (pk_0, pk_1) = \underbrace{(a \cdot \red{s} + t\textcolor{darkgreen}{e}, -a)}_{\text{RLWE instance-like}}$.
 
 Notice that the public key  looks like a RLWE sample, but the error $e$ is multiplied by the plaintext modulus $t$. 
 
 `Encrypt(m, pk, params) -> (c0, c1)`
-- Draw the noise $e_0, e_1 \leftarrow \chi$ and a "small" random polynomial $u \xleftarrow R \{-1, 0, 1\}^n$ 
-- Compute $c_0 = pk_0 \cdot u + te_0 + m$
-- Compute $c_1 = pk_1 \cdot u + te_1$
+- Draw the noise $\textcolor{darkgreen}{e_0}, \textcolor{darkgreen}{e_1} \leftarrow \chi$ and a "small" polynomial $\red{u} \in \{-1, 0, 1\}^n$ in the same way as the secret.
+- Compute $c_0 = pk_0 \cdot \red{u} + t\textcolor{darkgreen}{e_0} + m$
+- Compute $c_1 = pk_1 \cdot \red{u} + t\textcolor{darkgreen}{e_1}$
 - Return $c = (c_0, c_1)$.
 
 The ciphertext components $(c_0, c_1)$ are elements in $R_q = \mathbb Z_q[X]/(X^n + 1)$.
 
 `Decrypt(c, sk, params)`
-- Compute $m = c_0 + c_1 \cdot s \bmod q \bmod t$
+- Compute $m = c_0 + c_1 \cdot \red{s} \bmod q \bmod t$
 - Return $m$.
 
-**Correctness**
+<details><summary> Correctness (Click for math)</summary>
+
 
 Let's unroll the equations to check the correctness. All operation are $\bmod q$ to ease notation, unless we specify otherwise. 
 
 The public key is:
 $$
 \begin{aligned}
-pk_0 &= a \cdot s + te \\
+pk_0 &= a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e} \\
 pk_1 &= -a
 \end{aligned}
 $$
@@ -291,24 +299,46 @@ $$
 The public key hides the secret $s$ as a RLWE sample.
 
 The encryption equations unrolled are:
-$$
+
+<!-- $$
 \begin{aligned}
 c_0 &= pk_0 \cdot u + te_0 + m \\
 &= (a \cdot s + te) \cdot u + te_0 + m \\
-&= a \cdot s \cdot u + t(e \cdot u) + te_0 + m
+&= a \cdot s \cdot u + t(e \cdot u) + te_0 + m \\
 \\
 c_1 &= pk_1 \cdot u + te_1 \\
 &= -a \cdot u + te_1 \\
 \end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+c_0 = pk_0 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e}_0 + m \\
+&= (a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e}) \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_0} + m \\
+&= a \cdot \textcolor{red}{s} \cdot \textcolor{red}{u} + t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u}) + t\textcolor{darkgreen}{e_0} + m
+\\
+c_1 &= pk_1 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_1} \\
+&= -a \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_1} \\
+\end{aligned}
 $$
 
 The decryption equation unrolled is:
-$$
+
+<!-- $$
 \begin{aligned}
 c_0 + c_1 \cdot s &= a \cdot s \cdot u + t(e \cdot u) + te_0 + m + (-a \cdot u + te_1) \cdot s \bmod q\\
 &= \cancel{a \cdot s \cdot u} + t(e \cdot u) + te_0 + m \cancel{-a \cdot u \cdot s} + t(e_1 \cdot s)\\
 &= t(e_1 \cdot s) + t(e \cdot u) + te_0 + m \\
 &= \underbrace{t(e \cdot u + e_0 + e_1 \cdot s)}_{\text{error}} + m
+\end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+c_0 + c_1 \cdot \textcolor{red}{s} &= a \cdot \textcolor{red}{s} \cdot \textcolor{red}{u} + t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u}) + t\textcolor{darkgreen}{e_0} + m + (-a \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_1}) \cdot \textcolor{red}{s} \bmod q \\
+&= \cancel{a \cdot \textcolor{red}{s} \cdot \textcolor{red}{u}} + t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u}) + t\textcolor{darkgreen}{e_0} + m \cancel{-a \cdot \textcolor{red}{u} \cdot \textcolor{red}{s}} + t\textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s} \\
+&= t\textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s} + t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u}) + t\textcolor{darkgreen}{e_0} + m \\
+&= \underbrace{t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u} + \textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s})}_{\text{error}} + m
 \end{aligned}
 $$
 
@@ -318,10 +348,11 @@ The decryption is correct as long as the error we add to $m$ does not wrap the c
 Now, we reduce the above $\bmod t$ and we get:
 
 $$
-c_0+c_1 \cdot s = m \bmod q \bmod t
+c_0+c_1 \cdot \textcolor{red}{s} = m \bmod q \bmod t
 $$
 
-
+</details>
+<br>
 
 ## FHE Operations
 
@@ -333,7 +364,7 @@ The goal is to find two functions, $\text{add}, \text{mul}$, that work on cipher
 
 Recall that $c$ and $c'$ encrypt $m$ and $m'$ i.e.:
 
-$$
+<!-- $$
 \begin{aligned}
 c_0 &= pk_0 \cdot u + te_0 + m \\
 c_1 &= pk_1 \cdot u + te_1 \\
@@ -341,9 +372,19 @@ c_1 &= pk_1 \cdot u + te_1 \\
 c'_0 &= pk_0 \cdot u' + te'_0 + m \\
 c'_1 &= pk_1 \cdot u' + te'_1 \\
 \end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+c_0 &= pk_0 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_0} + m \\
+c_1 &= pk_1 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_1} \\
+\\
+c'_0 &= pk_0 \cdot \textcolor{red}{u'} + t\textcolor{darkgreen}{e'_0} + m \\
+c'_1 &= pk_1 \cdot \textcolor{red}{u'} + t\textcolor{darkgreen}{e'_1} \\
+\end{aligned}
 $$
 
-### FHE addition
+### FHE Addition
 The image on the left performs the addition before the encryption, with the messages in clear. This is not what we want. The image on the right is the desirable outcome, where we encrypt the messages, then perform addition on the encrypted messages.
 
 ![fhe_add](/galleries/bgv_scheme2023/fhe_add_tiny.png)
@@ -355,8 +396,9 @@ We define `add`:
 - $c^*_1 = c_1 + c'_1$
 - return $c^* = (c^*_0, c^*_1)$
 
-**Correctness**
-$$
+<details><summary> Correctness (click for math)</summary>
+
+<!-- $$
 \begin{aligned}
 c^*_0 &= c_0 + c'_0 \\
 &= pk_0 \cdot u + te_0 + m + pk_0 \cdot u' + te'_0 + m' \\
@@ -370,10 +412,26 @@ c^*_1 &= c_1 + c'_1 \\
 &= pk_1(u + u') + t(e_1 + e'_1) \\
 &= -a(u + u') + t(e_1 + e'_1)
 \end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+c^*_0 &= c_0 + c'_0 \\
+&= pk_0 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_0} + m + pk_0 \cdot \textcolor{red}{u'} + t\textcolor{darkgreen}{e'_0} + m' \\
+&= pk_0 \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + m + m' \\
+&= (a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e}) \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + m + m' \\
+&= (a \cdot \textcolor{red}{s} ) \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t\textcolor{darkgreen}{e} \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + m + m'
+\\
+\\
+c^*_1 &= c_1 + c'_1 \\
+&= pk_1 \cdot \textcolor{red}{u} + t\textcolor{darkgreen}{e_1} + pk_1 \cdot \textcolor{red}{u'} + t\textcolor{darkgreen}{e'_1} \\ 
+&= pk_1(\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1}) \\
+&= -a(\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1})
+\end{aligned}
 $$
 
 And by using `Decrypt(c*, sk, params)` we have
-
+<!-- 
 $$
 \begin{aligned}
 c^*_0 + c^*_1 \cdot s &= \overbrace{(a \cdot s ) \cdot (u + u') + te \cdot (u + u') + t(e_0 + e'_0) + m + m'}^{c^*_0} + \\
@@ -383,15 +441,30 @@ c^*_0 + c^*_1 \cdot s &= \overbrace{(a \cdot s ) \cdot (u + u') + te \cdot (u + 
 &= t(e \cdot (u + u')) + t(e_0 + e'_0) + t(e_1 + e'_1) \cdot s  + m + m' \\
 &=  \underbrace{t(e \cdot (u + u') + e_0 + e'_0 + (e_1 + e'_1)\cdot s )}_{\text{error}} + m + m'
 \end{aligned}
+$$ -->
+
+
+$$
+\begin{aligned}
+c^*_0 + c^*_1 \cdot \textcolor{red}{s} &= \overbrace{(a \cdot \textcolor{red}{s} ) \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + \textcolor{darkgreen}{te} \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + m + m'}^{c^*_0} + \\
+&+ \overbrace{(-a(\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1}))}^{c^*_1} \cdot \textcolor{red}{s} \\
+&= \cancel{(a \cdot \textcolor{red}{s} ) \cdot (\textcolor{red}{u} + \textcolor{red}{u'})} + t\textcolor{darkgreen}{e} \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + m + m' - \\
+& \cancel{-(a \cdot \textcolor{red}{s}) \cdot (\textcolor{red}{u} + \textcolor{red}{u'})} +  t(\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1}) \cdot \textcolor{red}{s} \\
+&= t\textcolor{darkgreen}{e} \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + t(\textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0}) + t(\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1}) \cdot \textcolor{red}{s}  + m + m' \\
+&=  \underbrace{t(\textcolor{darkgreen}{e} \cdot (\textcolor{red}{u} + \textcolor{red}{u'}) + \textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e'_0} + (\textcolor{darkgreen}{e_1} + \textcolor{darkgreen}{e'_1}) \cdot \textcolor{red}{s} )}_{\text{error}} + m + m'
+\end{aligned}
 $$
 
 Again, by reducing everything $\bmod t$ we have
 
 $$
-c^*_0 + c^*_1 \cdot s = m^* = m + m' \bmod t
+c^*_0 + c^*_1 \cdot \red{s} = m^* = m + m' \bmod t
 $$
 
 with the same remark that for the decryption to be correct the error that we add to $m^*$ must not wrap $m^*$ around $q$.
+
+</details>
+<br>
 
 The resulting ciphertext $c^*$ is not fresh anymore (just encrypted), and has a bigger noise than any of the previous ciphertexts that were inputs in the addition operation. In general, using non-fresh ciphertexts $c^*$ to perform future operations will carry over the noise from all the previous operations.
 
@@ -405,18 +478,23 @@ As in the addition case, we want the multiplication to be done on the encrypted 
 <!-- ![](https://hackmd.io/_uploads/ByIaITbun.png) -->
 
 Before describing how we multiply two ciphertexts we need to reinterpret the decryption equation: 
-$$c_0 + c_1 \cdot s  \equiv m \bmod t$$
+$$c_0 + c_1 \cdot \red{s}  \equiv m \bmod t$$
 as a linear equation:
 $$y = ax + b$$
 in $s$.
 
 If we look at adding two such linear equations in $s$ we obtain another linear  equation in $s$:
-$$c_0 + c_1 \cdot s + c'_0  + c'_1 \cdot s = \underbrace{(c_0 + c_0')}_{c^*_0}  + \underbrace{(c_1 + c'_1)}_{c^*_1} \cdot s$$
+$$c_0 + c_1 \cdot \red{s} + c'_0  + c'_1 \cdot \red{s} = \underbrace{(c_0 + c_0')}_{c^*_0}  + \underbrace{(c_1 + c'_1)}_{c^*_1} \cdot \red{s}$$
 
-However, when multiplying two linear equations in $s$ we get a quadratic equation ($ax^2 + bx + c$) in $s$:
-$$
+However, when multiplying two linear equations in $\red{s}$ we get a quadratic equation ($ax^2 + bx + c$) in $\red{s}$:
+<!-- $$
 \begin{aligned}
 \underbrace{(c_0 + c_1 \cdot s )}_{= m \bmod t} \cdot \underbrace{(c'_0 + c'_1 \cdot s )}_{= m' \bmod t} &= c_1 \cdot c'_1 \cdot s^2 + (c_0 \cdot c'_1 + c_1 \cdot c'_0) \cdot s +c_0 \cdot c'_0
+\end{aligned}
+$$ -->
+$$
+\begin{aligned}
+\underbrace{(c_0 + c_1 \cdot \textcolor{red}{s} )}_{= m \bmod t} \cdot \underbrace{(c'_0 + c'_1 \cdot \textcolor{red}{s} )}_{= m' \bmod t} &= c_1 \cdot c'_1 \cdot \textcolor{red}{s}^2 + (c_0 \cdot c'_1 + c_1 \cdot c'_0) \cdot \textcolor{red}{s} +c_0 \cdot c'_0
 \end{aligned}
 $$
 
@@ -438,23 +516,33 @@ To solve the remarks the concept of **relinearization** is introduced.
 
 The concept was explained in the [BFV blogpost](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) aswell.
 
-*Intuition*: We want to transform the quadratic equation $c^*_0 + c^*_1 \cdot s + c^*_2 \cdot s^2$ in $s$ into some other linear equation $\hat c_0 + \hat c_1 \cdot \hat s$ in $\hat s$ for some other secret key $\hat s$. 
+*Intuition*: We want to transform the quadratic equation $c^*_0 + c^*_1 \cdot \red{s} + c^*_2 \cdot \red{s}^2$ in $\red{s}$ into some other linear equation $\hat c_0 + \hat c_1 \cdot \red{\hat s}$ in some other secret key $\red{\hat s}$.
 
 In order to do this we need to give some extra information (a "hint") about the key $s$ that will help us get $\hat s$.
 
 Consider the hint to be the pair:
-$$(ek_0, ek_1) = ((a \cdot s + te) + s^2, -a)$$
+
+<!-- $$(ek_0, ek_1) = ((a \cdot s + te) + s^2, -a)$$ -->
+
+$$
+(ek_0, ek_1) = ((a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e}) + \textcolor{red}{s}^2, -a)
+$$
+
 This is very similar to how the public key is generated and we can use the `PubKeyGen -> (pk0, pk1)` to generate it:
-$$(pk_0 + s^2, pk_1)$$
-Intuitively, we use a RLWE sample to hide $s^2$.
+$$(pk_0 + \red{s}^2, pk_1)$$
+Intuitively, we use a RLWE sample to hide $\red{s}^2$.
 
 Notice that:
 
-$$
+<!-- $$
 ek_0 + ek_1 \cdot s = \cancel{a \cdot s} + e + s^2 - \cancel{a \cdot s} = s^2 + e
+$$ -->
+
+$$
+ek_0 + ek_1 \cdot \textcolor{red}{s} = \cancel{\textcolor{red}{a} \cdot \textcolor{red}{s}} + \textcolor{darkgreen}{e} + \textcolor{red}{s}^2 - \cancel{\textcolor{red}{a} \cdot \textcolor{red}{s}} = \textcolor{red}{s}^2 + \textcolor{darkgreen}{e}
 $$
 
-The easiest way to get the term $c^*_2 s^2$ from the above equation is to multiply it by $c^*_2$. However, $c^*_2$ is a random element in $R_q$ and it will yield some large noise $c^*_2e$. So we have to do something smarter.
+The easiest way to get the term $c^*_2 \red{s}^2$ from the above equation is to multiply it by $c^*_2$. However, $c^*_2$ is a random element in $R_q$ and it will yield some large noise $c^*_2\textcolor{darkgreen}{e}$. So we have to do something smarter.
 
 
 ### Key switching v1
@@ -502,10 +590,14 @@ c = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot c^{(i)} \bmod q
 $$
 
 The polynomials $c^{(i)}$ are elements of $R_T$ and for a reasonable small $T$ they have small coefficients ($< T$). For each one of them we generate the hints:
-$$
+<!-- $$
 (ek_0^{(i)}, ek_1^{(i)}) = (a_i \cdot s + te_i + T^is^2, -a_i)
+$$ -->
 $$
-with $a_i \xleftarrow{R} R_q$ and $e_i \leftarrow \chi$.
+(ek_0^{(i)}, ek_1^{(i)}) = (a_i \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e_i} + T^i\textcolor{red}{s}^2, -a_i)
+$$
+
+with $a_i \xleftarrow{R} R_q$ and $\textcolor{darkgreen}{e_i} \leftarrow \chi$.
 
 Now we go back to our ciphertext $c^* = (c_0^*, c_1^*, c_2^*)$, the result of `EvalMul`. We decompose $c^*_2$ in the base $T$ and we get:
 $$
@@ -513,19 +605,31 @@ c^*_2 = \sum_{i=0}^{\lfloor \log_T q \rfloor} T^i  \cdot {c^*_2}^{(i)} \bmod q
 $$
 
 Then we construct the new ciphertext $\hat c$ with the **two** components:
-$$
+
+<!-- $$
 \begin{aligned}
 \hat c_0 &= c^*_0 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ek_0^{(i)} \cdot {c^*_2}^{(i)} = c^*_0 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ((a_i \cdot s + te_i) + T^is^2 )\cdot {c^*_2}^{(i)}\\
+\hat c_1 &= c^*_1 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ek_1^{(i)} \cdot {c^*_2}^{(i)} = c^*_1 + \sum_{i=0}^{\lfloor \log_T q \rfloor} -a_i \cdot {c^*_2}^{(i)} 
+\end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+\hat c_0 &= c^*_0 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ek_0^{(i)} \cdot {c^*_2}^{(i)} = c^*_0 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ((a_i \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e_i}) + T^i\textcolor{red}{s}^2 )\cdot {c^*_2}^{(i)}\\
 \hat c_1 &= c^*_1 + \sum_{i=0}^{\lfloor \log_T q \rfloor} ek_1^{(i)} \cdot {c^*_2}^{(i)} = c^*_1 + \sum_{i=0}^{\lfloor \log_T q \rfloor} -a_i \cdot {c^*_2}^{(i)} 
 \end{aligned}
 $$
 
 Using the above relations, we obtain the following linear equation:
 
-$$
+<!-- $$
 \hat c_0 + \hat c_1 \cdot s = \underbrace{c^*_0 + c^*_1 \cdot s + c^*_2 \cdot s^2}_{m \cdot m'} + \underbrace{ \sum_{i=0}^{\lfloor \log_T q \rfloor} te_i \cdot {c^*_2}^{(i)}}_{\text{relinearization error}}
+$$ -->
 $$
-(the terms containing $a_i \cdot s$ from $\hat c_0$ and $-a_i \cdot s$ from $\hat c_1 \cdot s$  cancel out, $c^*_2$ is reconstructed and we are left with an error term).
+\hat c_0 + \hat c_1 \cdot \textcolor{red}{s} = \underbrace{c^*_0 + c^*_1 \cdot \textcolor{red}{s} + c^*_2 \cdot \textcolor{red}{s}^2}_{m \cdot m'} + \underbrace{ \sum_{i=0}^{\lfloor \log_T q \rfloor} t\textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}}_{\text{relinearization error}}
+$$
+
+(the terms containing $a_i \cdot \red{s}$ from $\hat c_0$ and $-a_i \cdot \red{s}$ from $\hat c_1 \cdot \red{s}$  cancel out, $c^*_2$ is reconstructed and we are left with an error term).
 
 Because the relinearization error is a multiple of $t$, it goes away when we decrypt and reduce $\bmod t$ as long as the relinearization error does not wrap $m^* = m\cdot m'$ around $q$.
 
@@ -547,15 +651,15 @@ You can perform this repeatedly with many moduli $\{q_0, q_1, ..., q_L\}$ with d
 The easiest way to do this is to scale down the ciphertext's components by $q / Q$ and **smartly round** in a way to keep the decryption equation correct. To ensure this, we want the scaling to keep the following propriety: $\tilde c_i = c_i \bmod t$ , where $\tilde c_i \approx (q / Q) c_i$ where $i \in \{0, 1\}$.
 
 The two requirements that we want to have are
-1. The decryption should be correct (decryption mod $Q$ should be the same as decryption mod $q$): $[c_0 + c_1 \cdot s]_Q = [\tilde c_0 + \tilde c_1 \cdot s]_q \bmod t$.
+1. The decryption should be correct (decryption mod $Q$ should be the same as decryption mod $q$): $[c_0 + c_1 \cdot \red{s}]_Q = [\tilde c_0 + \tilde c_1 \cdot \red{s}]_q \bmod t$.
 2. The noise scales down.
 
 **Rounding**  
 In order for the decryption to be correct we must adjust $c_i$ before scaling by  $q / Q$. To do this we add a **small correction term** $\delta_i$ per component. We require $\delta_i$ to:
 1. Only influence the error, hence $\delta_i \equiv 0 \bmod t$ (it will disappear when decrypting)
-2. Make the ciphertext to be divisible by
+2. Make the ciphertext to be divisible by $ Q / q$: 
     $$
-    Q / q \Rightarrow c_i + \delta_i \equiv 0 \bmod \dfrac Q q  \Rightarrow \delta_i \equiv -c_i \bmod \dfrac Q q
+    c_i + \delta_i \equiv 0 \bmod \dfrac Q q  \Rightarrow \delta_i \equiv -c_i \bmod \dfrac Q q
     $$
 
 One easy choice to set the correction terms such that both properties hold is $\delta_i = t [-c_i t^{-1}]_{Q/q}$ where $t^{-1}$ is the inverse of $t$ modulo $Q / q$. 
@@ -564,10 +668,11 @@ In the end, we define the components $\tilde c_i$ of the  modulus switched ciphe
 $$\tilde c_i = \dfrac q Q(c_i + \delta_i)$$ 
 
 
-**Correctness**
+<details><summary> Correctness (Click for math)</summary>
+
 Now, let's check the decryption equation is actually correct. For a $k \in R$:
 
-$$
+<!-- $$
 \begin{aligned}
 [\tilde c_0 + \tilde c_1 \cdot s]_q 
 &= \tilde c_0 + \tilde c_1 \cdot s - kq \\
@@ -577,12 +682,27 @@ $$
 &= \dfrac q Q \underbrace{[c_0 + c_1 \cdot s]_Q}_{\equiv m \bmod t}  + \underbrace{\dfrac q Q (\delta_0 + \delta_1 \cdot s)}_{\equiv 0 \bmod t} + kq - kq \\
 &\equiv \dfrac q Q m \bmod t
 \end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+[\tilde c_0 + \tilde c_1 \cdot \textcolor{red}{s}]_q 
+&= \tilde c_0 + \tilde c_1 \cdot \textcolor{red}{s} - kq \\
+&= \dfrac q Q(c_0 + \delta_0) + \dfrac q Q (c_1 + \delta_1) \cdot \textcolor{red}{s} - kq \\
+&= \dfrac q Q(c_0 + c_1 \cdot \textcolor{red}{s} + \delta_0 + \delta_1 \cdot \textcolor{red}{s}) - kq \\
+&= \dfrac q Q([{c_0 + c_1 \cdot \textcolor{red}{s}}]_Q + kQ + \delta_0 + \delta_1 \cdot \textcolor{red}{s}) - kq \\ 
+&= \dfrac q Q \underbrace{[{c_0 + c_1 \cdot \textcolor{red}{s}}]_Q}_{\equiv m \bmod t}  + \underbrace{\dfrac q Q (\delta_0 + \delta_1 \cdot \textcolor{red}{s})}_{\equiv 0 \bmod t} + kq - kq \\
+&\equiv \dfrac q Q m \bmod t
+\end{aligned}
 $$
 
-When doing $c_0 + c_1 \cdot s = [c_0 + c_1 \cdot s]_Q + kQ$
-we mention that $k$ is the same as in $[\tilde c_0 + \tilde c_1 \cdot s]_q = \tilde c_0 + \tilde c_1 \cdot s - kq$ under some conditions (see lemma 1 from [here](https://eprint.iacr.org/2011/277.pdf)).
+When doing $c_0 + c_1 \cdot \red{s} = [c_0 + c_1 \cdot \red{s}]_Q + kQ$
+we mention that $k$ is the same as in $[\tilde c_0 + \tilde c_1 \cdot \red{s}]_q = \tilde c_0 + \tilde c_1 \cdot \red{s} - kq$ under some conditions (see lemma 1 from [here](https://eprint.iacr.org/2011/277.pdf)).
 
 In the end we decrypt $\dfrac q Q m$ instead of $m$. In practice this can be solved by multiplying by $Q/q$ before encryption or after decryption, or to take $Q/q \equiv 1 \bmod t$ (however such a $Q/q$ can be harder to find).
+
+</details>
+<br>
 
 ### Key switching v2
 Now that we know about modulus switching we introduce a second version to do key switching in BGV. Recall that the key switching technique is used in relinearization, for decreasing the size of the ciphertext obtained in multiplication.
@@ -590,7 +710,13 @@ Now that we know about modulus switching we introduce a second version to do key
 **Idea**: Given two moduli $q, Q$  with $q < Q$ and $q | Q$, we start with elements in $R_q$ and we make a detour in a ring $R_Q$ with a bigger modulus $Q$ where we perform our relinearization. Then we perform modulus switching to go back to our small ring $R_q$.
 
 We generate the *hint*: 
-$$ (ek_0, ek_1) = (a \cdot s + te + \frac Q  q s ^ 2, -a) \bmod Q$$
+<!-- $$
+(ek_0, ek_1) = (a \cdot s + te + \frac Q  q s ^ 2, -a) \bmod Q
+ $$ -->
+
+$$
+(ek_0, ek_1) = ((a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e} + \frac{Q}{q} \textcolor{red}{s}^2), -a) \bmod Q
+$$
 
 Recall that $c^* = (c^*_0, c^*_1, c^*_2)$ is the result of the `mul`. Then we compute the components of the new ciphertext $\hat c$:
 $$
@@ -602,20 +728,44 @@ $$
 Lastly, we scale them both using modulus switching: $\hat c_i = \dfrac q Q (\hat c_i + \delta_i)$ with $\delta_i = t[-c_i t^{-1}]_{Q/q}$, like before.
 
 The relinearization equation looks like this:
-$$\hat c_0 + \hat c_1 \cdot s = \underbrace{c_0^* + c_1^* \cdot s + c_2^* \cdot s^2}_{m\cdot m'} + \underbrace{\dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)}_{\text{relinearization error}}$$
+
+<!-- $$
+\hat c_0 + \hat c_1 \cdot s = \underbrace{c_0^* + c_1^* \cdot s + c_2^* \cdot s^2}_{m\cdot m'} + \underbrace{\dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)}_{\text{relinearization error}}
+$$ -->
+
+$$
+\hat c_0 + \hat c_1 \cdot \textcolor{red}{s} = \underbrace{c_0^* + c_1^* \cdot \textcolor{red}{s} + c_2^* \cdot \textcolor{red}{s}^2}_{m\cdot m'} + \underbrace{\dfrac q Q (t c_2^* \cdot \textcolor{darkgreen}{e} + \delta_0 + \delta_1 \cdot \textcolor{red}{s})}_{\text{relinearization error}}
+$$
 
 Because the relinearization error is a multiple of $t$ (remember that we chose $\delta_i$ to be multiples of $t$ too, to not influence the error), it will go away when we decrypt and reduce $\bmod t$ as long as the relinearization error does not wrap $m^* = m\cdot m'$ around $q$.
 
-**Correctness**
-$$
+<details><summary> Correctness (click for math)</summary>
+
+<!-- $$
 \begin{aligned}
 \hat c_0 + \hat c_1 \cdot s 
 &= \dfrac q Q \left( \frac Q q c_0^* + c_2^* \cdot ek_0 + \delta_0 \right) + \left(\frac q Q \left ( \dfrac Q q c_1^*  + c_2^* \cdot ek_1 \right) + \delta_1 \right)\cdot s \\
-&= \dfrac q Q \left( \frac Q q c_0^* + c_2^* \cdot \left( a \cdot s + te + \frac Q  q s ^ 2 \right) + \delta_0 \right) + \left(\frac q Q \left ( \dfrac Q q c_1^*  + c_2^* \cdot (-a)\right)  + \delta_1 \right) \cdot s \\
+&= \dfrac q Q \left( \frac Q q c_0^* + c_2^* \cdot \left( a \cdot s + te + \frac Q  q s ^ 2 \right) + \delta_0 \right) + \\
+&+ \left(\frac q Q \left ( \dfrac Q q c_1^*  + c_2^* \cdot (-a)\right)  + \delta_1 \right) \cdot s \\
 &= c_0^* + c_1^* \cdot s + c_2^* \cdot s^2 + \dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s) \\
 &= mm' \bmod t
 \end{aligned}
+$$ -->
+
 $$
+\begin{aligned}
+\hat c_0 + \hat c_1 \cdot \textcolor{red}{s} 
+&= \frac{q}{Q} \left( \frac{Q}{q} c_0^* + c_2^* \cdot ek_0 + \delta_0 \right) + \left(\frac{q}{Q} \left ( \frac{Q}{q} c_1^*  + c_2^* \cdot ek_1 \right) + \delta_1 \right) \cdot \textcolor{red}{s} \\
+&= \frac{q}{Q} \left( \frac{Q}{q} c_0^* + c_2^* \cdot \left( a \cdot \textcolor{red}{s} + t\textcolor{darkgreen}{e} + \frac{Q}{q} \textcolor{red}{s}^2 \right) + \delta_0 \right) + \\
+&+ \left(\frac{q}{Q} \left ( \frac{Q}{q} c_1^*  + c_2^* \cdot (-a)\right)  + \delta_1 \right) \cdot \textcolor{red}{s} \\
+&= c_0^* + c_1^* \cdot \textcolor{red}{s} + c_2^* \cdot s^2 + \frac{q}{Q} (tc_2^* \cdot \textcolor{darkgreen}{e} + \delta_0 + \delta_1 \cdot \textcolor{red}{s}) \\
+&= mm' \bmod t
+\end{aligned}
+$$
+
+</details>
+<br>
+
 
 
 ## Noise analysis
@@ -653,8 +803,11 @@ We have the quotient polynomial $X^n + 1$ of $R$ which has the complex roots $\{
 Then we take a polynomial $a \in R$:  
 $$a(X) = a_0 + a_1X + ... a_{n-1}X^{n-1}$$
 and we evaluate $a$ in every root $\zeta_i$. This leads to a vector $\left(a(\zeta_0), ... a(\zeta_{n-1})\right) \in \mathbb C^n$. We call this vector the **canonical embedding** of $a$.  
-The [canonical embedding](https://eprint.iacr.org/2012/230.pdf) is defined as $$\sigma: R \to \mathbb C^n,
-\quad \sigma(a) = \left(a(\zeta_0), ... a(\zeta_{n-1})\right)$$
+The [canonical embedding](https://eprint.iacr.org/2012/230.pdf) is defined as 
+$$
+\sigma: R \to \mathbb C^n,
+\quad \sigma(a) = \left(a(\zeta_0), ... a(\zeta_{n-1})\right)
+$$
 
 **Canonical norm**   
 Since now we have obtained a new vector in $\mathbb C^n$ we can look at its infinity norm and define the **canonical norm** $\can a = \|\sigma(a)\|_\infty$.
@@ -697,24 +850,38 @@ We now have the building blocks (starting values and operations) to analyse the 
 
 **Fresh ciphertext noise**  
 In order to make sure the decryption is correct we must make sure the error 
-$$
+<!-- $$
 v = c_0 + c_1 \cdot s= \underbrace{t(e \cdot u + e_0 + e_1 \cdot s)}_{r}+ m = r + m \bmod q
+$$ -->
+
 $$
+v = c_0 + c_1 \cdot \textcolor{red}{s} = \underbrace{t(\textcolor{darkgreen}{e} \cdot \textcolor{red}{u} + \textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s})}_{r} + m = r + m \bmod q
+$$
+
 does not wrap around the modulus (i.e $\|v\|_{\infty} \leq c_{2n}\can v \leq q/2$ ). The message $m$ is thought to come uniformly from $R_t$.
 
 Recall that
-- The errors $e, e_0, e_1$ come from a discrete Gaussian => $V_e = V_{e_0} = V_{e_1} = \sigma^2$.
-- The secret $s$ and $u$ come from a ternary distribution => $V_s = V_u = 2/3$.
+- The errors $\textcolor{darkgreen}{e}, \textcolor{darkgreen}{e_0}, \textcolor{darkgreen}{e_1}$ come from a discrete Gaussian => $V_{\textcolor{darkgreen}{e}} = V_{\textcolor{darkgreen}{e_0}} = V_{\textcolor{darkgreen}{e_1}} = \sigma^2$.
+- The secret $\red{s}$ and $\red{u}$ come from a ternary distribution => $V_{\red{s}} = V_{\red{u}} = 2/3$.
 - The message $m$ comes from $R_t$ and we assume that the coefficients are uniformly distributed in $\mathbb Z_t$ => $V_m = t^2 / 12$.
 
-$$
+<!-- $$
 \begin{aligned}
 V_v &= V_{m + t(e\cdot u + e_0 + e_1 \cdot s)} \\
 &= V_m + t^2V_{e \cdot u + e_0 + e_1 \cdot s}  \\
 &= \dfrac {t^2}{12} + t^2 \left (n\sigma^2 \dfrac 2 3 + \sigma ^ 2 + n\sigma^2 \dfrac 2 3 \right)  \\
 &= t^2 \left( \dfrac 1 {12} + \sigma^2 \left( \dfrac 4 3 n + 1 \right) \right)
 \end{aligned}
+$$ -->
 $$
+\begin{aligned}
+V_v &= V_{m + t(\textcolor{darkgreen}{e}\cdot \textcolor{red}{u} + \textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s})} \\
+&= V_m + t^2V_{\textcolor{darkgreen}{e} \cdot \textcolor{red}{u} + \textcolor{darkgreen}{e_0} + \textcolor{darkgreen}{e_1} \cdot \textcolor{red}{s}}  \\
+&= \frac{t^2}{12} + t^2 \left(n\sigma^2 \frac{2}{3} + \sigma^2 + n\sigma^2 \frac{2}{3}\right)  \\
+&= t^2 \left(\frac{1}{12} + \sigma^2 \left(\frac{4}{3}n + 1\right)\right)
+\end{aligned}
+$$
+
 Hence:
 $$\can v \leq D\sqrt {nV_v}$$
 
@@ -726,7 +893,7 @@ For two ciphertexts $(c, c')$ encrypting $(m, m')$ we have the corresponding err
 
 If we use the decryption equation we have
 $$
-v_{\text{add}} = v + v' = (c_0 + c_1 \cdot s) + (c_0' + c_1' \cdot s) = r + m + r' + m' \bmod q
+v_{\text{add}} = v + v' = (c_0 + c_1 \cdot \red{s}) + (c_0' + c_1' \cdot \red{s}) = r + m + r' + m' \bmod q
 $$
 
 We have $m + m' = [m + m']_t + gt$ with $g \in R$ and $\|g\|_{\infty} = 1$ (because both $\|m\|_{\infty}, \|m'\|_{\infty} < t / 2$). By replacing in the equation above we obtain:
@@ -742,7 +909,11 @@ $$
 **Multiplication**  
 Similarly for multiplication, if we use the decryption equation we have:
 $$
-v_{\text{mul}} = v \cdot v' = (c_0 + c_1 \cdot s) \cdot (c_0' + c_1' \cdot s) = (r + m) + (r' + m') = mm' + mr' + m'r + rr' \bmod q
+\begin{aligned}
+v_{\text{mul}} 
+&= v \cdot v' = (c_0 + c_1 \cdot \red{s}) \cdot (c_0' + c_1' \cdot \red{s}) \\
+&= (r + m) + (r' + m') = mm' + mr' + m'r + rr' \bmod q
+\end{aligned}
 $$
 
 If we look at the error term $mr' + m'r + rr'$ we see that in the leading term $rr'$ we multiply the noises, therefore the noise grows quadratically.
@@ -759,51 +930,70 @@ Recall that
 
 
 $$
-v_{\text{switch}} = [\tilde c_0 + \tilde c_1 \cdot s]_q = \dfrac q Q [c_0 + c_1 \cdot s]_Q  + \dfrac q Q (\delta_0 + \delta_1 \cdot s) = \dfrac q Q v  + \dfrac q Q (\delta_0 + \delta_1 \cdot s)
+v_{\text{switch}} = [\tilde c_0 + \tilde c_1 \cdot \red{s}]_q = \dfrac q Q [c_0 + c_1 \cdot \red{s}]_Q  + \dfrac q Q (\delta_0 + \delta_1 \cdot \red{s}) = \dfrac q Q v  + \dfrac q Q (\delta_0 + \delta_1 \cdot \red{s})
 $$
 
 Using the canonical norm we get:
 $$
-\can {v_{\text{switch}}} \leq \dfrac q Q \can v + \dfrac q Q \can {\delta_0 + \delta_1 \cdot s} \leq \dfrac q Q \can v + Dt\sqrt{\dfrac n {12} \left (1 + \dfrac 2 3 n \right)}
+\can {v_{\text{switch}}} \leq \dfrac q Q \can v + \dfrac q Q \can {\delta_0 + \delta_1 \cdot \red{s}} \leq \dfrac q Q \can v + Dt\sqrt{\dfrac n {12} \left (1 + \dfrac 2 3 n \right)}
 $$
 
 We can see that the noise is scaled down by almost $q / Q$.
 
 **Key switching - Base decomposition**  
-In relinearization we deal with $c_0 + c_1 \cdot s + c_2 \cdot s^2$. Here we decompose $c_2 \cdot s^2$ in base $T$ and hide the *hints* about $s^2$ using  RingLWE-like samples involving errors  $e_i$. Remember from  key switching technique using base decomposition that we have a relinearization error: $\sum_{i=0}^{\lfloor \log_T q \rfloor} te_i \cdot {c^*_2}^{(i)}$. The variance of any term $te_i \cdot {c^*_2}^{(i)}$ from the sum is $V_{t e_i \cdot {c^*_2}^{(i)}}$.
+In relinearization we deal with $c_0 + c_1 \cdot \red{s} + c_2 \cdot \red{s}^2$. Here we decompose $c_2 \cdot \red{s}^2$ in base $T$ and hide the *hints* about $\red{s}^2$ using  RingLWE-like samples involving errors  $\textcolor{darkgreen}{e_i}$. Remember from  key switching technique using base decomposition that we have a relinearization error: $\sum_{i=0}^{\lfloor \log_T q \rfloor} t\textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}$. The variance of any term $t\textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}$ from the sum is $V_{t \textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}}$.
 
 Recall that
-- The errors $e_i$ come from a discrete Gaussian distribution => $V_{e_i}= \sigma^2$.
+- The errors $\textcolor{darkgreen}{e_i}$ come from a discrete Gaussian distribution => $V_{\textcolor{darkgreen}{e_i}}= \sigma^2$.
 - We can assume that the polynomials in base $T$ behave like random polynomials extracted from $R_T$ => $V_{{c^*_2}} = T^2 / 12$.
 
-$$v_{\text{ks}} = \underbrace{c^*_0 + c^*_1 \cdot s + c^*_2 \cdot s^2}_{v_{\text{mul}}} +  \sum_{i=0}^{\lfloor \log_T q \rfloor} te_i \cdot {c^*_2}^{(i)}$$
+$$
+v_{\text{ks}} = \underbrace{c^*_0 + c^*_1 \cdot \red{s} + c^*_2 \cdot \red{s}^2}_{v_{\text{mul}}} +  \sum_{i=0}^{\lfloor \log_T q \rfloor} t\textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}
+$$
 
 If we use the canonical norm:
-$$
+<!-- $$
 \begin{aligned}
 \can {v_{\text{ks}}} & \leq \can {v_{\text{mul}}} + D\sqrt{n \log_T (q)V_{t e_i \cdot {c^*_2}^{(i)}}} \\
 &= \can {v_{\text{mul}}} + Dt\sqrt{n^2 \log_T (q)V_{e_i} V_{{c^*_2}^{(i)}}}  \\ 
 &= \can {v_{\text{mul}}} + DtnT\sqrt{ \log_T (q)\dfrac {\sigma^2} {12}}
 \end{aligned}
+$$ -->
+
+$$
+\begin{aligned}
+\can {v_{\text{ks}}} & \leq \can {v_{\text{mul}}} + D\sqrt{n \log_T (q)V_{t \cdot \textcolor{darkgreen}{e_i} \cdot {c^*_2}^{(i)}}} \\
+&= \can {v_{\text{mul}}} + Dt\sqrt{n^2 \log_T (q)V_{\textcolor{darkgreen}{e_i}} V_{{c^*_2}^{(i)}}}  \\ 
+&= \can {v_{\text{mul}}} + DtnT\sqrt{ \log_T (q)\dfrac {\sigma^2} {12}}
+\end{aligned}
 $$
 
 **Key switching - Modulus switch**  
-In the relinearisation version that employs modulus switching, we have the following error term: $\dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)$.
+In the relinearisation version that employs modulus switching, we have the following error term: $\dfrac q Q (tc_2^* \cdot \textcolor{darkgreen}{e} + \delta_0 + \delta_1 \cdot \red{s})$.
 Recall that:
 - The ciphertext component $c_2^*$ comes from $R_q$ => $V_{c_2^*} = q^2 / 12$.
-- The errors $e$ comes from a discrete Gaussian => $V_{e}= \sigma^2$.
-- The secret $s$ comes from a ternary distribution => $V_{s}= 2/3$.
+- The errors $\textcolor{darkgreen}{e}$ comes from a discrete Gaussian => $V_{\textcolor{darkgreen}{e}}= \sigma^2$.
+- The secret $\red{s}$ comes from a ternary distribution => $V_{\red{s}}= 2/3$.
 -  We set $\delta_i = t[-c_it^{-1}]_{Q/q}$. We assume the terms $[-c_it^{-1}]_{Q/q}$ are uniformly distributed mod $Q / q$, then multiplied by $t$ => $V_{\delta_0} = V_{\delta_1} = \dfrac {t^2Q^2} {12q^2}$.
 
 $$
-v_{\text{ks}} = \underbrace{c_0^* + c_1^* \cdot s + c_2^* \cdot s^2}_{v_{\text{mul}}} + \dfrac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)
+v_{\text{ks}} = \underbrace{c_0^* + c_1^* \cdot \red{s} + c_2^* \cdot \red{s}^2}_{v_{\text{mul}}} + \dfrac q Q (tc_2^* \cdot \textcolor{darkgreen}{e} + \delta_0 + \delta_1 \cdot \red{s})
 $$
 
 The variance of this error term is:
-$$
+<!-- $$
 \begin{aligned}
 V_{\frac q Q (tc_2^* \cdot e + \delta_0 + \delta_1 \cdot s)} 
 &= \left(\frac q Q \right)^2 (t^2 nV_{c_2^*}V_e + V_{\delta_0} + nV_{\delta_1}V_s) \\
+&= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 +  \dfrac {t^2Q^2} {12q^2} + n  \dfrac {t^2Q^2} {12q^2} \dfrac 2 3\right) \\
+&= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 \right)  +\dfrac {t^2} {12} + n  \dfrac {t^2} {12} \dfrac 2 3 \\
+&= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 \right)  +\dfrac {t^2} {12} \left(1+ \dfrac 2 3 n \right)
+\end{aligned}
+$$ -->
+$$
+\begin{aligned}
+V_{\frac q Q (t{c_2^*}_i \cdot \textcolor{darkgreen}{e} + \delta_0 + \delta_1 \cdot \textcolor{red}{s})} 
+&= \left(\frac q Q \right)^2 (t^2 nV_{c_2^*}V_{\textcolor{darkgreen}{e}} + V_{\delta_0} + nV_{\delta_1}V_{\textcolor{red}{s}}) \\
 &= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 +  \dfrac {t^2Q^2} {12q^2} + n  \dfrac {t^2Q^2} {12q^2} \dfrac 2 3\right) \\
 &= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 \right)  +\dfrac {t^2} {12} + n  \dfrac {t^2} {12} \dfrac 2 3 \\
 &= \left(\frac q Q \right)^2 \left(t^2  n \frac {q^2} {12} \sigma^2 \right)  +\dfrac {t^2} {12} \left(1+ \dfrac 2 3 n \right)
