@@ -11,7 +11,7 @@ date: June-29-2023
 ## Introduction
 $$\gdef\can #1{\|#1\|^{\text{can}}}$$
 
-This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) and it's part of the series that cover fully homomorphic encryption techniques and applications.
+This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) and it's part of the series that covers fully homomorphic encryption techniques and applications.
 
 In this blogpost we will focus on the encryption, decryption, relinearization and the noise analysis of the [Brakerski, Gentry, Vaikuntanathan (BGV)](https://eprint.iacr.org/2011/277.pdf) fully homomorphic encryption scheme. A Python implementation of the aforementioned will be provided.
 
@@ -508,13 +508,13 @@ We can define `mul` in the following way:
 **Remarks**
 - Similarly, as in addition, the noise of the resulting ciphertext $c^*$ increases. 
 - We increase the number of ciphertext components by 1. This is not sustainable.
-- Our decryption equation is linear, however after `mul` we have a quadratic decryption equation with 3 ciphertexts that doesn't play well with the our idea of linear decryption equation.
+- Our decryption equation is linear, however after `mul` we have a quadratic decryption equation with 3 ciphertexts that doesn't play well with our idea of linear decryption equation.
 
 To solve the remarks the concept of **relinearization** is introduced.
 
 ## Relinearization
 
-The concept was explained in the [BFV blogpost](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) aswell.
+The concept was explained in the [BFV blogpost](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) as well.
 
 *Intuition*: We want to transform the quadratic equation $c^*_0 + c^*_1 \cdot \red{s} + c^*_2 \cdot \red{s}^2$ in $\red{s}$ into some other linear equation $\hat c_0 + \hat c_1 \cdot \red{\hat s}$ in some other secret key $\red{\hat s}$.
 
