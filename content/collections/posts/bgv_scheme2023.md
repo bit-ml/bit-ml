@@ -481,7 +481,7 @@ Before describing how we multiply two ciphertexts we need to reinterpret the dec
 $$c_0 + c_1 \cdot \red{s}  \equiv m \bmod t$$
 as a linear equation:
 $$y = ax + b$$
-in $\ted{s}$.
+in $\red{s}$.
 
 If we look at adding two such linear equations in $s$ we obtain another linear  equation in $\red{s}$:
 $$c_0 + c_1 \cdot \red{s} + c'_0  + c'_1 \cdot \red{s} = \underbrace{(c_0 + c_0')}_{c^*_0}  + \underbrace{(c_1 + c'_1)}_{c^*_1} \cdot \red{s}$$
