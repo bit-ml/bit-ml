@@ -234,7 +234,7 @@ Consider the quotient polynomial ring $R_q = \mathbb Z_q[X]/ (X^n + 1)$. This ri
 **The RLWE problem - decision**  
 The problem asks to distinguish between the following two distributions:
   - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $b_i \xleftarrow R R_q$. 
-  - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $\textcolor{darkgreen}{e_i} \leftarrow \chi$,  and $b_i = a_i \cdot \red{s} + \textcolor{darkgreen}{e_i}$ for some "small" secret $\red{s} \in R_q$ sampled before.
+  - $(a_i, b_i)$ with $a_i \xleftarrow R R_q$, $e_i \leftarrow \chi$,  and $b_i = a_i \cdot s + e_i$ for some "small" secret $s \in R_q$ sampled before.
     
 The RLWE problem also has a search version, where given pairs $(a_i, b_i)$, $b_i = a_i \cdot s + e_i$ you need to find $s$. In practice, the decision version is more widely used when proving the security of different schemes. 
 
