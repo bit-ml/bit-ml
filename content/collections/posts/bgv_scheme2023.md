@@ -8,10 +8,12 @@ date: June-29-2023
 
 
 # The BGV fully homomorphic encryption scheme
+
+This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) and it's part of the series that covers fully homomorphic encryption techniques and applications.
+
 ## Introduction
 $$\gdef\can #1{\|#1\|^{\text{can}}}$$
 
-This is a sister blogpost to the [previous one about a similar scheme (BFV)](https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/) and it's part of the series that covers fully homomorphic encryption techniques and applications.
 
 In this blogpost we will focus on the encryption, decryption, relinearization and the noise analysis of the [Brakerski, Gentry, Vaikuntanathan (BGV)](https://eprint.iacr.org/2011/277.pdf) fully homomorphic encryption scheme. A Python implementation of the aforementioned will be provided.
 
@@ -50,7 +52,7 @@ Notations:
 - $e \leftarrow \chi$ - An element $e$ sampled from the distribution $\chi$
 - $a \xleftarrow R S$ - An element sampled uniformly from a set $S$
     - Ex: $a \xleftarrow R R_q$ An element $a$ sampled uniformly from the ring $R_q$
-- $a \cdot b$  denotes the multiplication of 2 elements from the ring $R_q$. 
+- $a \cdot b$  denotes the multiplication of 2 elements from the ring $R_q$
 - $ta$  denotes the multiplication of coefficients of $a \in R_q$ by some scalar $t$.
 
 ## Fully Homomorphic Encryption (FHE)
@@ -101,7 +103,7 @@ $$\text{Dec}(sk, c^*) = m^* = f(m_1, ..., m_n)$$
 
 
 
-In the image above, the user with the laptop is interested in computing in encrypted form a certain circuit on its data $m$. Therefore it sends its data, encrypted, to the cloud so that the cloud computes the circuit. By correctness, the user indeed gets the circuit applied on its data $m$.
+In the image above, the user with the laptop is interested  evaluating a certain circuit on its data $m$. Therefore it sends its data, encrypted, to the cloud so that the cloud computes the circuit. By correctness, the user indeed gets the circuit applied on its data $m$.
 
 **Circuits?**  
 The two important operations we care about are addition and multiplication, because with them we can construct any arithmetic operation! Homomorphic encryption schemes started out by encrypting bits, so the equivalent operations for additon and multiplication on bits, `xor` and `and` are used. 
