@@ -2,7 +2,7 @@
 slug: bgv-python
 authors: Dacian Stroia
 categories: blog
-featured_img: "/galleries/homomorphic2020/enigma_dec.jpg"
+featured_img: "/galleries/bgv_scheme2023/lock.jpg"
 date: June-29-2023
 ---
 
