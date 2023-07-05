@@ -1,5 +1,5 @@
 ---
-slug: bgv-python
+slug: bgv-fully-homomorphic-encryption-scheme-in-python
 authors: Dacian Stroia
 categories: blog
 featured_img: "/galleries/bgv_scheme2023/lock.jpg"

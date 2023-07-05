@@ -172,6 +172,16 @@ export default ({ posts }) => (
         <Slider>
           <Slide index={0}>
             {
+              <FeaturedLink to="/blog/post/bgv-fully-homomorphic-encryption-scheme-in-python/">
+                <FeaturedHeading>The BGV fully homomorphic encryption scheme</FeaturedHeading>
+                <FeaturedSynopsis>
+                  The encryption, decryption, relinearization and the noise analysis of the Brakerski, Gentry, Vaikuntanathan (BGV) fully homomorphic encryption scheme.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+          <Slide index={1}>
+            {
               <FeaturedLink to="/blog/post/pretrained-atari-agents/">
                 <FeaturedHeading>Over 25,000 Atari trained agents published</FeaturedHeading>
                 <FeaturedSynopsis>
@@ -180,7 +190,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/blog/post/private-set-intersection-an-implementation-in-python/">
                 <FeaturedHeading>
@@ -194,7 +204,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
                 <FeaturedHeading>
@@ -209,7 +219,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>
@@ -219,20 +229,6 @@ export default ({ posts }) => (
                   Check out some of the courses delivered by our team in
                   collaboration with top Universities in Bucharest. Includes
                   slides and notebooks.
-                </FeaturedSynopsis>
-              </FeaturedLink>
-            }
-          </Slide>
-          <Slide index={4}>
-            {
-              <FeaturedLink to="/blog/post/recurrent-space-time-graph-neural-nets/">
-                <FeaturedHeading>
-                  Recurrent Space-time Graph Neural Network
-                </FeaturedHeading>
-                <FeaturedSynopsis>
-                  We introduce our recurrent graph model designed for video
-                  processing from our paper that will be presented at NeurIPS
-                  2019 in Vancouver.
                 </FeaturedSynopsis>
               </FeaturedLink>
             }
