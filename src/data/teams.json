@@ -15,17 +15,7 @@
             "website": "ilarele.github.io/"
           }
         },
-        {
-          "name": "Emanuela Haller",
-          "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
-          "img": "emanuela_haller.jpg",
-          "contact": {
-            "mail": "ehaller@bitdefender.com",
-            "twitter": "",
-            "github": "",
-            "website": "emanuelahaller.github.io/"
-          }
-        },
+        
         {
           "name": "Florin Brad",
           "bio": "I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
@@ -80,24 +70,11 @@
             "github": "@MrNiceGuy090",
             "website": ""
           }
-        }
-      ],
-      "interns": [
+        },
         {
           "name": "Ioana Pintilie",
           "bio": "Internship 2022",
           "img": "ioana_pintilie.jpg",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": ""
-          }
-        },
-        {
-          "name": "Stefan Pirje",
-          "bio": "Internship 2022",
-          "img": "stefan_pirje.jpg",
           "contact": {
             "mail": "",
             "twitter": "",
@@ -117,27 +94,18 @@
           }
         },
         {
-          "name": "Andrei Diaconu",
-          "bio": "Internship 2022",
-          "img": "",
+          "name": "Emanuela Haller",
+          "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
+          "img": "emanuela_haller.jpg",
           "contact": {
-            "mail": "",
+            "mail": "ehaller@bitdefender.com",
             "twitter": "",
             "github": "",
-            "website": ""
-          }
-        },
-        {
-          "name": "Andrei Mihailescu",
-          "bio": "Internship 2022",
-          "img": "",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": ""
+            "website": "emanuelahaller.github.io/"
           }
         }
+      ],
+      "interns": [
       ],
       "collaborators": [
         {
@@ -183,6 +151,16 @@
             "github": "",
             "website": "sites.google.com/site/mariusleordeanu/home"
           }
+        },
+        {
+          "name": "Radu Țițiu",
+          "bio": "PhD in Cryptography from École Normale Supérieure de Lyon; Security researcher @ Bitdefender",
+          "img": "radu_titiu.jpg",
+          "contact": {
+            "mail": "rtitiu@bitdefender.com",
+            "twitter": "",
+            "github": ""
+          }
         }
       ]
     }
@@ -215,14 +193,14 @@
           }
         },
         {
-          "name": "Radu Țițiu",
-          "bio": "I am interested in lattice-based cryptography, which proposes promising cryptographic schemes in the eventuality that quantum computers are built. Moreover, lattice-based cryptography enables the construction of some advanced cryptographic primitives that allow computation on encrypted data, including Functional Encryption or Homomorphic Encryption. I have obtained my PhD in Cryptography from École Normale Supérieure de Lyon, under the supervision of Benoît Libert. In my undergraduate and my Master programs I studied mathematics at the University of Bucharest..",
-          "img": "radu_titiu.jpg",
-          "contact": {
-            "mail": "rtitiu@bitdefender.com",
-            "twitter": "",
-            "github": ""
-          }
+            "name": "Dacian Stroia",
+            "bio": "I am an applied researcher in the field of cryptography and machine learning. I studied CSE at Politehnica University of Timișoara, and now I'm  a MSc student at the machine learning specialization at the same university. I'm interested in understanding cryptographic algorithms and their real world implementation considerations. Nowadays, I'm focusing on homomorphic encryption techniques.",
+            "img": "dacian_stroia.jpg",
+            "contact": {
+              "mail": "dstroia@bitdefender.com",
+              "twitter": "",
+              "github": "zademn"
+            }
         }
       ]
     }
