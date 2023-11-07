@@ -48,7 +48,7 @@ export default ({ pageName }) => {
       <Nav bgColor={bgColor} fontColor={fontColor}>
         <Link exact to="/">Home</Link>
         <Link to="/#research">Research</Link>
-        <Link to="/#team">Team</Link>
+        <Link to="/#teams">Team</Link>
         <Link to="/teaching/lectures-and-courses">Teaching</Link>
         {/* <Link to="/blog">Blog</Link> */}
       </Nav>

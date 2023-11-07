@@ -86,7 +86,6 @@ export default withRouteData(withSiteData(props => (
         ))}
       </SpecialtyContainer>
 
-
       <TeamsContainer id="teams">
         {props.teams.map((team) => (
           <div>

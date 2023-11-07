@@ -15,7 +15,17 @@
             "website": "ilarele.github.io/"
           }
         },
-        
+        {
+          "name": "Emanuela Haller",
+          "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
+          "img": "emanuela_haller.jpg",
+          "contact": {
+            "mail": "ehaller@bitdefender.com",
+            "twitter": "",
+            "github": "",
+            "website": "emanuelahaller.github.io/"
+          }
+        },
         {
           "name": "Florin Brad",
           "bio": "I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
@@ -72,11 +82,22 @@
           }
         },
         {
+          "name": "Elisabeta Oneata",
+          "bio": "I have obtained my PhD in computer vision from the School of Advanced Studies of the Romanian Academy (SCOSAAR),  with the thesis “Perceptual Models for Computational Visual Analysis”, under the supervision of Prof. Dr. Cristian Sminchisescu. My work focused on 3d human pose estimation and perception in monocular images and videos. Currently I am interested in automatic detection of deepfake visual content.",
+          "img": "elisabeta_oneata.jpeg",
+          "contact": {
+            "mail": "eoneata@bitdefender.com",
+            "twitter": "",
+            "github": "",
+            "website": "https://scholar.google.com/citations?user=ssHUPeUAAAAJ&hl=en&oi=ao"
+          }
+        },
+        {
           "name": "Ioana Pintilie",
-          "bio": "Internship 2022",
+          "bio": "I am an Artificial Intelligence master’s student at the University of Bucharest, where I also obtained my bachelor’s degree in Computer Science. I am interested in anomaly detection for multivariate time series data, diffusion models, and I have a general interest in NLP topics. Currently, my focus is on large language models.",
           "img": "ioana_pintilie.jpg",
           "contact": {
-            "mail": "",
+            "mail": "ipintilie@bitdefender.com",
             "twitter": "",
             "github": "",
             "website": ""
@@ -84,104 +105,13 @@
         },
         {
           "name": "Dragos Tantaru",
-          "bio": "Internship 2022",
+          "bio": "I am a researcher in the field of Deep Learning, with expertise in Deepfake detection and Large Language Models (LLMs) finetuning and optimization. I'm also very interested in works pertaining to theoretical aspects of Deep Learning. I'm currently pursuing a Master's degree in Artificial Intelligence at the University of Bucharest.",
           "img": "dragos_tantaru.jpg",
           "contact": {
-            "mail": "",
+            "mail": "dtantaru@bitdefender.com",
             "twitter": "",
-            "github": "",
+            "github": "dragosconst",
             "website": ""
-          }
-        },
-        {
-          "name": "Emanuela Haller",
-          "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
-          "img": "emanuela_haller.jpg",
-          "contact": {
-            "mail": "ehaller@bitdefender.com",
-            "twitter": "",
-            "github": "",
-            "website": "emanuelahaller.github.io/"
-          }
-        },
-        {
-          "name": "Andrei Diaconu",
-          "bio": "Internship 2022",
-          "img": "",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": ""
-          }
-        },
-        {
-          "name": "Andrei Mihailescu",
-          "bio": "Internship 2022",
-          "img": "",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": ""
-          }
-        }
-      ],
-      "interns": [
-      ],
-      "collaborators": [
-        {
-          "name": "Andrei Nicolicioiu",
-          "bio": "PhD Student @ University of Montreal",
-          "img": "andrei_nicolicioiu.jpg",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": "andreinicolicioiu.github.io/"
-          }
-        },
-        {
-          "name": "Tudor Berariu",
-          "bio": "PhD Student @ Imperial College London",
-          "img": "tudor_berariu.jpg",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": ""
-          }
-        },
-        {
-          "name": "Iulia Duta",
-          "bio": "PhD Student @ University of Cambridge",
-          "img": "iulia_duta.jpg",
-          "contact": {
-            "mail": "",
-            "twitter": "",
-            "github": "",
-            "website": "iuliaduta.github.io/"
-          }
-        },
-        {
-          "name": "Marius Leordeanu",
-          "bio": "Prof @  University Politehnica of Bucharest",
-          "img": "marius_leordeanu.jpg",
-          "contact": {
-            "mail": "leordeanu@gmail.com",
-            "twitter": "",
-            "github": "",
-            "website": "sites.google.com/site/mariusleordeanu/home"
-          }
-        },
-        {
-          "name": "Radu Țițiu",
-          "bio": "PhD in Cryptography from École Normale Supérieure de Lyon; Security researcher @ Bitdefender",
-          "img": "radu_titiu.jpg",
-          "contact": {
-            "mail": "rtitiu@bitdefender.com",
-            "twitter": "",
-            "github": ""
           }
         }
       ]
@@ -226,5 +156,67 @@
         }
       ]
     }
+  },
+  {
+    "direction": "",
+    "id": "ml",
+    "subteams": {
+    "collaborators": [
+      {
+        "name": "Andrei Nicolicioiu",
+        "bio": "PhD Student @ University of Montreal",
+        "img": "andrei_nicolicioiu.jpg",
+        "contact": {
+          "mail": "",
+          "twitter": "",
+          "github": "",
+          "website": "andreinicolicioiu.github.io/"
+        }
+      },
+      {
+        "name": "Tudor Berariu",
+        "bio": "PhD Student @ Imperial College London",
+        "img": "tudor_berariu.jpg",
+        "contact": {
+          "mail": "",
+          "twitter": "",
+          "github": "",
+          "website": ""
+        }
+      },
+      {
+        "name": "Iulia Duta",
+        "bio": "PhD Student @ University of Cambridge",
+        "img": "iulia_duta.jpg",
+        "contact": {
+          "mail": "",
+          "twitter": "",
+          "github": "",
+          "website": "iuliaduta.github.io/"
+        }
+      },
+      {
+        "name": "Marius Leordeanu",
+        "bio": "Prof @  University Politehnica of Bucharest",
+        "img": "marius_leordeanu.jpg",
+        "contact": {
+          "mail": "leordeanu@gmail.com",
+          "twitter": "",
+          "github": "",
+          "website": "sites.google.com/site/mariusleordeanu/home"
+        }
+      },
+      {
+        "name": "Radu Țițiu",
+        "bio": "PhD in Cryptography from École Normale Supérieure de Lyon",
+        "img": "radu_titiu.jpg",
+        "contact": {
+          "mail": "rtitiu@bitdefender.com",
+          "twitter": "",
+          "github": ""
+        }
+      }
+    ]
   }
+}
 ]
