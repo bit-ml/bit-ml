@@ -44,10 +44,10 @@
         "papers": [
           {
             "authors": "D. Tantaru, E. Oneata, D. Oneata",
-            "title": "Weakly-supervised deepfake localization in diffusion-based images",
-            "year": "2023",
-            "link": "./projects/deepfake_detection.pdf",
-            "published": "WACV and ICCV Workshop on Adversarial Robustness In the Real World (AROW)"
+            "title": "Weakly-supervised deepfake localization in diffusion-generated images",
+            "year": "",
+            "link": "https://arxiv.org/abs/2311.04584",
+            "published": "WACV 2024 and *Best Short Paper* at ICCV 2023 Workshop on Adversarial Robustness In the Real World (AROW)"
           }
         ]
       },
