@@ -16,6 +16,7 @@
     "htmr": "^0.7.0",
     "image-size": "^0.6.3",
     "jdown": "^0.6.6",
+    "npx": "^10.2.2",
     "prism": "^4.1.2",
     "prism-themes": "^1.5.0",
     "pure-react-carousel": "^1.24.1",
