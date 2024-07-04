@@ -16,17 +16,6 @@
           }
         },
         {
-          "name": "Emanuela Haller",
-          "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
-          "img": "emanuela_haller.jpg",
-          "contact": {
-            "mail": "ehaller@bitdefender.com",
-            "twitter": "",
-            "github": "",
-            "website": "emanuelahaller.github.io/"
-          }
-        },
-        {
           "name": "Florin Brad",
           "bio": "I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
           "img": "florin_brad.jpg",
@@ -113,6 +102,39 @@
             "github": "dragosconst",
             "website": ""
           }
+        },
+        {
+          "name": "Cristian Paduraru",
+          "bio": "I earned my Bachelor's degree in Computer Science from the University of Bucharest, where I am currently pursuing a Master's program in Artificial Intelligence. My interests include bias identification and correction, as well as model interpretability.",
+          "img": "cristi_paduraru.png",
+          "contact": {
+            "mail": "cpaduraru@bitdefender.com",
+            "twitter": "",
+            "github": "",
+            "website": ""
+          }
+        },
+        {
+          "name": "Radu Filipescu",
+          "bio": "Starting the Artificial Intelligence master program at the University of Bucharest, where I also graduated the Faculty of Mathematics and Computer Science. I am interested in multiple applications of Machine Learning, and now working mainly on Domain Generalization and Distribution Shift problems.",
+          "img": "radu_filipescu.jpg",
+          "contact": {
+            "mail": "rfilipescu@bitdefender.com",
+            "twitter": "",
+            "github": "radu-filipescu",
+            "website": "https://www.linkedin.com/in/radu-filipescu"
+          }
+        },
+        {
+          "name": "Antonio Barbalau",
+          "bio": "Currently pursuing a PhD focused on weakly-supervised and self-supervised learning at the University of Bucharest. I've been mainly involved in model stealing, video anomaly detection and speech processing. Presently, I'm working on domain generalization.",
+          "img": "antonio_barbalau.png",
+          "contact": {
+            "mail": "ext-abarbalau@bitdefender.com",
+            "twitter": "",
+            "github": "antoniobarbalau",
+            "website": ""
+          }
         }
       ]
     }
@@ -122,17 +144,6 @@
     "id": "ml",
     "subteams": {
       "": [
-        {
-          "name": "Miruna Roșca",
-          "bio": "I am interested in post-quantum cryptography, with a focus on lattice-based solutions. I have a strong background in mathematics and I obtained my Phd in cryptography from École Normale Supérieure de Lyon, advised by Damien Stehlé. During my Phd, I worked on algebraic variants of Learning With Errors. More info about me on the website link below.",
-          "img": "miruna_rosca.jpg",
-          "contact": {
-            "mail": "mrosca@bitdefender.com",
-            "twitter": "Miruna_Rosca",
-            "github": "",
-            "website": "mirunarosca.github.io/"
-          }
-        },
         {
           "name": "Mădălina Bolboceanu",
           "bio": "I obtained both my undergraduate and Master degrees in Mathematics from the University of Bucharest. My goal is to use my strong mathematical skills and experience in mathematical contests and olympiads to solve cryptographic challenges. I am interested in applications of lattices in cryptography, including lattice based homomorphic encryption schemes.",
@@ -173,6 +184,18 @@
           "website": "andreinicolicioiu.github.io/"
         }
       },
+      {
+        "name": "Teo Poncu",
+        "bio": "PhD Student @ University Politehnica of Bucharest",
+        "img": "teo_poncu.jpg",
+        "contact": {
+          "mail": "",
+          "twitter": "",
+          "github": "",
+          "website": ""
+        }
+      },
+      
       {
         "name": "Tudor Berariu",
         "bio": "PhD Student @ Imperial College London",

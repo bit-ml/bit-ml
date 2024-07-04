@@ -2,7 +2,7 @@
   {
     "title": "Robustness",
     "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the deep anomaly detection task.",
-    "people": "Elena Burceanu, Emanuela Haller, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
+    "people": "Antonio Barbalau, Elena Burceanu, Cristian Paduraru, Radu Filipescu, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
     "projects": [
       {
         "title": "Anomaly Detection in Distribution Shifted environments",
@@ -30,6 +30,26 @@
             "published": " in The Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
           }
         ]
+      },
+      {
+        "title": "Message-passing graph neural networks",
+        "description": "Message-passing graph neural networks (MPNNs) have emerged as a powerful paradigm for graph-based machine learning. Despite their effectiveness, MPNNs face challenges such as under-reaching and over-squashing, where limited receptive fields and structural bottlenecks hinder information flow in the graph. While graph transformers hold promise in addressing these issues, their scalability is limited due to quadratic complexity regarding the number of nodes, rendering them impractical for larger graphs.",
+        "papers": [
+          {
+            "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
+            "title": "Probabilistic Graph Rewiring via Virtual Nodes",
+            "year": "2024",
+            "link": "https://arxiv.org/abs/2405.17311",
+            "published": " under review"
+          },
+          {
+            "authors": "C. Qian, A. Manolache, K. Ahmed, Z. Zeng, G. Van den Broeck, M. Niepert, C. Morris",
+            "title": "Probabilistically Rewired Message-Passing Neural Networks",
+            "year": "2024",
+            "link": "https://arxiv.org/abs/2310.02156",
+            "published": " in The Proceedings of the 12th International Conference on Learning Representations (ICLR)"
+          }
+        ]
       }
     ]
   },
@@ -43,10 +63,17 @@
         "description": "Deepfake detection plays a crucial role in addressing the social impact of synthetic media manipulation. With the rise of deepfake technology, there is a growing concern about its potential to spread misinformation and deceive the public. Detection efforts are essential to protect individuals and society from the harmful consequences of manipulated content. By using advanced machine learning techniques to uncover inconsistencies and anomalies within deepfake videos, audio recordings, or images, these detection methods act as a shield against the erosion of trust in digital media.",
         "papers": [
           {
+            "authors":"O. Pascu, A. Stan, D. Oneata, E. Oneata, H. Cucu",
+            "title": "Towards generalisable and calibrated synthetic speech detection with self-supervised representations",
+            "year": "",
+            "link": "https://arxiv.org/pdf/2309.05384",
+            "published": "Interspeech 2024"
+          },
+          {
             "authors": "D. Tantaru, E. Oneata, D. Oneata",
             "title": "Weakly-supervised deepfake localization in diffusion-generated images",
             "year": "",
-            "link": "https://arxiv.org/abs/2311.04584",
+            "link": "https://openaccess.thecvf.com/content/WACV2024/papers/Tantaru_Weakly-Supervised_Deepfake_Localization_in_Diffusion-Generated_Images_WACV_2024_paper.pdf",
             "published": "WACV 2024 and *Best Short Paper* at ICCV 2023 Workshop on Adversarial Robustness In the Real World (AROW)"
           }
         ]
@@ -176,8 +203,21 @@
   {
     "title": "Natural Language Processing",
     "description": "A large amount of today's data is stored in databases. Building AI tools that facilitate the access to knowledge requires processing of natural language and structured data. We focus on neural approaches for natural language interfaces to databases, in particular structure-aware and semi-supervised methods.",
-    "people": "Florin Brad, Andrei Manolache, Ioana Pintilie, Dragos Tantaru",
+    "people": "Florin Brad, Andrei Manolache, Ioana Pintilie, Dragos Tantaru, Marius Dragoi",
     "projects": [
+      {
+        "title": "Large Language Models for Assembly",
+        "description": "Features learned by pretrained models are crucial for downstream tasks such as anomaly detection, search or classification. Most LLMs (either general purpose or code-based) have little assembly data in their pretraining corpus relative to the entire corpus. Finetuning LLMs on more assembly data should then result in better features. To test this, we developed several downstream classification tasks, where the input is assembly code. Classifiers trained on features from the asmLLM should then outperform classifiers trained on features from base LLMs.",
+        "papers": [
+          {
+            "authors": "F. Brad, I. Pintilie, M. Dragoi, D. Tantaru",
+            "title": "Large Language Models for Malware Analysis",
+            "year": "2024",
+            "link": "https://bit-ml.github.io/blog/post/large-language-models-for-malware-analysis/",
+            "published": ""
+          }
+        ]
+      },
       {
         "title": "Anomaly detection in Text",
         "description": "Recent deep methods for detecting anomalies in images learn better features of normality in an end-to-end self-supervised setting. These methods train a model to discriminate between different transformations applied to visual data and then use the output to compute an anomaly score. We use this approach for Anomaly Detection in text, by introducing a novel pretext task on text sequences. We learn our model end-to-end, enforcing two independent and complementary self-supervision signals, one at the token-level and one at the sequence-level.",
