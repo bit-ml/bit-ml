@@ -167,10 +167,20 @@ export default ({ posts }) => (
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
-        totalSlides={5}
+        totalSlides={6}
       >
         <Slider>
-          <Slide index={0}>
+        <Slide index={0}>
+            {
+              <FeaturedLink to="/blog/post/large-language-models-for-malware-analysis/">
+                <FeaturedHeading>Large Language Models for Malware Analysis</FeaturedHeading>
+                <FeaturedSynopsis>
+                  Leveraging Large Language Models to understand and generate assembly code.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+          <Slide index={1}>
             {
               <FeaturedLink to="/blog/post/bgv-fully-homomorphic-encryption-scheme-in-python/">
                 <FeaturedHeading>The BGV fully homomorphic encryption scheme</FeaturedHeading>
@@ -180,7 +190,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/blog/post/pretrained-atari-agents/">
                 <FeaturedHeading>Over 25,000 Atari trained agents published</FeaturedHeading>
@@ -190,7 +200,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/blog/post/private-set-intersection-an-implementation-in-python/">
                 <FeaturedHeading>
@@ -204,7 +214,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
                 <FeaturedHeading>
@@ -219,7 +229,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={4}>
+          <Slide index={5}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>

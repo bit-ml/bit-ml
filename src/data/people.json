@@ -2,7 +2,7 @@
   {
     "name": "Elena Burceanu",
     "bio": "I recently defended my PhD thesis in Computer Vision, on `Efficiently Exploiting Space-Time Consensus for Object Segmentation and Tracking in Video`, at University of Bucharest, under Marius Leordeanu and GheorgheStefanescu supervision. My current research interest is in Generalization problems under Distribution Shifts, with a focus on the anomaly detection task.",
-    "img": "elena_burceanu.jpg",
+    "img": "elena_burceanu.webp",
     "contact": {
       "mail": "eburceanu@bitdefender.com",
       "twitter": "ilarele",
@@ -13,7 +13,7 @@
   {
     "name": "Emanuela Haller",
     "bio": "I obtained my PhD on `Unsupervised Visual Learning by Exploiting the Spatio-Temporal Consistency of Highly Probable Positive Features` from University Politehnica of Bucharest, co-supervised by Marius Leordeanu and Adina Magda Florea. My main focus is the problem of unsupervised learning and I am currently working on the task of unsupervised learning of objects from video sequences.",
-    "img": "emanuela_haller.jpg",
+    "img": "emanuela_haller.webp",
     "contact": {
       "mail": "ehaller@bitdefender.com",
       "twitter": "",
@@ -24,7 +24,7 @@
   {
     "name": "Florin Brad",
     "bio": "I am interested in neural generative models for natural language processing, especially for code generation. In particular, I am interested in leveraging discrete structure (syntax trees) to improve the expresiveness of the latent space and to guide the generation process.",
-    "img": "florin_brad.jpg",
+    "img": "florin_brad.webp",
     "contact": {
       "mail": "fbrad@bitdefender.com",
       "twitter": "",
@@ -35,7 +35,7 @@
   {
     "name": "Andrei Manolache",
     "bio": "I am a Ph.D. student at IMPRS-IS and ELLIS, under the co-supervision of Mathias Niepert (University of Stuttgart) and Karsten Borgwardt (ETH Zürich & MPI-B) and a Researcher at Bitdefender’s Theoretical Research Laboratory. My focus is on robustness and trustworthiness of Geometric Deep Learning methods.",
-    "img": "andrei_manolache.jpg",
+    "img": "andrei_manolache.webp",
     "contact": {
       "mail": "amanolache@bitdefender.com",
       "twitter": "andreimano2",
@@ -46,7 +46,7 @@
   {
     "name": "Marius Drăgoi",
     "bio": "I studied at Politehnica University of Bucharest, where I obtained a Bachelor's degree in Computer Science and a Master's degree in Artificial Intelligence. I am currently researching the problem of out-of-distribution sample detection and distributional shift in log data.",
-    "img": "marius_dragoi.jpg",
+    "img": "marius_dragoi.webp",
     "contact": {
       "mail": "mdragoi@bitdefender.com",
       "twitter": "dmarviss",
@@ -57,7 +57,7 @@
   {
     "name": "Florin Gogianu",
     "bio": "Currently pursuing a PhD in Reinforcement Learning unde the supervision of Prof. Lucian Bușoniu following an MSc in Artificial Intelligence from University Politehnica of Bucharest and a BSc in Philosophy. I have a broad interest in Reinforcement Learning topics and I am currently focusing on questions regarding sample efficiency in the context of model-free value-based methods with neural network estimators.",
-    "img": "florin_gogianu.jpg",
+    "img": "florin_gogianu.webp",
     "contact": {
       "mail": "fgogianu@bitdefender.com",
       "twitter": "FlorinGogianu",
@@ -68,7 +68,7 @@
   {
     "name": "Stefan Smeu",
     "bio": "I studied Mathematics and Computer Science at University of Bucharest, where I got my bachelor's degree and currently pursuing it's Artificial Intelligence Master degree program. I am interested in the unsupervised representation learning branch of deeplearning. Nowadays I research the problem of distributional shift and anomaly detection, mainly on visual data.",
-    "img": "stefan_smeu.jpg",
+    "img": "stefan_smeu.webp",
     "contact": {
       "mail": "ssmeu@bitdefender.com",
       "twitter": "@SmeuStefan",
@@ -79,7 +79,7 @@
   {
     "name": "Marius Leordeanu",
     "bio": "I am an Professor at the University Politehnica of Bucharest and senior researcher at the Institute of Mathematics of the Romanian Academy. I am interested in the nature of intelligence, life and consciousness. In particular, my research focuses on computer vision, machine learning and robotics. I have received a Ph.D. in Robotics from Carnegie Mellon University in 2009.",
-    "img": "marius_leordeanu.jpg",
+    "img": "marius_leordeanu.webp",
     "contact": {
       "mail": "leordeanu@gmail.com",
       "twitter": "",
@@ -90,7 +90,7 @@
   {
     "name": "Miruna Roșca",
     "bio": "I am interested in post-quantum cryptography, with a focus on lattice-based solutions. I have a strong background in mathematics and I obtained my Phd in cryptography from École Normale Supérieure de Lyon, advised by Damien Stehlé. During my Phd, I worked on algebraic variants of Learning With Errors. More info about me on the website link below.",
-    "img": "miruna_rosca.jpg",
+    "img": "miruna_rosca.webp",
     "contact": {
       "mail": "mrosca@bitdefender.com",
       "twitter": "Miruna_Rosca",
@@ -101,7 +101,7 @@
   {
     "name": "Mădălina Bolboceanu",
     "bio": "I obtained both my undergraduate and Master degrees in Mathematics from the University of Bucharest. My goal is to use my strong mathematical skills and experience in mathematical contests and olympiads to solve cryptographic challenges. I am interested in applications of lattices in cryptography, including lattice based homomorphic encryption schemes.",
-    "img": "madalina_bolboceanu.jpg",
+    "img": "madalina_bolboceanu.webp",
     "contact": {
       "mail": "mbolboceanu@bitdefender.com",
       "twitter": "molbozaur",
@@ -112,7 +112,7 @@
   {
     "name": "Radu Țițiu",
     "bio": "I am interested in lattice-based cryptography, which proposes promising cryptographic schemes in the eventuality that quantum computers are built. Moreover, lattice-based cryptography enables the construction of some advanced cryptographic primitives that allow computation on encrypted data, including Functional Encryption or Homomorphic Encryption. I have obtained my PhD in Cryptography from École Normale Supérieure de Lyon, under the supervision of Benoît Libert. In my undergraduate and my Master programs I studied mathematics at the University of Bucharest..",
-    "img": "radu_titiu.jpg",
+    "img": "radu_titiu.webp",
     "contact": {
       "mail": "rtitiu@bitdefender.com",
       "twitter": "",
@@ -122,7 +122,7 @@
   {
     "name": "Dacian Stroia",
     "bio": "I am an applied researcher in the field of cryptography and machine learning. I studied CSE at Politehnica University of Timișoara, and now I'm  a MSc student at the machine learning specialization at the same university. I'm interested in understanding cryptographic algorithms and their real world implementation considerations. Nowadays, I'm focusing on homomorphic encryption techniques.",
-    "img": "dacian_stroia.jpg",
+    "img": "dacian_stroia.webp",
     "contact": {
       "mail": "dstroia@bitdefender.com",
       "twitter": "",
