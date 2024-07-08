@@ -189,10 +189,10 @@
         "bio": "Research Scientist @ University Politehnica of Bucharest, nVidia DLI University Ambassador",
         "img": "teo_poncu.jpg",
         "contact": {
-          "mail": "",
-          "twitter": "",
-          "github": "",
-          "website": ""
+          "twitter":  "@TeodorPoncu", 
+            "github" :  "TeodorPoncu",
+            "website":  "",
+            "email"  :  "dan_teodor.poncu@upb.ro"
         }
       },
       
