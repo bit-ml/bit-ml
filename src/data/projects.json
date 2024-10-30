@@ -1,19 +1,26 @@
 [
   {
     "title": "Robustness",
-    "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the deep anomaly detection task.",
+    "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the bias analysis and on deep anomaly detection task.",
     "people": "Antonio Barbalau, Elena Burceanu, Cristian Paduraru, Radu Filipescu, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
     "projects": [
       {
-        "title": "Anomaly Detection in Distribution Shifted environments",
-        "description": "Even though recently there is an effervescence on the generalization capabilities in multi-environment setups, the problem is curently  discussed only in supervised scenarios. We are interested in analysising unsupervised approaches and their perfomance under distribution shifted data. More, we started formalizing this setup for the Anomaly Detection task.",
+        "title": "Generalization",
+        "description": "Even though recently there is an effervescence on the generalization capabilities in multi-environment setups, the problem is curently discussed only in supervised scenarios. We are interested in analysising unsupervised approaches and their perfomance under distribution shifted data. More, we recently started analyzing the biases in the context of out-of-distribution data.",
         "papers": [
           {
             "authors": "S. Smeu, E. Burceanu, E. Haller, A. Nicolicioiu",
             "title": "Stylist: Style-Driven Feature Ranking for Robust Novelty Detection",
-            "year": "2023",
+            "year": "2025",
             "link": "https://arxiv.org/abs/2310.03738",
-            "published": " under review, partially presented at ICCV Workshop on Out Of Distribution Generalization in Computer Vision"
+            "published": " in Winter Conference on Applications of Computer Vision (WACV)"
+          },
+          {
+            "authors": "C. Paduraru, A. Barbalau, R. Filipescu, A. Nicolicioiu, E. Burceanu",
+            "title": "ConceptDrift: Uncovering Biases through the Lens of Foundational Models",
+            "year": "2024",
+            "link": "https://arxiv.org/abs/2410.18970",
+            "published": "in NeurIPS Workshop on Interpretable AI: Past, Present and Future"
           },
           {
             "authors": "S. Smeu, E. Burceanu, A. Nicolicioiu, E. Haller",
@@ -35,6 +42,20 @@
         "title": "Message-passing graph neural networks",
         "description": "Message-passing graph neural networks (MPNNs) have emerged as a powerful paradigm for graph-based machine learning. Despite their effectiveness, MPNNs face challenges such as under-reaching and over-squashing, where limited receptive fields and structural bottlenecks hinder information flow in the graph. While graph transformers hold promise in addressing these issues, their scalability is limited due to quadratic complexity regarding the number of nodes, rendering them impractical for larger graphs.",
         "papers": [
+          {
+            "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
+            "title": "Probabilistic Graph Rewiring via Virtual Nodes",
+            "year": "2024",
+            "link": "https://arxiv.org/abs/2405.17311",
+            "published": " in Conference on Neural Information Processing Systems (NeurIPS)"
+          },
+          {
+            "authors": "A. Manolache, D. Tantaru, M. Niepert",
+            "title": "MolMix: A Simple Yet Effective Baseline for Multimodal Molecular Representation Learning",
+            "year": "2024",
+            "link": "https://arxiv.org/abs/2410.07981",
+            "published": " in NeurIPS Workshop on Machine Learning for Structural Biology"
+          },
           {
             "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
             "title": "Probabilistic Graph Rewiring via Virtual Nodes",
@@ -63,11 +84,18 @@
         "description": "Deepfake detection plays a crucial role in addressing the social impact of synthetic media manipulation. With the rise of deepfake technology, there is a growing concern about its potential to spread misinformation and deceive the public. Detection efforts are essential to protect individuals and society from the harmful consequences of manipulated content. By using advanced machine learning techniques to uncover inconsistencies and anomalies within deepfake videos, audio recordings, or images, these detection methods act as a shield against the erosion of trust in digital media.",
         "papers": [
           {
+            "authors":"S.Smeu, E. Oneata, D. Oneata",
+            "title": "DeCLIP: Decoding CLIP representations for deepfake localization",
+            "year": "2025",
+            "link": "https://arxiv.org/abs/2409.08849",
+            "published": " in Winter Conference on Applications of Computer Vision (WACV)"
+          },
+          {
             "authors":"O. Pascu, A. Stan, D. Oneata, E. Oneata, H. Cucu",
             "title": "Towards generalisable and calibrated synthetic speech detection with self-supervised representations",
-            "year": "",
+            "year": "2024",
             "link": "https://arxiv.org/pdf/2309.05384",
-            "published": "Interspeech 2024"
+            "published": "Interspeech"
           },
           {
             "authors": "D. Tantaru, E. Oneata, D. Oneata",
