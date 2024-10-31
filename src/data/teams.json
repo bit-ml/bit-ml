@@ -135,35 +135,17 @@
             "github": "antoniobarbalau",
             "website": ""
           }
-        }
-      ]
-    }
-  },
-  {
-    "direction": "Crypto team",
-    "id": "ml",
-    "subteams": {
-      "": [
+        }, 
         {
-          "name": "Mădălina Bolboceanu",
-          "bio": "I obtained both my undergraduate and Master degrees in Mathematics from the University of Bucharest. My goal is to use my strong mathematical skills and experience in mathematical contests and olympiads to solve cryptographic challenges. I am interested in applications of lattices in cryptography, including lattice based homomorphic encryption schemes.",
-          "img": "madalina_bolboceanu.webp",
+          "name": "Dragos (Andu) Boldisor",
+          "bio": "I am currently studying for my Master's Degree in Artificial Intelligence at University Politehnica of Bucharest. I am presently researching approaches to deepfake detection.",
+          "img": "andu_boldisor.jpg",
           "contact": {
-            "mail": "mbolboceanu@bitdefender.com",
-            "twitter": "molbozaur",
-            "github": "",
-            "website": "mbolboceanu.github.io/"
+            "mail": "dboldisor@bitdefender.com",
+            "twitter": "",
+            "github": "@Andu199",
+            "website": ""
           }
-        },
-        {
-            "name": "Dacian Stroia",
-            "bio": "I am an applied researcher in the field of cryptography and machine learning. I studied CSE at Politehnica University of Timișoara, and now I'm  a MSc student at the machine learning specialization at the same university. I'm interested in understanding cryptographic algorithms and their real world implementation considerations. Nowadays, I'm focusing on homomorphic encryption techniques.",
-            "img": "dacian_stroia.webp",
-            "contact": {
-              "mail": "dstroia@bitdefender.com",
-              "twitter": "",
-              "github": "zademn"
-            }
         }
       ]
     }
