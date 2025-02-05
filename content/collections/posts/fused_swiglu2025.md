@@ -490,7 +490,7 @@ So far, we have focused only on the first half of the MLP computation. More so, 
 
 ## Credits
 
-Blog background image generated with DALLE-3.
+Blog background image generated with DALL·E 3.
 
 [^4]: We are not entirely sure why CuTe doesn't reduce this to a `(2, 4, 8): (512, 2048, 8)` layout, but this further reinforces why trying to directly operate on the raw layouts is a bad idea.
 
