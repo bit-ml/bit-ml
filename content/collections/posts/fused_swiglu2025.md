@@ -1,12 +1,12 @@
 ---
 slug: fused-swiglu-kernel
-authors: Florin Brad, Ioana Pintilie, Marius Dragoi, Dragos Tantaru
+authors: Dragos Tantaru
 categories: blog
 featured_img: "/galleries/fused_swiglu2025/gpu2.jpeg"
 date: February-05-2025
 ---
 
-# Towards Better Gated MLP kernels
+# Towards Better Kernels for Gated MLP
 
 The decoder block of a Transformer is the basic unit of all modern LLMs. Most of the compute used for it is spent on self-attention and the MLP, with self-attention in special being problematic on long sequences due to its quadratic compute and memory requirements. It is not surprising therefore that there's been a lot of progress towards increasing the performance of self-attention, such as FlashAttention [[1](#fa)], or algorithms and models that approximate full attention, like Window Attention [[2](#wa)], or State-Space Models [[3](mam), [4](lru), [5](mam2)]. While efficient kernels for MLPs do exist, from what we could find they seem to be either tailored to very specific setups, or only partially solve some of the issues of MLPs, such as fusing the gating operation. 
 
@@ -94,7 +94,7 @@ Several Triton kernels for the fourth line of code in our `mlp` function are ava
 
 ### Fused Gated MLP kernels
 
-A similar approach to our gated MLP kernel exists in the TensorRT-LLM repo [here](https://github.com/NVIDIA/TensorRT-LLM/blob/d93a2dde84eada06ae2339b4fb4e6432167a1cfd/cpp/tensorrt_llm/cutlass_extensions/include/cutlass_extensions/gemm/kernel/sm90_gemm_gated_tma_warpspecialized_pingpong.hpp). At a high-level the kernels are conceptually similar, in that they both fuse the gating computation with the GEMM. The differences stop here, as the one from TensorRT-LLM is written and very optimized for the Hopper architecture, and used only for FP8 MLPs. The fusing itself also does not use the odd-even column scheme we employ, instead they do two separate GEMMs for the weights. In any case, we see this as a confirmation that fusing these kernels is a good way forward. We did not bechmark against their kernel, because our code is written for Ampere, since that is the hardware available for us (A100).
+A similar approach to our gated MLP kernel exists in the TensorRT-LLM repo [here](https://github.com/NVIDIA/TensorRT-LLM/blob/d93a2dde84eada06ae2339b4fb4e6432167a1cfd/cpp/tensorrt_llm/cutlass_extensions/include/cutlass_extensions/gemm/kernel/sm90_gemm_gated_tma_warpspecialized_pingpong.hpp). At a high-level the kernels are conceptually similar, in that they both fuse the gating computation with the GEMM. The differences stop here, as the one from TensorRT-LLM is written and very optimized for the Hopper architecture, and used only for FP8 MLPs. The fusing itself also does not use the odd-even column scheme we employ, instead they do two separate GEMMs for the weights. In any case, we see this as a confirmation that fusing these kernels is a promising approach. We did not bechmark against their kernel, because our code is written for Ampere, since that is the hardware available for us (A100).
 
 ## Benchmarks
 ---
@@ -110,8 +110,10 @@ pre code {
 </style>
 ```python
 def forward(self, C):
-    torch.mm(self.x, self.w, out=C) # X and W are the inputs and concatenated weights
-    return swiglu_fg_kernel(C[:, :self.N//2], C[:, self.N//2:]) # self.N is 2 x D_up
+    # X and W are the inputs and concatenated weights
+    torch.mm(self.x, self.w, out=C)
+    # self.N is 2 x D_up
+    return swiglu_fg_kernel(C[:, :self.N//2], C[:, self.N//2:]) 
 ```
 
 The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. The code for the benchmarks is provided in the Github [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking suite to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors.
@@ -148,7 +150,7 @@ The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` 
 
 Our kernel underperforms in terms of TFLOP/s, achieving between 95-98% of the `cuBLAS+Unsloth` approach, but we can ease the memory pressure by half. This can result in elevated throughput for inference workloads, as the memory saved could be used for expanding the KV cache, for example.
 
-We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized cuBLAS kernel for the A100. Our claim is based on the observation that the performance gap between cuBLAS and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table bellow shows the ratio between the TFLOP/s of our kernel GEMM code and cuBLAS for the GEMM column, and the Full column refers to the ratio of `cuBLAS+Unsloth` and our complete kernel. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
+We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized cuBLAS kernel for the A100. Our claim is based on the observation that the performance gap between cuBLAS and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table bellow shows the ratio between the TFLOP/s of our kernel GEMM code and cuBLAS for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
 
 
 <div style="display: flex; justify-content: center; margin: 10px;">
@@ -424,7 +426,7 @@ As we can see, each thread will always hold a pair of two elements. Furthermore,
 Finally, we can explain our solution. What we did is to define this **Traits** Atom for an imaginary $16 \times 4 \times 16$ MMA:
 ```cpp=
   template <>
-  struct MMA_Traits<ASMLLM::SM80_16x4x16_F32BF16BF16F32_TN_GATED_COPY>
+  struct MMA_Traits<SM80_16x4x16_F32BF16BF16F32_TN_GATED>
         : MMA_Traits<SM80_16x8x8_F16F16F16F16_TN>
   {
     ...
@@ -494,6 +496,6 @@ Blog background image generated with DALLE-3.
 
 [^3]: This is computed as the ratio $\frac{4\cdot Seq \cdot D + Seq \cdot U + Seq \cdot D}{4\cdot Seq \cdot D + 3 \cdot Seq \cdot U + Seq \cdot D}$, where $U$ is short-hand for the up-scaling dimension. This further reduces to $\frac{5D + U}{5D + 3U}$. Since we have $U=c\cdot D$ with $c>2$ in practice, we can simplify this to $\frac{5+c}{5+3c}$, which is lower bounded by $\frac{1}{3}$ in the limit, and upper bounded by $~64\%$ for $c=2$. This translates for $35-70\%$ gains per layer as the up-proj dimension gets larger. If we assume some more memory optimizations, like overwriting the queries with the outputs and the up-scaled MLP inputs with the gating result (for example), we can reduce the memory requirement to $3 \cdot Seq \cdot D + 2 \cdot Seq \cdot U + Seq \cdot D$. Using the same series of calculations we would arrive at a $25-50\%$ gain.
 
-[^2]: In practice, PyTorch uses its own CUDA memory allocator. A simplified way to look at it is that when a tensor frees memory, PyTorch doesn’t immediately return it to the GPU. Instead, it holds onto the memory for reuse, reducing the overhead associated with frequent `cudaMalloc` and `cudaFree` calls. Therefore, scrips similar to this one might not actually result in increased total memory usage, and will (probably) always use less than $3$ times the memory of `x`, since the `x * scaling` term can be freed after the squaring operation.
+[^2]: In practice, PyTorch uses its own CUDA memory allocator. A simplified way to look at it is that when a tensor frees memory, PyTorch doesn’t immediately return it to the GPU. Instead, it holds onto the memory for reuse, reducing the overhead associated with `cudaMalloc` and `cudaFree` calls. Therefore, scripts similar to this one might not actually result in increased total memory usage, and will (probably) always use less than $3$ times the memory of `x`, since the `x * scaling` term can be freed after the squaring operation.
 
 [^1]: Here we should also note that the discussion for warps is also more nuanced, since we skipped talking about warp divergence.

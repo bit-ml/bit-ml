@@ -173,9 +173,9 @@ export default ({ posts }) => (
         <Slide index={0}>
             {
               <FeaturedLink to="/blog/post/fused-swiglu-kernel/">
-                <FeaturedHeading>Towards Better Gated MLP kernels</FeaturedHeading>
+                <FeaturedHeading>Towards Better Kernels for Gated MLP</FeaturedHeading>
                 <FeaturedSynopsis>
-                  Fusing the first half of the gated MLP.
+                  Fusing the upscaling and gating in the Gated MLP.
                 </FeaturedSynopsis>
               </FeaturedLink>
             }
