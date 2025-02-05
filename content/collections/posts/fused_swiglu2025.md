@@ -81,7 +81,7 @@ def mlp(x: torch.Tensor, weights_upscale: torch.Tensor, weights_downscale: torch
 What we have currently worked on are the 2-4 lines of code. The algorithm can be summarized as follows:
 
 1. Concatenate the upscaling weights and gating weights on the second dimension (i.e. add extra columns), such that we can compute both the up scaled $X$ and the gating values in one matrix multiplication. This is a standard optimization used in many LLM projects. The main difference is that we interleave columns, with even positions corresponding to upscaling weights and odd positions to gate weights. This is helpful, because our kernel can only compute a small patch of both the up-scaled weights and the gating values. By grabbing the odd and even columns, we can compute the local gated patch.
-2. Compute the GEMM (General Matrix Multiplication). It is very important for our approach to be able to directly work on the result of the matrix multiplication and manipulate its shape, therefore we cannot use highly efficient, but closed source kernels like cuBLAS. We write our own GEMM implementation, based on the CuTe documentation and 
+2. Compute the GEMM (General Matrix Multiplication). It is very important for our approach to be able to directly work on the result of the matrix multiplication and manipulate its shape, therefore we cannot use highly efficient, but closed source kernels like cuBLAS. For this purpose, we wrote a custom GEMM kernel.
 3. Each CTA now holds a patch of the final linear projection. To compute the gated linear unit (line 4), we take all odd columns from the patch, apply the activation function on them, and multiply them by the even columns.
 4. We write the result to `gated_up_scale`. 
 
