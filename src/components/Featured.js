@@ -167,7 +167,7 @@ export default ({ posts }) => (
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
-        totalSlides={6}
+        totalSlides={7}
       >
         <Slider>
         <Slide index={0}>
