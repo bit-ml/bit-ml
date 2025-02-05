@@ -10,7 +10,7 @@ date: February-05-2025
 
 The decoder block of a Transformer is the basic unit of all modern LLMs. Most of the compute used for it is spent on self-attention and the MLP, with self-attention in special being problematic on long sequences due to its quadratic compute and memory requirements. It is not surprising therefore that there's been a lot of progress towards increasing the performance of self-attention, such as FlashAttention [[1](#fa)], or algorithms and models that approximate full attention, like Window Attention [[2](#wa)], or State-Space Models [[3](mam), [4](lru), [5](mam2)]. While efficient kernels for MLPs do exist, from what we could find they seem to be either tailored to very specific setups, or only partially solve some of the issues of MLPs, such as fusing the gating operation. 
 
-We spent the last few weeks working on a kernel that computes the up-scaling and gating part of the MLP in a single (fused) call. In this blogpost, we will explain our approach and dive into some low-level details of our implementation. While having some familiarity with GPU kernels will make reading this blog easier, we include some introductory sections that give a high-level overview of relevant concepts. The full implementation can be found at our Github [repo](https://github.com/bit-ml/Fused-SwiGLU).
+We spent the last few weeks working on a kernel that computes the up-scaling and gating part of the MLP in a single (fused) call. In this blog post, we will explain our approach and dive into some low-level details of our implementation. While having some familiarity with GPU kernels will make reading this blog easier, we include some introductory sections that give a high-level overview of relevant concepts. The full implementation can be found at our GitHub [repo](https://github.com/bit-ml/Fused-SwiGLU).
 
 ## Gated MLPs
 ---
@@ -24,7 +24,7 @@ Gated MLPs, introduced in [[6](#glu)], changed the activation used in the tradit
 </div>
 
 
-During training, this results in projecting the input tokens into a much larger dimension. For example, for Llama 405B the inputs are projected from $Seq \times 16384$ to $Seq \times 53248$, where $Seq$ is the sequence length. This in turn means that when training with sequences with less than $53248$ context length, the MLP will dominate self-attention in terms of both FLOP and memory even without using efficient kernels like FlashAttention, because the quadratic cost in terms of context length is actually lower. In general, this holds for most sizes of LLMs, as even smaller models in the 8B class usually upscale in the 14k-20k range, which exceeds most context sizes used for pretrainig. 
+During training, this results in projecting the input tokens into a much larger dimension. For example, for Llama 405B the inputs are projected from $Seq \times 16384$ to $Seq \times 53248$, where $Seq$ is the sequence length. This in turn means that when training with sequences with less than $53248$ context length, the MLP will dominate self-attention in terms of both FLOPs and memory even without using efficient kernels like FlashAttention, because the quadratic cost in terms of context length is actually lower. In general, this holds for most sizes of LLMs, as even smaller models in the 8B class usually upscale to the 14k-20k range, which exceeds most context sizes used for pretraining. 
 
 For inference, the discussion is more nuanced. Inference engines tend to prioritize, among other things, storing as little memory as possible for activations to make room for larger models and KV caches. We will have a section towards the end of the post where we will discuss in more detail how exactly our kernel might fit in a modern inference engine, but briefly speaking, we expect the impact of our kernel to be modest in terms of memory, but still useful for further improving the throughput of model deployments.
 
@@ -94,7 +94,7 @@ Several Triton kernels for the fourth line of code in our `mlp` function are ava
 
 ### Fused Gated MLP kernels
 
-A similar approach to our gated MLP kernel exists in the TensorRT-LLM repo [here](https://github.com/NVIDIA/TensorRT-LLM/blob/d93a2dde84eada06ae2339b4fb4e6432167a1cfd/cpp/tensorrt_llm/cutlass_extensions/include/cutlass_extensions/gemm/kernel/sm90_gemm_gated_tma_warpspecialized_pingpong.hpp). At a high-level the kernels are conceptually similar, in that they both fuse the gating computation with the GEMM. The differences stop here, as the one from TensorRT-LLM is written and very optimized for the Hopper architecture, and used only for FP8 MLPs. The fusing itself also does not use the odd-even column scheme we employ, instead they do two separate GEMMs for the weights. In any case, we see this as a confirmation that fusing these kernels is a promising approach. We did not bechmark against their kernel, because our code is written for Ampere, since that is the hardware available for us (A100).
+A similar approach to our gated MLP kernel exists in the TensorRT-LLM repo [here](https://github.com/NVIDIA/TensorRT-LLM/blob/d93a2dde84eada06ae2339b4fb4e6432167a1cfd/cpp/tensorrt_llm/cutlass_extensions/include/cutlass_extensions/gemm/kernel/sm90_gemm_gated_tma_warpspecialized_pingpong.hpp). At a high-level the kernels are conceptually similar, in that they both fuse the gating computation with the GEMM. The differences stop here, as the one from TensorRT-LLM is written and very optimized for the Hopper architecture, and used only for FP8 MLPs. The fusing itself also does not use the odd-even column scheme we employ, instead they do two separate GEMMs for the weights. In any case, we see this as a confirmation that fusing these kernels is a promising approach. We did not benchmark against their kernel, because our code is written for Ampere, since that is the hardware available for us (A100).
 
 ## Benchmarks
 ---
@@ -116,7 +116,7 @@ def forward(self, C):
     return swiglu_fg_kernel(C[:, :self.N//2], C[:, self.N//2:]) 
 ```
 
-The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. The code for the benchmarks is provided in the Github [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking module to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors.
+The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. The code for the benchmarks is provided in the GitHub [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking module to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors.
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <div style="text-align: center; margin: 10px;">
@@ -150,7 +150,7 @@ The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` 
 
 Our kernel underperforms in terms of TFLOP/s, achieving between 95-98% of the `cuBLAS+Unsloth` approach, but we can ease the memory pressure by half. This can result in elevated throughput for inference workloads, as the memory saved could be used for expanding the KV cache, for example.
 
-We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized cuBLAS kernel for the A100. Our claim is based on the observation that the performance gap between cuBLAS and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table bellow shows the ratio between the TFLOP/s of our kernel GEMM code and cuBLAS for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
+We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized cuBLAS kernel for the A100. Our claim is based on the observation that the performance gap between cuBLAS and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table below shows the ratio between the TFLOP/s of our kernel GEMM code and cuBLAS for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
 
 
 <div style="display: flex; justify-content: center; margin: 10px;">
@@ -192,7 +192,7 @@ In principle, any GEMM kernel for Ampere should be amenable to fuse the gated li
 
 ### Impact on model capabilities and correctness
 
-To check the correctness of our model, we ran numerical tests where we measured the difference between the outpus of our kernel and the PytTorch code, using matrices initialized with kaiming initializaiton, which is the default option for PyTorch weights. All of the tensors are kept in `bfloat16` precision. We use rectangular matrices with the shape indicated by the `MNK` column. We run 100 iterations of random initializations to compute the mean and standard deviation of each statistic. We report the results in the following table: 
+To check the correctness of our model, we ran numerical tests where we measured the difference between the outputs of our kernel and the PyTorch code, using matrices initialized with Kaiming initialization, which is the default option for PyTorch weights. All of the tensors are kept in `bfloat16` precision. We use rectangular matrices with the shape indicated by the `MNK` column. We run 100 iterations of random initializations to compute the mean and standard deviation of each statistic. We report the results in the following table: 
 
 <table>
   <thead>
@@ -250,7 +250,7 @@ To check the correctness of our model, we ran numerical tests where we measured 
 </table>
 
 
-However, it is possible to degrade model performance even with small numerical errors, due to the compounding effects over the many layers models have. Therefore, we measure the performance of a Llama 8B model on 3 popular benchmarks, with and without our kernel. 
+However, it is possible to degrade model performance even with small numerical errors, due to the compounding effects over the many layers models have. Therefore, we measure the performance of a Llama 8B model on three popular benchmarks, with and without our kernel. 
 
 <table style="margin: auto; border-collapse: collapse; margin-bottom: 10px;">
 <caption style="caption-side: top; font-weight: bold; margin-bottom: 8px; text-align: center;">
@@ -454,7 +454,7 @@ Tensor tCgC_gate = thr_mma_gate.partition_C(gC_half);
 Tensor tCrC_gate = thr_mma_gate.make_fragment_C(tCgC_gate);
 // and so on
 ```
-As can be seen in the code snippet, there are still some small changes we need to do. In particular, we need to ensure we adjust some strides before calling the kernel, since our rows are shorter than what a GEMM kernel would expect. If we use thread coarsening, we also must be careful in the final `Tile<>` definition to account for the halved `N` dimension. Regardless, we find that handling these details outside of the kernel code is significantly easier to follow than directly manipulating Tensor shapes and strides in the kernel. 
+As can be seen in the code snippet, there are still some small changes we need to make. In particular, we need to ensure we adjust some strides before calling the kernel, since our rows are shorter than what a GEMM kernel would expect. If we use thread coarsening, we also must be careful in the final `Tile<>` definition to account for the halved `N` dimension. Regardless, we find that handling these details outside of the kernel code is significantly easier to follow than directly manipulating Tensor shapes and strides in the kernel. 
 
 
 ## Closing thoughts
@@ -468,7 +468,7 @@ The reason we specify Ampere is that the algorithm hinges on the particular stru
 
 ### Future directions
 
-So far, we have focused only on the first half of the MLP computation. More so, our optimization concerns just the forward pass, as for a backward pass it's generally more efficient to store intermediary results anyway, and therefore our kernel would achieve lower throughput. We are interested in studying the possiblity of fusing the entire MLP in a single kernel. A more immediate goal would be to improve on our current kernel, mainly to further bridge the gap to the cuBLAS performance. 
+So far, we have focused only on the first half of the MLP computation. More so, our optimization concerns just the forward pass, as for a backward pass it's generally more efficient to store intermediary results anyway, and therefore our kernel would achieve lower throughput. We are interested in studying the possiblity of fusing the entire MLP in a single kernel. A more immediate goal would be to improve our current kernel, mainly to further bridge the gap to cuBLAS performance. 
 
 ## References
 ---
