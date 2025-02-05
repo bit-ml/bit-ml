@@ -172,6 +172,16 @@ export default ({ posts }) => (
         <Slider>
         <Slide index={0}>
             {
+              <FeaturedLink to="/blog/post/fused-swiglu-kernel/">
+                <FeaturedHeading>Towards Better Gated MLP kernels</FeaturedHeading>
+                <FeaturedSynopsis>
+                  Fusing the first half of the gated MLP.
+                </FeaturedSynopsis>
+              </FeaturedLink>
+            }
+          </Slide>
+        <Slide index={1}>
+            {
               <FeaturedLink to="/blog/post/large-language-models-for-malware-analysis/">
                 <FeaturedHeading>Large Language Models for Malware Analysis</FeaturedHeading>
                 <FeaturedSynopsis>
@@ -180,7 +190,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={1}>
+          <Slide index={2}>
             {
               <FeaturedLink to="/blog/post/bgv-fully-homomorphic-encryption-scheme-in-python/">
                 <FeaturedHeading>The BGV fully homomorphic encryption scheme</FeaturedHeading>
@@ -190,7 +200,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={2}>
+          <Slide index={3}>
             {
               <FeaturedLink to="/blog/post/pretrained-atari-agents/">
                 <FeaturedHeading>Over 25,000 Atari trained agents published</FeaturedHeading>
@@ -200,7 +210,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={3}>
+          <Slide index={4}>
             {
               <FeaturedLink to="/blog/post/private-set-intersection-an-implementation-in-python/">
                 <FeaturedHeading>
@@ -214,7 +224,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={4}>
+          <Slide index={5}>
             {
               <FeaturedLink to="/blog/post/homomorphic-encryption-toy-implementation-in-python/">
                 <FeaturedHeading>
@@ -229,7 +239,7 @@ export default ({ posts }) => (
               </FeaturedLink>
             }
           </Slide>
-          <Slide index={5}>
+          <Slide index={6}>
             {
               <FeaturedLink to="/teaching/lectures-and-courses/">
                 <FeaturedHeading>
