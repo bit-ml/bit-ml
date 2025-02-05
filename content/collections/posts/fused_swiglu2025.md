@@ -116,7 +116,7 @@ def forward(self, C):
     return swiglu_fg_kernel(C[:, :self.N//2], C[:, self.N//2:]) 
 ```
 
-The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. The code for the benchmarks is provided in the Github [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking suite to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors.
+The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. The code for the benchmarks is provided in the Github [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking module to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors.
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <div style="text-align: center; margin: 10px;">
