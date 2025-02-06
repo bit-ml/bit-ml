@@ -62,7 +62,7 @@ x = torch.exp((x * scale) ** 2)
 It might be surprising if you are not familiar with the details of *eager* mode to find out that this line of code will result in 3 memory allocations[^2] of the size of `x` and 3 kernel launches. The multiplication by `scale`, the squaring and the exponentiation will each result in one kernel call and memory allocation.
 
 #### Torch.compile
-While *eager* execution has its advantages, it is often wasteful in terms of both memory and compute. This is the reason tools like `torch.compile` have been developed, to offer an automated way to fuse kernels in PyTorch code. Torch compilation is definitely a powerful tool that can significantly speed up your code. That being said, certain optimizations are still out of reach for current compilers, such as FlashAttention. It seems that our kernel is currently also part of this class of optimizations, since we did not measure any significant improvements when compiling the PyTorch gating module.
+While *eager* execution has its advantages, it is often wasteful in terms of both memory and compute. This is the reason tools like `torch.compile` have been developed, to offer an automated way to fuse kernels in PyTorch code. Torch compilation is definitely a powerful tool that can significantly speed up your code. That being said, certain optimizations are still out of reach for current compilers, such as FlashAttention. It seems that fused gated MLPs are currently also part of this class of optimizations, since we did not measure any improvements over the eager `cuBLAS+Unsloth` (we will clarify what this refers to in the Benchmarking section) approach when compiling the PyTorch gating module in our repo.
 
 
 ## Our approach
