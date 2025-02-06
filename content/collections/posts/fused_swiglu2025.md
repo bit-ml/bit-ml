@@ -98,7 +98,7 @@ Furthermore, in [this repo](https://github.com/fattorib/fusedswiglu/tree/main) t
 
 A similar approach to our gated MLP kernel exists in the TensorRT-LLM repo [here](https://github.com/NVIDIA/TensorRT-LLM/blob/d93a2dde84eada06ae2339b4fb4e6432167a1cfd/cpp/tensorrt_llm/cutlass_extensions/include/cutlass_extensions/gemm/kernel/sm90_gemm_gated_tma_warpspecialized_pingpong.hpp). At a high-level the kernels are conceptually similar, in that they both fuse the gating computation with the GEMM. The similarities stop here, as the one from TensorRT-LLM is written and very optimized for the Hopper architecture, and used only for FP8 MLPs. The fusing itself also does not use the odd-even column scheme we employ, instead they do two separate GEMMs for the weights. In any case, we see this as a confirmation that fusing these kernels is a promising approach. We did not benchmark against their kernel, because our code is written for Ampere, since that is the hardware available for us (A100).
 
-Additionally, the [`xformers`](https://github.com/facebookresearch/xformers) library includes a fused implementation that leverages the `DualGemm` class from the Nvidia [CUTLASS](https://github.com/NVIDIA/cutlass) library.
+Additionally, the [`xformers`](https://github.com/facebookresearch/xformers) library includes a fused implementation that utilizes the `DualGemm` class from the Nvidia [CUTLASS](https://github.com/NVIDIA/cutlass) library.
 
 ## Benchmarks
 ---
@@ -120,7 +120,7 @@ def forward(self, C):
     return swiglu_fg_kernel(C[:, :self.N//2], C[:, self.N//2:]) 
 ```
 
-The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. We call this implementation `cuBLAS+Unsloth` throughout our blog, since it uses the `cuBLAS` GEMM kernel and the gate Triton kernel from UnslothAI. The code for the benchmarks is provided in the GitHub [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking module to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors. We also report the results for the [Triton kernel](https://github.com/fattorib/fusedswiglu/tree/main) and [xformers](https://github.com/facebookresearch/xformers) implementations.
+The `torch.mm` call will call a `cuBLAS` optimized kernel, and `swiglu_fg_kernel` corresponds to the Unsloth kernel, with the modification that it overwrites the second argument with the result, to save on memory. We call this implementation `cuBLAS+Unsloth` throughout our blog, since it uses the `cuBLAS` GEMM kernel and the gate Triton kernel from UnslothAI. The code for the benchmarks is provided in the GitHub [repo](https://github.com/bit-ml/Fused-SwiGLU). We use the Triton benchmarking module to measure the TFLOP/s achieved by the above code and our kernel. All benchmarks are run on an A100 80GB card, with bf16 precision for all tensors. We also report the results for the [Triton kernel](https://github.com/fattorib/fusedswiglu/tree/main) and [xformers](https://github.com/facebookresearch/xformers) implementations.
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <div style="text-align: center; margin: 10px;">
@@ -169,7 +169,7 @@ The `torch.mm` call will call a cuBLAS optimized kernel, and `swiglu_fg_kernel` 
 
 Our kernel underperforms in terms of TFLOP/s, achieving between 95-98% of the `cuBLAS+Unsloth` approach, but we can ease the memory pressure by half. This can result in elevated throughput for inference workloads, as the memory saved could be used for expanding the KV cache, for example.
 
-We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized `cuBLAS`` kernel for the A100. Our claim is based on the observation that the performance gap between `cuBLAS`` and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table below shows the ratio between the TFLOP/s of our kernel GEMM code and `cuBLAS`` for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
+We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized `cuBLAS` kernel for the A100. Our claim is based on the observation that the performance gap between `cuBLAS` and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table below shows the ratio between the TFLOP/s of our kernel GEMM code and `cuBLAS` for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
 
 
 <div style="display: flex; justify-content: center; margin: 10px;">
