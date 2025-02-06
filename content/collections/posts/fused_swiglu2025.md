@@ -169,7 +169,7 @@ The `torch.mm` call will call a `cuBLAS` optimized kernel, and `swiglu_fg_kernel
 
 Our kernel underperforms in terms of TFLOP/s, achieving between 95-98% of the `cuBLAS+Unsloth` approach, but we can ease the memory pressure by half. This can result in elevated throughput for inference workloads, as the memory saved could be used for expanding the KV cache, for example.
 
-We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized `cuBLAS` kernel for the A100. Our claim is based on the observation that the performance gap between `cuBLAS` and our standalone GEMM code is larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table below shows the ratio between the TFLOP/s of our kernel GEMM code and `cuBLAS` for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
+We also note that the difference in terms of compute is mostly explained by the difference in performance between our GEMM code and the extremely optimized `cuBLAS` kernel for the A100. Our claim is based on the observation that the performance gap between `cuBLAS` and our standalone GEMM code is generally larger than the gap between our complete kernel and the `cuBLAS+Unsloth` code. The table below shows the ratio between the TFLOP/s of our kernel GEMM code and `cuBLAS` for the GEMM column, and the Full column refers to the ratio of our complete kernel and `cuBLAS+Unsloth`. We see that for most model sizes and token counts the gap between the GEMM computations is higher, and in all cases the ratios are closely matched.
 
 
 <div style="display: flex; justify-content: center; margin: 10px;">
@@ -211,7 +211,7 @@ In principle, any GEMM kernel for Ampere should be amenable to fuse the gated li
 
 ### Impact on model capabilities and correctness
 
-To check the correctness of our model, we ran numerical tests where we measured the difference between the outputs of our kernel and the PyTorch code, using matrices initialized with Kaiming initialization, which is the default option for PyTorch weights. All of the tensors are kept in `bfloat16` precision. We use rectangular matrices with the shape indicated by the `MNK` column. We run 100 iterations of random initializations to compute the mean and standard deviation of each statistic. We report the results in the following table: 
+To check the correctness of our model, we ran numerical tests where we measured the difference between the outputs of our kernel and the PyTorch code, using matrices initialized with Kaiming initialization, which is the default option for PyTorch weights. All of the tensors are kept in `bfloat16` precision. We use square matrices with the shape indicated by the `MNK` column. We run 100 iterations of random initializations to compute the mean and standard deviation of each statistic. We report the results in the following table: 
 
 <table>
   <thead>
@@ -332,7 +332,7 @@ A side-effect of chunked prefill is that the memory used by activations drops ev
     </p>
 </div>
 
-We plot in these graphs the amount of tokens that we can further add to the *KV cache* when reducing the activation memory per chunk with a chunk size of $512$. This value is fixed per model deployment, since it only depends on the chunk size. Since the chunk size is fixed, the amount of tokens is tightly correlated with the configurations of each model, which is why the graphs have irregular patterns. The gains are more modest in this scenario, given the small chunk sizes. Nonetheless, they can still help squeeze more value out of existing deployments. Since Gemma 2-27B has the highest up-scaling factor of $8$, we can also see it leads to the largest potential increase in KV cache memory.
+We plot in these graphs the amount of tokens that we can further add to the *KV cache* when reducing the activation memory per chunk with a chunk size of $512$. This value is fixed per model deployment, since it only depends on the chunk size and model configuration. The stronger dependence on model configuration is also the reason why the graphs have irregular patterns. The gains are more modest in this scenario, given the small chunk sizes. Nonetheless, they can still help squeeze more value out of existing deployments. Notably, Gemma 2-27B has the highest up-scaling factor of $8$, and we can see it leads to the largest potential increase in KV cache memory.
 
 ## A closer look <a href id="close"></a>
 ---
