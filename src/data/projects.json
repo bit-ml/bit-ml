@@ -46,8 +46,8 @@
         ]
       },
       {
-        "title": "Message-passing graph neural networks",
-        "description": "Message-passing graph neural networks (MPNNs) have emerged as a powerful paradigm for graph-based machine learning. Despite their effectiveness, MPNNs face challenges such as under-reaching and over-squashing, where limited receptive fields and structural bottlenecks hinder information flow in the graph. While graph transformers hold promise in addressing these issues, their scalability is limited due to quadratic complexity regarding the number of nodes, rendering them impractical for larger graphs.",
+        "title": "Equivariant Neural Networks",
+        "description": "Equivariant neural networks incorporate symmetry constraints directly into their architecture, offering a strong inductive bias for learning from structured data such as graphs, molecules, or physical systems. This bias can yield models that generalize well and require fewer samples, but it also introduces limitations. Constraining computations to respect symmetry can restrict model expressiveness, reduce flexibility in representing complex patterns, and make training more challenging. These issues can arise from both architectural bottlenecks, such as limited information flow in message-passing graph neural networks, and from the optimization process itself. We explore strategies to overcome these challenges, including modifying connectivity patterns and designing training procedures that progressively guide models toward the desired symmetries, balancing the benefits of equivariance with the practical needs of scalability, expressiveness, and robustness.",
         "papers": [
           {
             "authors": "A. Manolache, L.F.O. Chamon, M. Niepert",
