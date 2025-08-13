@@ -60,7 +60,7 @@
           }
         },
         {
-          "name": "Stefan Smeu",
+          "name": "Ștefan Smeu",
           "bio": "I studied Mathematics and Computer Science at University of Bucharest, where I got my bachelor's degree and currently pursuing it's Artificial Intelligence Master degree program. I am interested in the unsupervised representation learning branch of deeplearning. Nowadays I research the problem of distributional shift and anomaly detection, mainly on visual data.",
           "img": "stefan_smeu.webp",
           "contact": {
@@ -104,7 +104,7 @@
           }
         },
         {
-          "name": "Cristian Paduraru",
+          "name": "Cristian Păduraru",
           "bio": "I earned my Bachelor's degree in Computer Science from the University of Bucharest, where I am currently pursuing a Master's program in Artificial Intelligence. My interests include bias identification and correction, as well as model interpretability.",
           "img": "cristi_paduraru.webp",
           "contact": {
@@ -115,7 +115,7 @@
           }
         },
         {
-          "name": "Antonio Barbalau",
+          "name": "Antonio Bărbălau",
           "bio": "Currently pursuing a PhD focused on weakly-supervised and self-supervised learning at the University of Bucharest. I've been mainly involved in model stealing, video anomaly detection and speech processing. Presently, I'm working on domain generalization.",
           "img": "antonio_barbalau.webp",
           "contact": {
@@ -126,7 +126,7 @@
           }
         }, 
         {
-          "name": "Dragos (Andu) Boldisor",
+          "name": "Dragoș (Andu) Boldișor",
           "bio": "I am currently studying for my Master's Degree in Artificial Intelligence at University Politehnica of Bucharest. I am presently researching approaches to deepfake detection.",
           "img": "andu_boldisor.webp",
           "contact": {
@@ -152,7 +152,7 @@
           "mail": "",
           "twitter": "",
           "github": "",
-          "website": "andreinicolicioiu.github.io/"
+          "website": ""
         }
       },
       {
@@ -160,26 +160,26 @@
         "bio": "Research Scientist @ University Politehnica of Bucharest, nVidia DLI University Ambassador",
         "img": "teo_poncu.webp",
         "contact": {
-          "twitter":  "@TeodorPoncu", 
-            "github" :  "TeodorPoncu",
+          "twitter":  "", 
+            "github" :  "",
             "website":  "",
-            "email"  :  "dan_teodor.poncu@upb.ro"
+            "email"  :  ""
         }
       },
       {
-        "name": "Dragos Tantaru",
-        "bio": "I am a researcher in the field of Deep Learning, with expertise in Deepfake detection and Large Language Models (LLMs) finetuning and optimization. I'm also very interested in works pertaining to theoretical aspects of Deep Learning. I'm currently pursuing a Master's degree in Artificial Intelligence at the University of Bucharest.",
+        "name": "Dragoș Țânțaru",
+        "bio": "Member of Engineering @ poolside",
         "img": "dragos_tantaru.webp",
         "contact": {
-          "mail": "dtantaru@bitdefender.com",
+          "mail": "",
           "twitter": "",
-          "github": "dragosconst",
+          "github": "",
           "website": ""
         }
       },
       {
         "name": "Tudor Berariu",
-        "bio": "PhD Student @ Imperial College London",
+        "bio": "Research Scientist @ UiPath",
         "img": "tudor_berariu.webp",
         "contact": {
           "mail": "",
@@ -196,7 +196,7 @@
           "mail": "",
           "twitter": "",
           "github": "",
-          "website": "iuliaduta.github.io/"
+          "website": ""
         }
       },
       {
@@ -204,20 +204,10 @@
         "bio": "Prof @  University Politehnica of Bucharest",
         "img": "marius_leordeanu.webp",
         "contact": {
-          "mail": "leordeanu@gmail.com",
+          "mail": "",
           "twitter": "",
           "github": "",
-          "website": "sites.google.com/site/mariusleordeanu/home"
-        }
-      },
-      {
-        "name": "Radu Țițiu",
-        "bio": "PhD in Cryptography from École Normale Supérieure de Lyon",
-        "img": "radu_titiu.webp",
-        "contact": {
-          "mail": "rtitiu@bitdefender.com",
-          "twitter": "",
-          "github": ""
+          "website": ""
         }
       }
     ]
