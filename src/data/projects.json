@@ -50,6 +50,13 @@
         "description": "Message-passing graph neural networks (MPNNs) have emerged as a powerful paradigm for graph-based machine learning. Despite their effectiveness, MPNNs face challenges such as under-reaching and over-squashing, where limited receptive fields and structural bottlenecks hinder information flow in the graph. While graph transformers hold promise in addressing these issues, their scalability is limited due to quadratic complexity regarding the number of nodes, rendering them impractical for larger graphs.",
         "papers": [
           {
+            "authors": "A. Manolache, L.F.O. Chamon, M. Niepert",
+            "title": "Learning (Approximately) Equivariant Networks via Constrained Optimization",
+            "year": "2025",
+            "link": "https://arxiv.org/pdf/2505.13631",
+            "published": "under review"
+          },
+          {
             "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
             "title": "Probabilistic Graph Rewiring via Virtual Nodes",
             "year": "2024",
