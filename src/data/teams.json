@@ -39,7 +39,7 @@
         },
         {
           "name": "Marius Drăgoi",
-          "bio": "I studied at Politehnica University of Bucharest, where I obtained a Bachelor's degree in Computer Science and a Master's degree in Artificial Intelligence. I am currently researching the problem of out-of-distribution sample detection and distributional shift in log data.",
+          "bio": "I earned my Bachelor's degree in Computer Science and Master's degree in Artificial Intelligence from Politehnica University of Bucharest. My earlier research focused on anomaly detection in scenarios involving distribution shifts. Currently, I am working on Large Language Models, with an emphasis on enhancing their reasoning capabilities.",
           "img": "marius_dragoi.webp",
           "contact": {
             "mail": "mdragoi@bitdefender.com",
