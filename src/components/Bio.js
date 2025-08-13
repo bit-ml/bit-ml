@@ -74,19 +74,20 @@ Bio.defaultProps = {
 const ContactBox = styled.div`
   display: flex;
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   margin-bottom: 1rem;
 
   > a {
-    width: 33.33%;
+    width: 30%;
     text-align: center;
     font-size: 0.833rem;
     font-weight: normal !important;
     color: #828282 !important;
-    padding: 0.3rem;
+    padding: 0.1rem 0;
     border: 1px solid #edebeb;
     margin-right: 5px;
+    margin-bottom: 5px;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     &:hover {
