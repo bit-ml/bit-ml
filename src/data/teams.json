@@ -71,7 +71,7 @@
           }
         },
         {
-          "name": "Elisabeta Oneata",
+          "name": "Elisabeta Oneață",
           "bio": "I have obtained my PhD in computer vision from the School of Advanced Studies of the Romanian Academy (SCOSAAR),  with the thesis “Perceptual Models for Computational Visual Analysis”, under the supervision of Prof. Dr. Cristian Sminchisescu. My work focused on 3d human pose estimation and perception in monocular images and videos. Currently I am interested in automatic detection of deepfake visual content.",
           "img": "elisabeta_oneata.webp",
           "contact": {
@@ -79,6 +79,17 @@
             "twitter": "",
             "github": "",
             "website": "https://scholar.google.com/citations?user=ssHUPeUAAAAJ&hl=en&oi=ao"
+          }
+        },
+        {
+          "name": "Dan Oneață",
+          "bio": "I received my Ph.D. from Université Grenoble Alpes, where I worked on automatic action recognition in videos. During my postdoctoral research, I started investigating how to integrate vision with other modalities, such as speech and language. This work showed how visual grounding can help with tasks like speech recognition or language documentation, and how multimodal models relate to human learning. At Bitdefender, I apply multimodal learning to detect deepfakes across various media, including images, audio, and video.",
+          "img": "dan_oneata.webp",
+          "contact": {
+            "mail": "doneata@bitdefender.com",
+            "twitter": "",
+            "github": "@danoneata",
+            "website": "https://doneata.bitbucket.io/"
           }
         },
         {
@@ -93,20 +104,9 @@
           }
         },
         {
-          "name": "Dragos Tantaru",
-          "bio": "I am a researcher in the field of Deep Learning, with expertise in Deepfake detection and Large Language Models (LLMs) finetuning and optimization. I'm also very interested in works pertaining to theoretical aspects of Deep Learning. I'm currently pursuing a Master's degree in Artificial Intelligence at the University of Bucharest.",
-          "img": "dragos_tantaru.webp",
-          "contact": {
-            "mail": "dtantaru@bitdefender.com",
-            "twitter": "",
-            "github": "dragosconst",
-            "website": ""
-          }
-        },
-        {
           "name": "Cristian Paduraru",
           "bio": "I earned my Bachelor's degree in Computer Science from the University of Bucharest, where I am currently pursuing a Master's program in Artificial Intelligence. My interests include bias identification and correction, as well as model interpretability.",
-          "img": "cristi_paduraru.png",
+          "img": "cristi_paduraru.webp",
           "contact": {
             "mail": "cpaduraru@bitdefender.com",
             "twitter": "",
@@ -115,20 +115,9 @@
           }
         },
         {
-          "name": "Radu Filipescu",
-          "bio": "Starting the Artificial Intelligence master program at the University of Bucharest, where I also graduated the Faculty of Mathematics and Computer Science. I am interested in multiple applications of Machine Learning, and now working mainly on Domain Generalization and Distribution Shift problems.",
-          "img": "radu_filipescu.jpg",
-          "contact": {
-            "mail": "rfilipescu@bitdefender.com",
-            "twitter": "",
-            "github": "radu-filipescu",
-            "website": "https://www.linkedin.com/in/radu-filipescu"
-          }
-        },
-        {
           "name": "Antonio Barbalau",
           "bio": "Currently pursuing a PhD focused on weakly-supervised and self-supervised learning at the University of Bucharest. I've been mainly involved in model stealing, video anomaly detection and speech processing. Presently, I'm working on domain generalization.",
-          "img": "antonio_barbalau.png",
+          "img": "antonio_barbalau.webp",
           "contact": {
             "mail": "ext-abarbalau@bitdefender.com",
             "twitter": "",
@@ -139,7 +128,7 @@
         {
           "name": "Dragos (Andu) Boldisor",
           "bio": "I am currently studying for my Master's Degree in Artificial Intelligence at University Politehnica of Bucharest. I am presently researching approaches to deepfake detection.",
-          "img": "andu_boldisor.jpg",
+          "img": "andu_boldisor.webp",
           "contact": {
             "mail": "dboldisor@bitdefender.com",
             "twitter": "",
@@ -169,7 +158,7 @@
       {
         "name": "Teo Poncu",
         "bio": "Research Scientist @ University Politehnica of Bucharest, nVidia DLI University Ambassador",
-        "img": "teo_poncu.jpg",
+        "img": "teo_poncu.webp",
         "contact": {
           "twitter":  "@TeodorPoncu", 
             "github" :  "TeodorPoncu",
@@ -177,7 +166,17 @@
             "email"  :  "dan_teodor.poncu@upb.ro"
         }
       },
-      
+      {
+        "name": "Dragos Tantaru",
+        "bio": "I am a researcher in the field of Deep Learning, with expertise in Deepfake detection and Large Language Models (LLMs) finetuning and optimization. I'm also very interested in works pertaining to theoretical aspects of Deep Learning. I'm currently pursuing a Master's degree in Artificial Intelligence at the University of Bucharest.",
+        "img": "dragos_tantaru.webp",
+        "contact": {
+          "mail": "dtantaru@bitdefender.com",
+          "twitter": "",
+          "github": "dragosconst",
+          "website": ""
+        }
+      },
       {
         "name": "Tudor Berariu",
         "bio": "PhD Student @ Imperial College London",
