@@ -1,482 +1,502 @@
 [
-  {
-    "title": "Robustness",
-    "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the bias analysis and on deep anomaly detection task.",
-    "people": "Antonio Barbalau, Elena Burceanu, Cristian Paduraru, Radu Filipescu, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
-    "projects": [
-      {
-        "title": "Generalization",
-        "description": "Even though recently there is an effervescence on the generalization capabilities in multi-environment setups, the problem is curently discussed only in supervised scenarios. We are interested in analysising unsupervised approaches and their perfomance under distribution shifted data. More, we recently started analyzing the biases in the context of out-of-distribution data.",
-        "papers": [
-          {
-            "authors": "D. Teney, L. Jiang, F. Gogianu, E. Abbasnejad",
-            "title": "Do We Always Need the Simplicity Bias? Looking for Optimal Inductive Biases in the Wild",
-            "year": "2025",
-            "link": "https://arxiv.org/abs/2503.10065",
-            "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
-          },
-          {
-            "authors": "S. Smeu, E. Burceanu, E. Haller, A. Nicolicioiu",
-            "title": "Stylist: Style-Driven Feature Ranking for Robust Novelty Detection",
-            "year": "2025",
-            "link": "https://arxiv.org/abs/2310.03738",
-            "published": " in Winter Conference on Applications of Computer Vision (WACV)"
-          },
-          {
-            "authors": "C. Paduraru, A. Barbalau, R. Filipescu, A. Nicolicioiu, E. Burceanu",
-            "title": "ConceptDrift: Uncovering Biases through the Lens of Foundational Models",
-            "year": "2024",
-            "link": "https://arxiv.org/abs/2410.18970",
-            "published": "in NeurIPS Workshop on Interpretable AI: Past, Present and Future"
-          },
-          {
-            "authors": "S. Smeu, E. Burceanu, A. Nicolicioiu, E. Haller",
-            "title": "Env-Aware Anomaly Detection: Ignore Style Changes, Stay True to Content!",
-            "year": "2022",
-            "link": "https://arxiv.org/abs/2210.03103",
-            "published": " in NeurIPS Workshop on Distribution Shifts: Connecting Methods and Applications"
-          },
-          {
-            "authors": "M. Dragoi, E.Burceanu, E. Haller, A. Manolache, F. Brad",
-            "title": "AnoShift: A Distribution Shift Benchmark for Unsupervised Anomaly Detection",
-            "year": "2022",
-            "link": "https://arxiv.org/abs/2206.15476",
-            "published": " in The Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
-          }
+    {
+        "title": "Robustness",
+        "description": "Currently, we are mainly focused on the generalization properties of deep learning models that encounter distribution shifts in data, but also in datasets exhibiting subpopulations or out-of-distribution environments. In this scenario, we focus in particular on the bias analysis and on deep anomaly detection task.",
+        "people": "Antonio Barbalau, Elena Burceanu, Cristian Paduraru, Radu Filipescu, Marius Dragoi, Stefan Smeu, Florin Brad, Andrei Manolache",
+        "projects": [
+            {
+                "title": "Generalization",
+                "description": "Even though recently there is an effervescence on the generalization capabilities in multi-environment setups, the problem is curently discussed only in supervised scenarios. We are interested in analysising unsupervised approaches and their perfomance under distribution shifted data. More, we recently started analyzing the biases in the context of out-of-distribution data.",
+                "papers": [
+                    {
+                        "authors": "C. Paduraru, A. Barbalau, R. Filipescu, A. Nicolicioiu, E. Burceanu",
+                        "title": "Bridging Explainability and Embeddings: BEE Aware of Spuriousness",
+                        "year": "2026",
+                        "link": "https://openreview.net/pdf?id=9jYpHmI8ot",
+                        "published": " in International Conference on Learning Representations (ICLR)"
+                    },
+                    {
+                        "authors": "D. Teney, L. Jiang, F. Gogianu, E. Abbasnejad",
+                        "title": "Do We Always Need the Simplicity Bias? Looking for Optimal Inductive Biases in the Wild",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2503.10065",
+                        "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
+                    },
+                    {
+                        "authors": "S. Smeu, E. Burceanu, E. Haller, A. Nicolicioiu",
+                        "title": "Stylist: Style-Driven Feature Ranking for Robust Novelty Detection",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2310.03738",
+                        "published": " in Winter Conference on Applications of Computer Vision (WACV)"
+                    },
+                    {
+                        "authors": "C. Paduraru, A. Barbalau, R. Filipescu, A. Nicolicioiu, E. Burceanu",
+                        "title": "ConceptDrift: Uncovering Biases through the Lens of Foundational Models",
+                        "year": "2024",
+                        "link": "https://arxiv.org/abs/2410.18970",
+                        "published": "in NeurIPS Workshop on Interpretable AI: Past, Present and Future"
+                    },
+                    {
+                        "authors": "S. Smeu, E. Burceanu, A. Nicolicioiu, E. Haller",
+                        "title": "Env-Aware Anomaly Detection: Ignore Style Changes, Stay True to Content!",
+                        "year": "2022",
+                        "link": "https://arxiv.org/abs/2210.03103",
+                        "published": " in NeurIPS Workshop on Distribution Shifts: Connecting Methods and Applications"
+                    },
+                    {
+                        "authors": "M. Dragoi, E.Burceanu, E. Haller, A. Manolache, F. Brad",
+                        "title": "AnoShift: A Distribution Shift Benchmark for Unsupervised Anomaly Detection",
+                        "year": "2022",
+                        "link": "https://arxiv.org/abs/2206.15476",
+                        "published": " in The Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
+                    }
+                ]
+            },
+            {
+                "title": "Equivariant Neural Networks",
+                "description": "Equivariant neural networks incorporate symmetry constraints directly into their architecture, offering a strong inductive bias for learning from structured data such as graphs, molecules, or physical systems. This bias can yield models that generalize well and require fewer samples, but it also introduces limitations. Constraining computations to respect symmetry can restrict model expressiveness, reduce flexibility in representing complex patterns, and make training more challenging. These issues can arise from both architectural bottlenecks, such as limited information flow in message-passing graph neural networks, and from the optimization process itself. We explore strategies to overcome these challenges, including modifying connectivity patterns and designing training procedures that progressively guide models toward the desired symmetries, balancing the benefits of equivariance with the practical needs of scalability, expressiveness, and robustness.",
+                "papers": [
+                    {
+                        "authors": "A. Manolache, L.F.O. Chamon, M. Niepert",
+                        "title": "Learning (Approximately) Equivariant Networks via Constrained Optimization",
+                        "year": "2025",
+                        "link": "https://arxiv.org/pdf/2505.13631",
+                        "published": " in Conference on Neural Information Processing Systems (NeurIPS)"
+                    },
+                    {
+                        "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
+                        "title": "Probabilistic Graph Rewiring via Virtual Nodes",
+                        "year": "2024",
+                        "link": "https://arxiv.org/abs/2405.17311",
+                        "published": " in Conference on Neural Information Processing Systems (NeurIPS)"
+                    },
+                    {
+                        "authors": "A. Manolache, D. Tantaru, M. Niepert",
+                        "title": "MolMix: A Simple Yet Effective Baseline for Multimodal Molecular Representation Learning",
+                        "year": "2024",
+                        "link": "https://arxiv.org/abs/2410.07981",
+                        "published": " in NeurIPS Workshop on Machine Learning for Structural Biology"
+                    },
+                    {
+                        "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
+                        "title": "Probabilistic Graph Rewiring via Virtual Nodes",
+                        "year": "2024",
+                        "link": "https://arxiv.org/abs/2405.17311",
+                        "published": " under review"
+                    },
+                    {
+                        "authors": "C. Qian, A. Manolache, K. Ahmed, Z. Zeng, G. Van den Broeck, M. Niepert, C. Morris",
+                        "title": "Probabilistically Rewired Message-Passing Neural Networks",
+                        "year": "2024",
+                        "link": "https://arxiv.org/abs/2310.02156",
+                        "published": " in The Proceedings of the 12th International Conference on Learning Representations (ICLR)"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Equivariant Neural Networks",
-        "description": "Equivariant neural networks incorporate symmetry constraints directly into their architecture, offering a strong inductive bias for learning from structured data such as graphs, molecules, or physical systems. This bias can yield models that generalize well and require fewer samples, but it also introduces limitations. Constraining computations to respect symmetry can restrict model expressiveness, reduce flexibility in representing complex patterns, and make training more challenging. These issues can arise from both architectural bottlenecks, such as limited information flow in message-passing graph neural networks, and from the optimization process itself. We explore strategies to overcome these challenges, including modifying connectivity patterns and designing training procedures that progressively guide models toward the desired symmetries, balancing the benefits of equivariance with the practical needs of scalability, expressiveness, and robustness.",
-        "papers": [
-          {
-            "authors": "A. Manolache, L.F.O. Chamon, M. Niepert",
-            "title": "Learning (Approximately) Equivariant Networks via Constrained Optimization",
-            "year": "2025",
-            "link": "https://arxiv.org/pdf/2505.13631",
-            "published": "under review"
-          },
-          {
-            "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
-            "title": "Probabilistic Graph Rewiring via Virtual Nodes",
-            "year": "2024",
-            "link": "https://arxiv.org/abs/2405.17311",
-            "published": " in Conference on Neural Information Processing Systems (NeurIPS)"
-          },
-          {
-            "authors": "A. Manolache, D. Tantaru, M. Niepert",
-            "title": "MolMix: A Simple Yet Effective Baseline for Multimodal Molecular Representation Learning",
-            "year": "2024",
-            "link": "https://arxiv.org/abs/2410.07981",
-            "published": " in NeurIPS Workshop on Machine Learning for Structural Biology"
-          },
-          {
-            "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
-            "title": "Probabilistic Graph Rewiring via Virtual Nodes",
-            "year": "2024",
-            "link": "https://arxiv.org/abs/2405.17311",
-            "published": " under review"
-          },
-          {
-            "authors": "C. Qian, A. Manolache, K. Ahmed, Z. Zeng, G. Van den Broeck, M. Niepert, C. Morris",
-            "title": "Probabilistically Rewired Message-Passing Neural Networks",
-            "year": "2024",
-            "link": "https://arxiv.org/abs/2310.02156",
-            "published": " in The Proceedings of the 12th International Conference on Learning Representations (ICLR)"
-          }
+    },
+    {
+        "title": "Computer Vision",
+        "description": "We tackle fundamental unsupervised learning approaches that we consider to be the key to true unconstrained learning, which best simulates how humans discover the surrounding world. We aim to combine the unsupervised visual perception with supervised cognitive video representation. We want to build systems that understand our world by only watching videos.\nAnd we go further, teaching the system to describe, in natural language, the discovered elements.",
+        "people": "Elena Burceanu, Emanuela Haller, Elisabeta Oneata, Dragos Tantaru",
+        "projects": [
+            {
+                "title": "DeepFake Detection",
+                "description": "Deepfake detection plays a crucial role in addressing the social impact of synthetic media manipulation. With the rise of deepfake technology, there is a growing concern about its potential to spread misinformation and deceive the public. Detection efforts are essential to protect individuals and society from the harmful consequences of manipulated content. By using advanced machine learning techniques to uncover inconsistencies and anomalies within deepfake videos, audio recordings, or images, these detection methods act as a shield against the erosion of trust in digital media.",
+                "papers": [
+                    {
+                        "authors": "D. Boldisor, S. Smeu, D. Oneata, E. Oneata",
+                        "title": "Circumventing shortcuts in audio-visual deepfake detection datasets with unsupervised learning",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2412.00175",
+                        "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
+                    },
+                    {
+                        "authors": "S. Smeu, E. Oneata, D. Oneata",
+                        "title": "DeCLIP: Decoding CLIP representations for deepfake localization",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2409.08849",
+                        "published": " in Winter Conference on Applications of Computer Vision (WACV)"
+                    },
+                    {
+                        "authors": "O. Pascu, A. Stan, D. Oneata, E. Oneata, H. Cucu",
+                        "title": "Towards generalisable and calibrated synthetic speech detection with self-supervised representations",
+                        "year": "2024",
+                        "link": "https://arxiv.org/pdf/2309.05384",
+                        "published": "Interspeech"
+                    },
+                    {
+                        "authors": "D. Tantaru, E. Oneata, D. Oneata",
+                        "title": "Weakly-supervised deepfake localization in diffusion-generated images",
+                        "year": "",
+                        "link": "https://openaccess.thecvf.com/content/WACV2024/papers/Tantaru_Weakly-Supervised_Deepfake_Localization_in_Diffusion-Generated_Images_WACV_2024_paper.pdf",
+                        "published": "WACV 2024 and *Best Short Paper* at ICCV 2023 Workshop on Adversarial Robustness In the Real World (AROW)"
+                    }
+                ]
+            },
+            {
+                "title": "Unsupervised learning of objects from video sequences",
+                "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.",
+                "papers": [
+                    {
+                        "authors": "E.Burceanu, M. Leordeanu",
+                        "title": "Learning a Fast 3D Spectral Approach to Object Segmentation and Tracking over Space and Time",
+                        "year": "2022",
+                        "link": "https://arxiv.org/abs/2212.08058",
+                        "published": "journal version under review"
+                    },
+                    {
+                        "authors": "E. Haller, A.M. Florea, M. Leordeanu",
+                        "title": "Iterative Knowledge Exchange Between Deep Learning and Space-Time Spectral Clustering for Unsupervised Segmentation in Videos",
+                        "year": "2021",
+                        "link": "https://ieeexplore.ieee.org/document/9573434",
+                        "published": "Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
+                    },
+                    {
+                        "authors": "E. Haller, M. Leordeanu",
+                        "title": "Spacetime Graph Optimization for Video Object Segmentation",
+                        "year": "2020",
+                        "link": "./papers/govos_arxiv.pdf",
+                        "published": "arXiv"
+                    },
+                    {
+                        "authors": "E. Burceanu, M. Leordeanu",
+                        "title": "A 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
+                        "year": "2020",
+                        "link": "https://arxiv.org/abs/1907.02731",
+                        "published": " In The International Joint Conference on Artificial Intelligence (IJCAI)"
+                    },
+                    {
+                        "authors": "E. Haller, M. Leordeanu",
+                        "title": "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
+                        "year": "2017",
+                        "link": "https://arxiv.org/abs/1704.05674",
+                        "published": " In The IEEE International Conference on Computer Vision (ICCV)"
+                    }
+                ]
+            },
+            {
+                "title": "Graph methods for video processing",
+                "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, devised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
+                "papers": [
+                    {
+                        "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
+                        "title": "Discovering Dynamic Salient Regions with Spatio-Temporal Graph Neural Networks",
+                        "year": "2021",
+                        "link": "https://arxiv.org/abs/2009.08427",
+                        "published": "in the Conference on Neural Information Processing Systems (NeurIPS)"
+                    },
+                    {
+                        "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
+                        "title": "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
+                        "year": "2020",
+                        "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
+                        "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS"
+                    },
+                    {
+                        "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
+                        "title": "Recurrent Space-time Graph Neural Networks",
+                        "year": "2019",
+                        "link": "https://papers.nips.cc/paper/9444-recurrent-space-time-graph-neural-networks",
+                        "published": " in the Conference on Neural Information Processing Systems (NeurIPS)"
+                    }
+                ]
+            },
+            {
+                "title": "Multi-task graph",
+                "description": "Existing methods in multi-task graphs rely on expensive manual supervision. In contrast, our proposed solution, with consensus shift learning, relies only on pseudo-labels provided by expert models. In our graph, every node represents a task, and every edge learns to transform one input node into another. Once initialized, the graph learns by itself on virtually any novel target domain. An adaptive selection mechanism finds consensus among multiple paths reaching a given node and establishes the pseudo-ground truth at that node. Such pseudo-labels, given by ensemble pathways in the graph, are used during the next learning iteration when single edges distill this distributed knowledge.",
+                "papers": [
+                    {
+                        "authors": "E. Haller, E.Burceanu, M. Leordeanu",
+                        "title": "Self-Supervised Learning in Multi-Task Graphs through Iterative Consensus Shift",
+                        "year": "2021",
+                        "link": "https://arxiv.org/abs/2103.14417",
+                        "published": " in The British Machine Vision Conference (BMVC)"
+                    }
+                ]
+            },
+            {
+                "title": "Video Captioning",
+                "description": "Video captioning is the task of describing a video in natural language. It lies at the intersection of computer vision, natural language processing and machine learning requiring both high level visual comprehension and the ability to produce meaningful sentences. Our goal is to detect objects and events in a video and be capable of understanding the interactions between them in spatial and temporal dimensions.",
+                "papers": [
+                    {
+                        "authors": "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
+                        "title": "Mining for meaning: from vision to language through multiple networks consensus",
+                        "year": "2018",
+                        "link": "https://arxiv.org/abs/1806.01954",
+                        "published": " in The British Machine Vision Conference (BMVC)"
+                    }
+                ]
+            },
+            {
+                "title": "Unsupervised Object Tracking",
+                "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. Difficulties come come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.",
+                "papers": [
+                    {
+                        "authors": "E. Burceanu",
+                        "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
+                        "year": "2020",
+                        "link": "https://proceedings.mlr.press/v148/burceanu21a.html",
+                        "published": "NeurIPS 2020 - Pre-register workshop, ICCV 2021 Structured Representations for Video Understanding workshop"
+                    },
+                    {
+                        "authors": "E. Burceanu, M. Leordeanu",
+                        "title": "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
+                        "year": "2018",
+                        "link": "./papers/SocietyOfTrackingParts.pdf",
+                        "published": " in The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
+                    },
+                    {
+                        "authors": "E. Burceanu, M. Leordeanu",
+                        "title": "Learning a Robust Society of Tracking Parts",
+                        "year": "2017",
+                        "link": "https://arxiv.org/abs/1705.09602"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Computer Vision",
-    "description": "We tackle fundamental unsupervised learning approaches that we consider to be the key to true unconstrained learning, which best simulates how humans discover the surrounding world. We aim to combine the unsupervised visual perception with supervised cognitive video representation. We want to build systems that understand our world by only watching videos.\nAnd we go further, teaching the system to describe, in natural language, the discovered elements.",
-    "people": "Elena Burceanu, Emanuela Haller, Elisabeta Oneata, Dragos Tantaru",
-    "projects": [
-      {
-        "title": "DeepFake Detection",
-        "description": "Deepfake detection plays a crucial role in addressing the social impact of synthetic media manipulation. With the rise of deepfake technology, there is a growing concern about its potential to spread misinformation and deceive the public. Detection efforts are essential to protect individuals and society from the harmful consequences of manipulated content. By using advanced machine learning techniques to uncover inconsistencies and anomalies within deepfake videos, audio recordings, or images, these detection methods act as a shield against the erosion of trust in digital media.",
-        "papers": [
-          {
-            "authors":"D. Boldisor, S. Smeu, D. Oneata, E. Oneata",
-            "title": "Circumventing shortcuts in audio-visual deepfake detection datasets with unsupervised learning",
-            "year": "2025",
-            "link": "https://arxiv.org/abs/2412.00175",
-            "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
-          },
-          {
-            "authors":"S. Smeu, E. Oneata, D. Oneata",
-            "title": "DeCLIP: Decoding CLIP representations for deepfake localization",
-            "year": "2025",
-            "link": "https://arxiv.org/abs/2409.08849",
-            "published": " in Winter Conference on Applications of Computer Vision (WACV)"
-          },
-          {
-            "authors":"O. Pascu, A. Stan, D. Oneata, E. Oneata, H. Cucu",
-            "title": "Towards generalisable and calibrated synthetic speech detection with self-supervised representations",
-            "year": "2024",
-            "link": "https://arxiv.org/pdf/2309.05384",
-            "published": "Interspeech"
-          },
-          {
-            "authors": "D. Tantaru, E. Oneata, D. Oneata",
-            "title": "Weakly-supervised deepfake localization in diffusion-generated images",
-            "year": "",
-            "link": "https://openaccess.thecvf.com/content/WACV2024/papers/Tantaru_Weakly-Supervised_Deepfake_Localization_in_Diffusion-Generated_Images_WACV_2024_paper.pdf",
-            "published": "WACV 2024 and *Best Short Paper* at ICCV 2023 Workshop on Adversarial Robustness In the Real World (AROW)"
-          }
+    },
+    {
+        "title": "Natural Language Processing",
+        "description": "A large amount of today's data is stored in databases. Building AI tools that facilitate the access to knowledge requires processing of natural language and structured data. We focus on neural approaches for natural language interfaces to databases, in particular structure-aware and semi-supervised methods.",
+        "people": "Florin Brad, Andrei Manolache, Ioana Pintilie, Dragos Tantaru, Marius Dragoi",
+        "projects": [
+            {
+                "title": "Large Language Models and RLHF",
+                "description": "Features learned by pretrained models are crucial for downstream tasks such as anomaly detection, search or classification. Most LLMs (either general purpose or code-based) have little assembly data in their pretraining corpus relative to the entire corpus. Finetuning LLMs on more assembly data should then result in better features. To test this, we developed several downstream classification tasks, where the input is assembly code. Classifiers trained on features from the asmLLM should then outperform classifiers trained on features from base LLMs.",
+                "papers": [
+                    {
+                        "authors": "M. Dragoi, I. Pintilie, F. Gogianu, F. Brad",
+                        "title": "Beyond Pass@k: Breadth-Depth Metrics for Reasoning Boundaries",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2510.08325",
+                        "published": ""
+                    },
+                    {
+                        "authors": "Teodor Poncu, Ioana Pintilie, Marius Dragoi, Dragos Tantaru, Florin Brad",
+                        "title": "C-ing Clearly: Enhanced Binary Code Explanations using C code",
+                        "year": "2025",
+                        "link": "https://arxiv.org/abs/2512.14500",
+                        "published": ""
+                    },
+                    {
+                        "authors": "F. Brad, I. Pintilie, M. Dragoi, D. Tantaru",
+                        "title": "Large Language Models for Malware Analysis",
+                        "year": "2024",
+                        "link": "https://bit-ml.github.io/blog/post/large-language-models-for-malware-analysis/",
+                        "published": ""
+                    }
+                ]
+            },
+            {
+                "title": "Anomaly detection in Text",
+                "description": "Recent deep methods for detecting anomalies in images learn better features of normality in an end-to-end self-supervised setting. These methods train a model to discriminate between different transformations applied to visual data and then use the output to compute an anomaly score. We use this approach for Anomaly Detection in text, by introducing a novel pretext task on text sequences. We learn our model end-to-end, enforcing two independent and complementary self-supervision signals, one at the token-level and one at the sequence-level.",
+                "papers": [
+                    {
+                        "authors": "I. Pintilie, A. Manolache, F. Brad",
+                        "title": "Time Series Anomaly Detection using Diffusion-based Models",
+                        "year": "2023",
+                        "link": "https://arxiv.org/abs/2311.01452",
+                        "published": "ICDM - International Conference on Data Mining"
+                    },
+                    {
+                        "authors": "A. Bejan, A. Manolache, M. Popescu",
+                        "title": "AD-NLP: A Benchmark for Anomaly Detection in Natural Language Processing",
+                        "year": "2023",
+                        "link": "./papers/public/papers/nlp_benchmark_for_AD.pdf",
+                        "published": "EMNLP"
+                    },
+                    {
+                        "authors": "A. Manolache, F. Brad, E. Burceanu",
+                        "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
+                        "year": "2021",
+                        "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
+                        "published": "in The Proceedings of the North American Chapter of ACL (NAACL), ICML Uncertainty & Robustness in Deep Learning workshop"
+                    }
+                ]
+            },
+            {
+                "title": "Domain Adaptation for Authorship Verification",
+                "description": "The task of identifying the author of a text spans several decades and was tackled using linguistics, statistics, and, more recently, machine learning. We tackle it inspired by the impressive performance gains across a broad range of natural language processing tasks and by the recent availability of the PAN large-scale authorship dataset.",
+                "papers": [
+                    {
+                        "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
+                        "title": "Rethinking the Authorship Verification Experimental Setups",
+                        "year": "2022",
+                        "link": "https://arxiv.org/abs/2112.05125",
+                        "published": "EMNLP"
+                    },
+                    {
+                        "authors": "A. Manolache, F. Brad, Antonio Barbalau, Radu Tudor Ionescu, Marius Popescu",
+                        "title": "VeriDark: A Large-Scale Benchmark for Authorship Verification on the Dark Web",
+                        "year": "2022",
+                        "link": "https://openreview.net/forum?id=gvaqa_WcIR6",
+                        "published": " in The Proceedings of the Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
+                    }
+                ]
+            },
+            {
+                "title": "Visual Question Answering",
+                "description": "The VQA task refers to answering questions about an image. Existing methods fuse image and text representations and are able to exploit superficial correlations and produce the correct answer, but often for the wrong reason. The recently introduced Visual Commonsense Reasoning dataset facilitates cognition-level understanding on top of recognition, by requiring not only the correct answer, but also a justification for it. We improve existing methods by leveraging structured representations of images.",
+                "papers": [
+                    {
+                        "authors": "F. Brad",
+                        "title": "Scene Graph Contextualization in Visual Commonsense Reasoning",
+                        "year": "2019",
+                        "link": "#",
+                        "published": " in The IEEE International Conference on Computer Vision (ICCV) - Pre.Register Workshop"
+                    }
+                ]
+            },
+            {
+                "title": "Natural Language Interface to Databases",
+                "description": "Natural Language Interface to Databases (NLIDB) bridges the gap between technical and non-technical users by allowing the latter to query large amounts of structured data through the use of instructions written in natural language.\nDespite long-standing research efforts, progress has been slow and widespread adoption has failed to pick up. Data-driven approaches have been hindered by the lack of large parallel corpora to train the models on, but recent datasets alleviate this problem. We seek to improve existing SEQ2SEQ models by leveraging syntax to guide the generation process and by using semi-supervised techniques to overcome the low parallel data regime.",
+                "papers": [
+                    {
+                        "authors": "R. Iacob, F. Brad, E.-S. Apostol, C.-O. Truica, T. Rebedea",
+                        "title": "Neural Approaches for Natural Language Interfaces to Databases: A Survey",
+                        "year": "2020",
+                        "link": "https://coling2020.org",
+                        "published": " in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
+                    },
+                    {
+                        "authors": "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
+                        "title": "Natural Language Interface for Databases Using a Dual-Encoder Model",
+                        "year": "2018",
+                        "link": "http://www.aclweb.org/anthology/C18-1043",
+                        "published": " in The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
+                    },
+                    {
+                        "authors": "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
+                        "title": "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
+                        "year": "2018",
+                        "link": "./papers/SYNLIDB_ICTAI_2018.pdf",
+                        "published": " in The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
+                    },
+                    {
+                        "authors": "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
+                        "title": "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
+                        "year": "2017",
+                        "link": "https://arxiv.org/abs/1707.03172",
+                        "published": " in The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Unsupervised learning of objects from video sequences",
-        "description": "We address an essential problem in computer vision, that of unsupervised foreground object segmentation in video, where a main object of interest in a video sequence should be automatically separated from its background. Video object segmentation and object discovery are strongly related tasks, but we tackle the problem from a fully unsupervised perspective, building object representations from raw video sequences. An efficient solution to this task would enable large-scale video interpretation at a high semantic level in the absence of the costly manual labeling.",
-        "papers": [
-          {
-            "authors": "E.Burceanu, M. Leordeanu",
-            "title": "Learning a Fast 3D Spectral Approach to Object Segmentation and Tracking over Space and Time",
-            "year": "2022",
-            "link": "https://arxiv.org/abs/2212.08058",
-            "published": "journal version under review"
-          },
-          {
-            "authors": "E. Haller, A.M. Florea, M. Leordeanu",
-            "title": "Iterative Knowledge Exchange Between Deep Learning and Space-Time Spectral Clustering for Unsupervised Segmentation in Videos",
-            "year": "2021",
-            "link": "https://ieeexplore.ieee.org/document/9573434",
-            "published": "Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
-          },
-          {
-            "authors": "E. Haller, M. Leordeanu",
-            "title": "Spacetime Graph Optimization for Video Object Segmentation",
-            "year": "2020",
-            "link": "./papers/govos_arxiv.pdf",
-            "published": "arXiv"
-          },
-          {
-            "authors": "E. Burceanu, M. Leordeanu",
-            "title": "A 3D Convolutional Approach to Spectral Object Segmentation in Space and Time",
-            "year": "2020",
-            "link": "https://arxiv.org/abs/1907.02731",
-            "published": " In The International Joint Conference on Artificial Intelligence (IJCAI)"
-          },
-          {
-            "authors": "E. Haller, M. Leordeanu",
-            "title": "Unsupervised Object Segmentation in Video by Efficient Selection of Highly Probable Positive Features",
-            "year": "2017",
-            "link": "https://arxiv.org/abs/1704.05674",
-            "published": " In The IEEE International Conference on Computer Vision (ICCV)"
-          }
+    },
+    {
+        "title": "Reinforcement Learning",
+        "description": "Within the field of artificial intelligence reinforcement learning seems a natural setting for training agents that interact with the world we are living in. We engage in furthering the field by developing agents able to learn continuously in different environments. We are also investigating models sitting at the intersection of generative models and reinforcement learning.",
+        "people": "Florin Gogianu",
+        "projects": [
+            {
+                "title": "Learning Representations for Deep Reinforcement Learning",
+                "description": "We are interested in furthering the research on learning good representations for Deep Reinforcement Learning towards the goals of more stable optimisation, improvede generalization and better sample complexity.",
+                "papers": [
+                    {
+                        "authors": "F. Gogianu, T. Berariu, M. Roșca, C. Clopath, L. Bușoniu, R. Pașcanu",
+                        "title": "Spectral Normalisation for Deep Reinforcement Learning: An Optimisation Perspective",
+                        "year": "2021",
+                        "link": "http://proceedings.mlr.press/v139/gogianu21a.html",
+                        "published": "Proceedings of the 38th International Conference on Machine Learning (ICML)"
+                    }
+                ]
+            },
+            {
+                "title": "Malmo AI Challenge",
+                "description": "The Microsoft Malmo AI Challenge proposed a time-extended stag hunt scneario build on top of the well-known Minecraft platform. In order to maximize its payoff in such a game an agent needs to predict the level of commitment to a collaborative strategy of the other player, decide on a specific plan and navigate through the environment to execute it.\n Our submission ranked second for the AI Summer School placement prize and third for the Microsoft Azure for Research Grant prize.",
+                "papers": [
+                    {
+                        "authors": "A. Nica, T. Berariu, F. Gogianu, A.M. Florea",
+                        "title": "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
+                        "year": "2017",
+                        "link": "./learning-maximize-return.pdf",
+                        "published": "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Graph methods for video processing",
-        "description": "Given a video we want to have a good understanding of the scene and to be able to identify the key events in order to extract useful information. Our goal is to capture the complex interactions between multiple entities in a scene. We improve the clasical convolutional models by proposing a graph model, that has a strong, explicit bias towards modeling relationships and at the same time being able to model long range interactions. We also design a novel method, devised at the object-level, that can discover salient regions and we quantitatively show that they correlate with objects locations and help the relational procesing",
-        "papers": [
-          {
-            "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
-            "title": "Discovering Dynamic Salient Regions with Spatio-Temporal Graph Neural Networks",
-            "year": "2021",
-            "link": "https://arxiv.org/abs/2009.08427",
-            "published": "in the Conference on Neural Information Processing Systems (NeurIPS)"
-          },
-          {
-            "authors": "I. Duță, A. Nicolicioiu, M. Leordeanu",
-            "title": "Dynamic Regions Graph Neural Networks for Spatio-Temporal Reasoning",
-            "year": "2020",
-            "link": "https://github.com/orlrworkshop/orlrworkshop.github.io/blob/master/pdf/ORLR_5.pdf",
-            "published": "Object Representations for Learning and Reasoning Workshop at NeurIPS"
-          },
-          {
-            "authors": "A. Nicolicioiu, I. Duță, M. Leordeanu",
-            "title": "Recurrent Space-time Graph Neural Networks",
-            "year": "2019",
-            "link": "https://papers.nips.cc/paper/9444-recurrent-space-time-graph-neural-networks",
-            "published": " in the Conference on Neural Information Processing Systems (NeurIPS)"
-          }
+    },
+    {
+        "title": "Cryptography",
+        "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
+        "people": "Miruna Rosca, Mădălina Bolboceanu, Dacian Stroia",
+        "projects": [
+            {
+                "title": "Hardness of lattice problems",
+                "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems and giving reductions between them.",
+                "papers": [
+                    {
+                        "authors": "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
+                        "title": "Order-LWE and the Hardness of Ring-LWE with Entropic Secrets",
+                        "year": "2019",
+                        "link": "https://eprint.iacr.org/2018/494",
+                        "published": " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
+                    },
+                    {
+                        "authors": "M. Rosca, D. Stehlé and A. Wallet",
+                        "title": "On the Ring-LWE and Polynomial-LWE Problems",
+                        "year": "2018",
+                        "link": "https://eprint.iacr.org/2018/170",
+                        "published": " in the proceedings of International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT), pages 146-173, Springer"
+                    },
+                    {
+                        "authors": "M. Bolboceanu",
+                        "title": "Relating Different Polynomial-LWE problems",
+                        "year": "2018",
+                        "link": "https://eprint.iacr.org/2018/1035",
+                        "published": " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
+                    },
+                    {
+                        "authors": "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
+                        "title": "Middle-Product Learning with Errors",
+                        "year": "2017",
+                        "link": "https://eprint.iacr.org/2017/628",
+                        "published": "In the proceedings of International Cryptology Conference (CRYPTO), pages 283-297, Springer"
+                    }
+                ]
+            },
+            {
+                "title": "Cryptographic primitives from (algebraic variants of) LWE",
+                "description": "We build advanced cryptographic primitives whose security relies on the hardness of LWE and its algebraic variants. We are mainly interested in Homomorphic Encryption and Functional Encryption which allow you to run learning algorithms on encrypted data and perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
+                "papers": [
+                    {
+                        "authors": "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
+                        "title": "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
+                        "year": "2020",
+                        "link": "https://eprint.iacr.org/2020/198.pdf",
+                        "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+                    },
+                    {
+                        "authors": "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
+                        "title": "Adaptive Simulation Security for Inner Product Functional Encryption",
+                        "year": "2020",
+                        "link": "https://eprint.iacr.org/2020/209.pdf",
+                        "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
+                    },
+                    {
+                        "authors": "B.Libert, R. Țițiu",
+                        "title": "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
+                        "year": "2019",
+                        "link": "https://hal.inria.fr/hal-02352139/document",
+                        "published": " accepted at ASIACRYPT"
+                    },
+                    {
+                        "authors": "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
+                        "title": "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
+                        "year": "2020",
+                        "link": "https://eprint.iacr.org/2019/908",
+                        "published": " accepted at ASIACRYPT"
+                    },
+                    {
+                        "authors": "R. Țițiu, B.Libert, D. Stehlé",
+                        "title": "Adaptively Secure Distributed PRFs from LWE",
+                        "year": "2018",
+                        "link": "https://eprint.iacr.org/2018/927.pdf",
+                        "published": " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "title": "Multi-task graph",
-        "description": "Existing methods in multi-task graphs rely on expensive manual supervision. In contrast, our proposed solution, with consensus shift learning, relies only on pseudo-labels provided by expert models. In our graph, every node represents a task, and every edge learns to transform one input node into another. Once initialized, the graph learns by itself on virtually any novel target domain. An adaptive selection mechanism finds consensus among multiple paths reaching a given node and establishes the pseudo-ground truth at that node. Such pseudo-labels, given by ensemble pathways in the graph, are used during the next learning iteration when single edges distill this distributed knowledge.",
-        "papers": [
-          {
-            "authors": "E. Haller, E.Burceanu, M. Leordeanu",
-            "title": "Self-Supervised Learning in Multi-Task Graphs through Iterative Consensus Shift",
-            "year": "2021",
-            "link": "https://arxiv.org/abs/2103.14417",
-            "published": " in The British Machine Vision Conference (BMVC)"
-          }
-        ]
-      },
-      {
-        "title": "Video Captioning",
-        "description": "Video captioning is the task of describing a video in natural language. It lies at the intersection of computer vision, natural language processing and machine learning requiring both high level visual comprehension and the ability to produce meaningful sentences. Our goal is to detect objects and events in a video and be capable of understanding the interactions between them in spatial and temporal dimensions.",
-        "papers": [
-          {
-            "authors": "I. Duță, A. Nicolicioiu, V. Bogolin, M. Leordeanu",
-            "title": "Mining for meaning: from vision to language through multiple networks consensus",
-            "year": "2018",
-            "link": "https://arxiv.org/abs/1806.01954",
-            "published": " in The British Machine Vision Conference (BMVC)"
-          }
-        ]
-      },
-      {
-        "title": "Unsupervised Object Tracking",
-        "description": "Object tracking is one of the first and most fundamental problems that has been addressed in computer vision. Difficulties come come from severe changes in object appearance, presence of background clutter and occlusions that might take place in the video.",
-        "papers": [
-          {
-            "authors": "E. Burceanu",
-            "title": "SFTrack++: A Fast Learnable Spectral Segmentation Approach for Space-Time Consistent Tracking",
-            "year": "2020",
-            "link": "https://proceedings.mlr.press/v148/burceanu21a.html",
-            "published": "NeurIPS 2020 - Pre-register workshop, ICCV 2021 Structured Representations for Video Understanding workshop"
-          },
-          {
-            "authors": "E. Burceanu, M. Leordeanu",
-            "title": "Learning a Robust Society of Tracking Parts using Co-occurrence Constraints",
-            "year": "2018",
-            "link": "./papers/SocietyOfTrackingParts.pdf",
-            "published": " in The European Conference on Computer Vision (ECCV), at Visual Object Tracking workshop"
-          },
-          {
-            "authors": "E. Burceanu, M. Leordeanu",
-            "title": "Learning a Robust Society of Tracking Parts",
-            "year": "2017",
-            "link": "https://arxiv.org/abs/1705.09602"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Natural Language Processing",
-    "description": "A large amount of today's data is stored in databases. Building AI tools that facilitate the access to knowledge requires processing of natural language and structured data. We focus on neural approaches for natural language interfaces to databases, in particular structure-aware and semi-supervised methods.",
-    "people": "Florin Brad, Andrei Manolache, Ioana Pintilie, Dragos Tantaru, Marius Dragoi",
-    "projects": [
-      {
-        "title": "Large Language Models for Assembly",
-        "description": "Features learned by pretrained models are crucial for downstream tasks such as anomaly detection, search or classification. Most LLMs (either general purpose or code-based) have little assembly data in their pretraining corpus relative to the entire corpus. Finetuning LLMs on more assembly data should then result in better features. To test this, we developed several downstream classification tasks, where the input is assembly code. Classifiers trained on features from the asmLLM should then outperform classifiers trained on features from base LLMs.",
-        "papers": [
-          {
-            "authors": "F. Brad, I. Pintilie, M. Dragoi, D. Tantaru",
-            "title": "Large Language Models for Malware Analysis",
-            "year": "2024",
-            "link": "https://bit-ml.github.io/blog/post/large-language-models-for-malware-analysis/",
-            "published": ""
-          }
-        ]
-      },
-      {
-        "title": "Anomaly detection in Text",
-        "description": "Recent deep methods for detecting anomalies in images learn better features of normality in an end-to-end self-supervised setting. These methods train a model to discriminate between different transformations applied to visual data and then use the output to compute an anomaly score. We use this approach for Anomaly Detection in text, by introducing a novel pretext task on text sequences. We learn our model end-to-end, enforcing two independent and complementary self-supervision signals, one at the token-level and one at the sequence-level.",
-        "papers": [
-          {
-            "authors": "I. Pintilie, A. Manolache, F. Brad",
-            "title": "Time Series Anomaly Detection using Diffusion-based Models",
-            "year": "2023",
-            "link": "https://arxiv.org/abs/2311.01452",
-            "published": "ICDM - International Conference on Data Mining"
-          },
-          {
-            "authors": "A. Bejan, A. Manolache, M. Popescu",
-            "title": "AD-NLP: A Benchmark for Anomaly Detection in Natural Language Processing",
-            "year": "2023",
-            "link": "./papers/public/papers/nlp_benchmark_for_AD.pdf",
-            "published": "EMNLP"
-          },
-          {
-            "authors": "A. Manolache, F. Brad, E. Burceanu",
-            "title": "DATE: Detecting Anomalies in Text via Self-Supervision of Transformers",
-            "year": "2021",
-            "link": "https://www.aclweb.org/anthology/2021.naacl-main.25/",
-            "published": "in The Proceedings of the North American Chapter of ACL (NAACL), ICML Uncertainty & Robustness in Deep Learning workshop"
-          }
-        ]
-      },
-      {
-        "title": "Domain Adaptation for Authorship Verification",
-        "description": "The task of identifying the author of a text spans several decades and was tackled using linguistics, statistics, and, more recently, machine learning. We tackle it inspired by the impressive performance gains across a broad range of natural language processing tasks and by the recent availability of the PAN large-scale authorship dataset.",
-        "papers": [
-          
-          {
-            "authors": "A. Manolache, F. Brad, E. Burceanu, Antonio Barbalau, Marius Popescu, Radu Tudor Ionescu",
-            "title": "Rethinking the Authorship Verification Experimental Setups",
-            "year": "2022",
-            "link": "https://arxiv.org/abs/2112.05125",
-            "published": "EMNLP"
-          },
-          {
-            "authors": "A. Manolache, F. Brad, Antonio Barbalau, Radu Tudor Ionescu, Marius Popescu",
-            "title": "VeriDark: A Large-Scale Benchmark for Authorship Verification on the Dark Web",
-            "year": "2022",
-            "link": "https://openreview.net/forum?id=gvaqa_WcIR6",
-            "published": " in The Proceedings of the Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS, Datasets and Benchmarks Track)"
-          }
-        ]
-      },
-      {
-        "title": "Visual Question Answering",
-        "description": "The VQA task refers to answering questions about an image. Existing methods fuse image and text representations and are able to exploit superficial correlations and produce the correct answer, but often for the wrong reason. The recently introduced Visual Commonsense Reasoning dataset facilitates cognition-level understanding on top of recognition, by requiring not only the correct answer, but also a justification for it. We improve existing methods by leveraging structured representations of images.",
-        "papers": [
-          {
-            "authors": "F. Brad",
-            "title": "Scene Graph Contextualization in Visual Commonsense Reasoning",
-            "year": "2019",
-            "link": "#",
-            "published": " in The IEEE International Conference on Computer Vision (ICCV) - Pre.Register Workshop"
-          }
-        ]
-      },
-      {
-        "title": "Natural Language Interface to Databases",
-        "description": "Natural Language Interface to Databases (NLIDB) bridges the gap between technical and non-technical users by allowing the latter to query large amounts of structured data through the use of instructions written in natural language.\nDespite long-standing research efforts, progress has been slow and widespread adoption has failed to pick up. Data-driven approaches have been hindered by the lack of large parallel corpora to train the models on, but recent datasets alleviate this problem. We seek to improve existing SEQ2SEQ models by leveraging syntax to guide the generation process and by using semi-supervised techniques to overcome the low parallel data regime.",
-        "papers": [
-          {
-            "authors": "R. Iacob, F. Brad, E.-S. Apostol, C.-O. Truica, T. Rebedea",
-            "title": "Neural Approaches for Natural Language Interfaces to Databases: A Survey",
-            "year": "2020",
-            "link": "https://coling2020.org",
-            "published": " in The Proceedings of the 29th International Conference on Computational Linguistics (COLING)"
-          },
-          {
-            "authors": "I. Hosu, R. Iacob, F. Brad, S. Ruseti, T. Rebedea",
-            "title": "Natural Language Interface for Databases Using a Dual-Encoder Model",
-            "year": "2018",
-            "link": "http://www.aclweb.org/anthology/C18-1043",
-            "published": " in The Proceedings of the 27th International Conference on Computational Linguistics (COLING)"
-          },
-          {
-            "authors": "F. Brad, R. Iacob, I. Hosu, S. Ruseti, T. Rebedea",
-            "title": "A Syntax-Guided Neural Model for Natural Language Interfaces to Databases",
-            "year": "2018",
-            "link": "./papers/SYNLIDB_ICTAI_2018.pdf",
-            "published": " in The Proceedings of the IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)"
-          },
-          {
-            "authors": "F. Brad, R. Iacob, I. Hosu, T. Rebedea",
-            "title": "Dataset for a Neural Natural Language Interface for Databases (NNLIDB)",
-            "year": "2017",
-            "link": "https://arxiv.org/abs/1707.03172",
-            "published": " in The Proceedings of the Eighth International Joint Conference on Natural Language Processing (IJCNLP, Volume 1: Long Papers)"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Reinforcement Learning",
-    "description": "Within the field of artificial intelligence reinforcement learning seems a natural setting for training agents that interact with the world we are living in. We engage in furthering the field by developing agents able to learn continuously in different environments. We are also investigating models sitting at the intersection of generative models and reinforcement learning.",
-    "people": "Florin Gogianu",
-    "projects": [
-      {
-        "title": "Learning Representations for Deep Reinforcement Learning",
-        "description": "We are interested in furthering the research on learning good representations for Deep Reinforcement Learning towards the goals of more stable optimisation, improvede generalization and better sample complexity.",
-        "papers": [
-          {
-            "authors": "F. Gogianu, T. Berariu, M. Roșca, C. Clopath, L. Bușoniu, R. Pașcanu",
-            "title": "Spectral Normalisation for Deep Reinforcement Learning: An Optimisation Perspective",
-            "year": "2021",
-            "link": "http://proceedings.mlr.press/v139/gogianu21a.html",
-            "published": "Proceedings of the 38th International Conference on Machine Learning (ICML)"
-          }
-        ]
-      },
-      {
-        "title": "Malmo AI Challenge",
-        "description": "The Microsoft Malmo AI Challenge proposed a time-extended stag hunt scneario build on top of the well-known Minecraft platform. In order to maximize its payoff in such a game an agent needs to predict the level of commitment to a collaborative strategy of the other player, decide on a specific plan and navigate through the environment to execute it.\n Our submission ranked second for the AI Summer School placement prize and third for the Microsoft Azure for Research Grant prize.",
-        "papers": [
-          {
-            "authors": "A. Nica, T. Berariu, F. Gogianu, A.M. Florea",
-            "title": "Learning to Maximize Return in a Stag Hunt Collaborative Scenario through Deep Reinforcement Learning",
-            "year": "2017",
-            "link": "./learning-maximize-return.pdf",
-            "published": "in The International Conference on Machine Learning (ICML), at Reinforcement Learning Workshop"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Cryptography",
-    "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. We build advanced primitives whose security relies on the hardness of lattice problems.",
-    "people": "Miruna Rosca, Mădălina Bolboceanu, Dacian Stroia",
-    "projects": [
-      {
-        "title": "Hardness of lattice problems",
-        "description": "Lattice-based cryptography is a great promise for post-quantum cryptography. It aims at harnessing the security of cryptographic primitives in the conjectured hardness of well-identiﬁed and well-studied algorithmic problems involving euclidean lattices. In order to build post-quantum cryptographic primitives based on lattices, we actually make use of some intermediate, more versatile problems, Learning With Errors (LWE) and Shortest Integer Solutions (SIS), which are provably at least as hard as classical lattice problems.\nTo obtain more efficient primitives, different structured variants of LWE and SIS have been introduced. We are interested in studying the hardness of all these problems and giving reductions between them.",
-        "papers": [
-          {
-            "authors": "M. Bolboceanu, Z. Brakerski, R. Perlman, D. Sharma",
-            "title": "Order-LWE and the Hardness of Ring-LWE with Entropic Secrets",
-            "year": "2019",
-            "link": "https://eprint.iacr.org/2018/494",
-            "published": " in The Annual International Conference on the Theory and Application of Cryptology and Information Security (Asiacrypt)"
-          },
-          {
-            "authors": "M. Rosca, D. Stehlé and A. Wallet",
-            "title": "On the Ring-LWE and Polynomial-LWE Problems",
-            "year": "2018",
-            "link": "https://eprint.iacr.org/2018/170",
-            "published": " in the proceedings of International Conference on the Theory and Applications of Cryptographic Techniques (EUROCRYPT), pages 146-173, Springer"
-          },
-          {
-            "authors": "M. Bolboceanu",
-            "title": "Relating Different Polynomial-LWE problems",
-            "year": "2018",
-            "link": "https://eprint.iacr.org/2018/1035",
-            "published": " in 11th International Conference on Security for Information Technology and Communications (SECITC)"
-          },
-          {
-            "authors": "M. Rosca, A. Sakzad, D. Stehlé and R. Steinfeld",
-            "title": "Middle-Product Learning with Errors",
-            "year": "2017",
-            "link": "https://eprint.iacr.org/2017/628",
-            "published": "In the proceedings of International Cryptology Conference (CRYPTO), pages 283-297, Springer"
-          }
-        ]
-      },
-      {
-        "title": "Cryptographic primitives from (algebraic variants of) LWE",
-        "description": "We build advanced cryptographic primitives whose security relies on the hardness of LWE and its algebraic variants. We are mainly interested in Homomorphic Encryption and Functional Encryption which allow you to run learning algorithms on encrypted data and perform statistical tests on the sensitive encrypted data that one could find for instance in a hospital or in a bank.",
-        "papers": [
-          {
-            "authors": "S. Bai, D. Das, R. Hiromasa, M. Rosca, A. Sakzad, D. Stehlé, R. Steinfeld, Z. Zhang",
-            "title": "MPSign: A Signature from Small-Secret Middle-Product Learning with Errors",
-            "year": "2020",
-            "link": "https://eprint.iacr.org/2020/198.pdf",
-            "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
-          },
-          {
-            "authors": "S. Agrawal, B. Libert, M. Maitra, R. Titiu",
-            "title": "Adaptive Simulation Security for Inner Product Functional Encryption",
-            "year": "2020",
-            "link": "https://eprint.iacr.org/2020/209.pdf",
-            "published": " accepted at International Conference on Practice and Theory of Public Key Cryptography (PKC)"
-          },
-          {
-            "authors": "B.Libert, R. Țițiu",
-            "title": "Multi-Client Functional Encryption for Linear Functions in the Standard Model from LWE",
-            "year": "2019",
-            "link": "https://hal.inria.fr/hal-02352139/document",
-            "published": " accepted at ASIACRYPT"
-          },
-          {
-            "authors": "B. Libert, K. Nguyen, A. Passelègue, R. Țițiu",
-            "title": "Simulation-Sound Proofs for LWE and Applications to KDM-CCA2 Security",
-            "year": "2020",
-            "link": "https://eprint.iacr.org/2019/908",
-            "published": " accepted at ASIACRYPT"
-          },
-          {
-            "authors": "R. Țițiu, B.Libert, D. Stehlé",
-            "title": "Adaptively Secure Distributed PRFs from LWE",
-            "year": "2018",
-            "link": "https://eprint.iacr.org/2018/927.pdf",
-            "published": " in The Theory of Cryptography Conference (TCC), invited to The Journal of Cryptology"
-          }
-        ]
-      }
-    ]
-  }
+    }
 ]
