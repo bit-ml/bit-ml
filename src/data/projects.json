@@ -20,7 +20,7 @@
                         "title": "Do We Always Need the Simplicity Bias? Looking for Optimal Inductive Biases in the Wild",
                         "year": "2025",
                         "link": "https://arxiv.org/abs/2503.10065",
-                        "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
+                        "published": " in Computer Vision and Pattern Recognition Conference (Oral paper @ CVPR)"
                     },
                     {
                         "authors": "S. Smeu, E. Burceanu, E. Haller, A. Nicolicioiu",
@@ -61,7 +61,7 @@
                         "title": "Learning (Approximately) Equivariant Networks via Constrained Optimization",
                         "year": "2025",
                         "link": "https://arxiv.org/pdf/2505.13631",
-                        "published": " in Conference on Neural Information Processing Systems (NeurIPS)"
+                        "published": " in Conference on Neural Information Processing Systems (Oral paper @ NeurIPS)"
                     },
                     {
                         "authors": "C. Qian, A. Manolache, C. Morris, M. Niepert",
@@ -109,14 +109,14 @@
                         "title": "Circumventing shortcuts in audio-visual deepfake detection datasets with unsupervised learning",
                         "year": "2025",
                         "link": "https://arxiv.org/abs/2412.00175",
-                        "published": " in Computer Vision and Pattern Recognition Conference (CVPR)"
+                        "published": " in Computer Vision and Pattern Recognition Conference (Highlight paper @ CVPR)"
                     },
                     {
                         "authors": "S. Smeu, E. Oneata, D. Oneata",
                         "title": "DeCLIP: Decoding CLIP representations for deepfake localization",
                         "year": "2025",
                         "link": "https://arxiv.org/abs/2409.08849",
-                        "published": " in Winter Conference on Applications of Computer Vision (WACV)"
+                        "published": " in Winter Conference on Applications of Computer Vision (Oral paper @ WACV)"
                     },
                     {
                         "authors": "O. Pascu, A. Stan, D. Oneata, E. Oneata, H. Cucu",
